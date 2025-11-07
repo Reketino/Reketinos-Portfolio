@@ -1,9 +1,10 @@
 "use client"
 import Image from 'next/image'
 import Fullskjerm from './fullskjerm'
+import Taskbar from './taskbar'
 import React, {useState} from 'react'
 
-export default function App() {
+export default function Desktop() {
   const [openApp, setOpenApp] = useState(null);
 
   return (
@@ -148,7 +149,7 @@ export default function App() {
 
       {openApp === "Spotify" && (
         <Fullskjerm
-          url="https://open.spotify.com/embed/playlist/5fWaijV0GmLzP9KFydh712?utm_source=generator"
+          url="https://open.spotify.com/embed/playlist/0JSMbYLP1XQk0uIsqwdH9g?utm_source=generator" 
           title="Spotify"
           onBack={() => setOpenApp(null)}
         />
@@ -161,6 +162,7 @@ export default function App() {
           onBack={() => setOpenApp(null)}
         />
       )}
+      <Taskbar />
     </>
   );
 }
