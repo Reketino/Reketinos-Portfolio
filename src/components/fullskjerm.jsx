@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Image from "next/image";
 
 export default function Fullskjerm({ url, title, onBack }) {
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -19,16 +20,42 @@ export default function Fullskjerm({ url, title, onBack }) {
           </button>
         </div>
 
-        <div className=" absolute right-4 flex gap-2">
-          <button
-            onClick={() => setIsFullscreen(!isFullscreen)}
-            className="text-sm text-white underline"
-          >
-            {isFullscreen ? "⧉" : "🗖"}
-          </button>
-        </div>
+        <h2 className="mx-auto text-center font-semibold">{title}</h2>
 
-        <h2 className="mx-auto text-xl font-semibold">{title}</h2>
+        <div className=" absolute right-4 flex gap-2">
+          <button className="p-1 hover:bg-gray-700 rounded-transition">
+            <Image
+              src="/minimize.png"
+              alt="Minimize"
+              width={16}
+              height={16}
+            />
+          </button>
+
+          <button 
+            onClick={() => setIsFullscreen(!isFullscreen)}
+            className="p-1 hover:bg-gray-700 rounded-transition"
+            >
+              <Image
+                src={isFullscreen ? "/minimize.png" : "/maximize.png"}
+                alt="Maximize"
+                width={16}
+                height={16}
+              />
+            </button>
+
+            <button
+              onClick={onBack}
+              className="p-1 hover:bg-red-600 rounded-transition"
+            >
+              <Image
+                src="/close.png"
+                alt="Close"
+                width={16}
+                height={16}
+              />
+            </button>
+        </div>
       </div>
 
       <iframe
