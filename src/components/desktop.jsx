@@ -87,7 +87,6 @@ export default function Desktop() {
               <p>
                 Jeg har erfaring med flere programmeringsspråk og rammeverk.
               </p>
-              <p> Blant annet:</p>
             </div>
           )}
 
