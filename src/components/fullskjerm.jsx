@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 
-export default function Fullskjerm({ url, title, onBack }) {
+export default function Fullskjerm({ url, title, onBack, onMinimize }) {
   const [isFullscreen, setIsFullscreen] = useState(false);
 
   return (
@@ -23,7 +23,10 @@ export default function Fullskjerm({ url, title, onBack }) {
         <h2 className="mx-auto text-center font-semibold">{title}</h2>
 
         <div className=" absolute right-4 flex gap-2">
-          <button className="p-1 hover:bg-gray-700 rounded-transition">
+          <button 
+          onClick={onMinimize}
+          className="p-1 hover:bg-gray-700 rounded-transition"
+          >
             <Image
               src="/minimize.png"
               alt="Minimize"

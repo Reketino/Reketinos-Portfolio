@@ -6,6 +6,7 @@ import React, {useState} from 'react'
 
 export default function Desktop() {
   const [openApp, setOpenApp] = useState(null);
+  const [minimizedApps, setMinimizedApps] = useState([]);
 
   return (
     <main>
@@ -59,7 +60,8 @@ export default function Desktop() {
       </div>
 
       {openApp && (
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gray-900 text-white rounded-xl shadow-2xl w-[90%] max-w-md  p-6 z-10 animate-fadeIn">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+         bg-gray-900 text-white rounded-xl shadow-2xl w-[90%] max-w-md p-6 z-10 ">
           <div className="flex justify-between items-center mb-4">
             <h2 className="text-lg font-semibold">
               {openApp === "about" && "Om Meg"}
@@ -125,46 +127,84 @@ export default function Desktop() {
           )}
         </div>
       )}
-      {openApp === "project1" && (
+      {(openApp === "project1" || !minimizedApps.includes("project1")) && (
         <Fullskjerm
           url="https://fjellturer.vercel.app/"
           title="Fjellturer Nettside"
           onBack={() => setOpenApp("prosjekter")}
+            onMinimize={() => {
+            setMinimizedApps((prev) =>
+              prev.includes("project1") ? prev : [...prev, "project1"]
+          );
+            setOpenApp(null);
+          }}
+          isMinimized={minimizedApps.includes("project1")}
         />
       )}
 
-      {openApp === "project2" && (
+      {(openApp === "project2" || !minimizedApps.includes("project2")) && (
         <Fullskjerm
           url="https://kjodes-frisor.vercel.app/"
           title="Frisør Booking"
           onBack={() => setOpenApp("prosjekter")}
+           onMinimize={() => {
+            setMinimizedApps((prev) =>
+              prev.includes("project2") ? prev : [...prev, "project2"]
+          );
+            setOpenApp(null);
+          }}
+          isMinimized={minimizedApps.includes("project2")}
         />
       )}
 
-      {openApp === "project3" && (
+      {(openApp === "project3" || !minimizedApps.includes("project3")) && (
         <Fullskjerm
           url="https://reketino-s-word-of-wisdom-31dr.vercel.app/"
           title="Visdomsord"
           onBack={() => setOpenApp("prosjekter")}
+            onMinimize={() => {
+            setMinimizedApps((prev) =>
+              prev.includes("project3") ? prev : [...prev, "project3"]
+          );
+            setOpenApp(null);
+          }}
+          isMinimized={minimizedApps.includes("project3")}
         />
       )}
 
-      {openApp === "Spotify" && (
+      {openApp === "Spotify" && !minimizedApps.includes("Spotify") && (
         <Fullskjerm
           url="https://open.spotify.com/embed/playlist/0JSMbYLP1XQk0uIsqwdH9g?utm_source=generator" 
           title="Spotify"
           onBack={() => setOpenApp(null)}
+          onMinimize={() => {
+            setMinimizedApps([...minimizedApps,"Spotify"]);
+            setOpenApp(null);
+          }}
         />
       )}
 
-      {openApp === "Flappy Bird" && (
+      {openApp === "Flappy Bird" && !minimizedApps.includes("Flappy Bird") &&  (
         <Fullskjerm
           url="https://flappy-bird-ruby-nine.vercel.app/"
           title="Flappy Bird"
           onBack={() => setOpenApp(null)}
+           onMinimize={() => {
+            setMinimizedApps([...minimizedApps,"Flappy Bird"]);
+            setOpenApp(null);
+          }}
+          
         />
       )}
-      <Taskbar />
+
+      <Taskbar
+      minimizedApps={minimizedApps}
+      onRestore={(app) => {
+        setOpenApp(app);
+        setMinimizedApps(minimizedApps.filter(a => a !== app));
+      }}
+      />
+
     </main>
   );
 }
