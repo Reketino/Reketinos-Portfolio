@@ -8,8 +8,11 @@ export default function Desktop() {
   const [openApp, setOpenApp] = useState(null);
 
   return (
-    <>
-      <div className="flex flex-col items-start gap-8 fixed left-10 top-1/4">
+    <main>
+
+      <div className="grid grid-cols-2 gap-6 items-center mt-20 
+       md:flex md:flex-col md:items-start md:gap-8 md:fixed md:left-10 md:top-1/4
+      ">
         <div
           className="flex flex-col items-center cursor-pointer hover:scale-105 transition-transform"
           onClick={() => setOpenApp("about")}
@@ -163,6 +166,6 @@ export default function Desktop() {
         />
       )}
       <Taskbar />
-    </>
+    </main>
   );
 }
