@@ -19,7 +19,7 @@ export default function Desktop() {
           onClick={() => setOpenApp("about")}
         >
           <span className="text-6xl">📖</span>
-          <p className="mt-2 text-sm">Beareven.txt</p>
+          <p className="mt-2 text-sm">BEARME.MD</p>
         </div>
 
         <div
