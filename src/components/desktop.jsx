@@ -127,7 +127,7 @@ export default function Desktop() {
           )}
         </div>
       )}
-      {(openApp === "project1" || !minimizedApps.includes("project1")) && (
+      {(openApp === "project1" && !minimizedApps.includes("project1")) && (
         <Fullskjerm
           url="https://fjellturer.vercel.app/"
           title="Fjellturer Nettside"
@@ -142,7 +142,7 @@ export default function Desktop() {
         />
       )}
 
-      {(openApp === "project2" || !minimizedApps.includes("project2")) && (
+      {(openApp === "project2" && !minimizedApps.includes("project2")) && (
         <Fullskjerm
           url="https://kjodes-frisor.vercel.app/"
           title="Frisør Booking"
@@ -157,7 +157,7 @@ export default function Desktop() {
         />
       )}
 
-      {(openApp === "project3" || !minimizedApps.includes("project3")) && (
+      {(openApp === "project3" && !minimizedApps.includes("project3")) && (
         <Fullskjerm
           url="https://reketino-s-word-of-wisdom-31dr.vercel.app/"
           title="Visdomsord"
