@@ -13,7 +13,7 @@ export default function Fullskjerm({ url, title, onBack, onMinimize, children })
       }
      bg-gray-900 z-50 rounded-lg shadow-2xl flex flex-col transition-all duration-500 `}
     >
-      <div className=" relative flex items-center  bg-gray-800 px-4 py-2 text-white">
+      <div className=" relative flex items-center  bg-black px-4 py-2 text-white">
         <div className=" absolute left-4 flex gap-2">
           <button onClick={onBack} className="text-sm text-white underline">
             ⬅
@@ -61,7 +61,7 @@ export default function Fullskjerm({ url, title, onBack, onMinimize, children })
         </div>
       </div>
 
-     <div className="flex-1 w-full h-full overflow-auto rounded-b-lg bg-gray-900">
+     <div className="flex-1 w-full h-full overflow-auto rounded-b-lg bg-black">
       {url ?(
       <iframe
         id="iframe-fullscreen"
