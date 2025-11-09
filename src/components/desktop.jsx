@@ -4,6 +4,7 @@ import Fullskjerm from './fullskjerm'
 import Taskbar from './taskbar'
 import React, {useState} from 'react'
 
+
 export default function Desktop() {
   const [openApp, setOpenApp] = useState(null);
   const [minimizedApps, setMinimizedApps] = useState([]);
@@ -16,7 +17,7 @@ export default function Desktop() {
       ">
         <div
           className="flex flex-col items-center cursor-pointer hover:scale-105 transition-transform"
-          onClick={() => setOpenApp("about")}
+          onClick={() => setOpenApp("About")}
         >
           <span className="text-6xl">📖</span>
           <p className="mt-2 text-sm">BEARME.MD</p>
@@ -24,10 +25,10 @@ export default function Desktop() {
 
         <div
           className="flex flex-col items-center cursor-pointer hover:scale-105 transition-transform"
-          onClick={() => setOpenApp("prosjekter")}
+          onClick={() => setOpenApp("Projects")}
         >
           <span className="text-6xl">📂</span>
-          <p className="mt-2 text-sm">Prosjekter</p>
+          <p className="mt-2 text-sm">My Projects</p>
         </div>
 
         <div
@@ -64,8 +65,8 @@ export default function Desktop() {
          bg-gray-900 text-white rounded-xl shadow-2xl w-[90%] max-w-md p-6 z-10 ">
           <div className="flex justify-between items-center mb-4">
             <h2 className="text-lg font-semibold">
-              {openApp === "about" && "Om Meg"}
-              {openApp === "prosjekter" && "Mine Prosjekter"}
+              {openApp === "About" && "About Me"}
+              {openApp === "Projects" && "My Projects"}
             </h2>
             <button
               onClick={() => setOpenApp(null)}
@@ -75,24 +76,42 @@ export default function Desktop() {
             </button>
           </div>
 
-          {openApp === "about" && (
-            <div className="space-y-2 text-sm leading-relaxed">
-              <p>Hei 👋 Jeg heter Bjørn Even Lyngstad.</p>
-              <p>
-                Jeg har hoppet inn i kodingens verden og elsker å skape ting på
-                nettet.
-              </p>
-              <p>
-                På denne siden kan du utforske noen av mine prosjekter og
-                interesser.
-              </p>
-              <p>
-                Jeg har erfaring med flere programmeringsspråk og rammeverk.
-              </p>
-            </div>
-          )}
+          {openApp === "About" && (
+            <div className="grid grid-cols-3 gap-6 justify-items-center">
+              <div 
+              className='flex flex-col items-center cursor-pointer hover:scale-105 transition-transform'
+              onClick={() => setOpenApp ("About Me")}
+              >
+             <span className='text-5xl'>📝</span>
+             <p className='mt-1 text-sm text-center'>
+              About Me
+             </p>
+             </div>
 
-          {openApp === "prosjekter" && (
+              <div 
+              className='flex flex-col items-center cursor-pointer hover:scale-105 transition-transform'
+              onClick={() => setOpenApp ("TechStack")}
+              >
+             <span className='text-5xl'>💻</span>
+             <p className='mt-1 text-sm text-center'>
+              Tech Stack
+             </p>
+             </div>
+
+               <div 
+              className='flex flex-col items-center cursor-pointer hover:scale-105 transition-transform'
+              onClick={() => setOpenApp ("Hobbies")}
+              >
+             <span className='text-5xl'>🏃🏻‍➡️</span>
+             <p className='mt-1 text-sm text-center'>
+              Hobbies
+             </p>
+             </div>
+             </div>
+          )}
+          
+
+          {openApp === "Projects" && (
             <div className="grid grid-cols-3 gap-6 justify-items-center">
               <div
                 className="flex flex-col items-center cursor-pointer hover:scale-105 transition-transform"
@@ -125,13 +144,13 @@ export default function Desktop() {
               </div>
             </div>
           )}
-        </div>
+       </div>
       )}
       {(openApp === "project1" && !minimizedApps.includes("project1")) && (
         <Fullskjerm
           url="https://fjellturer.vercel.app/"
           title="Fjellturer Nettside"
-          onBack={() => setOpenApp("prosjekter")}
+          onBack={() => setOpenApp("Projects")}
             onMinimize={() => {
             setMinimizedApps((prev) =>
               prev.includes("project1") ? prev : [...prev, "project1"]
@@ -146,7 +165,7 @@ export default function Desktop() {
         <Fullskjerm
           url="https://kjodes-frisor.vercel.app/"
           title="Frisør Booking"
-          onBack={() => setOpenApp("prosjekter")}
+          onBack={() => setOpenApp("Projects")}
            onMinimize={() => {
             setMinimizedApps((prev) =>
               prev.includes("project2") ? prev : [...prev, "project2"]
@@ -161,7 +180,7 @@ export default function Desktop() {
         <Fullskjerm
           url="https://reketino-s-word-of-wisdom-31dr.vercel.app/"
           title="Visdomsord"
-          onBack={() => setOpenApp("prosjekter")}
+          onBack={() => setOpenApp("Projects")}
             onMinimize={() => {
             setMinimizedApps((prev) =>
               prev.includes("project3") ? prev : [...prev, "project3"]
