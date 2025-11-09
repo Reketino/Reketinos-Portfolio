@@ -77,21 +77,39 @@ export default function Desktop() {
           </div>
 
           {openApp === "About" && (
-            <div className="space-y-2 text-sm leading-relaxed">
-              <p>Hei 👋 Jeg heter Bjørn Even Lyngstad.</p>
-              <p>
-                Jeg har hoppet inn i kodingens verden og elsker å skape ting på
-                nettet.
-              </p>
-              <p>
-                På denne siden kan du utforske noen av mine prosjekter og
-                interesser.
-              </p>
-              <p>
-                Jeg har erfaring med flere programmeringsspråk og rammeverk.
-              </p>
-            </div>
+            <div className="grid grid-cols-3 gap-6 justify-items-center">
+              <div 
+              className='flex flex-col items-center cursor-pointer hover:scale-105 transition-transform'
+              onClick={() => setOpenApp ("About Me")}
+              >
+             <span className='text-5xl'>📝</span>
+             <p className='mt-1 text-sm text-center'>
+              About Me
+             </p>
+             </div>
+
+              <div 
+              className='flex flex-col items-center cursor-pointer hover:scale-105 transition-transform'
+              onClick={() => setOpenApp ("TechStack")}
+              >
+             <span className='text-5xl'>💻</span>
+             <p className='mt-1 text-sm text-center'>
+              Tech Stack
+             </p>
+             </div>
+
+               <div 
+              className='flex flex-col items-center cursor-pointer hover:scale-105 transition-transform'
+              onClick={() => setOpenApp ("Hobbies")}
+              >
+             <span className='text-5xl'>🏃🏻‍➡️</span>
+             <p className='mt-1 text-sm text-center'>
+              Hobbies
+             </p>
+             </div>
+             </div>
           )}
+          
 
           {openApp === "Projects" && (
             <div className="grid grid-cols-3 gap-6 justify-items-center">
@@ -126,7 +144,7 @@ export default function Desktop() {
               </div>
             </div>
           )}
-        </div>
+       </div>
       )}
       {(openApp === "project1" && !minimizedApps.includes("project1")) && (
         <Fullskjerm
