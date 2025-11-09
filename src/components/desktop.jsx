@@ -2,6 +2,7 @@
 import Image from 'next/image'
 import Fullskjerm from './fullskjerm'
 import Taskbar from './taskbar'
+import TechStack from './techstack'
 import React, {useState} from 'react'
 
 
@@ -191,6 +192,23 @@ export default function Desktop() {
         />
       )}
 
+
+      {openApp === "TechStack" && (
+  <Fullskjerm
+    title="Tech Stack"
+    onBack={() => setOpenApp("About")}
+    onMinimize={() => {
+      setMinimizedApps((prev) =>
+        prev.includes("TechStack") ? prev : [...prev, "TechStack"]
+      );
+      setOpenApp(null);
+    }}
+    isMinimized={minimizedApps.includes("TechStack")}
+  >
+    <TechStack />
+  </Fullskjerm>
+      )}
+      
       {openApp === "Spotify" && !minimizedApps.includes("Spotify") && (
         <Fullskjerm
           url="https://open.spotify.com/embed/playlist/0JSMbYLP1XQk0uIsqwdH9g?utm_source=generator" 

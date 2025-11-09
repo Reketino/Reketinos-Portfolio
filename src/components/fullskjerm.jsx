@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { Children, useState } from "react";
 import Image from "next/image";
 
-export default function Fullskjerm({ url, title, onBack, onMinimize }) {
+export default function Fullskjerm({ url, title, onBack, onMinimize, children }) {
   const [isFullscreen, setIsFullscreen] = useState(false);
 
   return (
@@ -61,13 +61,19 @@ export default function Fullskjerm({ url, title, onBack, onMinimize }) {
         </div>
       </div>
 
+     <div className="flex-1 w-full h-full overflow-auto rounded-b-lg bg-gray-900">
+      {url ?(
       <iframe
         id="iframe-fullscreen"
         src={url}
-        className="flex-1 w-full h-full rounded-none border-none z-50"
+        className=" w-full h-full border-none z-50"
         title={title}
         style={{ height: "calc(100vh - var(--taskbar-height))" }}
       />
+      ) : (
+        <div className="p-6">{children}</div>
+      )}
+    </div>
     </div>
   );
 }
