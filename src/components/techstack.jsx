@@ -24,8 +24,8 @@ export default function TechStack() {
   return (
     <main className="bg-black">
       <div className="p-6 text-amber-600">
-        <h2 className="text-2xl font-bold mb-4">👨🏻‍💻 Tech Stack</h2>
-        <div className="grid grid-cols-3 gap-4 text-center text-5xl">
+        <h2 className="text-2xl font-bold mb-4 text-center">👨🏻‍💻 Tech Stack</h2>
+        <div className="grid grid-cols-3 gap-2 text-center text-5xl">
           <FaJs title="Javacript" className="text-amber-300" />
           <FaHtml5 title="HTML" className="text-orange-500" />
           <FaCss3Alt title="CSS" className="text-blue-600" />
