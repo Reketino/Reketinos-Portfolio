@@ -7,7 +7,7 @@ import {
   FaReact,
   FaPython,
   FaGithub,
-  FaFigma
+  FaFigma,
 } from "react-icons/fa";
 
 import {
@@ -23,80 +23,84 @@ import { VscVscode } from "react-icons/vsc";
 
 export default function TechStack() {
   const sections = [
-  {
-        title:"Frontend",
-        items: [
-          {Icon: FaHtml5, color:"text-orange-500", name: "HTML"},
-          {Icon: FaCss3Alt, color:"text-blue-600", name: "CSS"},
-          {Icon: FaJs, color:"text-amber-300", name: "JavaScript"},
-          {Icon: FaReact, color:"text-cyan-500", name: "React"},
-          {Icon: SiNextdotjs, color:"text-white", name: "Next.js"},
-        ],
-      },
-      {
-        title: "Backend",
-        items: [
-          {Icon: FaPython, color:"text-yellow-500", name: "Python"},
-          {Icon: SiSupabase, color:"text-green-700", name: "Supabase"},
-          {Icon: SiRender, color:"text-purple-300", name: "Render"},
-        ],
-      },
-      {
-        title: "Tools",
-        items: [
-          {Icon: FaGithub, color:"text-white", name: "GitHub"},
-          {Icon: VscVscode, color:"text-blue-400", name: "Vs Code"},
-          {Icon: SiVercel, color:"text-gray-300", name: "Vercel"},
-        ],
-      },
-      {
-        title: "Creative Work",
-        items: [
-          {Icon: SiAdobephotoshop, color:"text-blue-700", name: "Photoshop"},
-          {Icon: SiAdobepremierepro, color:"text-indigo-700", name: "Premiere Pro"},
-          {Icon: FaFigma, color:"text-cyan-300", name: "Figma"},
-        ],
-      },
-    ];
+    {
+      title: "Frontend",
+      items: [
+        { Icon: FaHtml5, color: "text-orange-500", name: "HTML" },
+        { Icon: FaCss3Alt, color: "text-blue-600", name: "CSS" },
+        { Icon: FaJs, color: "text-amber-300", name: "JavaScript" },
+        { Icon: FaReact, color: "text-cyan-500", name: "React" },
+        { Icon: SiNextdotjs, color: "text-white", name: "Next.js" },
+      ],
+    },
+    {
+      title: "Backend",
+      items: [
+        { Icon: FaPython, color: "text-yellow-500", name: "Python" },
+        { Icon: SiSupabase, color: "text-green-700", name: "Supabase" },
+        { Icon: SiRender, color: "text-purple-300", name: "Render" },
+      ],
+    },
+    {
+      title: "Tools",
+      items: [
+        { Icon: FaGithub, color: "text-white", name: "GitHub" },
+        { Icon: VscVscode, color: "text-blue-400", name: "Vs Code" },
+        { Icon: SiVercel, color: "text-gray-300", name: "Vercel" },
+      ],
+    },
+    {
+      title: "Creative Work",
+      items: [
+        { Icon: SiAdobephotoshop, color: "text-blue-700", name: "Photoshop" },
+        {
+          Icon: SiAdobepremierepro,
+          color: "text-indigo-700",
+          name: "Premiere Pro",
+        },
+        { Icon: FaFigma, color: "text-cyan-300", name: "Figma" },
+      ],
+    },
+  ];
   return (
-   
-
-    <main className="md:bg-cover min-h-screen text-amber-600 p-8"
-    style={{backgroundImage:"url('/tech.jpg')"}}
+    <main
+      className="md:bg-cover min-h-screen text-amber-600 p-8"
+      style={{ backgroundImage: "url('/tech.jpg')" }}
     >
-        <h2 className="text-4xl font-bold mb-10 text-center">👨🏻‍💻 Tech Stack</h2>
+      <h2 className="text-4xl font-bold mb-10 text-center">👨🏻‍💻 Tech Stack</h2>
 
-        <div className=" grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
-          {sections.map((section, i ) => (
-            <div 
-            key={i} className="bg-white/5 bg-opacity-30 backdrop-blur-md rounded-2xl shadow-xl p-6 border-white/20">
-             <h3 className="text-2xl font-semibold text-green-500 mb-4 text-center">
+      <div className=" grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+        {sections.map((section, i) => (
+          <div
+            key={i}
+            className="bg-white/5 bg-opacity-30 backdrop-blur-md rounded-2xl shadow-xl p-6 border-white/20"
+          >
+            <h3 className="text-2xl font-semibold text-green-500 mb-4 text-center">
               {section.title}
-             </h3>
+            </h3>
 
-             <div className="grid grid-cols-3 sm:grid-cols-4 gap-6 text-center">
-              {section.items.map(({ Icon, color, name}, j) => (
+            <div className="grid grid-cols-3 sm:grid-cols-4 gap-6 text-center">
+              {section.items.map(({ Icon, color, name }, j) => (
                 <div key={j} className="flex flex-col items-center">
-                  <div className={`
+                  <div
+                    className={`
                   bg-white/15 backdrop-blur-sm rounded-xl shadow-md p-5 flex items-center justify-center
                   transition-all duration-300 hover:scale-105
                   hover:shadow-[0_0_25px_rgba(16,255,100,0.5)]
                    `}
-                   style={{
-                    boxShadow: `0 0 25px ${color.replace("text-", "")}66`,
-                   }}
-                   >
-                  <Icon className={`text-5xl ${color}`} title={name} />
+                    style={{
+                      boxShadow: `0 0 25px ${color.replace("text-", "")}66`,
+                    }}
+                  >
+                    <Icon className={`text-5xl ${color}`} title={name} />
                   </div>
                   <p className="text-sm text-gray-300 mt-2">{name}</p>
-                  </div>
+                </div>
               ))}
-              </div>
-              </div>
-          ))}
+            </div>
           </div>
-            
-        
+        ))}
+      </div>
     </main>
   );
 }

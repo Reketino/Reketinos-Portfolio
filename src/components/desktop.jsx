@@ -230,7 +230,6 @@ export default function Desktop() {
             setMinimizedApps([...minimizedApps,"Flappy Bird"]);
             setOpenApp(null);
           }}
-          
         />
       )}
 
