@@ -101,11 +101,11 @@ export default function Desktop() {
 
                <div 
               className='flex flex-col items-center cursor-pointer hover:scale-105 transition-transform'
-              onClick={() => setOpenApp ("Hobbies")}
+              onClick={() => setOpenApp ("Contact")}
               >
-             <span className='text-5xl'>🏃🏻‍➡️</span>
+             <span className='text-5xl'>📨</span>
              <p className='mt-1 text-sm text-center'>
-              Hobbies
+              Contact
              </p>
              </div>
              </div>
