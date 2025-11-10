@@ -61,7 +61,13 @@ export default function Fullskjerm({ url, title, onBack, onMinimize, children })
         </div>
       </div>
 
-     <div className="flex-1 w-full h-full overflow-auto rounded-b-lg bg-black">
+     <div className={`flex-1 w-full h-full overflow-auto rounded-b-lg ${
+      title==="Flappy Bird"
+      ? "bg-linear-to-b from-sky-400 to-green-500"
+      : "bg-black"
+     }`}
+      >
+
       {url ?(
       <iframe
         id="iframe-fullscreen"
