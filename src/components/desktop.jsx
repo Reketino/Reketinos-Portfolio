@@ -65,13 +65,13 @@ export default function Desktop() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
          bg-gray-900 text-white rounded-xl shadow-2xl w-[90%] max-w-md p-6 z-10 ">
           <div className="flex justify-between items-center mb-4">
-            <h2 className="text-lg font-semibold">
+            <h2 className="absolute left-1/2 -translate-x-1/2 text-xl text-center font-semibold pointer-events-none mb-0.5">
               {openApp === "About" && "About Me"}
               {openApp === "Projects" && "My Projects"}
             </h2>
             <button
               onClick={() => setOpenApp(null)}
-              className="text-gray-600 hover:text-black text-xl"
+              className="ml-auto text-gray-400 hover:text-gray-100 hover:scale-105 text-xl z-10 mb-0.5"
             >
               ✕
             </button>
@@ -120,7 +120,7 @@ export default function Desktop() {
               >
                 <span className="text-5xl">⛰️</span>
                 <p className="mt-1 text-sm text-center">
-                  Planlegger du en fjelltur?
+                  Planing a hike?
                 </p>
               </div>
 
@@ -130,7 +130,7 @@ export default function Desktop() {
               >
                 <span className="text-5xl">💇🏻</span>
                 <p className="mt-1 text-sm text-center">
-                  Eller kanskje du skulle vært hos frisøren?
+                   Maybe a trip to the hairdresser?
                 </p>
               </div>
 
@@ -140,7 +140,7 @@ export default function Desktop() {
               >
                 <span className="text-5xl">🔮</span>
                 <p className="mt-1 text-sm text-center">
-                  Hva med et visdomsord før du bestemmer deg?
+                  Or a word of wisdom before you decide?
                 </p>
               </div>
             </div>
@@ -230,7 +230,6 @@ export default function Desktop() {
             setMinimizedApps([...minimizedApps,"Flappy Bird"]);
             setOpenApp(null);
           }}
-          
         />
       )}
 
