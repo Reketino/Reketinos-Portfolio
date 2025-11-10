@@ -64,10 +64,15 @@ export default function TechStack() {
   ];
   return (
     <main
-      className="md:bg-cover min-h-screen text-amber-600 p-8"
+      className=" relative  bg-cover bg-center min-h-screen text-amber-600 p-8 flex items-center justify-center"
       style={{ backgroundImage: "url('/tech.jpg')" }}
     >
-      <h2 className="text-4xl font-bold mb-10 text-center">👨🏻‍💻 Tech Stack</h2>
+      <div className="absolute inset-0 bg-linear-to-b from-green-600/40 via-black/70 to-black/90">
+
+      <div className="relative z-10 w-full ">
+      <h2 className="text-4xl font-bold mb-5 mt-5 text-center drop-shadow-[0_0_15px_rgba(16,255,100,0.4)]">
+        👨🏻‍💻 Tech Stack
+        </h2>
 
       <div className=" grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
         {sections.map((section, i) => (
@@ -100,6 +105,8 @@ export default function TechStack() {
             </div>
           </div>
         ))}
+      </div>
+      </div>
       </div>
     </main>
   );
