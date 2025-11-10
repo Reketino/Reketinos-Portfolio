@@ -196,7 +196,7 @@ export default function Desktop() {
        {openApp === "AboutMe" && (
   <Fullskjerm
     title="About Me"
-    onBack={() => setOpenApp("AboutMe")}
+    onBack={() => setOpenApp("About")}
     onMinimize={() => {
       setMinimizedApps((prev) =>
         prev.includes("AboutMe") ? prev : [...prev, "AboutMe"]
