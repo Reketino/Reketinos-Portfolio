@@ -73,11 +73,15 @@ export default function AboutMe() {
              <li>
               🚵🏻 Cycling (mountain & Road)
               <div className='mt-2 flex justify-center'>
-                <video
-                src="/mtb.mp4"
-                controls
-                className="rounded-xl shadow-lg w-full max-w-3xl aspect-video"
-                />
+                 <iframe 
+              width="100%" 
+              height="200" 
+              src="https://youtu.be/Cm_TeuKtgRw?si=h1ZPQmDWLC36R39W" 
+              title="Mountain Biking" 
+              frameBorder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              referrerPolicy="strict-origin-when-cross-origin" 
+              allowFullScreen />
               </div>
              </li>
              
@@ -98,7 +102,7 @@ export default function AboutMe() {
               height="200" 
               src="https://www.youtube.com/embed/D_rQ4fOouk0?si=pHlv52uL3fiegLGx" 
               title="Rocket League Montage" 
-              frameborder="0" 
+              frameBorder="0" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
               referrerPolicy="strict-origin-when-cross-origin" 
               allowFullScreen />
