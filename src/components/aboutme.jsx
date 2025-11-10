@@ -71,7 +71,7 @@ export default function AboutMe() {
               </li>
              
              <li>
-              🚵🏻 Cycling (mountain & Road)
+              🚵🏻 Cycling (Mountain & Road)
               <div className='mt-2 flex justify-center'>
                  <iframe 
               width="100%" 
