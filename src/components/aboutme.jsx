@@ -71,17 +71,17 @@ export default function AboutMe() {
               </li>
              
              <li>
-              🚵🏻 Cycling (mountain & Road)
+              🚵🏻 Cycling (Mountain & Road)
               <div className='mt-2 flex justify-center'>
                  <iframe 
-              width="100%" 
-              height="200" 
-              src="https://youtu.be/Cm_TeuKtgRw?si=h1ZPQmDWLC36R39W" 
-              title="Mountain Biking" 
-              frameBorder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-              referrerPolicy="strict-origin-when-cross-origin" 
-              allowFullScreen />
+                 width="100%" 
+                 height="200" 
+                 src="https://www.youtube.com/embed/Cm_TeuKtgRw?si=ungy74VpeyRF-BrO" 
+                 title="YouTube video player" 
+                 frameBorder="0" 
+                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                 referrerPolicy="strict-origin-when-cross-origin" 
+                 allowFullScreen />
               </div>
              </li>
              
