@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Fullskjerm from './fullskjerm'
 import Taskbar from './taskbar'
 import TechStack from './techstack'
+import AboutMe from './aboutme'
 import React, {useState} from 'react'
 
 
@@ -81,7 +82,7 @@ export default function Desktop() {
             <div className="grid grid-cols-3 gap-6 justify-items-center">
               <div 
               className='flex flex-col items-center cursor-pointer hover:scale-105 transition-transform'
-              onClick={() => setOpenApp ("About Me")}
+              onClick={() => setOpenApp ("AboutMe")}
               >
              <span className='text-5xl'>📝</span>
              <p className='mt-1 text-sm text-center'>
@@ -191,7 +192,22 @@ export default function Desktop() {
           isMinimized={minimizedApps.includes("project3")}
         />
       )}
-
+      
+       {openApp === "AboutMe" && (
+  <Fullskjerm
+    title="About Me"
+    onBack={() => setOpenApp("AboutMe")}
+    onMinimize={() => {
+      setMinimizedApps((prev) =>
+        prev.includes("AboutMe") ? prev : [...prev, "AboutMe"]
+      );
+      setOpenApp(null);
+    }}
+    isMinimized={minimizedApps.includes("AboutMe")}
+  >
+    <AboutMe />
+  </Fullskjerm>
+      )}
 
       {openApp === "TechStack" && (
   <Fullskjerm
