@@ -57,7 +57,7 @@ export default function Taskbar({ minimizedApps, onRestore }) {
       </div>
 
       <div className="flex items-center gap-4 ml-auto">
-        <section className="grid grid-cols-2 grid-rows-2 gap-2 bg-white/10 backdrop-blur-md rounded-lg px-2 py-1 items-center">
+        <section className="grid grid-cols-2 grid-rows-2 gap-1  bg-white/10 backdrop-blur-md rounded-lg px-2 py-0.5 items-center">
           <a
             href="https://www.linkedin.com/in/beareven/"
             target="_blank"
