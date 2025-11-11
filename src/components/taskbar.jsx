@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
+import { FaLinkedin, FaGithub, FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
 
 export default function Taskbar({minimizedApps, onRestore}) {
   const [time, setTime] = useState(new Date());
@@ -52,15 +53,57 @@ export default function Taskbar({minimizedApps, onRestore}) {
       </div>
 
  
-      <div className="flex gap-3">
+      <div className="flex items-center gap-4 ml-auto">
+        <section className="grid grid-cols-2 grid-rows-2 gap-2 bg-white/10 backdrop-blur-md rounded-lg px-2 py-1 items-center">
+        <a
+        href="https://www.linkedin.com/in/beareven/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="hover:scale-105"
+        >
+          <FaLinkedin size={18} />
+        </a>
+
+        <a
+        href="https://github.com/Reketino"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="hover:scale-105"
+        >
+          <FaGithub size={18} />
+        </a>
+       
+       <a
+        href="https://www.facebook.com/bjorn.e.lyngstad/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="hover:scale-105"
+        >
+          <FaFacebook size={18} />
+        </a>
+ 
+      <a
+        href="https://www.instagram.com/beareven/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="hover:scale-105"
+        >
+          <FaInstagram size={18} />
+        </a>
+      </section>
+    
+
+
+
        
       
-      </div>
+      
 
      
       <div className="text-right leading-tight">
         <div className="text-sm font-medium">{formattedTime}</div>
         <div className="text-xs text-white/80">{formattedDate}</div>
+        </div>
       </div>
     </div>
   );
