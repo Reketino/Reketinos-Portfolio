@@ -11,7 +11,9 @@ export default function homePage() {
       style={{ backgroundImage: "url('/desktop.jpg')" }}
     >
       <div className="absolute inset bg-black/50" />
+      <div className="relative z-10">
         <Title3d />
+        </div>
         <Desktop />
     </main>
   );
