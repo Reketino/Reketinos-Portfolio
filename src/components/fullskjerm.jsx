@@ -40,7 +40,7 @@ export default function Fullskjerm({ url, title, onBack, onMinimize, children })
             className="p-1 hover:bg-gray-700 rounded-transition"
             >
               <Image
-                src={isFullscreen ? "/minimize.png" : "/maximize.png"}
+                src={isFullscreen ? "/restoredown.png" : "/maximize.png"}
                 alt="Maximize"
                 width={16}
                 height={16}
