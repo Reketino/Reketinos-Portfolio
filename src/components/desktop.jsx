@@ -227,7 +227,7 @@ export default function Desktop() {
       
       {openApp === "Spotify" && !minimizedApps.includes("Spotify") && (
         <Fullskjerm
-          url="https://open.spotify.com/embed/playlist/0JSMbYLP1XQk0uIsqwdH9g?utm_source=generator" 
+          url="https://open.spotify.com/embed/playlist/0JSMbYLP1XQk0uIsqwdH9g?utm_source=generator&theme=0" 
           title="Spotify"
           onBack={() => setOpenApp(null)}
           onMinimize={() => {
