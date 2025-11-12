@@ -1,4 +1,4 @@
-import React, { Children, useState } from "react";
+import React, { children, useState } from "react";
 import Image from "next/image";
 
 export default function Fullskjerm({ url, title, onBack, onMinimize, children }) {
@@ -61,20 +61,24 @@ export default function Fullskjerm({ url, title, onBack, onMinimize, children })
         </div>
       </div>
 
-     <div className={`flex-1 w-full h-full overflow-auto rounded-b-lg ${
+     <div className={`flex-1 w-full h-full  rounded-b-lg ${
       title==="Flappy Bird"
       ? "bg-linear-to-b from-sky-400 to-green-500"
       : "bg-black"
-     }`}
+     } ${url ? "overflow-hidden" : "overflow-y-auto"}`}
       >
 
       {url ?(
       <iframe
         id="iframe-fullscreen"
         src={url}
-        className=" w-full h-full border-none z-50"
+        className=" w-full h-full border-none"
         title={title}
-        style={{ height: "calc(100vh - var(--taskbar-height))" }}
+        style={{ 
+          display: "block",
+          height: "100%",
+          width: "100%",
+        }}
       />
       ) : (
         <div className="p-6">{children}</div>
