@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Outfit, Inter } from "next/font/google";
+import Narration from "./narration";
 
 const outfit = Outfit({ subsets: ["latin"], weight: ["400", "600", "700"] });
 const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "600"] });
@@ -49,18 +50,19 @@ export default function AboutMe() {
               <span className="text-amber-300 font-semibold">Kodehode</span>
             </p>
             <p>
-              🖥️ I’ve been working with computers for over 20 years — from 🎮
+              🖥️ I`ve been working with computers for over 20 years — from 🎮
               gaming and 🎬 video editing in{" "}
               <span className="text-indigo-300">Premiere Pro</span> to 📸 photo
               editing in <span className="text-blue-300">Photoshop</span>.
             </p>
             <p>
-              🚀 Through{" "}
+              🚀 Now I`ve taken a leap of faith into the world of coding through{" "}
               <span className="text-amber-300 font-semibold">Kodehode</span>,
-              I’ve discovered how coding can channel creativity. I love building
-              interactive and meaningful web experiences — and I’m diving deeper
-              into backend development to strengthen my craft.
+              where I discovered a new way to channel my creativity. I love
+              building interactive and functional web applications, but I am
+              also curious about backend and eager to sharpen my skills there.
             </p>
+            <Narration />
           </div>
         </div>
       </motion.section>
@@ -125,21 +127,21 @@ export default function AboutMe() {
             <ul className="space-y-6 text-gray-200">
               <li>🎮 PC Gaming</li>
               <li>🎬 Video Editing</li>
-            <li>
-            <div className="mt-3 flex justify-center">
-              <div className="w-full max-w-[600px] rounded-xl overflow-hidden shadow-lg">
-                <iframe
-                  className="w-full aspect-video"
-                  src="https://www.youtube.com/embed/D_rQ4fOouk0?si=pHlv52uL3fiegLGx"
-                  title="Rocket League Montage"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  allowFullScreen
-                />
-              </div>
-            </div>
-            </li>
+              <li>
+                <div className="mt-3 flex justify-center">
+                  <div className="w-full max-w-[600px] rounded-xl overflow-hidden shadow-lg">
+                    <iframe
+                      className="w-full aspect-video"
+                      src="https://www.youtube.com/embed/D_rQ4fOouk0?si=pHlv52uL3fiegLGx"
+                      title="Rocket League Montage"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerPolicy="strict-origin-when-cross-origin"
+                      allowFullScreen
+                    />
+                  </div>
+                </div>
+              </li>
             </ul>
           </div>
         </div>
