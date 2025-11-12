@@ -14,7 +14,7 @@ export default function Desktop() {
   return (
     <main>
 
-      <div className="grid grid-cols-2 gap-6 items-center mt-20 
+      <div className="grid grid-cols-2 gap-6 mt-20 w-fit mx-auto
        md:flex md:flex-col md:items-start md:gap-8 md:fixed md:left-10 md:top-1/4
       ">
         <div
