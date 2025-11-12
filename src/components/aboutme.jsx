@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Outfit, Inter } from "next/font/google";
+import Narration from "./narration";
 
 const outfit = Outfit({ subsets: ["latin"], weight: ["400", "600", "700"] });
 const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "600"] });
@@ -61,6 +62,7 @@ export default function AboutMe() {
               building interactive and functional web applications, but I am
               also curious about backend and eager to sharpen my skills there.
             </p>
+            <Narration />
           </div>
         </div>
       </motion.section>
