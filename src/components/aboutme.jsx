@@ -87,8 +87,8 @@ export default function AboutMe() {
                   <Image
                     src="/trailrun.jpg"
                     alt="Jogging"
-                    width={500}
-                    height={300}
+                    width={300}
+                    height={100}
                     className="rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 max-w-md w-full"
                   />
                 </div>
@@ -97,9 +97,9 @@ export default function AboutMe() {
               <li>
                 🚵🏻 Cycling (Mountain & Road)
                 <div className="mt-3 flex justify-center">
-                  <div className="w-full max-w-md rounded-xl overflow-hidden shadow-lg">
+                  <div className="w-full max-w-[600px] rounded-xl overflow-hidden shadow-lg">
                     <iframe
-                      className="w-full h-56 md:h-64"
+                      className="w-full aspect-video"
                       src="https://www.youtube.com/embed/Cm_TeuKtgRw?si=ungy74VpeyRF-BrO"
                       title="Cycling Video"
                       frameBorder="0"
@@ -122,14 +122,14 @@ export default function AboutMe() {
             <h3 className="text-2xl font-semibold text-blue-200 mb-4">
               Gaming & Editing
             </h3>
-            <ul className="space-y-3 text-gray-200">
+            <ul className="space-y-6 text-gray-200">
               <li>🎮 PC Gaming</li>
               <li>🎬 Video Editing</li>
-            </ul>
+            <li>
             <div className="mt-3 flex justify-center">
-              <div className="w-full max-w-md rounded-xl overflow-hidden shadow-lg">
+              <div className="w-full max-w-[600px] rounded-xl overflow-hidden shadow-lg">
                 <iframe
-                  className="w-full h-56 md:h-64"
+                  className="w-full aspect-video"
                   src="https://www.youtube.com/embed/D_rQ4fOouk0?si=pHlv52uL3fiegLGx"
                   title="Rocket League Montage"
                   frameBorder="0"
@@ -139,6 +139,8 @@ export default function AboutMe() {
                 />
               </div>
             </div>
+            </li>
+            </ul>
           </div>
         </div>
       </motion.section>
