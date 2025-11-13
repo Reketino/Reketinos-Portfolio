@@ -5,14 +5,13 @@ import { Outfit, Inter } from "next/font/google";
 import Narration from "./narration";
 import SteamCard from "./steamcard";
 
-
 const outfit = Outfit({ subsets: ["latin"], weight: ["400", "600", "700"] });
 const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "600"] });
 
 export default function AboutMe() {
   return (
     <main
-      className={`${outfit.className} relative bg-cover bg-center min-h-screen text-gray-100 flex flex-col items-center justify-center px-4 sm:px-6 md:px-12 py-10`}
+      className={`${outfit.className} relative bg- bg-center min-h-screen text-gray-100 flex flex-col items-center justify-center px-4 sm:px-6 md:px-12 py-10`}
       style={{ backgroundImage: "url('/bak.jpeg')" }}
     >
       <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/70 to-black/90" />
@@ -80,8 +79,10 @@ export default function AboutMe() {
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div className="flex flex-col items-center text-center bg-gray-800/40 p-8 rounded-2xl border border-gray-700/40 shadow-lg 
-          hover:shadow-2xl transition-all duration-300">
+          <div
+            className="flex flex-col items-center text-center bg-gray-800/40 p-8 rounded-2xl border border-gray-700/40 shadow-lg 
+          hover:shadow-2xl transition-all duration-300"
+          >
             <h3 className="text-2xl font-semibold text-blue-200 mb-6">
               Outdoors & Activity
             </h3>
@@ -123,8 +124,10 @@ export default function AboutMe() {
             </ul>
           </div>
 
-          <div className="flex flex-col items-center text-center bg-gray-800/40 p-8 rounded-2xl border-gray-700/40 shadow-lg 
-          hover:shadow-2xl transition-all duration-300">
+          <div
+            className="flex flex-col items-center text-center bg-gray-800/40 p-8 rounded-2xl border-gray-700/40 shadow-lg 
+          hover:shadow-2xl transition-all duration-300"
+          >
             <h3 className="text-2xl font-semibold text-blue-200 mb-6">
               Gaming & Editing
             </h3>
@@ -148,7 +151,7 @@ export default function AboutMe() {
               </li>
               <li>
                 <div className="mt-6 flex justify-center">
-                  <SteamCard steamUsername="PerdiG" />
+                  <SteamCard steamId="76561198037781673" />
                 </div>
               </li>
             </ul>
