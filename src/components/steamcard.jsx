@@ -81,11 +81,8 @@ export default function SteamCard({ steamId }) {
         </section>
 
         <section
-          className={`text-sm font-medium ${
-            statusColors[profile.personastate]
-          }`}
-        >
-          {statusText[profile.personastate]}
+          className={`text-sm font-medium ${statusColors[profile.personastate]}`}>
+            {statusText[profile.personastate]}
         </section>
 
         <div className="absolute inset-0 rounded-3xl bg-amber-400 opacity-0 group-hover:opacity-10 transition-opacity duration-300 pointer-events-none"></div>
