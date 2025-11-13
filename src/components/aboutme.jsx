@@ -68,7 +68,7 @@ export default function AboutMe() {
       </motion.section>
 
       <motion.section
-        className="relative z-10 w-full max-w-4xl bg-white/10 backdrop-blur-lg rounded-3xl shadow-2xl p-8 md:p-12 border border-white/10"
+        className="relative z-10 w-full max-w-6xl bg-white/10 backdrop-blur-lg rounded-3xl shadow-2xl p-10 md:p-14 border border-white/10"
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
@@ -77,29 +77,30 @@ export default function AboutMe() {
           🦥 My Hobbies & Interests
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          <div className="flex flex-col items-center text-center">
-            <h3 className="text-2xl font-semibold text-blue-200 mb-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div className="flex flex-col items-center text-center bg-gray-800/40 p-8 rounded-2xl border border-gray-700/40 shadow-lg 
+          hover:shadow-2xl transition-all duration-300">
+            <h3 className="text-2xl font-semibold text-blue-200 mb-6">
               Outdoors & Activity
             </h3>
-            <ul className="space-y-6 text-gray-200">
+            <ul className="space-y-8 text-gray-200 text-lg">
               <li>
                 🏃‍♂️ Trail running / jogging
-                <div className="mt-3 flex justify-center">
+                <div className="mt-4 flex justify-center">
                   <Image
                     src="/trailrun.jpg"
                     alt="Jogging"
-                    width={300}
-                    height={100}
-                    className="rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 max-w-md w-full"
+                    width={400}
+                    height={200}
+                    className="rounded-xl shadow-lg hover:scale-105 transition-transform duration-300"
                   />
                 </div>
               </li>
 
               <li>
                 🚵🏻 Cycling (Mountain & Road)
-                <div className="mt-3 flex justify-center">
-                  <div className="w-full max-w-[600px] rounded-xl overflow-hidden shadow-lg">
+                <div className="mt-4 flex justify-center">
+                  <div className="w-full max-w-[500px] rounded-xl overflow-hidden shadow-lg hover:scale-[1.02] transition-transform duration-300">
                     <iframe
                       className="w-full aspect-video"
                       src="https://www.youtube.com/embed/Cm_TeuKtgRw?si=ungy74VpeyRF-BrO"
@@ -120,16 +121,17 @@ export default function AboutMe() {
             </ul>
           </div>
 
-          <div className="flex flex-col items-center text-center">
-            <h3 className="text-2xl font-semibold text-blue-200 mb-4">
+          <div className="flex flex-col items-center text-center bg-gray-800/40 p-8 rounded-2xl border-gray-700/40 shadow-lg 
+          hover:shadow-2xl transition-all duration-300">
+            <h3 className="text-2xl font-semibold text-blue-200 mb-6">
               Gaming & Editing
             </h3>
-            <ul className="space-y-6 text-gray-200">
+            <ul className="space-y-8 text-gray-200 text-lg">
               <li>🎮 PC Gaming</li>
               <li>🎬 Video Editing</li>
               <li>
-                <div className="mt-3 flex justify-center">
-                  <div className="w-full max-w-[600px] rounded-xl overflow-hidden shadow-lg">
+                <div className="mt-4 flex justify-center">
+                  <div className="w-full max-w-[500px] rounded-xl overflow-hidden shadow-lg hover:scale-[1.02] transition-transform duration-300">
                     <iframe
                       className="w-full aspect-video"
                       src="https://www.youtube.com/embed/D_rQ4fOouk0?si=pHlv52uL3fiegLGx"
