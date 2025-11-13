@@ -15,7 +15,7 @@ export default function AboutMe() {
       className={`${outfit.className} relative bg-cover bg-center min-h-screen text-gray-100 flex flex-col items-center justify-center px-4 sm:px-6 md:px-12 py-10`}
       style={{ backgroundImage: "url('/bak.jpeg')" }}
     >
-      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/70 to-black/90" />
+      <div className="absolute inset-0 bg-linear-to-b from-black/50 via-black/70 to-black/90" />
 
       <motion.section
         className="relative z-10 w-full max-w-3xl bg-white/10 backdrop-blur-lg rounded-3xl shadow-2xl p-8 md:p-12 border border-white/10 mb-12"
