@@ -15,7 +15,7 @@ export default function Fullskjerm({ url, title, onBack, onMinimize, children })
     >
       <div className=" relative flex items-center  bg-black px-4 py-2 text-white">
         <div className=" absolute left-4 flex gap-2">
-          <button onClick={onBack} className="text-sm text-white underline">
+          <button onClick={onBack} className="text-sm text-white hover:bg-gray-700">
             ⬅
           </button>
         </div>
