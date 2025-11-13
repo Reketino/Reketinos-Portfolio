@@ -3,6 +3,8 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Outfit, Inter } from "next/font/google";
 import Narration from "./narration";
+import SteamCard from "./steamcard";
+
 
 const outfit = Outfit({ subsets: ["latin"], weight: ["400", "600", "700"] });
 const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "600"] });
@@ -142,6 +144,11 @@ export default function AboutMe() {
                       allowFullScreen
                     />
                   </div>
+                </div>
+              </li>
+              <li>
+                <div className="mt-6 flex justify-center">
+                  <SteamCard steamUsername="PerdiG" />
                 </div>
               </li>
             </ul>
