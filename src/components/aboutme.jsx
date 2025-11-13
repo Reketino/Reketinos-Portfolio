@@ -3,6 +3,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Outfit, Inter } from "next/font/google";
 import Narration from "./narration";
+import NarrationTwo from "./narrationtwo";
 import SteamCard from "./steamcard";
 
 const outfit = Outfit({ subsets: ["latin"], weight: ["400", "600", "700"] });
@@ -11,7 +12,7 @@ const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "600"] });
 export default function AboutMe() {
   return (
     <main
-      className={`${outfit.className} relative bg- bg-center min-h-screen text-gray-100 flex flex-col items-center justify-center px-4 sm:px-6 md:px-12 py-10`}
+      className={`${outfit.className} relative bg-cover bg-center min-h-screen text-gray-100 flex flex-col items-center justify-center px-4 sm:px-6 md:px-12 py-10`}
       style={{ backgroundImage: "url('/bak.jpeg')" }}
     >
       <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/70 to-black/90" />
@@ -153,6 +154,7 @@ export default function AboutMe() {
                 <div className="mt-6 flex justify-center">
                   <SteamCard steamId="76561198037781673" />
                 </div>
+                <NarrationTwo />
               </li>
             </ul>
           </div>
