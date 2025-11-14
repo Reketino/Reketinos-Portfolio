@@ -53,7 +53,7 @@ export default function AboutMe() {
               <span className="text-amber-300 font-semibold">Kodehode</span>
             </p>
             <p>
-              🖥️ I`ve spent over 20 years around computers — from 🎮 gaming and
+               I`ve spent over 20 years around computers — from 🎮 gaming and
               digital creativity to 🎬 video and 📸 photo editing — but it
               wasn`t until{" "}
               <span className="text-amber-300 font-semibold">
