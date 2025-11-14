@@ -27,7 +27,7 @@ export default function ContactForm() {
           formRef.current.reset();
         },
         (error) => {
-          setErrorMsg("Noe gikk galt, prøv igjen senere.");
+          setErrorMsg("Something went wrong, try again later.");
           setLoading(false);
           console.error(error);
         }
@@ -36,13 +36,13 @@ export default function ContactForm() {
 
   return (
     <div className="w-full max-w-lg mx-auto p-6 bg-neutral-800 rounded-2xl shadow-lg">
-      <h2 className="text-3xl font-bold mb-4 text-white">Kontakt meg</h2>
+      <h2 className="text-3xl font-bold mb-4 text-white">Contact Me</h2>
 
       <form ref={formRef} onSubmit={sendEmail} className="flex flex-col gap-4">
         <input
           type="text"
           name="user_name"
-          placeholder="Navn"
+          placeholder="Name"
           required
           className="p-3 rounded-lg bg-neutral-700 text-white outline-none"
         />
@@ -50,14 +50,14 @@ export default function ContactForm() {
         <input
           type="email"
           name="user_email"
-          placeholder="E-post"
+          placeholder="E-mail"
           required
           className="p-3 rounded-lg bg-neutral-700 text-white outline-none"
         />
 
         <textarea
           name="message"
-          placeholder="Melding"
+          placeholder="Message"
           rows="5"
           required
           className="p-3 rounded-lg bg-neutral-700 text-white outline-none"
@@ -68,11 +68,11 @@ export default function ContactForm() {
           disabled={loading}
           className="p-3 bg-blue-600 hover:bg-blue-700 transition rounded-lg text-white font-semibold disabled:opacity-50"
         >
-          {loading ? "Sender..." : "Send melding"}
+          {loading ? "Sending..." : "Send message"}
         </button>
 
         {isSent && (
-          <p className="text-green-400 font-medium">Meldingen ble sendt! 👍</p>
+          <p className="text-green-400 font-medium">Message sent! 👍</p>
         )}
 
         {errorMsg && (
