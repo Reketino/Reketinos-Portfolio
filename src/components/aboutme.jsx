@@ -48,21 +48,37 @@ export default function AboutMe() {
             className={`${inter.className} mt-8 text-gray-200 space-y-4 leading-relaxed`}
           >
             <p>
-              🧔🏻 28 years old | 📍 Norway | 🎓 Participant at{" "}
+              🧔🏻 28 years old | 📍 Sykkylven, More & Romsdal, Norway | 🎓
+              Participant at{" "}
               <span className="text-amber-300 font-semibold">Kodehode</span>
             </p>
             <p>
-              🖥️ I`ve been working with computers for over 20 years — from 🎮
-              gaming and 🎬 video editing in{" "}
-              <span className="text-indigo-300">Premiere Pro</span> to 📸 photo
-              editing in <span className="text-blue-300">Photoshop</span>.
+              🖥️ I`ve spent over 20 years around computers — from 🎮 gaming and
+              digital creativity to 🎬 video and 📸 photo editing — but it
+              wasn`t until{" "}
+              <span className="text-amber-300 font-semibold">
+                Kodehode
+              </span>{" "}
+              that I discovered how naturally coding fits the way I think and
+              create.
             </p>
             <p>
-              🚀 Now I`ve taken a leap of faith into the world of coding through{" "}
-              <span className="text-amber-300 font-semibold">Kodehode</span>,
-              where I discovered a new way to channel my creativity. I love
-              building interactive and functional web applications, but I am
-              also curious about backend and eager to sharpen my skills there.
+              Today I focus on building clean, responsive and engaging web
+              experiences. I work across the full stack, enjoy exploring ⚙️
+              backend concepts, and love turning ideas into something{" "}
+              <span className="text-indigo-300">functional</span>{" "}
+              and <span className="text-blue-300">intuitive</span>.
+            </p>
+            <p>
+              I approach coding like training: progress happens bit by bit, and
+              every challenge is an opportunity to build new strength.
+              Problem-solving motivates me, and I`m at my best when breaking
+              down complexity into clear, structured solutions.
+            </p>
+            <p>
+              On top of that, I`m easy to work with, curious, and highly
+              collaborative — I enjoy working with others, sharing ideas, and
+              creating something better together.
             </p>
             <Narration />
           </div>
@@ -132,10 +148,9 @@ export default function AboutMe() {
             <h3 className="text-2xl font-semibold text-blue-200 mb-6">
               Gaming & Editing
             </h3>
+
             <ul className="space-y-8 text-gray-200 text-lg">
               <li>🎮 PC Gaming</li>
-              <li>🎬 Video Editing</li>
-              <li>
                 <div className="mt-4 flex justify-center">
                   <div className="w-full max-w-[500px] rounded-xl overflow-hidden shadow-lg hover:scale-[1.02] transition-transform duration-300">
                     <iframe
@@ -149,13 +164,25 @@ export default function AboutMe() {
                     />
                   </div>
                 </div>
-              </li>
-              <li>
-                <div className="mt-6 flex justify-center">
+                <div className="mt-4 flex justify-center">
                   <SteamCard steamId="76561198037781673" />
                 </div>
+
+             <li className="mt-2">🎬 Video Editing</li>
+             <div className="mt-4 flex justify-center">
+              <div className="w-full max-w-[500px] rounded-xl overflow-hidden shadow-lg hover:scale-[1.02] transition-transform duration-300">
+                  <iframe
+                      className="w-full aspect-video"
+                      src="https://www.youtube.com/embed/EVIE_8xvWws?si=4iDvqcDL7Pa79HSQ"
+                      title="Skateboard Montage"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerPolicy="strict-origin-when-cross-origin"
+                      allowFullScreen
+                    />
+              </div>
+             </div>
                 <NarrationTwo />
-              </li>
             </ul>
           </div>
         </div>
