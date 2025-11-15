@@ -64,8 +64,10 @@ export default function Desktop() {
 
       {openApp && (
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-         bg-gray-900 text-white rounded-xl shadow-2xl w-[90%] max-w-md p-6 z-10 ">
-          <div className="flex justify-between items-center mb-4">
+         bg-[url('/card3.png')] bg-cover bg-center  text-white hover:scale-105 rounded-xl shadow-2xl w-[90%] max-w-md p-6 z-10 ">
+        <div className='absolute inset-0 bg-black/30 rounded-xl pointer-events-none'></div>
+
+          <div className="flex justify-between items-center mb-4 z-10">
             <h2 className="absolute left-1/2 -translate-x-1/2 text-xl text-center font-semibold pointer-events-none mb-0.5">
               {openApp === "About" && "About Me"}
               {openApp === "Projects" && "My Projects"}
@@ -79,7 +81,7 @@ export default function Desktop() {
           </div>
 
           {openApp === "About" && (
-            <div className="grid grid-cols-3 gap-6 justify-items-center">
+            <div className="relative z-10 grid grid-cols-3 gap-6 justify-items-center">
               <div 
               className='flex flex-col items-center cursor-pointer hover:scale-105 transition-transform'
               onClick={() => setOpenApp ("AboutMe")}
@@ -114,7 +116,7 @@ export default function Desktop() {
           
 
           {openApp === "Projects" && (
-            <div className="grid grid-cols-3 gap-6 justify-items-center">
+            <div className="relative z-10 grid grid-cols-3 gap-6 justify-items-center">
               <div
                 className="flex flex-col items-center cursor-pointer hover:scale-105 transition-transform"
                 onClick={() => setOpenApp("project1")}
