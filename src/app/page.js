@@ -1,18 +1,26 @@
+"use client";
 import Image from "next/image";
 import Title3d from "@/components/title3d";
 import Desktop from "../components/desktop";
 import React from "react";
+import { useBackground } from "@/components/bgprovider";
 
-export default function homePage() {
+
+
+export default function HomePage() {
+const { background } = useBackground();
+
   return (
     <main
-      className="min-h-screen  bg-cover bg-center text-white relative
-      md:bg-cover md:bg-center"
+      className="fixed inset-0 -z-10 bg-cover bg-center transition-all duration-300"
       style={{ backgroundImage: "url('/desktop.jpg')" }}
     >
       <div className="absolute inset bg-black/50" />
+
       <div className="relative z-10">
+
         <Title3d />
+
         </div>
         <Desktop />
     </main>
