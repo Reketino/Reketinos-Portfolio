@@ -7,6 +7,7 @@ import AboutMe from './aboutme'
 import React, { useState } from 'react'
 import BgFolder from './bgfolder'
 import BgWindow from './bgwindow'
+import Folder from './folder'
 
 
 export default function Desktop() {
@@ -23,54 +24,30 @@ export default function Desktop() {
       grid grid-cols-1 gap-8
       "
       >
-        <div
-          className="flex flex-col items-center cursor-pointer hover:scale-105 transition-transform"
-          onClick={() => setOpenApp("About")}
-        >
-          <span className="text-6xl">📖</span>
-          <p className="mt-2 text-sm">BEARME.MD</p>
-        </div>
+        <Folder label="BEARME.MD" icon="📖" onOpen={() => setOpenApp("About")} />
+          
 
-        <div
-          className="flex flex-col items-center cursor-pointer hover:scale-105 transition-transform"
-          onClick={() => setOpenApp("Projects")}
-        >
-          <span className="text-6xl">📂</span>
-          <p className="mt-2 text-sm">My Projects</p>
-        </div>
+        <Folder label="My Projects" icon="📂" onOpen={() => setOpenApp("Projects")} />
+          
+        <Folder 
+        label="Backgrounds"
+        icon="📂"
+        previewImages={["/desktop.jpg", "/desktop2.jpg", "/desktop3.jpg"]}
+        onOpen={() => setOpenFolder(true)} 
+        />
 
-        <BgFolder onOpen={() => setOpenFolder(true)} />
-
-        <div
-          className="flex flex-col items-center cursor-pointer hover:scale-105 transition-transform"
-          onClick={() => setOpenApp("Spotify")}
-        >
-          <Image
-            src="/spoti.png"
-            alt="Spotify Icon"
-            width={64}
-            height={64}
-            className="hover-glow rounded-lg"
+        <Folder 
+        label="Spotify"
+        image="/spoti.png"
+        onOpen={() => setOpenApp("Spotify")}
           />
-          <p className="mt-2 text-sm text-center">Spotify</p>
-        </div>
-
-        <div
-          className="flex flex-col items-center cursor-pointer hover:scale-105 transition-transform"
-          onClick={() => setOpenApp("Flappy Bird")}
-        >
-          <Image
-            src="/flappy.png"
-            alt="Flappy Bird Icon"
-            width={64}
-            height={64}
-            className="hover-glow rounded-lg"
-          />
-          <p className="mt-2 text-sm text-center">Flappy Bird</p>
-        </div>
+          
+        <Folder
+         label="Flappy Bird"
+         image="/flappy.png" 
+          onOpen={() => setOpenApp("Flappy Bird")}
+        />
       </section>
-
-      
 
       {openApp && (
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
