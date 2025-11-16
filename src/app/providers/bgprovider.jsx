@@ -28,6 +28,3 @@ localStorage.setItem("selectedBackground", background);
 export function useBackground() {
     return useContext(BackgroundContext);
 }
-
-
-

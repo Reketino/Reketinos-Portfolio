@@ -4,20 +4,25 @@ import Fullskjerm from './fullskjerm'
 import Taskbar from './taskbar'
 import TechStack from './techstack'
 import AboutMe from './aboutme'
-import React, {useState} from 'react'
-import BgPicker from './bgpicker'
+import React, { useState } from 'react'
+import BgFolder from './bgfolder'
+import BgWindow from './bgwindow'
 
 
 export default function Desktop() {
+  const [openFolder, setOpenFolder] = useState(false);
   const [openApp, setOpenApp] = useState(null);
   const [minimizedApps, setMinimizedApps] = useState([]);
 
   return (
     <main>
 
-      <div className="grid grid-cols-2 gap-6 mt-20 w-fit mx-auto
-       md:flex md:flex-col md:items-start md:gap-8 md:fixed md:left-10 md:top-1/4
-      ">
+      <section 
+      className="
+      fixed left-10 top-32
+      grid grid-cols-1 gap-8
+      "
+      >
         <div
           className="flex flex-col items-center cursor-pointer hover:scale-105 transition-transform"
           onClick={() => setOpenApp("About")}
@@ -33,6 +38,8 @@ export default function Desktop() {
           <span className="text-6xl">📂</span>
           <p className="mt-2 text-sm">My Projects</p>
         </div>
+
+        <BgFolder onOpen={() => setOpenFolder(true)} />
 
         <div
           className="flex flex-col items-center cursor-pointer hover:scale-105 transition-transform"
@@ -61,8 +68,7 @@ export default function Desktop() {
           />
           <p className="mt-2 text-sm text-center">Flappy Bird</p>
         </div>
-        <BgPicker />
-      </div>
+      </section>
 
       
 
@@ -253,6 +259,10 @@ export default function Desktop() {
             setOpenApp(null);
           }}
         />
+      )}
+
+      {openFolder && (
+        <BgWindow onClose={() => setOpenFolder (false)} />
       )}
 
       <Taskbar
