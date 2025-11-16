@@ -5,6 +5,7 @@ import Taskbar from './taskbar'
 import TechStack from './techstack'
 import AboutMe from './aboutme'
 import React, {useState} from 'react'
+import BgPicker from './bgpicker'
 
 
 export default function Desktop() {
@@ -60,7 +61,10 @@ export default function Desktop() {
           />
           <p className="mt-2 text-sm text-center">Flappy Bird</p>
         </div>
+        <BgPicker />
       </div>
+
+      
 
       {openApp && (
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
