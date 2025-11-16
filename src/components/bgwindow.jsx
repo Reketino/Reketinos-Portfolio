@@ -3,7 +3,7 @@ import React from "react";
 import { useBackground } from "@/app/providers/bgprovider";
 import Image from "next/image";
 
-const backgrounds = ["/desktop.jpg", "/desktop2.jpg", "/desktop3.jpg"];
+const backgrounds = ["/desktop.jpg", "/desktop2.jpg", "/desktop3.jpg", "/desktop4.png"];
 
 export default function BgWindow({ onClose }) {
   const { setBackground } = useBackground();
@@ -23,7 +23,7 @@ export default function BgWindow({ onClose }) {
       <div className="absolute inset-0 bg-black/30 rounded-xl pointer-events-none"></div>
 
       <header className="relative z-10 flex justify-between items-center mb-4">
-        <h2 className="text-xl font-semibold pointer-events-none">
+        <h2 className="text-xl text-center font-semibold pointer-events-none">
           Backgrounds
         </h2>
 
@@ -31,15 +31,12 @@ export default function BgWindow({ onClose }) {
           <button
             onClick={onClose}
             aria-label="Close window"
-            className="p-1 rounded hover:bg-white/20 transition"
+            className="
+            ml-auto text-gray-400 hover:text-gray-100 
+            hover:scale-105 text-xl z-10 mb.05
+            "
           >
-            <Image
-              src="/close.png"
-              alt="Close"
-              width={16}
-              height={16}
-              className="pointer-events-none"
-            />
+            ✕
           </button>
         </nav>
       </header>
