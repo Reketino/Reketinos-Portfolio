@@ -1,12 +1,22 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useBackground } from "@/app/providers/bgprovider";
-import Image from "next/image";
 
-const backgrounds = ["/desktop.jpg", "/desktop2.jpg", "/desktop3.jpg", "/desktop4.png"];
+
+
 
 export default function BgWindow({ onClose }) {
-  const { setBackground } = useBackground();
+  const { background, setBackground } = useBackground();
+  const [images, setImages] = useState([]);
+
+  useEffect(() => {
+  async function load() {
+    const res = await fetch("/api/backgrounds");
+    const data = await res.json();
+    setImages(data.images || []);
+  }
+load();
+  }, []);
 
   return (
     <section
@@ -42,7 +52,7 @@ export default function BgWindow({ onClose }) {
       </header>
 
       <ul className="grid grid-cols-3 gap-4">
-        {backgrounds.map((img) => (
+        {images.map((img) => (
           <li key={img}>
             <button
               onClick={() => {
@@ -60,7 +70,7 @@ export default function BgWindow({ onClose }) {
                   style={{ backgroundImage: `url(${img})` }}
                 />
                 <figcaption className="text-xs text-white mt-1 text-center">
-                  {img.replace("/", "")}
+                  {img.split("/").pop()}
                 </figcaption>
               </figure>
             </button>

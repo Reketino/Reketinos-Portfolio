@@ -32,7 +32,7 @@ export default function Desktop() {
         <Folder 
         label="Backgrounds"
         icon="📂"
-        previewImages={["/desktop.jpg", "/desktop2.jpg", "/desktop3.jpg"]}
+        previewImages={["/backgrounds/desktop.jpg", "/backgrounds/desktop2.jpg", "/backgrounds/desktop3.jpg", "/backgrounds/desktop4.png"]}
         onOpen={() => setOpenFolder(true)} 
         />
 

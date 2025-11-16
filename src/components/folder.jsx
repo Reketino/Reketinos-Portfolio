@@ -1,4 +1,4 @@
-import React, {  useMemo, } from 'react'
+import React, {  useMemo } from 'react'
 import Image from 'next/image'
 
 export default function Folder({
@@ -9,12 +9,11 @@ export default function Folder({
     onOpen
 }) {
       const randomThumbs = useMemo(() => {
-        if (typeof window === "undefined") return [];
-        if (previewImages.length === 0) return [];
+        if(!Array.isArray(previewImages) || previewImages.length === 0) return [];
+        const shuffled = [...previewImages].sort(() => Math.random() - 0.5);
+        return shuffled.slice(0, 3); 
+      }, [previewImages]);
 
-       const shuffled = [...previewImages].sort(() => Math.random() - 0.5);
-       return shuffled.slice(0, 3); 
-    }, [previewImages]);
 
   return (
     <button
