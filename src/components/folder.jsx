@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {  useMemo, } from 'react'
 import Image from 'next/image'
 
 export default function Folder({
@@ -8,15 +8,23 @@ export default function Folder({
     previewImages = [],
     onOpen
 }) {
+      const randomThumbs = useMemo(() => {
+        if (typeof window === "undefined") return [];
+        if (previewImages.length === 0) return [];
+
+       const shuffled = [...previewImages].sort(() => Math.random() - 0.5);
+       return shuffled.slice(0, 3); 
+    }, [previewImages]);
+
   return (
     <button
     onClick={onOpen}
-    className='relative flex flex-col items center hover:scale-105 transition cursor-pointer'
+    className='relative flex flex-col items-center hover:scale-105 transition cursor-pointer'
     >
 
-      {previewImages.length > 0 && (
+      {randomThumbs.length > 0 && (
      <ul className='absolute -top-3 -right-5 flex gap-1'>
-     {previewImages.slice(0, 3).map((src) => (
+     {randomThumbs.map((src) => (
      <li key={src}>
         <figure className='
         w-6 h-6 rounded-sm bg-cover bg-center
