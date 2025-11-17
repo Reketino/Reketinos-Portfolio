@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 
 
 export default function Draggable({ id, children, startX= 0, startY= 0, }) {
@@ -7,17 +7,6 @@ const ref = useRef(null);
 
 const [pos, setPos] = useState ({ x: startX, y: startY});
 
-useEffect(() => {
-   const saved = localStorage.getItem(`pos_${id}`);
-    if (saved) {
-      setPos(JSON.parse(saved));
-    } else {
-      localStorage.setItem(
-        `pos_${id}`,
-        JSON.stringify({ x: startX, y: startY })
-      );
-    }
-  }, [id, startX, startY]);
 
 function onPointerDown(e) {
     if (e.button !== 0) return;
@@ -38,8 +27,8 @@ function onPointerDown(e) {
         };
 
         setPos(newPos);
-        localStorage.setItem(`pos_${id}`, JSON.stringify(newPos));
     }
+    
 function up() {
     document.removeEventListener("pointermove", move);
     document.removeEventListener("pointerup", up);
