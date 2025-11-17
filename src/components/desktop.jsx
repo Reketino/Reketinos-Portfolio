@@ -21,15 +21,15 @@ export default function Desktop() {
       <section 
       className="fixed left-10 top-32 relative w-[300px] h-[700px]">
 
-        <Draggable id="about">
+        <Draggable id="about" startX={0} startY={0}>
         <Folder label="BEARME.MD" icon="📖" onOpen={() => setOpenApp("About")} />
           </Draggable>
 
-         <Draggable id="projects">
+         <Draggable id="projects" startX={0} startY={120}>
         <Folder label="My Projects" icon="📂" onOpen={() => setOpenApp("Projects")} />
           </Draggable>
 
-          <Draggable id="backgrounds">
+          <Draggable id="backgrounds" startX={0} startY={240}>
         <Folder 
         label="Backgrounds"
         icon="📂"
@@ -38,7 +38,7 @@ export default function Desktop() {
         />
       </Draggable>
 
-      <Draggable id="Spotify">
+      <Draggable id="Spotify" startX={0} startY={360}>
         <Folder 
         label="Spotify"
         image="/spoti.png"
@@ -46,7 +46,7 @@ export default function Desktop() {
           />
           </Draggable>
 
-         <Draggable id="Flappy Bird">
+         <Draggable id="Flappy Bird" startX={0} startY={480}>
         <Folder
          label="Flappy Bird"
          image="/flappy.png" 

@@ -5,16 +5,20 @@ import {createContext, useContext, useState} from "react";
 const BackgroundContext = createContext();
 
 export default function BgProvider({ children }) {
-    const [background, setBackground] = useState("/backgrounds/desktop.jpg");
+    const [background, setBackground] = useState (null); 
+    const [isClient, setIsclient] = useState(false);
 
 useEffect (()=> { 
     const saved = localStorage.getItem("selectedBackground");
-    if (saved)  setBackground(saved);
+      setBackground(saved || "/backgrounds/desktop.jpg");
+      setIsclient(true);
    }, []);
 
    useEffect(() => {
 localStorage.setItem("selectedBackground", background);    
 }, [background]);
+
+if (!isClient || !background) return null;
 
   return (
     <BackgroundContext.Provider value={{background, setBackground}}>
