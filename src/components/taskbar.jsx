@@ -38,11 +38,15 @@ export default function Taskbar({ minimizedApps, onRestore }) {
 
         {minimizedApps.map((app) => (
           <button
-            key={app}
-            onClick={() => onRestore(app)}
-            className="px-2 py-1 bg-gray-700/50 hover:bg-gray-600 rounded-md text-xs text-white transition"
+            key={app.id}
+            onClick={() => onRestore(app.id)}
+            className="px-2 py-1 bg-gray-700/50 hover:bg-gray-600 rounded-md flex items-center gap-1 text-xs text-white transition"
           >
-            {app}
+            {app.icon.endsWith(".png") ? (
+              <img src={app.icon} alt={app.id} className="w-5 h-5 object-contain" />
+            ) : (
+              <span className="text-lg">{app.icon}</span>
+            )}
           </button>
         ))}
       </div>
