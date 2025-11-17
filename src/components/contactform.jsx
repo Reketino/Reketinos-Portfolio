@@ -38,71 +38,74 @@ export default function ContactForm() {
 
   return (
     <main className="relative w-full max-w-lg mx-auto">
-    <TechEmailBg />
+      <TechEmailBg />
 
-    <motion.div
-    initial={{ opacity: 0, y:25}}
-    animate={{ opacity: 1, y: 0}}
-    transition={{ duration: 0.4 }}
-    className="relative z-10 p-8 rounded-2xl
+      <motion.div
+        initial={{ opacity: 0, y: 25 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4 }}
+        className="relative z-10 p-8 rounded-2xl
     bg-white/10 backdrop-blur-xl
     border border-white/10
     shadow-[0_0_30px_rgba(0,0,0,0.5)]
     text-white"
-    >
+      >
+        <h2 className="text-3xl font-semibold mb-6 text-center">Contact Me</h2>
 
-      <h2 className="text-3xl font-semibold mb-6 text-center">Contact Me</h2>
-
-      <form ref={formRef} onSubmit={sendEmail} className="flex flex-col gap-5">
-
-        <input
-          type="text"
-          name="user_name"
-          placeholder="Name"
-          required
-          className="p-3 rounded-lg bg-neutral-900/40 border border-neutral-700
+        <form
+          ref={formRef}
+          onSubmit={sendEmail}
+          className="flex flex-col gap-5"
+        >
+          <input
+            type="text"
+            name="user_name"
+            placeholder="Name"
+            required
+            className="p-3 rounded-lg bg-neutral-900/40 border border-neutral-700
           focus:border-blue-400 focus:ring-2 focus:ring-blue-500/40
           transition outline-none"
-        />
+          />
 
-        <input
-          type="email"
-          name="user_email"
-          placeholder="E-mail"
-          required
-          className="p-3 rounded-lg bg-neutral-900/40 border border-neutral-700
+          <input
+            type="email"
+            name="user_email"
+            placeholder="E-mail"
+            required
+            className="p-3 rounded-lg bg-neutral-900/40 border border-neutral-700
           focus:border-blue-400 focus:ring-2 focus:ring-blue-500/40
           transition outline-none"
-        />
+          />
 
-        <textarea
-          name="message"
-          placeholder="Message"
-          rows="5"
-          required
-          className="p-3 rounded-lg bg-neutral-900/40 border border-neutral-700
+          <textarea
+            name="message"
+            placeholder="Message"
+            rows="5"
+            required
+            className="p-3 rounded-lg bg-neutral-900/40 border border-neutral-700
           focus:border-blue-400 focus:ring-2 focus:ring-blue-500/40
           transition outline-none resize-none"
-        />
+          />
 
-        <button
-          type="submit"
-          disabled={loading}
-          className="p-3 bg-blue-600 hover:bg-blue-700 transition rounded-lg font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
-        >
-          {loading ? "Sending..." : "Send message"}
-        </button>
+          <button
+            type="submit"
+            disabled={loading}
+            className="p-3 bg-blue-600 hover:bg-blue-700 transition rounded-lg font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            {loading ? "Sending..." : "Send message"}
+          </button>
 
-        {isSent && (
-          <p className="text-green-400 text-center font-medium">Message sent! 👍</p>
-        )}
+          {isSent && (
+            <p className="text-green-400 text-center font-medium">
+              Message sent! 👍
+            </p>
+          )}
 
-        {errorMsg && (
-          <p className="text-red-400 text-center font-medium">{errorMsg}</p>
-        )}
-      </form>
+          {errorMsg && (
+            <p className="text-red-400 text-center font-medium">{errorMsg}</p>
+          )}
+        </form>
       </motion.div>
     </main>
   );
 }
-
