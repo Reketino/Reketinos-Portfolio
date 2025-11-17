@@ -1,11 +1,10 @@
 "use client"
-import Image from 'next/image'
+import React, { useState } from 'react'
 import Fullskjerm from './fullskjerm'
 import Taskbar from './taskbar'
 import TechStack from './techstack'
 import AboutMe from './aboutme'
-import React, { useState } from 'react'
-import BgFolder from './bgfolder'
+import Contact from './contact'
 import BgWindow from './bgwindow'
 import Folder from './folder'
 import Draggable from './draggable'
@@ -21,6 +20,7 @@ export default function Desktop() {
     project3: "🔮",
     AboutMe: "📝",
     TechStack: "💻",
+    Contact: "📨",
     Spotify: "/spoti.png",
     Flappy: "/flappy.png" 
   }
@@ -208,6 +208,16 @@ export default function Desktop() {
     >
     <TechStack />
   </Fullskjerm>
+      )}
+
+      {openApp === "Contact" && (
+      <Fullskjerm
+      title="Contact"
+      onBack={() => setOpenApp ("About")}
+      onMinimize={() => minimizeApp ("Contact")}
+      >
+        <Contact />
+      </Fullskjerm>
       )}
       
       {openApp === "Spotify" && !minimizedApps.some(a => a.id === "Spotify") && (
