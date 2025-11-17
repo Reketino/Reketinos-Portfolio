@@ -8,7 +8,7 @@ import React, { useState } from 'react'
 import BgFolder from './bgfolder'
 import BgWindow from './bgwindow'
 import Folder from './folder'
-
+import Draggable from './draggable'
 
 export default function Desktop() {
   const [openFolder, setOpenFolder] = useState(false);
@@ -19,34 +19,41 @@ export default function Desktop() {
     <main>
 
       <section 
-      className="
-      fixed left-10 top-32
-      grid grid-cols-1 gap-8
-      "
-      >
-        <Folder label="BEARME.MD" icon="📖" onOpen={() => setOpenApp("About")} />
-          
+      className="fixed left-10 top-32 relative w-[300px] h-[700px]">
 
+        <Draggable id="about">
+        <Folder label="BEARME.MD" icon="📖" onOpen={() => setOpenApp("About")} />
+          </Draggable>
+
+         <Draggable id="projects">
         <Folder label="My Projects" icon="📂" onOpen={() => setOpenApp("Projects")} />
-          
+          </Draggable>
+
+          <Draggable id="backgrounds">
         <Folder 
         label="Backgrounds"
         icon="📂"
         previewImages={["/backgrounds/desktop.jpg", "/backgrounds/desktop2.jpg", "/backgrounds/desktop3.jpg", "/backgrounds/desktop4.png"]}
         onOpen={() => setOpenFolder(true)} 
         />
+      </Draggable>
 
+      <Draggable id="Spotify">
         <Folder 
         label="Spotify"
         image="/spoti.png"
         onOpen={() => setOpenApp("Spotify")}
           />
-          
+          </Draggable>
+
+         <Draggable id="Flappy Bird">
         <Folder
          label="Flappy Bird"
          image="/flappy.png" 
           onOpen={() => setOpenApp("Flappy Bird")}
         />
+        </Draggable>
+        
       </section>
 
       {openApp && (
