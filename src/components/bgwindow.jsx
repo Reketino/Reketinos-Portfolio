@@ -33,7 +33,9 @@ load();
       <div className="absolute inset-0 bg-black/30 rounded-xl pointer-events-none"></div>
 
       <header className="relative z-10 flex justify-between items-center mb-4">
-        <h2 className="text-xl text-center font-semibold pointer-events-none">
+        <span className="opacity-0 pointer-events-none"></span>
+
+        <h2 className=" absolute left-1/2 -translate-x-1/2 text-xl text-center font-semibold pointer-events-none">
           Backgrounds
         </h2>
 
@@ -51,7 +53,7 @@ load();
         </nav>
       </header>
 
-      <ul className="grid grid-cols-3 gap-4">
+      <ul className="grid grid-cols-3 gap-4 relative z-10">
         {images.map((img) => (
           <li key={img}>
             <button
@@ -65,8 +67,7 @@ load();
                 <div
                   className="
                 w-20 h-20 rounded-xl
-                bg-cover bg-center border border-white/30
-                "
+                bg-cover bg-center border border-white/30"
                   style={{ backgroundImage: `url(${img})` }}
                 />
                 <figcaption className="text-xs text-white mt-1 text-center">
