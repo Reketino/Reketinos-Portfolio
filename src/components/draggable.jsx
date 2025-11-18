@@ -1,12 +1,19 @@
 "use client";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
 export default function Draggable({ id, children, startX = 0, startY = 0 }) {
   const ref = useRef(null);
 
   const [pos, setPos] = useState({ x: startX, y: startY });
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 768);
+  }, []);
 
   function onPointerDown(e) {
+    if (isMobile) return;
+
     if (e.button !== 0) return;
 
     const startX = e.clientX;
@@ -36,13 +43,15 @@ export default function Draggable({ id, children, startX = 0, startY = 0 }) {
   }
 
   return (
-    <main
+    <section
       ref={ref}
       onPointerDown={onPointerDown}
-      className="absolute cursor-pointer active:cursor-grabbing select-none"
-      style={{ left: pos.x, top: pos.y }}
+      className={`cursor-pointer active:cursor-grabbing select-none
+        ${isMobile ? "static" : "absolute"}
+        `}
+      style={isMobile ? {} : { left: pos.x, top: pos.y }}
     >
       {children}
-    </main>
+    </section>
   );
 }
