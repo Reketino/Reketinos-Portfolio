@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useState } from "react";
+import  { React, useRef, useState } from "react";
 import emailjs from "emailjs-com";
 import { motion } from "framer-motion";
 import TechEmailBg from "./techemailbg";
@@ -50,7 +50,10 @@ export default function ContactForm() {
     shadow-[0_0_30px_rgba(0,0,0,0.5)]
     text-white"
       >
-        <h2 className="text-3xl font-semibold mb-6 text-center">Contact Me</h2>
+        <h2 className="text-3xl font-bold text-center
+        text-blue-400 mb-6
+        drop-shadow-[0_0_15px_rgba(0,102,255,0.7)]
+        tracking-wider hover:text-blue-100">Shoot Me A Message</h2>
 
         <form
           ref={formRef}
