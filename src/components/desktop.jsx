@@ -35,19 +35,32 @@ export default function Desktop() {
   }
 
   return (
-    <main>
+    <main className='w-full h-screen overflow-hidden md:overflow-visible'>
 
       <section 
-      className="fixed left-10 top-32 relative w-[300px] h-[700px]">
+      className="md:fixed md:left-10 md:top-52
+      relative
+      w-full md:w-[300px]
+      h-auto md:h-[700px]
+      
+      grid md:block
+      grid-cols-2
+      place-items-center
+      gap-8 pt-10">
 
+        <div>
         <Draggable id="about" startX={0} startY={0}>
         <Folder label="BEARME.MD" icon="📖" onOpen={() => setOpenApp("About")} />
           </Draggable>
+         </div>
 
+         <div>
          <Draggable id="projects" startX={0} startY={120}>
         <Folder label="My Projects" icon="📂" onOpen={() => setOpenApp("Projects")} />
           </Draggable>
+         </div>
 
+         <div>
           <Draggable id="backgrounds" startX={0} startY={240}>
         <Folder 
         label="Backgrounds"
@@ -56,7 +69,9 @@ export default function Desktop() {
         onOpen={() => setOpenFolder(true)} 
         />
       </Draggable>
+       </div>
 
+       <div>
       <Draggable id="Spotify" startX={0} startY={360}>
         <Folder 
         label="Spotify"
@@ -64,7 +79,9 @@ export default function Desktop() {
         onOpen={() => setOpenApp("Spotify")}
           />
           </Draggable>
-
+         </div>
+          
+          <div>
          <Draggable id="Flappy" startX={0} startY={480}>
         <Folder
          label="Flappy Bird"
@@ -72,7 +89,8 @@ export default function Desktop() {
           onOpen={() => setOpenApp("Flappy")}
         />
         </Draggable>
-        
+        </div>
+
       </section>
 
       {openApp && (
