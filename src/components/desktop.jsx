@@ -6,14 +6,71 @@ import TechStack from "./techstack";
 import AboutMe from "./aboutme";
 import Contact from "./contact";
 import BgWindow from "./bgwindow";
-import Folder from "./folder";
-import Draggable from "./draggable";
-import IsMobile from "./ismobile";
+import DesktopIcon from "./desktopicon";
+import MenuItem from "./menuitem";
+
 
 export default function Desktop() {
   const [openFolder, setOpenFolder] = useState(false);
   const [openApp, setOpenApp] = useState(null);
   const [minimizedApps, setMinimizedApps] = useState([]);
+
+  const DesktopIcons = [
+    {
+      id: "about",
+      startX: 0,
+      startY: 0,
+      label: "BEARME.MD",
+      icon: "📖",
+      onOpen: () => setOpenApp("About")
+    },
+    {
+      id: "projects",
+      startX: 0,
+      startY: 120,
+      label: "My Projects",
+      icon: "📂",
+      onOpen: () => setOpenApp("Projects")
+    },
+    {
+      id: "backgrounds",
+      startX: 0,
+      startY: 240,
+      label: "Backgrounds",
+      icon: "📂",
+      previewImages: [
+        "backgrounds/desktop.jpg",
+        "backgrounds/desktop2.jpg",
+        "backgrounds/desktop3.jpg",
+        "backgrounds/desktop4.png",
+        "backgrounds/desktop5.png"
+      ],
+      onOpen: () => setOpenFolder (true),
+    },
+    {
+    id: "Spotify",
+    startX: 0,
+    startY: 360,
+    label: "Spotify",
+    image: "/spoti.png",
+    onOpen: () => setOpenApp("Spotify")
+    },
+    {
+      id: "Flappy",
+      startX: 0,
+      startY: 480,
+      label: "Flappy Bird",
+      image: "/flappy.png",
+      onOpen: () => setOpenApp ("Flappy"),
+    },
+  ];
+
+
+  const AboutMenu = [
+    { icon: "📝", label: "About Me", app: "AboutMe" },
+    { icon: "💻", label: "Tech Stack", app: "TechStack"},
+    { icon: "📨", label: "Contact", app: "Contact"}
+  ]
 
   const appIcons = {
     project1: "⛰️",
@@ -41,129 +98,16 @@ export default function Desktop() {
         className="md:fixed md:left-10 md:top-52
       relative
       w-full md:w-[300px]
-      h-auto md:h-[700px]
-      
       grid grid-cols-2
       md:block
       place-items-center
       gap-8 pt-10"
       >
-        <div>
-          <IsMobile
-            mobile={
-              <Folder
-                label="BEARME.MD"
-                icon="📖"
-                onOpen={() => setOpenApp("About")}
-              />
-            }
-            desktop={
-              <Draggable id="about" startX={0} startY={0}>
-                <Folder
-                  label="BEARME.MD"
-                  icon="📖"
-                  onOpen={() => setOpenApp("About")}
-                />
-              </Draggable>
-            }
-          />
-        </div>
-
-        <div>
-          <IsMobile
-            mobile={
-              <Folder
-                label="My Projects"
-                icon="📂"
-                onOpen={() => setOpenApp("Projects")}
-              />
-            }
-            desktop={
-              <Draggable id="projects" startX={0} startY={120}>
-                <Folder
-                  label="My Projects"
-                  icon="📂"
-                  onOpen={() => setOpenApp("Projects")}
-                />
-              </Draggable>
-            }
-          />
-        </div>
-
-        <div>
-          <IsMobile
-            mobile={
-              <Folder
-                label="Backgrounds"
-                icon="📂"
-                previewImages={[
-                  "/backgrounds/desktop.jpg",
-                  "/backgrounds/desktop2.jpg",
-                  "/backgrounds/desktop3.jpg",
-                  "/backgrounds/desktop4.png",
-                ]}
-                onOpen={() => setOpenFolder(true)}
-              />
-            }
-            desktop={
-              <Draggable id="backgrounds" startX={0} startY={240}>
-                <Folder
-                  label="Backgrounds"
-                  icon="📂"
-                  previewImages={[
-                    "/backgrounds/desktop.jpg",
-                    "/backgrounds/desktop2.jpg",
-                    "/backgrounds/desktop3.jpg",
-                    "/backgrounds/desktop4.png",
-                  ]}
-                  onOpen={() => setOpenFolder(true)}
-                />
-              </Draggable>
-            }
-          />
-        </div>
-
-        <div>
-          <IsMobile
-            mobile={
-              <Folder
-                label="Spotify"
-                image="/spoti.png"
-                onOpen={() => setOpenApp("Spotify")}
-              />
-            }
-            desktop={
-              <Draggable id="Spotify" startX={0} startY={360}>
-                <Folder
-                  label="Spotify"
-                  image="/spoti.png"
-                  onOpen={() => setOpenApp("Spotify")}
-                />
-              </Draggable>
-            }
-          />
-        </div>
-
-        <div>
-          <IsMobile
-            mobile={
-              <Folder
-                label="Flappy Bird"
-                image="/flappy.png"
-                onOpen={() => setOpenApp("Flappy")}
-              />
-            }
-            desktop={
-              <Draggable id="Flappy" startX={0} startY={480}>
-                <Folder
-                  label="Flappy Bird"
-                  image="/flappy.png"
-                  onOpen={() => setOpenApp("Flappy")}
-                />
-              </Draggable>
-            }
-          />
-        </div>
+        {DesktopIcons.map((icon) => (
+          <div key={icon.id}>
+            <DesktopIcon {...icon} />
+          </div>
+        ))}
       </section>
 
       {openApp && (
@@ -188,65 +132,33 @@ export default function Desktop() {
 
           {openApp === "About" && (
             <div className="relative z-10 grid grid-cols-3 gap-6 justify-items-center">
-              <div
-                className="flex flex-col items-center cursor-pointer hover:scale-105 transition-transform"
-                onClick={() => setOpenApp("AboutMe")}
-              >
-                <span className="text-5xl">📝</span>
-                <p className="mt-1 text-sm text-center">About Me</p>
-              </div>
-
-              <div
-                className="flex flex-col items-center cursor-pointer hover:scale-105 transition-transform"
-                onClick={() => setOpenApp("TechStack")}
-              >
-                <span className="text-5xl">💻</span>
-                <p className="mt-1 text-sm text-center">Tech Stack</p>
-              </div>
-
-              <div
-                className="flex flex-col items-center cursor-pointer hover:scale-105 transition-transform"
-                onClick={() => setOpenApp("Contact")}
-              >
-                <span className="text-5xl">📨</span>
-                <p className="mt-1 text-sm text-center">Contact</p>
-              </div>
+            {AboutMenu.map((item) => (
+              <MenuItem
+              key={item.app}
+              icon={item.icon}
+              label={item.label}
+              onClick={() => setOpenApp(item.app)}
+              />
+            ))}
             </div>
-          )}
+            )}
 
-          {openApp === "Projects" && (
-            <div className="relative z-10 grid grid-cols-3 gap-6 justify-items-center">
-              <div
-                className="flex flex-col items-center cursor-pointer hover:scale-105 transition-transform"
-                onClick={() => setOpenApp("project1")}
-              >
-                <span className="text-5xl">⛰️</span>
-                <p className="mt-1 text-sm text-center">Planing a hike?</p>
+            {openApp === "Projects" && (
+              <div className="relative z-10 grid grid-cols-3 gap-6 justify-items-center">
+                {projectMenu.map((item) => (
+                  <MenuItem
+                  key={item.app}
+                  icon={item.icon}
+                  label={item.label}
+                  onClick={() => setOpenApp(item.app)}
+                  />
+                ))}
+                </div>
+                )}
               </div>
-
-              <div
-                className="flex flex-col items-center cursor-pointer hover:scale-105 transition-transform"
-                onClick={() => setOpenApp("project2")}
-              >
-                <span className="text-5xl">💇🏻</span>
-                <p className="mt-1 text-sm text-center">
-                  Maybe a trip to the hairdresser?
-                </p>
-              </div>
-
-              <div
-                className="flex flex-col items-center cursor-pointer hover:scale-105 transition-transform"
-                onClick={() => setOpenApp("project3")}
-              >
-                <span className="text-5xl">🔮</span>
-                <p className="mt-1 text-sm text-center">
-                  Or a word of wisdom before you decide?
-                </p>
-              </div>
-            </div>
-          )}
-        </div>
-      )}
+            )}
+        
+      
       {openApp === "project1" &&
         !minimizedApps.some((a) => a.id === "project1") && (
           <Fullskjerm
