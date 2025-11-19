@@ -7,6 +7,7 @@ import {
   FaInstagram,
 } from "react-icons/fa";
 import Image from "next/image";
+import WeatherApp from "./weatherapp";
 
 
 export default function Taskbar({ minimizedApps, onRestore }) {
@@ -98,6 +99,10 @@ export default function Taskbar({ minimizedApps, onRestore }) {
             <FaInstagram size={18} />
           </SocialIcon>
         </div>
+          
+       <section className="flex items-center gap-3">
+        <WeatherApp />
+       </section>
 
         <time className="text-right leading-tight text-[10px]">
           <div className="text-sm font-medium">{formattedTime}</div>
