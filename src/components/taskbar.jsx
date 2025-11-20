@@ -49,7 +49,7 @@ export default function Taskbar({ minimizedApps, onRestore }) {
           src="/windows2.png"
           alt="Windows"
          fill
-         className="object contain"
+         className="object-contain"
           priority
           />
         </button>
@@ -69,7 +69,7 @@ export default function Taskbar({ minimizedApps, onRestore }) {
         ))}
       </nav>
 
-      <div className="absolute left-1/2 -translate-x-1/2 pointer-events-none">
+      <div className="absolute left-1/2 -translate-x-1/2 pointer-events-none hidden md:block">
         <Link
           href="https://github.com/Reketino"
           target="_blank"
