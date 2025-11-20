@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -38,4 +39,92 @@ body {
 }
 .animate-slideUp {
   animation: slideUp 0.4s ease-out forwards;
+}
+
+/* Bearweb */
+
+
+/* Bearweb Window */
+.bw-window {
+  @apply w-full h-full bg-neutral-900 rounded-xl overflow-hidden border border-neutral-700 flex flex-col;
+}
+
+
+/* Bearweb Topbar */
+.bw-topbar {
+  @apply flex flex-col bg-neutral-800 text-neutral-200 border-b border-neutral-700;
+}
+
+
+/* Bearweb Tabs */
+.bw-tabs {
+  @apply flex gap-1 px-2 py-1 items-center;
+}
+
+.bw-tab {
+  @apply flex items-center gap-2 px-4 py-1 rounded-t-md text-sm bg-neutral-800 cursor-pointer;
+}
+
+.bw-tab.active {
+  @apply bg-neutral-700;
+}
+
+.bw-tab.disabled {
+  @apply bg-neutral-800 opacity-40;
+}
+
+
+/* Bearweb Navigatoni Buttoni */
+.bw-nav {
+  @apply flex gap-2 px-3 py-2 items-center;
+}
+
+.bw-nav-btn {
+  @apply text-lg px-2 py-1 rounded hover:bg-neutral-700 disabled:opacity-40 disabled:bg-transparent;
+}
+
+
+/* Bearweb Address bar  */
+.bw-addr-form {
+  @apply w-full px-3 pb-2;
+}
+
+.bw-addr-input {
+  @apply w-full bg-neutral-700 px-4 py-2 rounded-md outline-none text-sm;
+}
+
+.bw-addr-url {
+  @apply block text-[10px] mt-1 text-neutral-400 truncate;
+}
+
+
+/* Bearweb`s content */
+.bw-content {
+  @apply flex-1 bg-black/20;
+}
+
+.bw-iframe {
+  @apply w-full h-full bg-white;
+}
+
+
+/* Bearweb Ready Set Start page */
+.bw-start {
+  @apply flex flex-col items-center justify-center gap-4 h-full text-neutral-100;
+}
+
+.bw-start-title {
+  @apply text-3xl font-bold;
+}
+
+.bw-start-sub {
+  @apply text-sm text-neutral-300;
+}
+
+.bw-start-favorites {
+  @apply flex gap-3;
+}
+
+.bw-start-fav {
+  @apply px-4 py-2 bg-neutral-700 rounded-md hover:bg-neutral-800;
 }

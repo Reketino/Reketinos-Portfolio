@@ -8,6 +8,7 @@ import Contact from "./contact";
 import BgWindow from "./bgwindow";
 import DesktopIcon from "./desktopicon";
 import MenuItem from "./menuitem";
+import BearWebWindow from "./BearWeb/BearWebWindow";
 
 
 export default function Desktop() {
@@ -63,6 +64,14 @@ export default function Desktop() {
       image: "/flappy.png",
       onOpen: () => setOpenApp ("Flappy"),
     },
+    {
+      id: "BearWeb",
+      startX: 150,
+      startY: 0,
+      label: "BearWeb",
+      image: "/bearweb.png",
+      onOpen: () => setOpenApp("BearWeb")
+    },
   ];
 
 
@@ -81,6 +90,7 @@ export default function Desktop() {
     Contact: "📨",
     Spotify: "/spoti.png",
     Flappy: "/flappy.png",
+    Bearweb: "/bearweb.png",
   };
 
   const minimizeApp = (id) => {
@@ -237,6 +247,17 @@ export default function Desktop() {
             onBack={() => setOpenApp(null)}
             onMinimize={() => minimizeApp("Flappy")}
           />
+        )}
+
+        {openApp === "BearWeb" && 
+        !minimizedApps.some((a) => a.id === "BearWeb") && (
+          <Fullskjerm
+          title="Bear Web"
+          onBack={() => setOpenApp(null)}
+          onMinimize={() => minimizeApp("BearWeb")}
+          >
+        <BearWebWindow />
+          </Fullskjerm>
         )}
 
       {openFolder && <BgWindow onClose={() => setOpenFolder(false)} />}
