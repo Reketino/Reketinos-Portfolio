@@ -75,7 +75,7 @@ const windowSize = isFullscreen
                 ? "bg-linear-to-b from-sky-400 to-green-500 overflow-hidden"
                 : "bg-black overflow-hidden"
               : mode === "browser"
-              ? "bg-black p-0 overflow-hidden"
+              ? "bg-black p-0 overflow-y-auto"
               : "bg-black rounded-b-lg overflow-y-auto"
           }
         `}
