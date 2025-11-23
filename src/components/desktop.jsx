@@ -69,7 +69,7 @@ export default function Desktop() {
       startX: 150,
       startY: 0,
       label: "BearWeb",
-      image: "/bearweb.png",
+      image: "/webbear.png",
       onOpen: () => setOpenApp("BearWeb")
     },
   ];
@@ -79,7 +79,14 @@ export default function Desktop() {
     { icon: "📝", label: "About Me", app: "AboutMe" },
     { icon: "💻", label: "Tech Stack", app: "TechStack"},
     { icon: "📨", label: "Contact", app: "Contact"}
-  ]
+  ];
+
+  
+  const projectMenu = [
+    { icon: "⛰️", label:"Hiking Website", app:"project1" },
+    { icon: "💇🏻", label: "Hairdresser Booking", app: "project2"},
+    { icon: "🔮", label: "Word of Wisdom", app: "project3"}
+  ];
 
   const appIcons = {
     project1: "⛰️",
@@ -90,7 +97,7 @@ export default function Desktop() {
     Contact: "📨",
     Spotify: "/spoti.png",
     Flappy: "/flappy.png",
-    Bearweb: "/bearweb.png",
+    Bearweb: "/webbear.png",
   };
 
   const minimizeApp = (id) => {
@@ -120,7 +127,7 @@ export default function Desktop() {
         ))}
       </section>
 
-      {openApp && (
+      {(openApp === "About" || openApp === "Projects") && (
         <div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
          bg-[url('/card3.png')] bg-cover bg-center  text-white hover:scale-105 rounded-xl shadow-2xl w-[90%] max-w-md p-6 z-10 "

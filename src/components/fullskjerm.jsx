@@ -1,4 +1,4 @@
-import React, { children, useState } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 
 export default function Fullskjerm({ url, title, onBack, onMinimize, children }) {
@@ -68,21 +68,25 @@ export default function Fullskjerm({ url, title, onBack, onMinimize, children })
      } ${url ? "overflow-hidden" : "overflow-y-auto"}`}
       >
 
-      {url ?(
-      <iframe
-        id="iframe-fullscreen"
-        src={url}
-        className=" w-full h-full border-none"
-        title={title}
-        style={{ 
-          display: "block",
-          height: "100%",
-          width: "100%",
-        }}
-      />
-      ) : (
-        <div className="p-6">{children}</div>
-      )}
+
+
+    {url ? (
+  <iframe
+    id="iframe-fullscreen"
+    src={url}
+    className="w-full h-full border-none"
+    title={title}
+    style={{
+      display: "block",
+      height: "100%",
+      width: "100%",
+    }}
+  />
+) : (
+  <div className="p-6">
+    {children}
+  </div>
+)}
     </div>
     </div>
   );
