@@ -46,7 +46,7 @@ body {
 
 /* Bearweb Window */
 .bw-window {
-  @apply w-full h-full bg-neutral-900 rounded-xl overflow-hidden border border-neutral-700 flex flex-col;
+  @apply  w-full h-full bg-neutral-900 rounded-xl overflow-hidden border border-neutral-700 flex flex-col;
 }
 
 
@@ -100,7 +100,7 @@ body {
 
 /* Bearweb`s content */
 .bw-content {
-  @apply flex-1 bg-black/20;
+  @apply flex-1 w-full h-full bg-black/20 overflow-hidden;
 }
 
 .bw-iframe {
