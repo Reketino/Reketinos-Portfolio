@@ -3,8 +3,6 @@ import React from 'react'
 export default function BearWebStart({ onOpen }) {
     const favorites = [
         { label: "Github", url: "https://github.com" },
-        { label: "Strava", url: "https://www.strava.com" },
-        { label: "DuckDuckGo", url:"https://duckduckgo.com" },
     ];
 
 

@@ -48,7 +48,7 @@ body {
 
 /* Bearweb Window */
 .bw-window {
-  @apply w-full h-full min-h-0 bg-neutral-900 rounded-xl overflow-hidden border border-neutral-700 flex flex-col;
+  @apply w-full min-h-full bg-neutral-900 rounded-xl  border border-neutral-700 flex flex-col;
 }
 
 
@@ -102,7 +102,7 @@ body {
 
 /* Bearweb`s content */
 .bw-content {
-  @apply flex-1 w-full min-h-0 bg-black/20 overflow-hidden;
+  @apply flex-1 w-full min-h-0 bg-black/20 overflow-auto;
 }
 
 .bw-iframe {
@@ -112,7 +112,7 @@ body {
 
 /* Bearweb Ready Set Start page */
 .bw-start {
-  @apply flex flex-col items-center justify-center gap-4 h-full text-neutral-100;
+  @apply flex flex-col items-center justify-center gap-4 min-h-full w-full  text-neutral-100;
 }
 
 .bw-start-title {
