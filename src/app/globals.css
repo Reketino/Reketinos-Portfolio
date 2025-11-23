@@ -41,12 +41,14 @@ body {
   animation: slideUp 0.4s ease-out forwards;
 }
 
+
+
 /* Bearweb */
 
 
 /* Bearweb Window */
 .bw-window {
-  @apply  w-full h-full bg-neutral-900 rounded-xl overflow-hidden border border-neutral-700 flex flex-col;
+  @apply w-full h-full min-h-0 bg-neutral-900 rounded-xl overflow-hidden border border-neutral-700 flex flex-col;
 }
 
 
@@ -100,7 +102,7 @@ body {
 
 /* Bearweb`s content */
 .bw-content {
-  @apply flex-1 w-full h-full bg-black/20 overflow-hidden;
+  @apply flex-1 w-full min-h-0 bg-black/20 overflow-hidden;
 }
 
 .bw-iframe {

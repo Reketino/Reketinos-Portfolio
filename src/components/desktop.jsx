@@ -260,6 +260,7 @@ export default function Desktop() {
         !minimizedApps.some((a) => a.id === "BearWeb") && (
           <Fullskjerm
           title="Bear Web"
+          mode="browser"
           onBack={() => setOpenApp(null)}
           onMinimize={() => minimizeApp("BearWeb")}
           >
