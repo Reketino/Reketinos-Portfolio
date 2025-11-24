@@ -1,10 +1,15 @@
 "use client";
 import { React, useState } from "react";
 import Image from "next/image";
-import { Section } from "lucide-react";
+
 
 export default function BearWebFrame({ title, onBack, onMinimize, children }) {
   const [fullscreen, setFullscreen] = useState(false);
+
+
+const handleMinimize = () => {
+    if (onMinimize) onMinimize(); 
+};
 
   return (
     <section

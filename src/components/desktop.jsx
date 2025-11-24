@@ -98,7 +98,7 @@ export default function Desktop() {
     Contact: "📨",
     Spotify: "/spoti.png",
     Flappy: "/flappy.png",
-    Bearweb: "/webbear.png",
+    BearWeb: "/webbear.png",
   };
 
   const minimizeApp = (id) => {

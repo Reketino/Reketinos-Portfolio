@@ -4,6 +4,9 @@ import { React, useState } from 'react'
 export default function BearWebAddressBar({ currentUrl, onNavigate }) {
 const [input, setInput] = useState("");
 
+
+const safeURL = typeof currentUrl === "string" ? currentUrl : "";
+
   return (
     <form 
     onSubmit={(e) => {
@@ -21,8 +24,10 @@ const [input, setInput] = useState("");
       onChange={(e) => setInput(e.target.value)}
       />
 
-      {currentUrl !== "bearweb://start" && (
-        <span className="bw-addr-url">{currentUrl}</span>
+      {safeURL !== "" && safeURL !== "bearweb://start" && (
+        <span className="bw-addr-url">
+          {safeURL.toLocaleUpperCase()}
+          </span>
       )}
     </form>
   );
