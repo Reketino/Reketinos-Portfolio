@@ -1,3 +1,4 @@
+import { color } from "framer-motion";
 import React from "react";
 
 import {
@@ -7,6 +8,7 @@ import {
   FaReact,
   FaPython,
   FaGithub,
+  FaGitAlt,
   FaFigma,
 } from "react-icons/fa";
 
@@ -45,6 +47,7 @@ export default function TechStack() {
       title: "Tools",
       items: [
         { Icon: FaGithub, color: "text-white", name: "GitHub" },
+        { Icon: FaGitAlt, color: "text-red-400", name: "Git"},
         { Icon: VscVscode, color: "text-blue-400", name: "Vs Code" },
         { Icon: SiVercel, color: "text-gray-300", name: "Vercel" },
       ],
