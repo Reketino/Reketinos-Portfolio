@@ -48,7 +48,7 @@ body {
 
 /* Bearweb Window */
 .bw-window {
-  @apply w-full min-h-full bg-neutral-900 rounded-xl  border border-neutral-700 flex flex-col;
+  @apply w-full h-full bg-neutral-900 rounded-xl  border border-neutral-700 flex flex-col min-h-0;
 }
 
 

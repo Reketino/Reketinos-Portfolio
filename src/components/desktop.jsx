@@ -9,6 +9,7 @@ import BgWindow from "./bgwindow";
 import DesktopIcon from "./desktopicon";
 import MenuItem from "./menuitem";
 import BearWebWindow from "./BearWeb/BearWebWindow";
+import BearWebFrame from "./BearWeb/BearWebFrame";
 
 
 export default function Desktop() {
@@ -258,14 +259,14 @@ export default function Desktop() {
 
         {openApp === "BearWeb" && 
         !minimizedApps.some((a) => a.id === "BearWeb") && (
-          <Fullskjerm
+          <BearWebFrame
           title="Bear Web"
           mode="browser"
           onBack={() => setOpenApp(null)}
           onMinimize={() => minimizeApp("BearWeb")}
           >
         <BearWebWindow />
-          </Fullskjerm>
+          </BearWebFrame>
         )}
 
       {openFolder && <BgWindow onClose={() => setOpenFolder(false)} />}
