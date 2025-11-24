@@ -45,7 +45,8 @@ export default function Desktop() {
         "backgrounds/desktop2.jpg",
         "backgrounds/desktop3.jpg",
         "backgrounds/desktop4.png",
-        "backgrounds/desktop5.png"
+        "backgrounds/desktop5.png",
+        "backgrounds/desktop6.png"
       ],
       onOpen: () => setOpenFolder (true),
     },
