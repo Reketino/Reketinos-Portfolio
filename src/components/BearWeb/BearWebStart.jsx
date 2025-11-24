@@ -4,16 +4,11 @@ import { FaGithub, FaYoutube } from "react-icons/fa";
 
 export default function BearWebStart({ onOpen }) {
   const shortcuts = [
-    { label: "Bearstocks", page: "stocks", icon: "/bearicon.png" },
+    { label: "Bearstocks", page: "stocks", icon: "/fabear.png" },
     {
       label: "Github",
       url: "https://github.com/Reketino",
       icon: <FaGithub size={32} />,
-    },
-    {
-      label: "Youtube",
-      url: "https://www.youtube.com/@Beareven",
-      icon: <FaYoutube size={32} />,
     },
   ];
 
