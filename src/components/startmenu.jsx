@@ -1,17 +1,28 @@
 "use client";
+import { Icon } from "lucide-react";
 import { useState } from "react";
-import { FaPowerOff, FaCog, FaSearch } from "react-icons/fa";
+import { FaPowerOff, FaCog, FaSearch, FaChrome, FaDiscord, FaGithub, FaTerminal } from "react-icons/fa";
+import { VscVscode } from "react-icons/vsc";
 
 export default function StartMenu() {
   const [brightness, setBrightness] = useState(100);
   const [volume, setVolume] = useState(50);
+
+
+  const apps = [
+    { name: "VSCode", icon: <VscVscode /> },
+    { name: "Chrome", icon: <FaChrome /> },
+    { name: "Discord", icon: <FaDiscord /> },
+    { name: "Github", icon: <FaGithub />},
+    { name: "Terminal", icon: <FaTerminal />},
+  ];
 
   return (
     <aside
       onClick={(e) => e.stopPropagation()}
       className="
     absolute bottom-14 left-2
-    w-80 bg-black/70
+    w-80 bg-black/90
     backrdop-blur-2xl
     border border-white/10
     rounded-2xl shadow-2xl p-4
@@ -32,9 +43,9 @@ export default function StartMenu() {
       </label>
 
       <section className="grid grid-cols-3 gap-4 mb-4">
-        {["vscode", "Chrome", "Discord", "Github", "Terminal"].map((app) => (
+        {apps.map((app) => (
           <button
-            key={app}
+            key={app.name}
             className="
              flex flex-col items-center gap-1
              hover:bg-white/10 p-2 rounded-xl transition
@@ -46,9 +57,9 @@ export default function StartMenu() {
                 flex items-center justify-center text-xs
                 "
             >
-              {app[0]}
+              {app.icon}
             </span>
-            <span className="text-xs text-white/70">{app}</span>
+            <span className="text-xs text-white/70">{app.name}</span>
           </button>
         ))}
       </section>
