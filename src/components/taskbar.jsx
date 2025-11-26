@@ -8,10 +8,18 @@ import {
 } from "react-icons/fa";
 import Image from "next/image";
 import WeatherApp from "./weatherapp";
+import StartMenu from "./startmenu";
 
 
 export default function Taskbar({ minimizedApps, onRestore }) {
   const [time, setTime] = useState(new Date());
+  const [openStart, setOpenStart] = useState(false);
+
+  useEffect(() => {
+    const handleClick = () => setOpenStart(false);
+    window.addEventListener("click", handleClick);
+    return () => window.removeEventListener("click", handleClick);
+  }, []);
 
   useEffect(() => {
     const timer = setInterval(() => setTime(new Date()), 1000);
@@ -28,6 +36,10 @@ export default function Taskbar({ minimizedApps, onRestore }) {
     month: "short",
   });
 
+
+
+
+
   return (
     <footer 
     is="taskbar"
@@ -40,6 +52,10 @@ export default function Taskbar({ minimizedApps, onRestore }) {
 
       <nav className="flex items-center overflow-x-auto shrink-0">
         <button 
+        onClick={(e) => {
+          e.stopPropagation();
+          setOpenStart(!openStart);
+        }}
         className="
         relative w-9 h-9
        hover:bg-white/10 
@@ -109,6 +125,7 @@ export default function Taskbar({ minimizedApps, onRestore }) {
           <div className="text-xs text-white/70">{formattedDate}</div>
         </time>
       </section>
+    {openStart && <StartMenu />}
     </footer>
   );
 }

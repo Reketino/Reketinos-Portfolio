@@ -1,0 +1,104 @@
+"use client";
+import { useState } from "react";
+import { FaPowerOff, FaCog, FaSearch } from "react-icons/fa";
+
+export default function StartMenu() {
+  const [brightness, setBrightness] = useState(100);
+  const [volume, setVolume] = useState(50);
+
+  return (
+    <aside
+      onClick={(e) => e.stopPropagation()}
+      className="
+    absolute bottom-14 left-2
+    w-80 bg-black/70
+    backrdop-blur-2xl
+    border border-white/10
+    rounded-2xl shadow-2xl p-4
+    animate-in fade-in slide-in-from-bottom-2
+    z-99999
+    "
+    >
+      <label className="relative block mb-4">
+        <FaSearch className="absolute left-2 top-1/2 -translate-y-1/2 text-white/40" />
+        <input
+          type="text"
+          placeholder="Search"
+          className="w-full bg-white/10 rounded-lg pl-8 pr-2 py-1.5
+        text-sm text-white placeholder-white/40
+        outline-none focus:bg-white/20 transition
+        "
+        />
+      </label>
+
+      <section className="grid grid-cols-3 gap-4 mb-4">
+        {["vscode", "Chrome", "Discord", "Github", "Terminal"].map((app) => (
+          <button
+            key={app}
+            className="
+             flex flex-col items-center gap-1
+             hover:bg-white/10 p-2 rounded-xl transition
+             "
+          >
+            <span
+              className="
+                w-10 h-10 bg-white/10 rounded-lg
+                flex items-center justify-center text-xs
+                "
+            >
+              {app[0]}
+            </span>
+            <span className="text-xs text-white/70">{app}</span>
+          </button>
+        ))}
+      </section>
+
+      <section className="bg-white/10 rounded-xl p-3 flex flex-col gap-3">
+        <label>
+          <div className="flex justify-between text-sm mb-1">
+            <span>Brightness</span>
+            <span>{brightness}%</span>
+          </div>
+          <input
+            type="range"
+            min="10"
+            max="150"
+            value={brightness}
+            onChange={(e) => {
+              setBrightness(e.target.value);
+              document.documentElement.style.filter = `brightness(${e.target.value}%)`;
+            }}
+            className="w-full"
+          />
+        </label>
+
+        <label>
+          <div className="flex justify-between text-sm mb-1">
+            <span>Volume</span>
+            <span>{volume}%</span>
+          </div>
+          <input
+            type="range"
+            min="0"
+            max="100"
+            value={volume}
+            onChange={(e) => setVolume(e.target.value)}
+            className="w-full"
+          />
+        </label>
+      </section>
+
+      <footer className="flex justify-between items-center mt-4 pt-3 border-t border-white/10">
+        <button className="flex items-center gap-2 hover:bg-white/10 px-3 py-1.5 rounded-lg transition">
+          <FaCog />
+          <span className="text-sm">Settings</span>
+        </button>
+
+        <button className="flex items-center gap-2 hover:bg-red-500/20 px-3 py-1.5 rounded-lg transition text-red-400">
+          <FaPowerOff />
+          <span className="text-sm">Power</span>
+        </button>
+      </footer>
+    </aside>
+  );
+}
