@@ -146,11 +146,20 @@ export default function Desktop() {
       {(openApp === "About" || openApp === "Projects") && (
         <div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-         bg-[url('/card3.png')] bg-cover bg-center  text-white hover:scale-105 rounded-xl shadow-2xl w-[90%] max-w-md p-6 z-10 "
+          w-[90%] max-w-md p-6 z-10 rounded-xl
+         bg-[#1f1f1f]/85
+         border border-white/10
+         shadow-[0_4px_18px_rgba(0,0,0,0.45)]
+         text-gray-200
+         transition-transform duration-100 hover:scale[1.01]
+          "
         >
-          <div className="absolute inset-0 bg-black/30 rounded-xl pointer-events-none"></div>
+          <div
+            className="absolute inset-0  rounded-xl pointer-events-none
+          "
+          />
 
-          <div className="flex justify-between items-center mb-4 z-10">
+          <div className="flex justify-between items-center mb-4 relative z-10">
             <h2 className="absolute left-1/2 -translate-x-1/2 text-xl text-center font-semibold pointer-events-none mb-0.5">
               {openApp === "About" && "About Me"}
               {openApp === "Projects" && "My Projects"}
