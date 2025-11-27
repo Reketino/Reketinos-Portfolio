@@ -19,6 +19,8 @@ export default function Desktop() {
   const [openApp, setOpenApp] = useState(null);
   const [minimizedApps, setMinimizedApps] = useState([]);
 
+
+  // Icons on desktop
   const DesktopIcons = [
     {
       id: "about",
@@ -86,20 +88,21 @@ export default function Desktop() {
     },
   ];
 
-
+// Menu to "Aboutme"
   const AboutMenu = [
     { icon: "📝", label: "About Me", app: "AboutMe" },
     { icon: "💻", label: "Tech Stack", app: "TechStack"},
     { icon: "📨", label: "Contact", app: "Contact"}
   ];
 
-  
+  // Menu to "Projects"
   const projectMenu = [
     { icon: "⛰️", label:"Hiking Website", app:"project1" },
     { icon: "💇🏻", label: "Hairdresser Booking", app: "project2"},
     { icon: "🔮", label: "Word of Wisdom", app: "project3"}
   ];
 
+  // Icons used in the apps
   const appIcons = {
     project1: "⛰️",
     project2: "💇🏻",
@@ -122,6 +125,7 @@ export default function Desktop() {
     setOpenApp(null);
   };
 
+  // Main page
   return (
     <main className="w-full h-screen overflow-hidden md:overflow-visible">
       <section
@@ -139,7 +143,8 @@ export default function Desktop() {
           </div>
         ))}
       </section>
-
+    
+    {/* Background when opening apps */}
       {(openApp === "About" || openApp === "Projects") && (
         <div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
@@ -159,7 +164,8 @@ export default function Desktop() {
               ✕
             </button>
           </div>
-
+         
+         {/* Open about folder */}
           {openApp === "About" && (
             <div className="relative z-10 grid grid-cols-3 gap-6 justify-items-center">
             {AboutMenu.map((item) => (
@@ -172,7 +178,8 @@ export default function Desktop() {
             ))}
             </div>
             )}
-
+          
+          {/* Open projects folder */}
             {openApp === "Projects" && (
               <div className="relative z-10 grid grid-cols-3 gap-6 justify-items-center">
                 {projectMenu.map((item) => (
@@ -188,7 +195,7 @@ export default function Desktop() {
               </div>
             )}
         
-      
+      {/* Open projects Apps */}
       {openApp === "project1" &&
         !minimizedApps.some((a) => a.id === "project1") && (
           <Fullskjerm
@@ -198,7 +205,7 @@ export default function Desktop() {
             onMinimize={() => minimizeApp("project1")}
           />
         )}
-
+ 
       {openApp === "project2" &&
         !minimizedApps.some((a) => a.id === "project2") && (
           <Fullskjerm
@@ -218,7 +225,8 @@ export default function Desktop() {
             onMinimize={() => minimizeApp("project3")}
           />
         )}
-
+      
+      {/* Open "About me" Apps */}
       {openApp === "AboutMe" && (
         <Fullskjerm
           title="About Me"
@@ -248,7 +256,8 @@ export default function Desktop() {
           <Contact />
         </Fullskjerm>
       )}
-
+    
+    {/* Open Recycle Bin + file */}
       {openApp === "RecycleBin" && (
         <TrashWindow
         onClose={() => setOpenApp(null)}
@@ -264,6 +273,7 @@ export default function Desktop() {
         />
       )}
 
+    {/* Open Spotify */}
       {openApp === "Spotify" &&
         !minimizedApps.some((a) => a.id === "Spotify") && (
           <Fullskjerm
@@ -273,7 +283,8 @@ export default function Desktop() {
             onMinimize={() => minimizeApp("Spotify")}
           />
         )}
-
+      
+      {/* Open Flappy Bird */}
       {openApp === "Flappy" &&
         !minimizedApps.some((a) => a.id === "Flappy") && (
           <Fullskjerm
@@ -283,7 +294,8 @@ export default function Desktop() {
             onMinimize={() => minimizeApp("Flappy")}
           />
         )}
-
+      
+      {/* Open BearWeb */}
         {openApp === "BearWeb" && 
         !minimizedApps.some((a) => a.id === "BearWeb") && (
           <BearWebFrame
@@ -295,9 +307,11 @@ export default function Desktop() {
         <BearWebWindow />
           </BearWebFrame>
         )}
-
+      
+      {/* Backgrounds folder */}
       {openFolder && <BgWindow onClose={() => setOpenFolder(false)} />}
-
+    
+    {/* Taskbar */}
       <Taskbar
         minimizedApps={minimizedApps}
         onRestore={(id) => {
