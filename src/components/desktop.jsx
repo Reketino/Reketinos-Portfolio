@@ -13,12 +13,10 @@ import BearWebFrame from "./BearWeb/BearWebFrame";
 import TrashWindow from "./RecycleBin/trashwindow";
 import Error from "./RecycleBin/error";
 
-
 export default function Desktop() {
   const [openFolder, setOpenFolder] = useState(false);
   const [openApp, setOpenApp] = useState(null);
   const [minimizedApps, setMinimizedApps] = useState([]);
-
 
   // Icons on desktop
   const DesktopIcons = [
@@ -28,7 +26,7 @@ export default function Desktop() {
       startY: 0,
       label: "BEARME.MD",
       icon: "📖",
-      onOpen: () => setOpenApp("About")
+      onOpen: () => setOpenApp("About"),
     },
     {
       id: "projects",
@@ -36,7 +34,7 @@ export default function Desktop() {
       startY: 120,
       label: "My Projects",
       icon: "📂",
-      onOpen: () => setOpenApp("Projects")
+      onOpen: () => setOpenApp("Projects"),
     },
     {
       id: "backgrounds",
@@ -50,17 +48,17 @@ export default function Desktop() {
         "backgrounds/desktop3.jpg",
         "backgrounds/desktop4.png",
         "backgrounds/desktop5.png",
-        "backgrounds/desktop6.png"
+        "backgrounds/desktop6.png",
       ],
-      onOpen: () => setOpenFolder (true),
+      onOpen: () => setOpenFolder(true),
     },
     {
-    id: "Spotify",
-    startX: 0,
-    startY: 360,
-    label: "Spotify",
-    image: "/spoti.png",
-    onOpen: () => setOpenApp("Spotify")
+      id: "Spotify",
+      startX: 0,
+      startY: 360,
+      label: "Spotify",
+      image: "/spoti.png",
+      onOpen: () => setOpenApp("Spotify"),
     },
     {
       id: "Flappy",
@@ -68,7 +66,7 @@ export default function Desktop() {
       startY: 480,
       label: "Flappy Bird",
       image: "/flappy.png",
-      onOpen: () => setOpenApp ("Flappy"),
+      onOpen: () => setOpenApp("Flappy"),
     },
     {
       id: "BearWeb",
@@ -76,7 +74,7 @@ export default function Desktop() {
       startY: 0,
       label: "BearWeb",
       image: "/webbear.png",
-      onOpen: () => setOpenApp("BearWeb")
+      onOpen: () => setOpenApp("BearWeb"),
     },
     {
       id: "recycle",
@@ -84,22 +82,22 @@ export default function Desktop() {
       startY: 120,
       label: "Recycle Bin",
       image: "/trash.png",
-      onOpen: () => setOpenApp("RecycleBin")
+      onOpen: () => setOpenApp("RecycleBin"),
     },
   ];
 
-// Menu to "Aboutme"
+  // Menu to "Aboutme"
   const AboutMenu = [
     { icon: "📝", label: "About Me", app: "AboutMe" },
-    { icon: "💻", label: "Tech Stack", app: "TechStack"},
-    { icon: "📨", label: "Contact", app: "Contact"}
+    { icon: "💻", label: "Tech Stack", app: "TechStack" },
+    { icon: "📨", label: "Contact", app: "Contact" },
   ];
 
   // Menu to "Projects"
   const projectMenu = [
-    { icon: "⛰️", label:"Hiking Website", app:"project1" },
-    { icon: "💇🏻", label: "Hairdresser Booking", app: "project2"},
-    { icon: "🔮", label: "Word of Wisdom", app: "project3"}
+    { icon: "⛰️", label: "Hiking Website", app: "project1" },
+    { icon: "💇🏻", label: "Hairdresser Booking", app: "project2" },
+    { icon: "🔮", label: "Word of Wisdom", app: "project3" },
   ];
 
   // Icons used in the apps
@@ -113,7 +111,7 @@ export default function Desktop() {
     Spotify: "/spoti.png",
     Flappy: "/flappy.png",
     BearWeb: "/webbear.png",
-    Error: "/brokenfile.png"
+    Error: "/brokenfile.png",
   };
 
   const minimizeApp = (id) => {
@@ -143,8 +141,8 @@ export default function Desktop() {
           </div>
         ))}
       </section>
-    
-    {/* Background when opening apps */}
+
+      {/* Background when opening apps */}
       {(openApp === "About" || openApp === "Projects") && (
         <div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
@@ -164,37 +162,37 @@ export default function Desktop() {
               ✕
             </button>
           </div>
-         
-         {/* Open about folder */}
+
+          {/* Open about folder */}
           {openApp === "About" && (
             <div className="relative z-10 grid grid-cols-3 gap-6 justify-items-center">
-            {AboutMenu.map((item) => (
-              <MenuItem
-              key={item.app}
-              icon={item.icon}
-              label={item.label}
-              onClick={() => setOpenApp(item.app)}
-              />
-            ))}
-            </div>
-            )}
-          
-          {/* Open projects folder */}
-            {openApp === "Projects" && (
-              <div className="relative z-10 grid grid-cols-3 gap-6 justify-items-center">
-                {projectMenu.map((item) => (
-                  <MenuItem
+              {AboutMenu.map((item) => (
+                <MenuItem
                   key={item.app}
                   icon={item.icon}
                   label={item.label}
                   onClick={() => setOpenApp(item.app)}
-                  />
-                ))}
-                </div>
-                )}
-              </div>
-            )}
-        
+                />
+              ))}
+            </div>
+          )}
+
+          {/* Open projects folder */}
+          {openApp === "Projects" && (
+            <div className="relative z-10 grid grid-cols-3 gap-6 justify-items-center">
+              {projectMenu.map((item) => (
+                <MenuItem
+                  key={item.app}
+                  icon={item.icon}
+                  label={item.label}
+                  onClick={() => setOpenApp(item.app)}
+                />
+              ))}
+            </div>
+          )}
+        </div>
+      )}
+
       {/* Open projects Apps */}
       {openApp === "project1" &&
         !minimizedApps.some((a) => a.id === "project1") && (
@@ -205,7 +203,7 @@ export default function Desktop() {
             onMinimize={() => minimizeApp("project1")}
           />
         )}
- 
+
       {openApp === "project2" &&
         !minimizedApps.some((a) => a.id === "project2") && (
           <Fullskjerm
@@ -225,7 +223,7 @@ export default function Desktop() {
             onMinimize={() => minimizeApp("project3")}
           />
         )}
-      
+
       {/* Open "About me" Apps */}
       {openApp === "AboutMe" && (
         <Fullskjerm
@@ -256,24 +254,23 @@ export default function Desktop() {
           <Contact />
         </Fullskjerm>
       )}
-    
-    {/* Open Recycle Bin + file */}
+
+      {/* Open Recycle Bin + file */}
       {openApp === "RecycleBin" && (
         <TrashWindow
-        onClose={() => setOpenApp(null)}
-        onOpenFile={() => setOpenApp("Error")}
+          onClose={() => setOpenApp(null)}
+          onOpenFile={() => setOpenApp("Error")}
         />
       )}
 
-      {openApp === "Error" &&
-      !minimizedApps.some((a) => a.id === "Error") && (
+      {openApp === "Error" && !minimizedApps.some((a) => a.id === "Error") && (
         <Error
-        onBack={() => setOpenApp ("RecycleBin")}
-        onMinimize={() => minimizeApp ("Error")}
+          onBack={() => setOpenApp("RecycleBin")}
+          onMinimize={() => minimizeApp("Error")}
         />
       )}
 
-    {/* Open Spotify */}
+      {/* Open Spotify */}
       {openApp === "Spotify" &&
         !minimizedApps.some((a) => a.id === "Spotify") && (
           <Fullskjerm
@@ -283,7 +280,7 @@ export default function Desktop() {
             onMinimize={() => minimizeApp("Spotify")}
           />
         )}
-      
+
       {/* Open Flappy Bird */}
       {openApp === "Flappy" &&
         !minimizedApps.some((a) => a.id === "Flappy") && (
@@ -294,24 +291,24 @@ export default function Desktop() {
             onMinimize={() => minimizeApp("Flappy")}
           />
         )}
-      
+
       {/* Open BearWeb */}
-        {openApp === "BearWeb" && 
+      {openApp === "BearWeb" &&
         !minimizedApps.some((a) => a.id === "BearWeb") && (
           <BearWebFrame
-          title="Bear Web"
-          mode="browser"
-          onBack={() => setOpenApp(null)}
-          onMinimize={() => minimizeApp("BearWeb")}
+            title="Bear Web"
+            mode="browser"
+            onBack={() => setOpenApp(null)}
+            onMinimize={() => minimizeApp("BearWeb")}
           >
-        <BearWebWindow />
+            <BearWebWindow />
           </BearWebFrame>
         )}
-      
+
       {/* Backgrounds folder */}
       {openFolder && <BgWindow onClose={() => setOpenFolder(false)} />}
-    
-    {/* Taskbar */}
+
+      {/* Taskbar */}
       <Taskbar
         minimizedApps={minimizedApps}
         onRestore={(id) => {
