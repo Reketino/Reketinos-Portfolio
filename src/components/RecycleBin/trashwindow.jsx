@@ -1,0 +1,47 @@
+"use client";
+import { FaTimes } from 'react-icons/fa';
+import React from 'react'
+
+export default function TrashWindow({ onClose, onOpenFile }) {
+    const playErrorSound = () => {
+        const audio = new Audio("/error.mp3")
+        audio.volume = 0.5;
+        audio.play();
+    };
+
+
+    const handleClick = () => {
+        playErrorSound();
+        setTimeout(() => {
+            onOpenFile();
+        }, 200);
+    }
+
+  return (
+    <main 
+    className='absolute top-24 left-24
+    w-80 bg-black/70 backdrop-blur-xl
+    border border-white/10 rounded-xl
+    shadow-2xl p-4 z-9999'
+     >
+      <header className=' flex justify-between items-center mb-4'>
+        <h2 className='text-lg font-bold'> Recycle Bin</h2>
+        <button onClick={onClose}>
+            <FaTimes className='text-white hover:text-red-500 transition' />
+        </button>
+      </header>
+      
+      <button
+      onClick={handleClick}
+      className='
+      flex items-center gap-3 w-full text-left
+      hover:bg-white/10 transition p-2 rounded-lg
+      '
+      >
+        <img src='/brokenfile.png' className='w-8 h-8' alt="" />
+        <span className='text-sm'>system32_critical_error.log</span>
+      </button>
+
+    </main>
+  )
+}
