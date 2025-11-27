@@ -10,6 +10,8 @@ import DesktopIcon from "./desktopicon";
 import MenuItem from "./menuitem";
 import BearWebWindow from "./BearWeb/BearWebWindow";
 import BearWebFrame from "./BearWeb/BearWebFrame";
+import TrashWindow from "./RecycleBin/trashwindow";
+import Error from "./RecycleBin/error";
 
 
 export default function Desktop() {
@@ -74,6 +76,14 @@ export default function Desktop() {
       image: "/webbear.png",
       onOpen: () => setOpenApp("BearWeb")
     },
+    {
+      id: "recycle",
+      startX: 150,
+      startY: 120,
+      label: "Recycle Bin",
+      image: "/trash.png",
+      onOpen: () => setOpenApp("RecycleBin")
+    },
   ];
 
 
@@ -100,6 +110,7 @@ export default function Desktop() {
     Spotify: "/spoti.png",
     Flappy: "/flappy.png",
     BearWeb: "/webbear.png",
+    Error: "/brokenfile.png"
   };
 
   const minimizeApp = (id) => {
@@ -236,6 +247,21 @@ export default function Desktop() {
         >
           <Contact />
         </Fullskjerm>
+      )}
+
+      {openApp === "RecycleBin" && (
+        <TrashWindow
+        onClose={() => setOpenApp(null)}
+        onOpenFile={() => setOpenApp("Error")}
+        />
+      )}
+
+      {openApp === "Error" &&
+      !minimizedApps.some((a) => a.id === "Error") && (
+        <Error
+        onBack={() => setOpenApp ("RecycleBin")}
+        onMinimize={() => minimizeApp ("Error")}
+        />
       )}
 
       {openApp === "Spotify" &&
