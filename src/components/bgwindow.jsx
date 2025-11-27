@@ -2,30 +2,29 @@
 import React, { useState, useEffect } from "react";
 import { useBackground } from "@/app/providers/bgprovider";
 
-
-
-
 export default function BgWindow({ onClose }) {
   const { background, setBackground } = useBackground();
   const [images, setImages] = useState([]);
 
   useEffect(() => {
-  async function load() {
-    const res = await fetch("/api/backgrounds");
-    const data = await res.json();
-    setImages(data.images || []);
-  }
-load();
+    async function load() {
+      const res = await fetch("/api/backgrounds");
+      const data = await res.json();
+      setImages(data.images || []);
+    }
+    load();
   }, []);
 
   return (
     <section
       className="
-    absolute top-1/2 left-1/2
-    -translate-x-1/2 -translate-y-1/2
-    bg-[url('/card3.png')] bg-cover bg-center
-    rounded-xl shadow-2xl text-white p-6 w-[90%] max-w-md hover:scale-105 transition 
-    z-10
+    absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+          w-[90%] max-w-md p-6 z-10 rounded-xl
+         bg-[#1f1f1f]/90
+         border border-white/10
+         shadow-[0_4px_18px_rgba(0,0,0,0.45)]
+         text-gray-200
+         transition-transform duration-100 hover:scale[1.01]
     "
       role="dialog"
       aria-modal="true"
