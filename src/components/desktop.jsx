@@ -12,7 +12,8 @@ import BearWebWindow from "./BearWeb/BearWebWindow";
 import BearWebFrame from "./BearWeb/BearWebFrame";
 import TrashWindow from "./RecycleBin/trashwindow";
 import Error from "./RecycleBin/error";
-import VSCode from "./vscode";
+import BearCodeWindow from "./BearCode/bearcodewindow";
+import BearCode from "./BearCode/bearcode";
 
 export default function Desktop() {
   const [openFolder, setOpenFolder] = useState(false);
@@ -86,12 +87,12 @@ export default function Desktop() {
       onOpen: () => setOpenApp("RecycleBin"),
     },
     {
-    id: "VSCode",
+    id: "BearCode",
     startX: 150,
     startY: 240,
-    label: "VS Code",
-    image:"/vscode.png",
-    onOpen: () => setOpenApp("VSCode"),
+    label: "BearCode",
+    image:"/vsbearcode.png",
+    onOpen: () => setOpenApp("BearCode"),
     },
   ];
 
@@ -121,7 +122,7 @@ export default function Desktop() {
     Flappy: "/flappy.png",
     BearWeb: "/webbear.png",
     Error: "/brokenfile.png",
-    VSCodeWindow: "/vscode.png"
+    BearCode: "/vsbearcode.png"
   };
 
   const minimizeApp = (id) => {
@@ -324,11 +325,11 @@ export default function Desktop() {
           </BearWebFrame>
         )}
 
-        {openApp === "VSCode" &&
-          !minimizedApps.some((a) => a.id === "VSCode") && (
-          <VSCode
+        {openApp === "BearCode" &&
+          !minimizedApps.some((a) => a.id === "BearCode") && (
+          <BearCodeWindow
           onBack={() => setOpenApp(null)}
-          onMinimize={() => minimizeApp("VSCode")}
+          onMinimize={() => minimizeApp("BearCode")}
           />
           )}
 
