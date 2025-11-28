@@ -12,6 +12,7 @@ import BearWebWindow from "./BearWeb/BearWebWindow";
 import BearWebFrame from "./BearWeb/BearWebFrame";
 import TrashWindow from "./RecycleBin/trashwindow";
 import Error from "./RecycleBin/error";
+import VSCode from "./vscode";
 
 export default function Desktop() {
   const [openFolder, setOpenFolder] = useState(false);
@@ -84,6 +85,14 @@ export default function Desktop() {
       image: "/trash.png",
       onOpen: () => setOpenApp("RecycleBin"),
     },
+    {
+    id: "VSCode",
+    startX: 150,
+    startY: 240,
+    label: "VS Code",
+    image:"/vscode.png",
+    onOpen: () => setOpenApp("VSCode"),
+    },
   ];
 
   // Menu to "Aboutme"
@@ -112,6 +121,7 @@ export default function Desktop() {
     Flappy: "/flappy.png",
     BearWeb: "/webbear.png",
     Error: "/brokenfile.png",
+    VSCodeWindow: "/vscode.png"
   };
 
   const minimizeApp = (id) => {
@@ -313,6 +323,14 @@ export default function Desktop() {
             <BearWebWindow />
           </BearWebFrame>
         )}
+
+        {openApp === "VSCode" &&
+          !minimizedApps.some((a) => a.id === "VSCode") && (
+          <VSCode
+          onBack={() => setOpenApp(null)}
+          onMinimize={() => minimizeApp("VSCode")}
+          />
+          )}
 
       {/* Backgrounds folder */}
       {openFolder && <BgWindow onClose={() => setOpenFolder(false)} />}
