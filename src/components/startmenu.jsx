@@ -10,11 +10,11 @@ export default function StartMenu() {
 
 
   const apps = [
-    { name: "VSCode", icon: <VscVscode /> },
-    { name: "Chrome", icon: <FaChrome /> },
-    { name: "Discord", icon: <FaDiscord /> },
-    { name: "Github", icon: <FaGithub />},
-    { name: "Terminal", icon: <FaTerminal />},
+    { name: "VSCode", icon: <VscVscode className="text-sky-400"  /> },
+    { name: "Chrome", icon: <FaChrome className="text-blue-400" /> },
+    { name: "Discord", icon: <FaDiscord className="text-indigo-400" /> },
+    { name: "Github", icon: <FaGithub className="text-gray-300" />},
+    { name: "Terminal", icon: <FaTerminal className="text-green-400" />},
   ];
 
   return (
@@ -23,8 +23,8 @@ export default function StartMenu() {
       className="
     absolute bottom-14 left-2
     w-80 bg-black/90
-    backrdop-blur-2xl
-    border border-white/10
+    backdrop-blur-2xl
+    border border-white/20
     rounded-2xl shadow-2xl p-4
     animate-in fade-in slide-in-from-bottom-2
     z-99999
@@ -36,8 +36,8 @@ export default function StartMenu() {
           type="text"
           placeholder="Search"
           className="w-full bg-white/10 rounded-lg pl-8 pr-2 py-1.5
-        text-sm text-white placeholder-white/40
-        outline-none focus:bg-white/20 transition
+        text-sm text-white placeholder-white/50
+        outline-none focus:bg-white/30 transition
         "
         />
       </label>
@@ -64,7 +64,7 @@ export default function StartMenu() {
         ))}
       </section>
 
-      <section className="bg-white/10 rounded-xl p-3 flex flex-col gap-3">
+      <section className="bg-white/5 rounded-xl p-3 flex flex-col gap-3">
         <label>
           <div className="flex justify-between text-sm mb-1">
             <span>Brightness</span>
