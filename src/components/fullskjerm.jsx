@@ -1,7 +1,7 @@
 import React, { children, useState } from "react";
 import Image from "next/image";
 
-export default function Fullskjerm({ url, title, mode, onBack, onMinimize, children }) {
+export default function Fullskjerm({ url, title, mode, onBack, onMinimize, children, fullContent=false, }) {
   const [isFullscreen, setIsFullscreen] = useState(false);
 
 
@@ -92,7 +92,11 @@ const windowSize = isFullscreen
           width: "100%",
         }}
       />
-      ) : (
+      ) : fullContent ? (
+          <div className="w-full h-full overflow-hidden">
+        {children}
+        </div>
+        ) : (
         <div className="p-6">{children}</div>
       )}
     </div>
