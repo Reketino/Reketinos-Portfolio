@@ -1,5 +1,4 @@
 "use client";
-import { Icon } from "lucide-react";
 import { useState } from "react";
 import { FaPowerOff, FaCog, FaSearch, FaChrome, FaDiscord, FaGithub, FaTerminal } from "react-icons/fa";
 import { VscVscode } from "react-icons/vsc";

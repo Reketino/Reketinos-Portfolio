@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import Title3d from "@/components/title3d";
 import Desktop from "../components/desktop";
 import React from "react";
