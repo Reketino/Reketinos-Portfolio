@@ -4,12 +4,8 @@ import { FaGithub, FaYoutube } from "react-icons/fa";
 
 export default function BearWebStart({ onOpen }) {
   const shortcuts = [
-    { label: "Bearstocks", page: "stocks", icon: "/fabear.png" },
-    {
-      label: "Github",
-      url: "https://github.com/Reketino",
-      icon: <FaGithub size={32} />,
-    },
+    { label: "BearStocks", page: "stocks", icon: "/bearicon.png" },
+    { label: "Bear HoldEm", page: "holdem", icon: "/bearholdem.png"},
   ];
 
   return (
@@ -32,7 +28,7 @@ export default function BearWebStart({ onOpen }) {
             key={item.label}
             onClick={() => onOpen(item.page || item.url)}
             className="flex flex-col items-center justify-center
-             w-20 h-20
+             w-25 h-23
              rounded-full
              bg-neutral-800
              hover:bg-neutral-700
