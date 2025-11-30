@@ -13,7 +13,7 @@ import BearWebFrame from "./BearWeb/BearWebFrame";
 import TrashWindow from "./RecycleBin/trashwindow";
 import Error from "./RecycleBin/error";
 import BearCodeWindow from "./BearCode/bearcodewindow";
-import BearCode from "./BearCode/bearcode";
+
 
 export default function Desktop() {
   const [openFolder, setOpenFolder] = useState(false);
@@ -75,7 +75,7 @@ export default function Desktop() {
       startX: 150,
       startY: 0,
       label: "BearWeb",
-      image: "/webbear.png",
+      image: "/ohmybjorn.png",
       onOpen: () => setOpenApp("BearWeb"),
     },
     {
@@ -120,7 +120,7 @@ export default function Desktop() {
     Contact: "📨",
     Spotify: "/spoti.png",
     Flappy: "/flappy.png",
-    BearWeb: "/webbear.png",
+    BearWeb: "/ohmybjorn.png",
     Error: "/brokenfile.png",
     BearCode: "/vsbearcode.png"
   };
