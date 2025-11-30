@@ -19,8 +19,8 @@ export default function BearWebWindow() {
     if (lower.includes("bearstocks")) return setPage("stocks");
 
 
-    if (lower.includes("gamble")) return setPage("gambling");
-    if (lower.includes("casino")) return setPage("gambling");
+    if (lower.includes("holdem")) return setPage("holdem");
+    if (lower.includes("bearholdem")) return setPage("holdem");
 
 
     if (lower.includes("home")) return setPage("home");
@@ -46,7 +46,13 @@ onReload={() => setPage (page)}
         {page === "home" && (
             <BearWebStart onOpen={navigate} />
         )}   
-
+    
+        {page === "holdem" && (
+            <iframe
+            src="https://bear-hold-em-frontend.vercel.app/"
+            className="bw-iframe"
+            />
+        )}
 
         {page === "stocks" && (
             <iframe
