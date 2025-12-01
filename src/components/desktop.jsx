@@ -237,7 +237,7 @@ export default function Desktop() {
       {openApp === "project3" &&
         !minimizedApps.some((a) => a.id === "project3") && (
           <Fullskjerm
-            url="https://reketino-s-word-of-wisdom-31dr.vercel.app/"
+            url="https://words-of-wisdom-iota.vercel.app/"
             title="Word Of Wisdom"
             onBack={() => setOpenApp("Projects")}
             onMinimize={() => minimizeApp("project3")}
