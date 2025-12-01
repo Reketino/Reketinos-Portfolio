@@ -5,7 +5,7 @@ import React from 'react'
 export default function Error({ onBack, onMinimize }) {
   return (
     <Fullskjerm 
-    title="System File Viewer"
+    title="system32_critical_error.log"
     onBack={onBack}
     onMinimize={onMinimize}
     >
