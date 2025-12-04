@@ -1,4 +1,4 @@
-import React from 'react'
+"use client";
 import { useEffect, useRef, useState } from 'react'
 
 export default function NotFound() {
