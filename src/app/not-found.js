@@ -100,7 +100,8 @@ export default function NotFound() {
              />
           </svg>
           </section>
-
+          
+          <div className='absolute bottom-0 w-full h-1/3 bg-yellow-300' />
 
         </main>
       )
