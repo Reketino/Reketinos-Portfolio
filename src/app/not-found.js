@@ -24,8 +24,12 @@ export default function NotFound() {
         const key = (e) => {
           if (e.key === "ArrowLeft" || e.key === "a")
             setbearX((x)=> Math.max(0, x - 20));
-        }
-       })
+          if (e.key === "ArrowRight" || e.key === "d")
+            setbearX((x) => Math.min(300, x + 20));
+        };
+        window.addEventListener("keydown", key);
+        return () => window.removeEventListener("keydown", key);
+       }, []);
     
    
 }
