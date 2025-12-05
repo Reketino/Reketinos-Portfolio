@@ -13,7 +13,8 @@ export default function NotFound() {
           "https://cdn.pixabay.com/download/audio/2022/03/15/audio_2b30d83836.mp3?filename=happy-day-in-beach-hand-panwav-14755.mp3"
         ); 
         audio.loop = true;
-        audio.volume();
+        audio.volume = 0.4;
+        audio.play();
         audioRef.current = audio;
         
         return () => audioRef.current?.pause();
@@ -133,7 +134,18 @@ export default function NotFound() {
         ))}
         </section>
 
-
+        {over && (
+          <button
+          onClick={() => {
+            setOver(false);
+            setBugs([]);
+            audioRef.current?.play();
+          }}
+          className='absolute bottom-12 px-6 py-3 bg-black/60 border border-white/20 rounded-xl hover:bg-black/80 transition'
+          >
+            Restart
+          </button>
+        )}
         </main>
-      )
+      );
 }
