@@ -81,6 +81,11 @@ export default function NotFound() {
           <div className='absolute top-10 right-10 w-40 h-40 rounded-full bg-yellow-300 opacity-70'
           style={{ animation: "sunPulse 6s infinite ease-in-out" }}
           />
+
+
+          <h1 className='absolute top-16 text-[3rem] font-bold drop-shadow-xl text-yellow-100 tracking-wide'>
+            Bear on Holiday
+          </h1>
         </main>
       )
 }
