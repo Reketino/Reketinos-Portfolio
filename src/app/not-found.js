@@ -119,8 +119,18 @@ export default function NotFound() {
         }}
         />
 
-        {}
-        
+        {bugs.map((bug) => (
+          <div
+          key={bug.id}
+          className='absolute bg-red-500'
+          style={{
+            width: 25,
+            height: 25,
+            top: bug.y,
+            left: bug.x,
+          }}
+          />
+        ))}
         </section>
 
 
