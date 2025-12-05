@@ -18,6 +18,14 @@ export default function NotFound() {
         
         return () => audioRef.current?.pause();
        }, []); 
+
+
+       useEffect(() => {
+        const key = (e) => {
+          if (e.key === "ArrowLeft" || e.key === "a")
+            setbearX((x)=> Math.max(0, x - 20));
+        }
+       })
     
    
 }
