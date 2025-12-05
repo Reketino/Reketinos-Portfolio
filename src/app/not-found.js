@@ -63,4 +63,24 @@ export default function NotFound() {
       return () => clearInterval(loop);
       }, [bugs, bearX, over]);
    
+      return (
+        <main className='relative flex items-center justify-center min-h-screen text-white overflow-hidden bg-blue-300'>
+          <style>{`
+          @keyframes sunPulse {
+          0% { transform: scale(1); opacity: 1; }
+          50% { transform: scale(1.05); opacity: 0.85; }
+          100% { transform: scale(1); opacity: 1; }
+          }
+          @keyframes wave {
+          0% { background-position: 0 0; }
+          100% { background-position: 800px 0; }
+          }
+          `}</style>
+
+
+          <div className='absolute top-10 right-10 w-40 h-40 rounded-full bg-yellow-300 opacity-70'
+          style={{ animation: "sunPulse 6s infinite ease-in-out" }}
+          />
+        </main>
+      )
 }
