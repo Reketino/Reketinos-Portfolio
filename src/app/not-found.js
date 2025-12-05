@@ -81,6 +81,27 @@ export default function NotFound() {
           <div className='absolute top-10 right-10 w-40 h-40 rounded-full bg-yellow-300 opacity-70'
           style={{ animation: "sunPulse 6s infinite ease-in-out" }}
           />
+
+
+          <h1 className='absolute top-16 text-[3rem] font-bold drop-shadow-xl text-yellow-100 tracking-wide'>
+            Bear on Holiday
+          </h1>
+
+
+          <section className='absolute top-0 w-full h-1/3 overflow-hidden opacity-80'>
+          <svg
+          viewBox='0 0 1440 320'
+          className='absolute top-0 w-[200%] h-full animate-[waveSlide_12s_linear_infinite]'
+          preserveAspectRatio='none'
+          >
+            <path
+            fill='#4aa3ff'
+             d="M0,64L60,69.3C120,75,240,85,360,112C480,139,600,181,720,186.7C840,192,960,160,1080,149.3C1200,139,1320,149,1380,154.7L1440,160L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"
+             />
+          </svg>
+          </section>
+
+
         </main>
       )
 }
