@@ -102,6 +102,27 @@ export default function NotFound() {
           </section>
           
           <div className='absolute bottom-0 w-full h-1/3 bg-yellow-300' />
+        
+
+        <section className='relative w-[350px] h-[400px] overflow-hidden rounded-xl backdrop-blur-md bg-white/10 border border-white/20'>
+        
+
+        <div 
+        className='absolute bottom-4 transition-all'
+        style={{
+          left: bearX,
+          width: 40,
+          height: 40,
+          backgroundColor: "#d17a00",
+          borderRadius: "8px",
+          boxShadow: "0 0 10px rgba(255,255,255,0.4)",
+        }}
+        />
+
+        {}
+        
+        </section>
+
 
         </main>
       )
