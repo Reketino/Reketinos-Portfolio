@@ -31,5 +31,13 @@ export default function NotFound() {
         return () => window.removeEventListener("keydown", key);
        }, []);
     
+
+       useEffect(() => {
+        if (over) return;
+        const spawn = setInterval(() => {
+          setBugs((b) => [...b, { id: crypto.randomUUID(), x: Math.random() * 300, y: 0 }]);
+        }, 650);
+        return () => clearInterval (spawn);
+       }, [over]);
    
 }
