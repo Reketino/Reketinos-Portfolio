@@ -39,5 +39,28 @@ export default function NotFound() {
         }, 650);
         return () => clearInterval (spawn);
        }, [over]);
+
+
+       useEffect(() => {
+        if (over) return;
+        const loop = setInterval(() => { 
+          setBugs ((b) => 
+          b
+
+          .map((bug) => ({ ...bug, y: bug.y + 8 }))
+          .filter((bug) => bug.y < 420)
+          );
+
+          bugs.forEach((bug) => {
+            const hitX = Math.abs(bug.x - bearX) < 40;
+            const hitY = bug.y > 320 && bug.y < 360;
+            if (hitX && hitY) {
+              setOver(true);
+              audioRef.current?.pause();
+            }
+          });
+      }, 50);
+      return () => clearInterval(loop);
+      }, [bugs, bearX, over]);
    
 }
