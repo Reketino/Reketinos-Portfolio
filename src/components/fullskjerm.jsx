@@ -18,8 +18,14 @@ const windowSize = isFullscreen
 
       <div className=" relative flex items-center  bg-black px-4 py-2 text-white">
         <div className=" absolute left-4 flex gap-2">
-          <button onClick={onBack} className="text-sm text-white hover:bg-gray-700">
-            ⬅
+          <button onClick={onBack} 
+          className="p-1 rounded-transition hover:bg-gray-700">
+            <Image
+            src="/fscreenicon/back.png"
+            alt="Back"
+            width={30}
+            height={30}
+          />
           </button>
         </div>
 
@@ -33,7 +39,7 @@ const windowSize = isFullscreen
           className="p-1 hover:bg-gray-700 rounded-transition"
           >
             <Image
-              src="/minimize.png"
+              src="/fscreenicon/minimize.png"
               alt="Minimize"
               width={16}
               height={16}
@@ -45,7 +51,7 @@ const windowSize = isFullscreen
             className="p-1 hover:bg-gray-700 rounded-transition"
             >
               <Image
-                src={isFullscreen ? "/restoredown.png" : "/maximize.png"}
+                src={isFullscreen ? "/fscreenicon/restoredown.png" : "/fscreenicon/maximize.png"}
                 alt="Maximize"
                 width={16}
                 height={16}
@@ -57,7 +63,7 @@ const windowSize = isFullscreen
               className="p-1 hover:bg-red-600 rounded-transition"
             >
               <Image
-                src="/close.png"
+                src="/fscreenicon/close.png"
                 alt="Close"
                 width={16}
                 height={16}
