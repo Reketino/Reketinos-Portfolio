@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from 'react'
 
+
 export default function NotFound() {
   const [bearX, setbearX] = useState(150);
   const [bugs, setBugs] = useState([]);
@@ -9,15 +10,32 @@ export default function NotFound() {
 
 
    useEffect(() => {
-        const audio  = new Audio(
-          "https://cdn.pixabay.com/download/audio/2022/03/15/audio_2b30d83836.mp3?filename=happy-day-in-beach-hand-panwav-14755.mp3"
-        ); 
+     function startMusic() {
+      if (!audioRef.current) {
+        const audio = new Audio("/audio/beach.mp3")
         audio.loop = true;
         audio.volume = 0.4;
-        audio.play();
+
+        audio.play().catch(() => {
+          console.log("Autoplay is waking up after new interaction");
+        });
+
         audioRef.current = audio;
-        
-        return () => audioRef.current?.pause();
+      }
+
+
+      window.removeEventListener("click", startMusic);
+      window.removeEventListener("keydown", startMusic);
+     }
+
+     window.addEventListener("click", startMusic);
+     window.addEventListener("keydown", startMusic);
+
+
+     return () => {
+      window.removeEventListener("click", startMusic);
+      window.removeEventListener("keydown", startMusic);
+     }; 
        }, []); 
 
 
@@ -112,23 +130,26 @@ export default function NotFound() {
         className='absolute bottom-4 transition-all'
         style={{
           left: bearX,
-          width: 40,
-          height: 40,
-          backgroundColor: "#d17a00",
-          borderRadius: "8px",
-          boxShadow: "0 0 10px rgba(255,255,255,0.4)",
+          width: 60,
+          height: 60,
+          backgroundImage: "url('/sprites/bear.png')",
+          backgroundSize: "contain",
+          backgroundRepeat: "no-repeat",
         }}
         />
 
         {bugs.map((bug) => (
           <div
           key={bug.id}
-          className='absolute bg-red-500'
+          className='absolute'
           style={{
-            width: 25,
-            height: 25,
+            width: 40,
+            height: 40,
             top: bug.y,
             left: bug.x,
+            backgroundImage:"url('/sprites/bee.png')",
+            backgroundSize: "contain",
+            backgroundRepeat: "no-repeat",
           }}
           />
         ))}
