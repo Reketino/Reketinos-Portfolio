@@ -83,55 +83,21 @@ export default function NotFound() {
       }, [bugs, bearX, over]);
    
       return (
-        <main className='relative flex items-center justify-center min-h-screen text-white overflow-hidden bg-blue-300'>
-          <style>{`
-          @keyframes sunPulse {
-          0% { transform: scale(1); opacity: 1; }
-          50% { transform: scale(1.05); opacity: 0.85; }
-          100% { transform: scale(1); opacity: 1; }
-          }
-          @keyframes wave {
-          0% { background-position: 0 0; }
-          100% { background-position: 800px 0; }
-          }
-          `}</style>
-
-
-          <div className='absolute top-10 right-10 w-40 h-40 rounded-full bg-yellow-300 opacity-70'
-          style={{ animation: "sunPulse 6s infinite ease-in-out" }}
-          />
-
-
-          <h1 className='absolute top-16 text-[3rem] font-bold drop-shadow-xl text-yellow-100 tracking-wide'>
-            Bear on Holiday
-          </h1>
-
-
-          <section className='absolute top-0 w-full h-1/3 overflow-hidden opacity-80'>
-          <svg
-          viewBox='0 0 1440 320'
-          className='absolute top-0 w-[200%] h-full animate-[waveSlide_12s_linear_infinite]'
-          preserveAspectRatio='none'
-          >
-            <path
-            fill='#4aa3ff'
-             d="M0,64L60,69.3C120,75,240,85,360,112C480,139,600,181,720,186.7C840,192,960,160,1080,149.3C1200,139,1320,149,1380,154.7L1440,160L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"
-             />
-          </svg>
-          </section>
+        <main className='relative flex items-center justify-center min-h-screen text-white bg-contain bg-center bg-no-repeat'
+        style={{ backgroundImage: "url('sprites/background.png')"}}
+        >
           
-          <div className='absolute bottom-0 w-full h-1/3 bg-yellow-300' />
         
 
-        <section className='relative w-[350px] h-[400px] overflow-hidden rounded-xl backdrop-blur-md bg-white/10 border border-white/20'>
+        <section className='relative w-[350px] h-[400px] overflow-hidden rounded-xl backdrop-blur-xs bg-amber-100/10 border border-amber-100'>
         
 
         <div 
         className='absolute bottom-4 transition-all'
         style={{
           left: bearX,
-          width: 60,
-          height: 60,
+          width: 100,
+          height: 100,
           backgroundImage: "url('/sprites/bear.png')",
           backgroundSize: "contain",
           backgroundRepeat: "no-repeat",
@@ -143,8 +109,8 @@ export default function NotFound() {
           key={bug.id}
           className='absolute'
           style={{
-            width: 40,
-            height: 40,
+            width: 60,
+            height: 60,
             top: bug.y,
             left: bug.x,
             backgroundImage:"url('/sprites/bee.png')",
