@@ -1,5 +1,6 @@
-import React, { children, useState } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
+import Draggable from "./draggable";
 
 export default function Fullskjerm({ url, title, mode, onBack, onMinimize, children, fullContent=false, }) {
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -7,16 +8,36 @@ export default function Fullskjerm({ url, title, mode, onBack, onMinimize, child
 
 const windowSize = isFullscreen
 ? "fixed inset-0 pb-[--taskbar-height]"
-: "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[96%] h-[95%]"
+: "relative w-[96%] h-[95%]"
+
+const WindowWrapper = isFullscreen ? "div" : Draggable;
+const wrapperProps = isFullscreen 
+? {} 
+: {
+  id: title, 
+  startX: 
+  typeof window !== "undefined"
+  ? window.innerWidth * 0.5 - (window.innerWidth * 0.96) / 2
+  :200, 
+  startY: 
+  typeof window !== "undefined"
+  ? window.innerHeight * 0.5 - (window.innerHeight * 0.95) / 2
+  :150, 
+};
 
   return (
+    <WindowWrapper {...wrapperProps}>
     <div
       className={`${windowSize}
      bg-gray-900 z-50 rounded-lg shadow-2xl flex flex-col transition-all duration-500 `}
     >
+   
 
-
-      <div className=" relative flex items-center  bg-black px-4 py-2 text-white">
+      <div className=" relative flex items-center  bg-black px-4 py-2 text-white cursor-move"
+      onPointerDown={(e) => {
+        if (isFullscreen) e.stopPropagation();
+      }}
+      >
         <div className=" absolute left-4 flex gap-2">
           <button onClick={onBack} 
           className="p-1 rounded-transition hover:bg-gray-700">
@@ -107,5 +128,6 @@ const windowSize = isFullscreen
       )}
     </div>
     </div>
+     </WindowWrapper>
   );
 }
