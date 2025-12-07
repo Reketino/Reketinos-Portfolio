@@ -48,7 +48,7 @@ export default function NarrationTwo() {
 
         <audio
           ref={audioRef}
-          src="/hobby.mp3"
+          src="/audio/hobby.mp3"
           onEnded={() => setIsPlaying(false)}
         />
 
