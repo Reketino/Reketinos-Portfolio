@@ -64,6 +64,7 @@ export default function Draggable({
     width,
     height,
     zIndex: 999,
+    transform: "translate(0,0)",
   }
 
   return (
