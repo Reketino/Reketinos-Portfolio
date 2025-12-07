@@ -37,7 +37,7 @@ export default function Fullskjerm({ url, title, mode, onBack, onMinimize, child
     const x = window.innerWidth / 2 - w / 2;
     const y = window.innerHeight / 2 - h / 2;
 
-    setStartPos({ x: x + 250, y: y + 150 });
+    setStartPos({ x: x + 300, y: y + 120 });
   };
   
  recalc();
