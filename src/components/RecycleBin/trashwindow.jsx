@@ -4,7 +4,7 @@ import React from 'react'
 
 export default function TrashWindow({ onClose, onOpenFile }) {
     const playErrorSound = () => {
-        const audio = new Audio("/error.mp3")
+        const audio = new Audio("/audio/error.mp3")
         audio.volume = 0.5;
         audio.play();
     };

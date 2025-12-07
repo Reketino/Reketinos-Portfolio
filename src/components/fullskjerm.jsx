@@ -23,8 +23,8 @@ const windowSize = isFullscreen
             <Image
             src="/fscreenicon/back.png"
             alt="Back"
-            width={30}
-            height={30}
+            width={20}
+            height={20}
           />
           </button>
         </div>

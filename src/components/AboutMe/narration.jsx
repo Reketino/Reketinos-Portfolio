@@ -46,7 +46,7 @@ export default function Narration() {
 
       <audio 
       ref={audioRef} 
-      src='/narrationone.mp3' 
+      src='/audio/narrationone.mp3' 
       onEnded={() => setIsPlaying (false)}
       />
       
