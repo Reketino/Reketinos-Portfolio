@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Draggable from "./draggable";
 
@@ -6,29 +6,65 @@ export default function Fullskjerm({ url, title, mode, onBack, onMinimize, child
   const [isFullscreen, setIsFullscreen] = useState(false);
 
 
-const windowSize = isFullscreen
-? "fixed inset-0 pb-[--taskbar-height]"
-: "relative w-[96%] h-[95%]"
+ const initialPos = typeof window !== "undefined"
+ ? {
+  x: window.innerWidth * 0.5 - (window.innerWidth * 0.96) / 2,
+  y: window.innerHeight * 0.5 - (window.innerHeight * 0.95) / 2,
+ }
+ : { x: 200, y: 150 };
 
-const WindowWrapper = isFullscreen ? "div" : Draggable;
-const wrapperProps = isFullscreen 
-? {} 
-: {
-  id: title, 
-  startX: 
-  typeof window !== "undefined"
-  ? window.innerWidth * 0.5 - (window.innerWidth * 0.96) / 2
-  :200, 
-  startY: 
-  typeof window !== "undefined"
-  ? window.innerHeight * 0.5 - (window.innerHeight * 0.95) / 2
-  :150, 
-};
+  const [startPos, setStartPos] = useState(initialPos);
+
+
+  const wrapperWidth = 
+  typeof window !== "undefined" 
+  ? `${Math.min(1400, Math.round(window.innerWidth * 0.96))}px` 
+  : "900px";
+
+
+  const wrapperHeight = 
+  typeof window !== "undefined" 
+  ? `${Math.min(900, Math.round(window.innerHeight * 0.95))}px` 
+  : "700px";
+
+  useEffect(() => {
+    if (isFullscreen) return;
+
+    const recalc = () => {
+    const w = window.innerWidth * 0.96;
+    const h = window.innerHeight * 0.95;
+
+    const x = window.innerWidth / 2 - w / 2;
+    const y = window.innerHeight / 2 - h / 2;
+
+    setStartPos({ x, y });
+  };
+  
+ recalc();
+
+ window.addEventListener("resize", recalc);
+ return () => window.removeEventListener("resize", recalc);
+  }, [isFullscreen]);
+
+   const wrapperProps = {
+    id: title ?? "window",
+    startX: startPos.x,
+    startY: startPos.y,
+    width: wrapperWidth,
+    height: wrapperHeight,
+    disabled: isFullscreen,
+  };
+
+
+
+const windowSizeClass = isFullscreen
+  ? "fixed inset-0 pb-[--taskbar-height]"
+  : "w-[100%] h-[100%]";
 
   return (
-    <WindowWrapper {...wrapperProps}>
+    <Draggable {...wrapperProps}>
     <div
-      className={`${windowSize}
+      className={`${windowSizeClass}
      bg-gray-900 z-50 rounded-lg shadow-2xl flex flex-col transition-all duration-500 `}
     >
    
@@ -128,6 +164,6 @@ const wrapperProps = isFullscreen
       )}
     </div>
     </div>
-     </WindowWrapper>
+     </Draggable>
   );
 }
