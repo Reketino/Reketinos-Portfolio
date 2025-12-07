@@ -2,14 +2,12 @@
 import { React, useState } from "react";
 import Image from "next/image";
 
-
 export default function BearWebFrame({ title, onBack, onMinimize, children }) {
   const [fullscreen, setFullscreen] = useState(false);
 
-
-const handleMinimize = () => {
-    if (onMinimize) onMinimize(); 
-};
+  const handleMinimize = () => {
+    if (onMinimize) onMinimize();
+  };
 
   return (
     <section
@@ -24,7 +22,12 @@ const handleMinimize = () => {
     >
       <header className="flex items-center justify-between bg-neutral-900 px-4 py-2">
         <button onClick={onBack} className="hover:bg-neutral-700 px-2 rounded">
-          ⬅
+          <Image
+            src="/fscreenicon/back.png"
+            alt="Back"
+            width={20}
+            height={20}
+          />
         </button>
 
         <h2 className="pointer-events-none">{title}</h2>
@@ -34,7 +37,12 @@ const handleMinimize = () => {
             onClick={onMinimize}
             className="hover:bg-neutral-700 p-1 rounded"
           >
-            <Image src="/fscreenicon/minimize.png" alt="min" width={16} height={16} />
+            <Image
+              src="/fscreenicon/minimize.png"
+              alt="min"
+              width={16}
+              height={16}
+            />
           </button>
 
           <button
@@ -42,7 +50,11 @@ const handleMinimize = () => {
             className="hover:bg-neutral-700 p-1 rounded"
           >
             <Image
-              src={fullscreen ? "/fscreenicon/restoredown.png" : "/fscreenicon/maximize.png"}
+              src={
+                fullscreen
+                  ? "/fscreenicon/restoredown.png"
+                  : "/fscreenicon/maximize.png"
+              }
               alt="full"
               width={16}
               height={16}
@@ -50,7 +62,12 @@ const handleMinimize = () => {
           </button>
 
           <button onClick={onBack} className="hover:bg-red-600 p-1 rounded">
-            <Image src="/close.png" alt="close" width={16} height={16} />
+            <Image
+              src="/fscreen/close.png"
+              alt="close"
+              width={16}
+              height={16}
+            />
           </button>
         </div>
       </header>
