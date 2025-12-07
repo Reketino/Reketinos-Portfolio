@@ -34,7 +34,7 @@ const handleMinimize = () => {
             onClick={onMinimize}
             className="hover:bg-neutral-700 p-1 rounded"
           >
-            <Image src="/minimize.png" alt="min" width={16} height={16} />
+            <Image src="/fscreenicon/minimize.png" alt="min" width={16} height={16} />
           </button>
 
           <button
@@ -42,7 +42,7 @@ const handleMinimize = () => {
             className="hover:bg-neutral-700 p-1 rounded"
           >
             <Image
-              src={fullscreen ? "/restoredown.png" : "/maximize.png"}
+              src={fullscreen ? "/fscreenicon/restoredown.png" : "/fscreenicon/maximize.png"}
               alt="full"
               width={16}
               height={16}

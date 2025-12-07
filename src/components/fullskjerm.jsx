@@ -11,21 +11,21 @@ export default function Fullskjerm({ url, title, mode, onBack, onMinimize, child
   x: window.innerWidth * 0.5 - (window.innerWidth * 0.96) / 2,
   y: window.innerHeight * 0.5 - (window.innerHeight * 0.95) / 2,
  }
- : { x: 200, y: 150 };
+ : { x: 500, y: 500 };
 
   const [startPos, setStartPos] = useState(initialPos);
 
 
   const wrapperWidth = 
   typeof window !== "undefined" 
-  ? `${Math.min(1400, Math.round(window.innerWidth * 0.96))}px` 
-  : "900px";
+  ? `${Math.min(1400, Math.round(window.innerWidth * 0.70))}px` 
+  : "700px";
 
 
   const wrapperHeight = 
   typeof window !== "undefined" 
-  ? `${Math.min(900, Math.round(window.innerHeight * 0.95))}px` 
-  : "700px";
+  ? `${Math.min(900, Math.round(window.innerHeight * 0.70))}px` 
+  : "400px";
 
   useEffect(() => {
     if (isFullscreen) return;
@@ -37,7 +37,7 @@ export default function Fullskjerm({ url, title, mode, onBack, onMinimize, child
     const x = window.innerWidth / 2 - w / 2;
     const y = window.innerHeight / 2 - h / 2;
 
-    setStartPos({ x, y });
+    setStartPos({ x: x + 250, y: y + 150 });
   };
   
  recalc();
@@ -46,27 +46,18 @@ export default function Fullskjerm({ url, title, mode, onBack, onMinimize, child
  return () => window.removeEventListener("resize", recalc);
   }, [isFullscreen]);
 
-   const wrapperProps = {
-    id: title ?? "window",
-    startX: startPos.x,
-    startY: startPos.y,
-    width: wrapperWidth,
-    height: wrapperHeight,
-    disabled: isFullscreen,
-  };
-
-
-
-const windowSizeClass = isFullscreen
-  ? "fixed inset-0 pb-[--taskbar-height]"
-  : "w-[100%] h-[100%]";
-
-  return (
-    <Draggable {...wrapperProps}>
+   const WindowContent = (
+   
     <div
-      className={`${windowSizeClass}
-     bg-gray-900 z-50 rounded-lg shadow-2xl flex flex-col transition-all duration-500 `}
-    >
+    className={`bg-gray-900 z-50 rounded-lg shadow-2xl flex flex-col transition-all duration-300
+      ${isFullscreen ? "fixed inset-0 pb-[--taskbar-height]" : ""}
+    `}
+    style={
+      isFullscreen
+        ? {}
+        : { width: wrapperWidth, height: wrapperHeight }
+    }
+  >
    
 
       <div className=" relative flex items-center  bg-black px-4 py-2 text-white cursor-move"
@@ -164,6 +155,20 @@ const windowSizeClass = isFullscreen
       )}
     </div>
     </div>
-     </Draggable>
   );
+
+
+  if (isFullscreen) return WindowContent;
+
+  return ( 
+  <Draggable
+  id={title}
+  startX={startPos.x}
+  startY={startPos.y}
+  width={wrapperWidth}
+  height={wrapperHeight}
+  >
+    {WindowContent}
+  </Draggable>
+  )
 }
