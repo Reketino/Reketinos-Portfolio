@@ -49,7 +49,9 @@ export default function Fullskjerm({ url, title, mode, onBack, onMinimize, child
    const WindowContent = (
    
     <div
-    className={`bg-gray-900 z-50 rounded-lg shadow-2xl flex flex-col transition-all duration-300
+    className={`bg-gray-900 z-50 rounded-lg shadow-2xl flex flex-col 
+      transition-all duration-300
+      animate-window-pop
       ${isFullscreen ? "fixed inset-0 pb-[--taskbar-height]" : ""}
     `}
     style={
