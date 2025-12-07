@@ -1,10 +1,24 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
 
-export default function Draggable({ id, children, startX = 0, startY = 0 }) {
+export default function Draggable({ 
+  id, 
+  children, 
+  startX = 0, 
+  startY = 0,
+  width = "900px",
+  height = "700px",
+ }) {
   const ref = useRef(null);
-  const [pos, setPos] = useState({ x: startX, y: startY });
+  const [pos, setPos] = useState({ x: startX ?? 0, y: startY ?? 0 });
   const [isMobile, setIsMobile] = useState(false);
+
+
+  useEffect(() => {
+    if (startX !== undefined && startY !== undefined) {
+    setPos({ x: startX, y: startY });
+    }
+  }, [startX, startY]);
 
   useEffect(() => {
     setIsMobile(typeof window !== "undefined" ? window.innerWidth < 768 : false);
@@ -47,10 +61,9 @@ export default function Draggable({ id, children, startX = 0, startY = 0 }) {
     position: "absolute",
     left: pos.x,
     top: pos.y,
-    display: "block",
-    width: "800px",
-    height: "600px",
-    zIndex: 50,
+    width,
+    height,
+    zIndex: 999,
   }
 
   return (
