@@ -82,8 +82,8 @@ export default function ResizeWindow({
                     newY = initY + dy;
                 }
 
-                if (newH > 300 && newH > 200) {
-                    setSize({ w: newH, h: newH });
+                if (newW > 300 && newH > 200) {
+                    setSize({ w: newW, h: newH });
                     setPos({ x: newX, y: newY });
                 }
             }
@@ -98,8 +98,64 @@ export default function ResizeWindow({
     }
 
   return (
-    <main>
-      
+    <main
+    onPointerDown={onDrag}
+    className='absolute select-none'
+    style={{
+        left: pos.x,
+        top: pos.y,
+        width: size.w,
+        height: size.h,
+        zIndex: 999,
+    }}
+    >
+        <section className='w-full h-full relative rounded-lg overflow-hidden shadow-xl'>
+            {children}
+        </section>
+
+    {/* Rezise handling/corners */}
+        <div 
+        data-resize
+        onPointerDown={(e) => onResizeDown(e, "top-left")}
+        className='absolute top-0 left-0 w-4 h-4 cursor-nwse-resize'
+        />
+        <div 
+        data-resize
+        onPointerDown={(e) => onResizeDown(e, "top-right")}
+        className='absolute top-0 right-0 w-4 h-4 cursor-nwse-resize'
+        />
+        <div 
+        data-resize
+        onPointerDown={(e) => onResizeDown(e, "bottom-left")}
+        className='absolute bottom-0 left-0 w-4 h-4 cursor-nwse-resize'
+        />
+        <div 
+        data-resize
+        onPointerDown={(e) => onResizeDown(e, "bottom right")}
+        className='absolute bottom-0 right-0 w-4 h-4 cursor-nwse-resize'
+        />
+
+    {/* Resize handling edges */}
+        <section 
+        data-resize
+        onPointerDown={(e) => onResizeDown(e, "top")}
+        className='absolute top-0 left-4 right-4 h-2 cursor-ns-resize'
+        />
+        <section 
+        data-resize
+        onPointerDown={(e) => onResizeDown(e, "bottom")}
+        className='absolute bottom-0 left-4 right-4 h-2 cursor-ns-resize'
+        />
+        <section 
+        data-resize
+        onPointerDown={(e) => onResizeDown(e, "left")}
+        className='absolute left-0 top-4 bottom-4 w-2 cursor-ew-resize'
+        />
+        <section 
+        data-resize
+        onPointerDown={(e) => onResizeDown(e, "right")}
+        className='absolute right-0 top-4 bottom-4 w-2 cursor-ew-resize'
+        />
     </main>
-  )
+  );
 }
