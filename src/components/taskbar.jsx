@@ -65,13 +65,20 @@ export default function Taskbar({ minimizedApps, onRestore }) {
           <button
             key={app.id}
             onClick={() => onRestore(app.id)}
-            className="px-2 py-1 bg-gray-700/50 hover:bg-gray-600 rounded-md flex items-center gap-1 text-xs text-white transition"
+            className="
+            w-10 h-10 
+            bg-gray-700/10 
+            hover:bg-gray-600/30 
+            rounded-md 
+            flex items-center justify-center gap-1 
+            text-xs text-white transition
+            mx-1 overflow-hidden"
           >
             {app.icon.endsWith(".png") ? (
               <img
                 src={app.icon}
                 alt={app.id}
-                className="w-5 h-5 object-contain"
+                className="w-6 h-6 object-contain"
               />
             ) : (
               <span className="text-lg">{app.icon}</span>
