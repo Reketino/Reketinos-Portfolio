@@ -6,17 +6,25 @@ export default function Fullskjerm({ url, title, mode, onBack, onMinimize, child
   const [isFullscreen, setIsFullscreen] = useState(false);
 
 
-  const isMobile =
-  typeof window !== "undefined" && window.innerWidth < 768;
+  const [isMobile, setIsMobile] = useState(null);
+  const [isReady, setIsReady] = useState(false);
+  
 
- const initialPos = typeof window !== "undefined"
- ? {
-  x: isMobile
-  ? 0
-  : window.innerWidth * 0.5 - (window.innerWidth * 0.96) / 2,
-  y: isMobile
-  ? 0 
-  : window.innerHeight * 0.5 - (window.innerHeight * 0.95) / 2,
+  useEffect(() => { 
+    if (typeof window !== "undefined") {
+      setIsMobile(window.innerWidth < 768);
+      setIsReady (true);
+    }
+  }, []);
+
+
+ const initialPos = 
+ isMobile
+  ? { x: 0, y: 0 }
+  : typeof window !== "undefined"
+  ? { 
+     x: window.innerWidth * 0.5 - (window.innerWidth * 0.96) / 2,
+     y: window.innerHeight * 0.5 - (window.innerHeight * 0.95) / 2,
  }
  : { x: 0, y: 0 };
 
@@ -39,6 +47,7 @@ export default function Fullskjerm({ url, title, mode, onBack, onMinimize, child
   : "400px";
 
   useEffect(() => {
+    if(!isReady) return;
     if (isFullscreen) return;
 
     if (isMobile) {
@@ -56,11 +65,13 @@ export default function Fullskjerm({ url, title, mode, onBack, onMinimize, child
     setStartPos({ x: x + 300, y: y + 120 });
   };
   
+  
  recalc();
-
  window.addEventListener("resize", recalc);
  return () => window.removeEventListener("resize", recalc);
-  }, [isFullscreen, isMobile]);
+  }, [isFullscreen, isMobile,isReady]);
+
+  if (!isReady) return null;
 
    const WindowContent = (
    
