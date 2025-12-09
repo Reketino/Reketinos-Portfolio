@@ -19,7 +19,9 @@ export default function TrashWindow({ onClose, onOpenFile }) {
 
   return (
     <main 
-    className='absolute top-24 left-24
+    className='
+    fixed top-1/2 left-1/2
+    -translate-x-1/2 -translate-y-1/2
     w-80 bg-black/70 backdrop-blur-xl
     border border-white/10 rounded-xl
     shadow-2xl p-4 z-9999'
