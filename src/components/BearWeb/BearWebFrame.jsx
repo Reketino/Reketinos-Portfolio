@@ -63,7 +63,7 @@ export default function BearWebFrame({ title, onBack, onMinimize, children }) {
 
           <button onClick={onBack} className="hover:bg-red-600 p-1 rounded">
             <Image
-              src="/fscreen/close.png"
+              src="/fscreenicon/close.png"
               alt="close"
               width={16}
               height={16}
