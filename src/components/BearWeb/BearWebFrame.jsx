@@ -21,7 +21,7 @@ export default function BearWebFrame({ title, onBack, onMinimize, children }) {
                 `}
     >
       <header className="flex items-center justify-between bg-neutral-900 px-4 py-2">
-        <button onClick={onBack} className="hover:bg-neutral-700 px-2 rounded">
+        <button onClick={onBack} className="hover:bg-neutral-700 p-1 rounded">
           <Image
             src="/fscreenicon/back.png"
             alt="Back"
