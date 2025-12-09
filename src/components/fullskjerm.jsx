@@ -6,29 +6,45 @@ export default function Fullskjerm({ url, title, mode, onBack, onMinimize, child
   const [isFullscreen, setIsFullscreen] = useState(false);
 
 
+  const isMobile =
+  typeof window !== "undefined" && window.innerWidth < 768;
+
  const initialPos = typeof window !== "undefined"
  ? {
-  x: window.innerWidth * 0.5 - (window.innerWidth * 0.96) / 2,
-  y: window.innerHeight * 0.5 - (window.innerHeight * 0.95) / 2,
+  x: isMobile
+  ? 0
+  : window.innerWidth * 0.5 - (window.innerWidth * 0.96) / 2,
+  y: isMobile
+  ? 0 
+  : window.innerHeight * 0.5 - (window.innerHeight * 0.95) / 2,
  }
- : { x: 500, y: 500 };
+ : { x: 0, y: 0 };
 
   const [startPos, setStartPos] = useState(initialPos);
 
 
   const wrapperWidth = 
   typeof window !== "undefined" 
-  ? `${Math.min(1400, Math.round(window.innerWidth * 0.70))}px` 
+  ? isMobile
+  ? "100vw"
+  :`${Math.min(1400, Math.round(window.innerWidth * 0.70))}px` 
   : "700px";
 
 
   const wrapperHeight = 
   typeof window !== "undefined" 
-  ? `${Math.min(900, Math.round(window.innerHeight * 0.70))}px` 
+  ? isMobile 
+  ? "100vh"
+  : `${Math.min(900, Math.round(window.innerHeight * 0.70))}px` 
   : "400px";
 
   useEffect(() => {
     if (isFullscreen) return;
+
+    if (isMobile) {
+      setStartPos({ x: 0, y: 0})
+      return;
+    }
 
     const recalc = () => {
     const w = window.innerWidth * 0.96;
@@ -44,7 +60,7 @@ export default function Fullskjerm({ url, title, mode, onBack, onMinimize, child
 
  window.addEventListener("resize", recalc);
  return () => window.removeEventListener("resize", recalc);
-  }, [isFullscreen]);
+  }, [isFullscreen, isMobile]);
 
    const WindowContent = (
    
@@ -160,7 +176,7 @@ export default function Fullskjerm({ url, title, mode, onBack, onMinimize, child
   );
 
 
-  if (isFullscreen) return WindowContent;
+  if (isFullscreen || isMobile) return WindowContent;
 
   return ( 
   <Draggable
