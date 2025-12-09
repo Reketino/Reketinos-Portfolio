@@ -14,7 +14,6 @@ import TrashWindow from "./RecycleBin/trashwindow";
 import Error from "./RecycleBin/error";
 import BearCodeWindow from "./BearCode/bearcodewindow";
 
-
 export default function Desktop() {
   const [openFolder, setOpenFolder] = useState(false);
   const [openApp, setOpenApp] = useState(null);
@@ -87,12 +86,12 @@ export default function Desktop() {
       onOpen: () => setOpenApp("RecycleBin"),
     },
     {
-    id: "BearCode",
-    startX: 150,
-    startY: 240,
-    label: "BearCode",
-    image:"/vsbearcode.png",
-    onOpen: () => setOpenApp("BearCode"),
+      id: "BearCode",
+      startX: 150,
+      startY: 240,
+      label: "BearCode",
+      image: "/vsbearcode.png",
+      onOpen: () => setOpenApp("BearCode"),
     },
   ];
 
@@ -122,7 +121,7 @@ export default function Desktop() {
     Flappy: "/flappy.png",
     BearWeb: "/ohmybjorn.png",
     Error: "/brokenfile.png",
-    BearCode: "/vsbearcode.png"
+    BearCode: "/vsbearcode.png",
   };
 
   const minimizeApp = (id) => {
@@ -138,13 +137,14 @@ export default function Desktop() {
   return (
     <main className="w-full h-screen overflow-hidden md:overflow-visible">
       <section
-        className="md:fixed md:left-10 md:top-52
-      relative
-      w-full md:w-[300px]
-      grid grid-cols-2
-      md:block
-      place-items-center
-      gap-8 pt-10"
+        className="
+        relative
+        w-full
+        
+        grid grid-cols-3 gap-6 px-6 pt-10
+        
+        md:fixed md:left-10 md:top-52 md:w-[300px]
+        md:block md:px-0 md:pt-0"
       >
         {DesktopIcons.map((icon) => (
           <div key={icon.id}>
@@ -325,13 +325,13 @@ export default function Desktop() {
           </BearWebFrame>
         )}
 
-        {openApp === "BearCode" &&
-          !minimizedApps.some((a) => a.id === "BearCode") && (
+      {openApp === "BearCode" &&
+        !minimizedApps.some((a) => a.id === "BearCode") && (
           <BearCodeWindow
-          onBack={() => setOpenApp(null)}
-          onMinimize={() => minimizeApp("BearCode")}
+            onBack={() => setOpenApp(null)}
+            onMinimize={() => minimizeApp("BearCode")}
           />
-          )}
+        )}
 
       {/* Backgrounds folder */}
       {openFolder && <BgWindow onClose={() => setOpenFolder(false)} />}
