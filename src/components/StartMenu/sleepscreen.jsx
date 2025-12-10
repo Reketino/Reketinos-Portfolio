@@ -49,6 +49,21 @@ export default function SleepScreen() {
         `}
     >
       
+    <section className="
+    absolute inset-0 pointer-events-none
+    before:content-[''] before:absolute before:inset-0
+    before:bg-[linear-gradient(rgba(255,0,0,0.04)_1px,transparent_1px)]
+    " />
+
+
+    <header className='relative text-center'>
+    <p className='font-mono text-red-950 text-4xl animate-pulse'>
+        Bear Evens Portfolio
+    </p>
+    <p className='mt-4 font-mono text-red-50 text-sm'>
+        press any button to wake
+    </p>
+    </header>
     </main>
-  )
+  );
 }
