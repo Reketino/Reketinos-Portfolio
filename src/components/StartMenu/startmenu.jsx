@@ -14,6 +14,7 @@ import { VscVscode } from "react-icons/vsc";
 export default function StartMenu() {
   const [brightness, setBrightness] = useState(100);
   const [volume, setVolume] = useState(50);
+  const [settingsOpen, setSettingsOpen] = useState (false);
 
   const apps = [
     { name: "VSCode", icon: <VscVscode className="text-sky-400" /> },
@@ -70,7 +71,38 @@ export default function StartMenu() {
         ))}
       </section>
 
-      <section className="bg-white/5 rounded-xl p-3 flex flex-col gap-3">
+
+      <footer className="flex justify-between items-center mt-4 pt-3 border-t border-white/10 flex-row-reverse">
+        <button 
+        onClick={() => setSettingsOpen(!settingsOpen)}
+        className="flex items-center gap-2 hover:bg-white/10 px-3 py-1.5 rounded-lg transition">
+          <FaCog />
+          <span className="text-sm">Settings</span>
+        </button>
+
+        <button
+          onClick={() => window.enterSleep && window.enterSleep()}
+          className="flex items-center gap-2 hover:bg-red-500/20 px-3 py-1.5 rounded-lg transition text-red-400"
+        >
+          <FaPowerOff />
+          <span className="text-sm">Power</span>
+        </button>
+      </footer>
+
+    
+      { settingsOpen && (
+        <section
+        className="
+        absolute bottom-14 left-0 w-full
+        bg-black/95 backdrop-blur-2xl
+        border border-white/10 p-4 rounded-xl shadow-xl
+        animate-in fade-in slide-in-from-bottom-1
+        flex flex-col gap-4
+        "
+        >
+          <h3 className="text-lg font-semibold mb-1"> Settings</h3>
+
+       
         <label>
           <div className="flex justify-between text-sm mb-1">
             <span>Brightness</span>
@@ -89,6 +121,7 @@ export default function StartMenu() {
           />
         </label>
 
+
         <label>
           <div className="flex justify-between text-sm mb-1">
             <span>Volume</span>
@@ -103,22 +136,8 @@ export default function StartMenu() {
             className="w-full"
           />
         </label>
-      </section>
-
-      <footer className="flex justify-between items-center mt-4 pt-3 border-t border-white/10">
-        <button className="flex items-center gap-2 hover:bg-white/10 px-3 py-1.5 rounded-lg transition">
-          <FaCog />
-          <span className="text-sm">Settings</span>
-        </button>
-
-        <button
-          onClick={() => window.enterSleep && window.enterSleep()}
-          className="flex items-center gap-2 hover:bg-red-500/20 px-3 py-1.5 rounded-lg transition text-red-400"
-        >
-          <FaPowerOff />
-          <span className="text-sm">Power</span>
-        </button>
-      </footer>
+        </section>
+      )}
     </aside>
   );
 }
