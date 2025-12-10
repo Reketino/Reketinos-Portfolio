@@ -1,19 +1,26 @@
 "use client";
 import { useState } from "react";
-import { FaPowerOff, FaCog, FaSearch, FaChrome, FaDiscord, FaGithub, FaTerminal } from "react-icons/fa";
+import {
+  FaPowerOff,
+  FaCog,
+  FaSearch,
+  FaChrome,
+  FaDiscord,
+  FaGithub,
+  FaTerminal,
+} from "react-icons/fa";
 import { VscVscode } from "react-icons/vsc";
 
 export default function StartMenu() {
   const [brightness, setBrightness] = useState(100);
   const [volume, setVolume] = useState(50);
 
-
   const apps = [
-    { name: "VSCode", icon: <VscVscode className="text-sky-400"  /> },
+    { name: "VSCode", icon: <VscVscode className="text-sky-400" /> },
     { name: "Chrome", icon: <FaChrome className="text-blue-400" /> },
     { name: "Discord", icon: <FaDiscord className="text-indigo-400" /> },
-    { name: "Github", icon: <FaGithub className="text-gray-300" />},
-    { name: "Terminal", icon: <FaTerminal className="text-green-400" />},
+    { name: "Github", icon: <FaGithub className="text-gray-300" /> },
+    { name: "Terminal", icon: <FaTerminal className="text-green-400" /> },
   ];
 
   return (
@@ -104,7 +111,10 @@ export default function StartMenu() {
           <span className="text-sm">Settings</span>
         </button>
 
-        <button className="flex items-center gap-2 hover:bg-red-500/20 px-3 py-1.5 rounded-lg transition text-red-400">
+        <button
+          onClick={() => window.enterSleep && window.enterSleep()}
+          className="flex items-center gap-2 hover:bg-red-500/20 px-3 py-1.5 rounded-lg transition text-red-400"
+        >
           <FaPowerOff />
           <span className="text-sm">Power</span>
         </button>
