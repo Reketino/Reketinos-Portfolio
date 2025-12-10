@@ -8,20 +8,31 @@ export default function SleepScreen() {
 
   //   Trigger functions globally
   useEffect(() => {
-    window.enterSleep = () => setActive(true);
-    window.exitSleep = () => setActive(false);
+    window.enterSleep = () => {
+      if (window.closeStartMenu) window.closeStartMenu();
+
+      window.disableStartMenuClick = true;
+
+      setActive(true);
+    };
+
+    window.exitSleep = () => {
+      setFade(false);
+
+      setTimeout(() => {
+        window.disableStartMenuClick = false;
+        setActive(false);
+      }, 300);
+    };
   }, []);
 
-  //   Fade handling + wake up behavior
   useEffect(() => {
     if (!active) return;
 
-    // Fade in Trigger
     setTimeout(() => setFade(true), 10);
 
     const wake = () => {
-      setFade(false);
-      setTimeout(() => setActive(false), 250);
+      window.exitSleep();
     };
 
     window.addEventListener("keydown", wake, { once: true });
