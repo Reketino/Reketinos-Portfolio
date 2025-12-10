@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import { React, useState, useEffect } from "react";
 import { FaLinkedin, FaGithub, FaFacebook, FaInstagram } from "react-icons/fa";
@@ -9,10 +10,18 @@ export default function Taskbar({ minimizedApps, onRestore }) {
   const [time, setTime] = useState(new Date());
   const [openStart, setOpenStart] = useState(false);
 
+  
   useEffect(() => {
-    const handleClick = () => setOpenStart(false);
-    window.addEventListener("click", handleClick);
-    return () => window.removeEventListener("click", handleClick);
+    window.closeStartMenu = () => setOpenStart(false);
+  }, []);
+
+  useEffect(() => {
+    const handleClick = () => {
+      if (window.disableStartMenuClick) return;
+      setOpenStart(false);
+    };
+  window.addEventListener("click", handleClick);
+  return () => window.removeEventListener("click", handleClick);
   }, []);
 
   useEffect(() => {

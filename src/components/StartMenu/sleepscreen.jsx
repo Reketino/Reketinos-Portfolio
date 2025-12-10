@@ -3,8 +3,8 @@
 import { useEffect, useState } from "react";
 
 export default function SleepScreen() {
-  const { active, setActive } = useState(false);
-  const { fade, setFade } = useState(false);
+  const [active, setActive] = useState(false);
+  const [fade, setFade] = useState(false);
 
   //   Trigger functions globally
   useEffect(() => {
