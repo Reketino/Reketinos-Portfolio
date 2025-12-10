@@ -3,7 +3,7 @@ import { React, useState, useEffect } from "react";
 import { FaLinkedin, FaGithub, FaFacebook, FaInstagram } from "react-icons/fa";
 import Image from "next/image";
 import WeatherApp from "./weatherapp";
-import StartMenu from "./startmenu";
+import StartMenu from "./StartMenu/startmenu";
 
 export default function Taskbar({ minimizedApps, onRestore }) {
   const [time, setTime] = useState(new Date());
