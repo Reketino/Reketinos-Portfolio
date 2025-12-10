@@ -40,7 +40,14 @@ export default function SleepScreen() {
   if (!active) return null;
   
     return (
-    <main>
+    <main
+    className={`
+        fixed inset-0 z-999999
+        flex items-center justify-center
+        bg-black transition-opacity duration-300
+        ${fade ? "opacity-100" : "opacity-0"}
+        `}
+    >
       
     </main>
   )
