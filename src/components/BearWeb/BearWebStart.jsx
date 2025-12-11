@@ -1,8 +1,10 @@
 "use client";
-import React from "react";
-import { FaGithub, FaYoutube } from "react-icons/fa";
+import React, { useState } from "react";
+import { FaGithub, FaYoutube, FaSearch } from "react-icons/fa";
 
 export default function BearWebStart({ onOpen }) {
+  const [query, setQuery] = useState("");
+
   const shortcuts = [
     { label: "BearStocks", page: "stocks", icon: "/bearicon.png" },
     { label: "Bear HoldEm", page: "holdem", icon: "/bearholdem.png"},
@@ -19,8 +21,33 @@ export default function BearWebStart({ onOpen }) {
         <span className="text-pink-400">e</span>
         <span className="text-cyan-400">b</span>
       </h1>
+    
+    <header className="flex justify-center mt-2">
+      <div className="
+      flex items-center gap-2
+      bg-neutral-800/80 border border-neutral-700
+      px-4 py-2 rounded-full shadow-md
+      w-[500px]
+      focus-within:border-neutral-500
+      transition-all
+      ">
+        <FaSearch className="text-neutral-400 text-sm" />
 
-      <p className="bw-start-sub">Your bearowser - powered by Bear Even 🐻</p>
+        <input
+        type="text"
+        placeholder="Search the BearWeb"
+        className="
+        bg-transparent text-neutral-200 placeholder-neutral-500
+        focus:outline-none text-sm w-full
+        "
+      value={query}
+      onChange={(e) => setQuery (e.target.value)}
+      />
+      </div>
+    </header>
+
+
+      <p className="bw-start-sub">Your Bearowser - powered by Bear Even 🐻</p>
 
       <section className="mt-6 flex flex-wrap justify-center gap-6">
         {shortcuts.map((item) => (
