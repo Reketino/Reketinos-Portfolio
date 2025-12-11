@@ -14,7 +14,8 @@ import { VscVscode } from "react-icons/vsc";
 export default function StartMenu() {
   const [brightness, setBrightness] = useState(100);
   const [volume, setVolume] = useState(50);
-  const [settingsOpen, setSettingsOpen] = useState (false);
+  const [settingsVisible, setSettingsVisible] = useState(false);
+  const [settingsOpen, setSettingsOpen] = useState(false);
 
   const apps = [
     { name: "VSCode", icon: <VscVscode className="text-sky-400" /> },
@@ -71,11 +72,19 @@ export default function StartMenu() {
         ))}
       </section>
 
-
       <footer className="flex justify-between items-center mt-4 pt-3 border-t border-white/10 flex-row-reverse">
-        <button 
-        onClick={() => setSettingsOpen(!settingsOpen)}
-        className="flex items-center gap-2 hover:bg-white/10 px-3 py-1.5 rounded-lg transition">
+        <button
+          onClick={() => {
+            if (!settingsVisible) {
+              setSettingsVisible(true);
+              setTimeout(() => setSettingsOpen(true), 10);
+            } else {
+              setSettingsOpen(false);
+              setTimeout(() => setSettingsVisible(false), 200);
+            }
+          }}
+          className="flex items-center gap-2 hover:bg-white/10 px-3 py-1.5 rounded-lg transition"
+        >
           <FaCog />
           <span className="text-sm">Settings</span>
         </button>
@@ -89,10 +98,9 @@ export default function StartMenu() {
         </button>
       </footer>
 
-    
-      { settingsOpen && (
+      {settingsOpen && (
         <section
-        className="
+          className="
         absolute bottom-14 left-0 w-full
         bg-black/95 backdrop-blur-2xl
         border border-white/10 p-4 rounded-xl shadow-xl
@@ -102,40 +110,38 @@ export default function StartMenu() {
         >
           <h3 className="text-lg font-semibold mb-1"> Settings</h3>
 
-       
-        <label>
-          <div className="flex justify-between text-sm mb-1">
-            <span>Brightness</span>
-            <span>{brightness}%</span>
-          </div>
-          <input
-            type="range"
-            min="10"
-            max="150"
-            value={brightness}
-            onChange={(e) => {
-              setBrightness(e.target.value);
-              document.documentElement.style.filter = `brightness(${e.target.value}%)`;
-            }}
-            className="w-full"
-          />
-        </label>
+          <label>
+            <div className="flex justify-between text-sm mb-1">
+              <span>Brightness</span>
+              <span>{brightness}%</span>
+            </div>
+            <input
+              type="range"
+              min="10"
+              max="150"
+              value={brightness}
+              onChange={(e) => {
+                setBrightness(e.target.value);
+                document.documentElement.style.filter = `brightness(${e.target.value}%)`;
+              }}
+              className="w-full"
+            />
+          </label>
 
-
-        <label>
-          <div className="flex justify-between text-sm mb-1">
-            <span>Volume</span>
-            <span>{volume}%</span>
-          </div>
-          <input
-            type="range"
-            min="0"
-            max="100"
-            value={volume}
-            onChange={(e) => setVolume(e.target.value)}
-            className="w-full"
-          />
-        </label>
+          <label>
+            <div className="flex justify-between text-sm mb-1">
+              <span>Volume</span>
+              <span>{volume}%</span>
+            </div>
+            <input
+              type="range"
+              min="0"
+              max="100"
+              value={volume}
+              onChange={(e) => setVolume(e.target.value)}
+              className="w-full"
+            />
+          </label>
         </section>
       )}
     </aside>
