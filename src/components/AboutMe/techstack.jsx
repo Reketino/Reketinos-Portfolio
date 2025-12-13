@@ -1,4 +1,5 @@
 import { color } from "framer-motion";
+import { Icon } from "lucide-react";
 import React from "react";
 
 import {
@@ -10,6 +11,7 @@ import {
   FaGithub,
   FaGitAlt,
   FaFigma,
+  FaNodeJs
 } from "react-icons/fa";
 
 import {
@@ -40,6 +42,7 @@ export default function TechStack() {
     {
       title: "Backend",
       items: [
+        { Icon: FaNodeJs, color: "text-green-500", name: "Node.js" },
         { Icon: FaPython, color: "text-yellow-500", name: "Python" },
         { Icon: SiSupabase, color: "text-green-700", name: "Supabase" },
         { Icon: SiRender, color: "text-purple-300", name: "Render" },
