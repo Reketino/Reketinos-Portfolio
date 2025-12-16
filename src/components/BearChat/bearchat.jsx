@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export default function BearChat() {
   const [input, setInput] = useState("");
@@ -7,6 +7,12 @@ export default function BearChat() {
   const [mode, setMode] = useState("professional");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+
+  const bottomRef = useRef(null);
+
+  useEffect(() => {
+    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages, loading]);
 
   async function askBear() {
     if (!input.trim() || loading) return;
@@ -69,6 +75,8 @@ export default function BearChat() {
         {loading && <p className="text-neutral-400">BearAI is summoning...</p>}
 
         {error && <p className="text-red-400">{error}</p>}
+
+        <div ref={bottomRef} />
       </section>
 
       <section className="flex gap-2">
