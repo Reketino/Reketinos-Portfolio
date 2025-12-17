@@ -1,13 +1,29 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import BearChat from "./bearchat";
 import Image from "next/image";
+import ChatBubble from "./chatbubble";
 
 export default function ChatBear() {
   const [open, setOpen] = useState(false);
+  const [showBubble, setShowBubble] = useState(false);
+
+  useEffect(() => {
+    // Bubble only pop up first time
+    const seen = sessionStorage.getItem("chatBubbleseen");
+    if (!seen) {
+      setShowBubble(true);
+      sessionStorage.setItem("chatBubbleSeen", "true");
+
+      setTimeout(() => setShowBubble(false), 6000);
+    }
+  }, []);
 
   return (
     <>
+     <section className="fixed bottom-6 right-6 z-50">
+      <ChatBubble show={showBubble && !open} />
+
       <button
         onClick={() => setOpen(!open)}
         className="fixed bottom-6 right-6 z-50
@@ -25,6 +41,7 @@ export default function ChatBear() {
         className="object-contain transition-transform group-hover:scale-105"
         />
       </button>
+    </section>
 
       {open && (
         <section
