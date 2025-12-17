@@ -21,31 +21,32 @@ export default function ChatBear() {
 
   return (
     <>
-     <section className="fixed bottom-6 right-6 z-50">
+     <main className="fixed bottom-24 right-10 z-50">
       <ChatBubble show={showBubble && !open} />
 
       <button
         onClick={() => setOpen(!open)}
-        className="fixed bottom-10 right-6 z-50
+        className="
                 text-black
                 w-20 h-20 rounded-full
                 flex items-center justify-center
-                shadow-lg hover:scale-105 transition group"
+                shadow-lg hover:scale-105 transition group
+                "
         aria-label="Open BearAI chat"
       >
         <Image
         src="/BearAI/bearai.png"
         alt="BearAI"
-        width={60}
-        height={60}
+        width={80}
+        height={80}
         className="object-contain transition-transform group-hover:scale-105"
         />
       </button>
-    </section>
+   
 
       {open && (
         <section
-          className="fixed bottom-24 right-6 z-50
+          className="absolute bottom-full mb-4 right-0 z-50
                    w-[360px] max-w-[90vw]
                    bg-neutral-950 border border-neutral-800
                    rounded-xl shadow-2xl p-4"
@@ -63,6 +64,7 @@ export default function ChatBear() {
           <BearChat />
         </section>
       )}
+       </main>
     </>
   );
 }
