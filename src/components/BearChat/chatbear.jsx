@@ -26,9 +26,9 @@ export default function ChatBear() {
 
       <button
         onClick={() => setOpen(!open)}
-        className="fixed bottom-6 right-6 z-50
-                bg-cyan-500 text-black
-                w-14 h-14 rounded-full
+        className="fixed bottom-10 right-6 z-50
+                text-black
+                w-20 h-20 rounded-full
                 flex items-center justify-center
                 shadow-lg hover:scale-105 transition group"
         aria-label="Open BearAI chat"
@@ -36,8 +36,8 @@ export default function ChatBear() {
         <Image
         src="/BearAI/bearai.png"
         alt="BearAI"
-        width={32}
-        height={32}
+        width={60}
+        height={60}
         className="object-contain transition-transform group-hover:scale-105"
         />
       </button>
