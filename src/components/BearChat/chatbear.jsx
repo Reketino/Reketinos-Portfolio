@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import BearChat from "./bearchat";
+import Image from "next/image";
 
 export default function ChatBear() {
   const [open, setOpen] = useState(false);
@@ -13,10 +14,16 @@ export default function ChatBear() {
                 bg-cyan-500 text-black
                 w-14 h-14 rounded-full
                 flex items-center justify-center
-                shadow-lg hover:scale-105 transition"
+                shadow-lg hover:scale-105 transition group"
         aria-label="Open BearAI chat"
       >
-        🐻
+        <Image
+        src="/BearAI/bearai.png"
+        alt="BearAI"
+        width={32}
+        height={32}
+        className="object-contain transition-transform group-hover:scale-105"
+        />
       </button>
 
       {open && (
