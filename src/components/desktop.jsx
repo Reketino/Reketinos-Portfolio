@@ -13,6 +13,7 @@ import BearWebFrame from "./BearWeb/BearWebFrame";
 import TrashWindow from "./RecycleBin/trashwindow";
 import Error from "./RecycleBin/error";
 import BearCodeWindow from "./BearCode/bearcodewindow";
+import ChatBear from "./BearChat/chatbear";
 
 export default function Desktop() {
   const [openFolder, setOpenFolder] = useState(false);
@@ -344,6 +345,8 @@ export default function Desktop() {
           setMinimizedApps((prev) => prev.filter((a) => a.id !== id));
         }}
       />
+
+      <ChatBear />
     </main>
   );
 }
