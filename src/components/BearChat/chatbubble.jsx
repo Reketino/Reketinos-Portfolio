@@ -5,7 +5,7 @@ export default function ChatBubble({ show }) {
   return (
     <main 
     className='
-    absolute -top-12 right-0
+    absolute -top-14 right-0
     bg-neutral-900 text-neutral-100
     text-xs px-3 py-2 rounded-lg
     shadow-lg border border-white/10
