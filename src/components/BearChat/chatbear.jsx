@@ -49,7 +49,8 @@ export default function ChatBear() {
           className="absolute bottom-full mb-4 right-0 z-50
                    w-[360px] max-w-[90vw]
                    bg-neutral-950 border border-neutral-800
-                   rounded-xl shadow-2xl p-4"
+                   rounded-xl shadow-2xl p-4
+                   animate-pop-from-bear"
         >
           <header className="flex justify-between items-center mb-2">
             <h3 className="text-sm font-semibold text-cyan-300">BearAI</h3>
