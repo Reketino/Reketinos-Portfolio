@@ -73,7 +73,7 @@ export default function BearChat({ setIsAnswering }) {
           </p>
         ))}
 
-        {loading && <p className="text-neutral-400">BearAI is summoning...</p>}
+        {loading && <p className="text-neutral-400">BearAI is typing...</p>}
 
         {error && <p className="text-red-400">{error}</p>}
 
