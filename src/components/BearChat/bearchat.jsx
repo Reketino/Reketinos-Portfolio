@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 
-export default function BearChat() {
+export default function BearChat({ setIsAnswering }) {
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([]);
   const [mode, setMode] = useState("professional");
@@ -17,6 +17,7 @@ export default function BearChat() {
     if (!input.trim() || loading) return;
 
     setLoading(true);
+    setIsAnswering(true);
     setError(null);
 
     try {
@@ -48,6 +49,7 @@ export default function BearChat() {
       setError("This went totally wrong. Try one more time.");
     } finally {
       setLoading(false);
+      setIsAnswering(false);
     }
   }
 

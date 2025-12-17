@@ -7,10 +7,11 @@ import ChatBubble from "./chatbubble";
 export default function ChatBear() {
   const [open, setOpen] = useState(false);
   const [showBubble, setShowBubble] = useState(false);
+  const [isAnswering, setIsAnswering] = useState(false);
 
   useEffect(() => {
     // Bubble only pop up first time
-    const seen = sessionStorage.getItem("chatBubbleseen");
+    const seen = sessionStorage.getItem("chatBubbleSeen");
     if (!seen) {
       setShowBubble(true);
       sessionStorage.setItem("chatBubbleSeen", "true");
@@ -26,12 +27,13 @@ export default function ChatBear() {
 
       <button
         onClick={() => setOpen(!open)}
-        className="
+        className={`
                 text-black
                 w-20 h-20 rounded-full
                 flex items-center justify-center
                 shadow-lg hover:scale-105 transition group
-                "
+                ${isAnswering ? "animate-bear-nod" : ""}
+                  `}
         aria-label="Open BearAI chat"
       >
         <Image
@@ -62,7 +64,7 @@ export default function ChatBear() {
             </button>
           </header>
 
-          <BearChat />
+          <BearChat setIsAnswering={setIsAnswering} />
         </section>
       )}
        </main>
