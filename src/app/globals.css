@@ -149,3 +149,31 @@ body {
 .bw-start-fav {
   @apply px-4 py-2 bg-neutral-700 rounded-md hover:bg-neutral-800;
 }
+
+
+/* BearAI animations */
+
+@keyframes popfromBear{
+  0% {
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-pop-from-bear {
+  animation: popFromBear 0.25s ease-out;
+}
+
+@keyframes nod {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(-3deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.animate-bear-nod {
+  animation: nod 0.3s ease-in-out;
+}
