@@ -68,7 +68,7 @@ export default function BearChat({ setIsAnswering }) {
 
       <section className="bg-black/40 rounded p-4 h-64 overflow-y-auto text-sm space-y-2">
         {messages.map((m, i) => (
-          <p key={i} className={m.role === "bear" ? "text-cyan-300" : ""}>
+          <p key={i} className={m.role === "bear" ? "text-amber-400" : "text-neutral-200"}>
             <strong>{m.role === "bear" ? "🐻BearAI" : "You"}:</strong> {m.text}
           </p>
         ))}
@@ -82,7 +82,11 @@ export default function BearChat({ setIsAnswering }) {
 
       <section className="flex gap-2">
         <input
-          className="flex-1 bg-neutral-900 p-2 rounded text-sm"
+          className="
+          flex-1 bg-neutral-900 p-2 rounded text-sm
+          focus:outline-none
+          focus:ring-2 focus:ring-amber-500/40
+          "
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder="Ask Bear something..."
@@ -91,7 +95,12 @@ export default function BearChat({ setIsAnswering }) {
         <button
           onClick={askBear}
           disabled={loading}
-          className="bg-cyan-500 text-black px-4 rounded disabled:opacity-50"
+          className="
+          bg-amber-500 hover:bg-amber-600 
+          text-black px-4 rounded 
+          disabled:opacity-50
+          transition
+          "
         >
           Ask
         </button>
