@@ -5,6 +5,7 @@ import { FaLinkedin, FaGithub, FaFacebook, FaInstagram } from "react-icons/fa";
 import Image from "next/image";
 import WeatherApp from "./weatherapp";
 import StartMenu from "../StartMenu/startmenu";
+import Calendar from "./calendar";
 
 export default function Taskbar({ minimizedApps, onRestore }) {
   const [time, setTime] = useState(new Date());
@@ -178,6 +179,21 @@ export default function Taskbar({ minimizedApps, onRestore }) {
             <div className="text-[10px] text-white/50">{timeZone}</div>
           )}
         </time>
+
+        {calendarOpen && (
+          <label 
+          onClick={(e) => e.stopPropagation()}
+          className="
+          absolute bottom-12 right-4
+          w-64 bg-black/90 backdrop-blur-xl
+          border border-white/20
+          rounded-xl shadow-2xl p-4
+          z-50
+          "
+          >
+            <Calendar />
+          </label>
+        )}
       </section>
       {openStart && (
         <StartMenu
