@@ -153,7 +153,12 @@ export default function Taskbar({ minimizedApps, onRestore }) {
           <div className="text-xs text-white/70">{formattedDate}</div>
         </time>
       </section>
-      {openStart && <StartMenu setClockFormat={setClockFormat} />}
+      {openStart && (
+      <StartMenu
+      clockFormat={clockFormat}
+      setClockFormat={setClockFormat} 
+      />
+      )}
     </footer>
   );
 }
