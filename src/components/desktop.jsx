@@ -1,7 +1,7 @@
 "use client";
 import { React, useState } from "react";
 import Fullskjerm from "./fullskjerm";
-import Taskbar from "./taskbar";
+import Taskbar from "./Taskbar/taskbar";
 import TechStack from "./AboutMe/techstack";
 import AboutMe from "./AboutMe/aboutme";
 import Contact from "./AboutMe/contact";
