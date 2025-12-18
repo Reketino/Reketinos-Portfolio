@@ -11,7 +11,7 @@ import {
 } from "react-icons/fa";
 import { VscVscode } from "react-icons/vsc";
 
-export default function StartMenu() {
+export default function StartMenu({ setClockFormat }) {
   const [brightness, setBrightness] = useState(100);
   const [volume, setVolume] = useState(50);
   const [settingsVisible, setSettingsVisible] = useState(false);
@@ -142,6 +142,40 @@ export default function StartMenu() {
               className="w-full"
             />
           </label>
+
+         <label className="
+         flex flex-col
+         gap-2 pt-2
+         border-t border-white/10
+         " 
+         >
+          <span className="text-sm opacity-80"> Clock format</span>
+
+          <header className="flex gap-2">
+            <button 
+            onClick={() => setClockFormat("24h")}
+            className="
+            px-3 py-1 rounded-lg
+            text-sm bg-white/10
+            hover:bg-white/20 transition
+            "
+            >
+              24h
+            </button>
+
+            <button
+            onClick={()=> setClockFormat("12h")}
+             className="
+            px-3 py-1 rounded-lg
+            text-sm bg-white/10
+            hover:bg-white/20 transition
+            "
+            >
+              12h
+            </button>
+
+          </header>
+         </label>
         </section>
       )}
     </aside>

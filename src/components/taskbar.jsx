@@ -9,6 +9,16 @@ import StartMenu from "./StartMenu/startmenu";
 export default function Taskbar({ minimizedApps, onRestore }) {
   const [time, setTime] = useState(new Date());
   const [openStart, setOpenStart] = useState(false);
+  const [clockFormat, setClockFormat] = useState("24h");
+
+  useEffect(()=> {
+    const saved = localStorage.getItem("clockFormat");
+    if (saved) setClockFormat(saved);
+  },[]);
+
+  useEffect(()=> {
+    localStorage.setItem("clockFormat", clockFormat);
+  },[clockFormat])
 
   
   useEffect(() => {
@@ -29,10 +39,18 @@ export default function Taskbar({ minimizedApps, onRestore }) {
     return () => clearInterval(timer);
   }, []);
 
-  const formattedTime = time.toLocaleTimeString([], {
+  const formattedTime = 
+  clockFormat === "24h"
+  ? time.toLocaleTimeString("nb-NO", {
     hour: "2-digit",
     minute: "2-digit",
+  })
+  : time.toLocaleTimeString("en-US", {
+    hour: "numeric",
+    minute: "2-digit",
+    hour12: true,
   });
+
   const formattedDate = time.toLocaleDateString("nb-NO", {
     weekday: "short",
     day: "2-digit",
@@ -135,7 +153,7 @@ export default function Taskbar({ minimizedApps, onRestore }) {
           <div className="text-xs text-white/70">{formattedDate}</div>
         </time>
       </section>
-      {openStart && <StartMenu />}
+      {openStart && <StartMenu setClockFormat={setClockFormat} />}
     </footer>
   );
 }
