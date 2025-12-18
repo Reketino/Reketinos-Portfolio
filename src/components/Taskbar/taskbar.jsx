@@ -169,8 +169,8 @@ export default function Taskbar({ minimizedApps, onRestore }) {
           onClick={(e) => {
             e.stopPropagation();
             setCalendarOpen(!calendarOpen);
-          }}        
-        className="text-right leading-tight text-[10px]"
+          }}
+          className="text-right leading-tight text-[10px]"
         >
           <div className="text-sm font-medium">{formattedTime}</div>
           <div className="text-xs text-white/70">{formattedDate}</div>
@@ -181,9 +181,9 @@ export default function Taskbar({ minimizedApps, onRestore }) {
         </time>
 
         {calendarOpen && (
-          <label 
-          onClick={(e) => e.stopPropagation()}
-          className="
+          <label
+            onClick={(e) => e.stopPropagation()}
+            className="
           absolute bottom-12 right-4
           w-64 bg-black/90 backdrop-blur-xl
           border border-white/20
