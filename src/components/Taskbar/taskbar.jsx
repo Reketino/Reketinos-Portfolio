@@ -4,13 +4,14 @@ import { React, useState, useEffect } from "react";
 import { FaLinkedin, FaGithub, FaFacebook, FaInstagram } from "react-icons/fa";
 import Image from "next/image";
 import WeatherApp from "./weatherapp";
-import StartMenu from "./StartMenu/startmenu";
+import StartMenu from "../StartMenu/startmenu";
 
 export default function Taskbar({ minimizedApps, onRestore }) {
   const [time, setTime] = useState(new Date());
   const [openStart, setOpenStart] = useState(false);
   const [clockFormat, setClockFormat] = useState("24h");
   const [showTimezone, setShowTimezone] = useState("false");
+  const [calendarOpen, setCalendarOpen] = useState(false);
 
   // EFFECT FOR TIMEZONE
   useEffect(() => {
@@ -163,7 +164,13 @@ export default function Taskbar({ minimizedApps, onRestore }) {
           <WeatherApp />
         </section>
 
-        <time className="text-right leading-tight text-[10px]">
+        <time
+          onClick={(e) => {
+            e.stopPropagation();
+            setCalendarOpen(!calendarOpen);
+          }}        
+        className="text-right leading-tight text-[10px]"
+        >
           <div className="text-sm font-medium">{formattedTime}</div>
           <div className="text-xs text-white/70">{formattedDate}</div>
 
