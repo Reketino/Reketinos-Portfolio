@@ -11,7 +11,12 @@ import {
 } from "react-icons/fa";
 import { VscVscode } from "react-icons/vsc";
 
-export default function StartMenu({clockFormat, setClockFormat }) {
+export default function StartMenu({
+  clockFormat,
+  setClockFormat,
+  showTimezone,
+  setShowTimezone,
+}) {
   const [brightness, setBrightness] = useState(100);
   const [volume, setVolume] = useState(50);
   const [settingsVisible, setSettingsVisible] = useState(false);
@@ -38,6 +43,7 @@ export default function StartMenu({clockFormat, setClockFormat }) {
     z-99999
     "
     >
+      {/* SEARCHBAR */}
       <label className="relative block mb-4">
         <FaSearch className="absolute left-2 top-1/2 -translate-y-1/2 text-white/40" />
         <input
@@ -50,6 +56,7 @@ export default function StartMenu({clockFormat, setClockFormat }) {
         />
       </label>
 
+      {/* APPS */}
       <section className="grid grid-cols-3 gap-4 mb-4">
         {apps.map((app) => (
           <button
@@ -72,6 +79,7 @@ export default function StartMenu({clockFormat, setClockFormat }) {
         ))}
       </section>
 
+      {/* SETTINGS */}
       <footer className="flex justify-between items-center mt-4 pt-3 border-t border-white/10 flex-row-reverse">
         <button
           onClick={() => {
@@ -128,6 +136,7 @@ export default function StartMenu({clockFormat, setClockFormat }) {
             />
           </label>
 
+          {/* VOLUME SETTINGS */}
           <label>
             <div className="flex justify-between text-sm mb-1">
               <span>Volume</span>
@@ -143,43 +152,69 @@ export default function StartMenu({clockFormat, setClockFormat }) {
             />
           </label>
 
-         <label className="
+          {/* CLOCK FORMAT SETTINGS */}
+          <label
+            className="
          flex flex-col
          gap-2 pt-2
          border-t border-white/10
-         " 
-         >
-          <span className="text-sm opacity-80"> Clock format</span>
+         "
+          >
+            <span className="text-sm opacity-80"> Clock format</span>
 
-          <header className="flex gap-2">
-            <button 
-            onClick={() => setClockFormat("24h")}
-            className={`px-3 py-1 rounded-lg text-sm transition
+            {/* 24 HOUR CLOCK */}
+            <header className="flex gap-2">
+              <button
+                onClick={() => setClockFormat("24h")}
+                className={`px-3 py-1 rounded-lg text-sm transition
               ${
                 clockFormat === "24h"
-                ? "bg-white/30"
-                : "bg-white/10 hover:bg-white/20"
-                }
+                  ? "bg-white/30"
+                  : "bg-white/10 hover:bg-white/20"
+              }
                 `}
-            >
-              24h
-            </button>
+              >
+                24h
+              </button>
+
+              {/* 12 HOUR CLOCK */}
+              <button
+                onClick={() => setClockFormat("12h")}
+                className={`px-3 py-1 rounded-lg text-sm transition
+              ${
+                clockFormat === "12h"
+                  ? "bg-white/30"
+                  : "bg-white/10 hover:bg-white/20"
+              } 
+            `}
+              >
+                12h
+              </button>
+            </header>
+          </label>
+
+          {/* TIMEZONE TOGGLE */}
+          <label
+            className="
+         flex items-center justify-between
+         pt-2 border-t border-white/10
+         "
+          >
+            <span className="text-sm opacity-80">Show timezone</span>
 
             <button
-            onClick={()=> setClockFormat("12h")}
-             className={`px-3 py-1 rounded-lg text-sm transition
-              ${
-            clockFormat === "12h"
-            ? "bg-white/30"    
-            : "bg-white/10 hover:bg-white/20"
-            } 
-            `}
+              onClick={() => setShowTimezone(!showTimezone)}
+              className={`w-10 h-5 rounded-full relative transition
+          ${showTimezone ? "bg-green-500/70" : "bg-white/20"}
+          `}
             >
-              12h
+              <span
+                className={`absolute top-0.5 w-4 h-4 rounded-full bg-white transition
+              ${showTimezone ? "left-5" : "left-0.5"}
+              `}
+              />
             </button>
-
-          </header>
-         </label>
+          </label>
         </section>
       )}
     </aside>

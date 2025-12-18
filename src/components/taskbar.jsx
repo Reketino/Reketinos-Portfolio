@@ -10,17 +10,29 @@ export default function Taskbar({ minimizedApps, onRestore }) {
   const [time, setTime] = useState(new Date());
   const [openStart, setOpenStart] = useState(false);
   const [clockFormat, setClockFormat] = useState("24h");
+  const [showTimezone, setShowTimezone] = useState("false");
 
-  useEffect(()=> {
+  // EFFECT FOR TIMEZONE
+  useEffect(() => {
+    const saved = localStorage.getItem("showTimezone");
+    if (saved) setShowTimezone(saved === "true");
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("showTimezone", showTimezone);
+  }, [showTimezone]);
+
+  // EFFECT FOR CLOCKFORMAT
+  useEffect(() => {
     const saved = localStorage.getItem("clockFormat");
     if (saved) setClockFormat(saved);
-  },[]);
+  }, []);
 
-  useEffect(()=> {
+  useEffect(() => {
     localStorage.setItem("clockFormat", clockFormat);
-  },[clockFormat])
+  }, [clockFormat]);
 
-  
+  // STARTMENU EFFECT
   useEffect(() => {
     window.closeStartMenu = () => setOpenStart(false);
   }, []);
@@ -30,32 +42,35 @@ export default function Taskbar({ minimizedApps, onRestore }) {
       if (window.disableStartMenuClick) return;
       setOpenStart(false);
     };
-  window.addEventListener("click", handleClick);
-  return () => window.removeEventListener("click", handleClick);
+    window.addEventListener("click", handleClick);
+    return () => window.removeEventListener("click", handleClick);
   }, []);
 
+  // NEW DATE EFFECT
   useEffect(() => {
     const timer = setInterval(() => setTime(new Date()), 1000);
     return () => clearInterval(timer);
   }, []);
 
-  const formattedTime = 
-  clockFormat === "24h"
-  ? time.toLocaleTimeString("nb-NO", {
-    hour: "2-digit",
-    minute: "2-digit",
-  })
-  : time.toLocaleTimeString("en-US", {
-    hour: "numeric",
-    minute: "2-digit",
-    hour12: true,
-  });
+  const formattedTime =
+    clockFormat === "24h"
+      ? time.toLocaleTimeString("nb-NO", {
+          hour: "2-digit",
+          minute: "2-digit",
+        })
+      : time.toLocaleTimeString("en-US", {
+          hour: "numeric",
+          minute: "2-digit",
+          hour12: true,
+        });
 
   const formattedDate = time.toLocaleDateString("nb-NO", {
     weekday: "short",
     day: "2-digit",
     month: "short",
   });
+
+  const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
   return (
     <footer
@@ -151,13 +166,19 @@ export default function Taskbar({ minimizedApps, onRestore }) {
         <time className="text-right leading-tight text-[10px]">
           <div className="text-sm font-medium">{formattedTime}</div>
           <div className="text-xs text-white/70">{formattedDate}</div>
+
+          {showTimezone && (
+            <div className="text-[10px] text-white/50">{timeZone}</div>
+          )}
         </time>
       </section>
       {openStart && (
-      <StartMenu
-      clockFormat={clockFormat}
-      setClockFormat={setClockFormat} 
-      />
+        <StartMenu
+          clockFormat={clockFormat}
+          setClockFormat={setClockFormat}
+          showTimezone={showTimezone}
+          setShowTimezone={setShowTimezone}
+        />
       )}
     </footer>
   );
