@@ -6,7 +6,7 @@
 export default function BearCode() {
   return (
     <main className='flex flex-col w-full h-full bg-[#1e1e1e]'>
-        <div className='flex-1 min-h-0'>
+        <section className='flex-1 min-h-0'>
       <Editor
       height="100%"
       defaultLanguage='javascript'
@@ -42,7 +42,7 @@ log("BearCode online. Try not to break anything.");
         scrollBeyondLastLine: false,
       }}
     />
-    </div>
+    </section>
     </main>
   );
 }
