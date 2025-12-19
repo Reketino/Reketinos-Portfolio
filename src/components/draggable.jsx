@@ -34,7 +34,14 @@ export default function Draggable({
 
     const handle = e.target.closest("[data-drag-handle]");
     if (!handle) return;
+
+
     e.preventDefault();
+
+    document.body.style.userSelect = "none";
+    document.body.style.overflow = "hidden";
+    document.body.style.cursor = "grabbing";
+
 
     const startClientX = e.clientX;
     const startClientY = e.clientY;
@@ -44,7 +51,10 @@ export default function Draggable({
     function move(ev) {
       const dx = ev.clientX - startClientX;
       const dy = ev.clientY - startClientY;
-      setPos({ x: initX + dx, y: initY + dy });
+      setPos({ 
+        x: initX + dx, 
+        y: initY + dy 
+      });
     }
 
     function up() {
