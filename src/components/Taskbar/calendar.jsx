@@ -49,12 +49,17 @@ export default function Calendar() {
                 const day = i + 1;
                 const isToday = day === today;
 
+                const columnIndex = (mondayOffset + i) % 7;
+                const isSunday = columnIndex === 6;
+
                 return (
                     <section
                     key={day}
                     className={`py-1 rounded-md ${
                         isToday
                         ? "bg-amber-500 text-white font-semibold"
+                        :isSunday
+                        ? "text-red-400 hover:bg-red-500/10"
                         : "hover:bg-white/10"
                     }`}
                     >
