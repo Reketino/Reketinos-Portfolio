@@ -1,5 +1,5 @@
 "use client";
-import Fullskjerm from "../fullskjerm";
+import Fullskjerm from "../Window-system/fullscreen";
 import React from 'react'
 
 export default function Error({ onBack, onMinimize }) {

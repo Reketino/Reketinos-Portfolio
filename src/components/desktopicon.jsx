@@ -1,6 +1,6 @@
 "use client";
 
-import Draggable from "./draggable";
+import Draggable from "./Window-system/draggable";
 import IsMobile from "./ismobile";
 import Folder from "./folder";
 
