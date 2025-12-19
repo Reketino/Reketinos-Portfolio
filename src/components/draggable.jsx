@@ -30,9 +30,10 @@ export default function Draggable({
 
   function onPointerDown(e) {
     if (isMobile) return;
-
     if (e.button !== 0) return;
 
+    const handle = e.target.closest("[data-drag-handle]");
+    if (!handle) return;
     e.preventDefault();
 
     const startClientX = e.clientX;
