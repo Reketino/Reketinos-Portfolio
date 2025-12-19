@@ -15,7 +15,7 @@ export default function Taskbar({ minimizedApps, onRestore }) {
   const [calendarOpen, setCalendarOpen] = useState(false);
 
   const [clockFormat, setClockFormat] = useState("24h");
-  const [showTimezone, setShowTimezone] = useState("false");
+  const [showTimezone, setShowTimezone] = useState(false);
   
 
   useEffect(() => {
@@ -60,6 +60,8 @@ export default function Taskbar({ minimizedApps, onRestore }) {
       px-4 
       "
     >
+
+      {/* WINDOWS BUTTON */}
       <nav className="flex items-center shrink-0">
         <button
           onClick={(e) => {
@@ -109,6 +111,7 @@ export default function Taskbar({ minimizedApps, onRestore }) {
         ))}
       </nav>
 
+      {/* GITHUB SIGNATURE */}
       <div className="absolute left-1/2 -translate-x-1/2 pointer-events-none hidden md:block">
         <Link
           href="https://github.com/Reketino"
@@ -120,6 +123,7 @@ export default function Taskbar({ minimizedApps, onRestore }) {
         </Link>
       </div>
 
+      {/* SOCIAL LINKS BOX */}
       <section className="flex items-center gap-3 shrink-0">
         <nav
         aria-label="Social links"
@@ -143,11 +147,13 @@ export default function Taskbar({ minimizedApps, onRestore }) {
             <FaInstagram size={18} />
           </SocialIcon>
         </nav>
-
+        
+        {/* WEATHER FROM YR.NO */}
         <section className="flex items-center gap-3">
           <WeatherApp />
         </section>
-
+        
+        {/* CLOCK + TIMEZONE & CALENDAR OPEN ON CLICK */}
         <Clock
         clockFormat={clockFormat}
         showTimezone={showTimezone}
@@ -156,7 +162,8 @@ export default function Taskbar({ minimizedApps, onRestore }) {
           setCalendarOpen(!calendarOpen);
         }}
         />
-
+        
+        {/* CALENDAR IMPORT */}
         {calendarOpen && (
           <label
             onClick={(e) => e.stopPropagation()}
@@ -173,7 +180,7 @@ export default function Taskbar({ minimizedApps, onRestore }) {
         )}
       </section>
 
-
+      {/* STARTMENU W/IMPORT */}
       {openStart && (
         <StartMenu
           clockFormat={clockFormat}
@@ -186,6 +193,7 @@ export default function Taskbar({ minimizedApps, onRestore }) {
   );
 }
 
+//  REUSABLE WRAPPER FOR SOCIALICONS
 function SocialIcon({ href, children }) {
   return (
     <a
