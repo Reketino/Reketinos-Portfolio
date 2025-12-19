@@ -8,13 +8,13 @@ import { motion } from "framer-motion";
 
 export default function Contact() {
   return (
-    <main className="relative w-full max-2xl mx-auto overflow-x-hidden">
+    <main className="relative w-full max-2xl mx-auto overflow-x-hidden overflow-y-auto overscroll-contain">
       <TechEmailBg />
       
       
       <motion.div
-        initial={{ opacity: 0, y: 25 }}
-        animate={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0,  }}
+        animate={{ opacity: 1,  }}
         transition={{ duration: 0.4 }}
         className=" 
         relative z-10 text-white p-6 rounded-2xl
