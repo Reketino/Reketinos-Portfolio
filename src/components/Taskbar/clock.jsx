@@ -27,6 +27,9 @@ export default function Clock({ clockFormat, showTimezone, onClick }) {
     day: "2-digit",
     month: "short",
   });
+
+  const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
   return (
     <time
       onClick={onClick}
@@ -38,11 +41,11 @@ export default function Clock({ clockFormat, showTimezone, onClick }) {
     transition
     "
     >
-      <label className="text-sm font-medium">{formattedTime}</label>
-      <label className="text-xs text-white/70">{formattedDate}</label>
+      <span className="text-sm font-medium">{formattedTime}</span>
+      <small className="text-xs text-white/70">{formattedDate}</small>
 
       {showTimezone && (
-        <section className="text-[10px] text-white/50">{timezone}</section>
+        <small className="text-[10px] text-white/50">{timezone}</small>
       )}
     </time>
   );
