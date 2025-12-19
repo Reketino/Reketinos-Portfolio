@@ -1,19 +1,19 @@
 "use client";
 import { React, useState } from "react";
-import Fullskjerm from "./fullskjerm";
-import Taskbar from "./Taskbar/taskbar";
-import TechStack from "./AboutMe/techstack";
-import AboutMe from "./AboutMe/aboutme";
-import Contact from "./AboutMe/contact";
+import Fullskjerm from "./fullscreen";
+import Taskbar from "../Taskbar/taskbar";
+import TechStack from "../AboutMe/techstack";
+import AboutMe from "../AboutMe/aboutme";
+import Contact from "../AboutMe/contact";
 import BgWindow from "./bgwindow";
-import DesktopIcon from "./desktopicon";
-import MenuItem from "./menuitem";
-import BearWebWindow from "./BearWeb/BearWebWindow";
-import BearWebFrame from "./BearWeb/BearWebFrame";
-import TrashWindow from "./RecycleBin/trashwindow";
-import Error from "./RecycleBin/error";
-import BearCodeWindow from "./BearCode/bearcodewindow";
-import ChatBear from "./BearChat/chatbear";
+import DesktopIcon from "../desktopicon";
+import MenuItem from "../menuitem";
+import BearWebWindow from "../BearWeb/BearWebWindow";
+import BearWebFrame from "../BearWeb/BearWebFrame";
+import TrashWindow from "../RecycleBin/trashwindow";
+import Error from "../RecycleBin/error";
+import BearCodeWindow from "../BearCode/bearcodewindow";
+import ChatBear from "../BearChat/chatbear";
 
 export default function Desktop() {
   const [openFolder, setOpenFolder] = useState(false);
