@@ -1,82 +1,54 @@
 "use client";
 import Link from "next/link";
-import { React, useState, useEffect } from "react";
-import { FaLinkedin, FaGithub, FaFacebook, FaInstagram } from "react-icons/fa";
+import { useState, useEffect } from "react";
 import Image from "next/image";
+import { FaLinkedin, FaGithub, FaFacebook, FaInstagram } from "react-icons/fa";
+
 import WeatherApp from "./weatherapp";
 import StartMenu from "./StartMenu/startmenu";
+import Clock from "./clock";
 import Calendar from "./calendar";
 
+
 export default function Taskbar({ minimizedApps, onRestore }) {
-  const [time, setTime] = useState(new Date());
   const [openStart, setOpenStart] = useState(false);
-  const [clockFormat, setClockFormat] = useState("24h");
-  const [showTimezone, setShowTimezone] = useState("false");
   const [calendarOpen, setCalendarOpen] = useState(false);
 
-  // EFFECT FOR TIMEZONE
-  useEffect(() => {
-    const saved = localStorage.getItem("showTimezone");
-    if (saved) setShowTimezone(saved === "true");
-  }, []);
+  const [clockFormat, setClockFormat] = useState("24h");
+  const [showTimezone, setShowTimezone] = useState("false");
+  
 
   useEffect(() => {
-    localStorage.setItem("showTimezone", showTimezone);
-  }, [showTimezone]);
+    const savedFormat = localStorage.getItem("clockFormat");
+    const savedTZ = localStorage.getItem("showTimezone");
 
-  // EFFECT FOR CLOCKFORMAT
-  useEffect(() => {
-    const saved = localStorage.getItem("clockFormat");
-    if (saved) setClockFormat(saved);
+    if (savedFormat) setClockFormat(savedFormat);
+    if (savedTZ) setShowTimezone(savedTZ === "true");
   }, []);
+
 
   useEffect(() => {
     localStorage.setItem("clockFormat", clockFormat);
   }, [clockFormat]);
 
-  // STARTMENU EFFECT
   useEffect(() => {
-    window.closeStartMenu = () => setOpenStart(false);
-  }, []);
+    localStorage.setItem("showTimezone", showTimezone);
+  }, [showTimezone]);
+
 
   useEffect(() => {
     const handleClick = () => {
-      if (window.disableStartMenuClick) return;
       setOpenStart(false);
+      setCalendarOpen(false);
     };
+
     window.addEventListener("click", handleClick);
     return () => window.removeEventListener("click", handleClick);
   }, []);
 
-  // NEW DATE EFFECT
-  useEffect(() => {
-    const timer = setInterval(() => setTime(new Date()), 1000);
-    return () => clearInterval(timer);
-  }, []);
-
-  const formattedTime =
-    clockFormat === "24h"
-      ? time.toLocaleTimeString("nb-NO", {
-          hour: "2-digit",
-          minute: "2-digit",
-        })
-      : time.toLocaleTimeString("en-US", {
-          hour: "numeric",
-          minute: "2-digit",
-          hour12: true,
-        });
-
-  const formattedDate = time.toLocaleDateString("nb-NO", {
-    weekday: "short",
-    day: "2-digit",
-    month: "short",
-  });
-
-  const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-
   return (
     <footer
-      is="taskbar"
+      role="taskbar"
       className="
      fixed bottom-0 left-0 w-full 
      backdrop-blur-md bg-white/10 border-t
