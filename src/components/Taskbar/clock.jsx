@@ -22,7 +22,7 @@ export default function Clock({ clockFormat, showTimezone, onClick }) {
           hour12: true,
         });
 
-  const formattedDate = time.toLocaleDateString("nb-NO", {
+  const formattedDate = time.toLocaleDateString("en-GB", {
     weekday: "short",
     day: "2-digit",
     month: "short",
@@ -34,6 +34,7 @@ export default function Clock({ clockFormat, showTimezone, onClick }) {
     <time
       onClick={onClick}
       className="
+      flex flex-col
     text-right leading-tight
     text-[10px] cursor-pointer
     hover:bg-white/10
@@ -43,10 +44,16 @@ export default function Clock({ clockFormat, showTimezone, onClick }) {
     >
       <span className="text-sm font-medium">{formattedTime}</span>
       <small className="text-xs text-white/70">{formattedDate}</small>
-
-      {showTimezone && (
-        <small className="text-[10px] text-white/50">{timezone}</small>
-      )}
+      
+      <small className={`
+      block h-1 leading-2
+      text-[10px] text-white/50
+      transition-opacity
+      ${showTimezone ? "opacity-100" : "opacity-0"}
+        `}
+        >
+      {timezone}
+        </small>
     </time>
   );
 }
