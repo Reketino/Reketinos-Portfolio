@@ -81,7 +81,8 @@ export default function Fullskjerm({
       }
     >
       <div
-        className=" relative flex items-center  bg-black px-4 py-2 text-white cursor-move"
+      data-drag-handle
+        className=" relative flex items-center  bg-black px-4 py-2 text-white cursor-move select-none"
         onPointerDown={(e) => {
           if (isFullscreen) e.stopPropagation();
         }}
