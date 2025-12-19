@@ -50,12 +50,17 @@ export default function Taskbar({ minimizedApps, onRestore }) {
     <footer
       role="taskbar"
       className="
-     fixed bottom-0 left-0 w-full 
-     backdrop-blur-md bg-white/10 border-t
-     border-white/20 shadow-[0_-2px_10px_rgba(0,0,0,0.2)]
-      text-white z-50 flex items-center justify-between px-4 py-2"
+     fixed bottom-0 left-0 w-full
+      h-14
+     backdrop-blur-md bg-white/10 
+     border-t border-white/20 
+     shadow-[0_-2px_10px_rgba(0,0,0,0.2)]
+      text-white z-50 
+      flex items-center justify-between 
+      px-4 
+      "
     >
-      <nav className="flex items-center overflow-x-auto shrink-0">
+      <nav className="flex items-center shrink-0">
         <button
           onClick={(e) => {
             e.stopPropagation();
@@ -63,9 +68,11 @@ export default function Taskbar({ minimizedApps, onRestore }) {
           }}
           className="
         relative w-9 h-9
-       hover:bg-white/10 
-       transition rounded-xl
-       flex items-center justify-center"
+        
+       flex items-center justify-center
+       rounded-xl
+        hover:bg-white/10 transition 
+       "
         >
           <Image
             src="/windows2.png"
@@ -82,13 +89,12 @@ export default function Taskbar({ minimizedApps, onRestore }) {
             key={app.id}
             onClick={() => onRestore(app.id)}
             className="
-            w-10 h-10 
-            bg-gray-700/10 
-            hover:bg-gray-600/30 
-            rounded-md 
-            flex items-center justify-center gap-1 
+            w-10 h-10 mx-1
             text-xs text-white transition
-            mx-1 overflow-hidden"
+            flex items-center justify-center gap-1 
+           bg-gray-700/10  hover:bg-gray-600/30 
+            rounded-md overflow-hidden
+            "
           >
             {app.icon.endsWith(".png") ? (
               <img
@@ -108,14 +114,19 @@ export default function Taskbar({ minimizedApps, onRestore }) {
           href="https://github.com/Reketino"
           target="_blank"
           rel="noopener noreferrer"
-          className="pointer-events-auto text-sm hover:bg-white/20 px-3 py-1 rounded-md"
+          className="text-sm px-3 py-1 rounded-md hover:bg-white/20 transition"
         >
           &copy; {new Date().getFullYear()} Reketino
         </Link>
       </div>
 
       <section className="flex items-center gap-3 shrink-0">
-        <div className="grid grid-cols-2 grid-rows-2 gap-1 bg-white/10 backdrop-blur-md rounded-lg px-2 py-0.5 items-center">
+        <nav
+        aria-label="Social links"
+        className="grid grid-cols-2 grid-rows-2 gap-1
+         bg-white/10 backdrop-blur-md 
+         rounded-lg px-2 py-1"
+         >
           <SocialIcon href="https://www.linkedin.com/in/beareven/">
             <FaLinkedin size={18} />
           </SocialIcon>
@@ -131,26 +142,20 @@ export default function Taskbar({ minimizedApps, onRestore }) {
           <SocialIcon href="https://www.instagram.com/beareven/">
             <FaInstagram size={18} />
           </SocialIcon>
-        </div>
+        </nav>
 
         <section className="flex items-center gap-3">
           <WeatherApp />
         </section>
 
-        <time
-          onClick={(e) => {
-            e.stopPropagation();
-            setCalendarOpen(!calendarOpen);
-          }}
-          className="text-right leading-tight text-[10px]"
-        >
-          <div className="text-sm font-medium">{formattedTime}</div>
-          <div className="text-xs text-white/70">{formattedDate}</div>
-
-          {showTimezone && (
-            <div className="text-[10px] text-white/50">{timeZone}</div>
-          )}
-        </time>
+        <Clock
+        clockFormat={clockFormat}
+        showTimezone={showTimezone}
+        onClick={(e) => {
+          e.stopPropagation();
+          setCalendarOpen(!calendarOpen);
+        }}
+        />
 
         {calendarOpen && (
           <label
@@ -167,6 +172,8 @@ export default function Taskbar({ minimizedApps, onRestore }) {
           </label>
         )}
       </section>
+
+
       {openStart && (
         <StartMenu
           clockFormat={clockFormat}
