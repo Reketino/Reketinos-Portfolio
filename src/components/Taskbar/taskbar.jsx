@@ -4,7 +4,7 @@ import { React, useState, useEffect } from "react";
 import { FaLinkedin, FaGithub, FaFacebook, FaInstagram } from "react-icons/fa";
 import Image from "next/image";
 import WeatherApp from "./weatherapp";
-import StartMenu from "../StartMenu/startmenu";
+import StartMenu from "./StartMenu/startmenu";
 import Calendar from "./calendar";
 
 export default function Taskbar({ minimizedApps, onRestore }) {
