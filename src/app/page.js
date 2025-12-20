@@ -1,6 +1,6 @@
 "use client";
 import Title3d from "@/components/Window-system/title3d";
-import Desktop from "../components/Window-system/desktop";
+import Desktop from "../components/Desktop-system/desktop";
 import React from "react";
 import { useBackground } from "@/app/providers/bgprovider";
 

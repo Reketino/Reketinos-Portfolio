@@ -1,13 +1,13 @@
 "use client";
 import { React, useState } from "react";
-import Fullskjerm from "./fullscreen";
+import Fullskjerm from "../Window-system/fullscreen";
 import Taskbar from "../Taskbar/taskbar";
 import TechStack from "../AboutMe/techstack";
 import AboutMe from "../AboutMe/aboutme";
 import Contact from "../AboutMe/contact";
-import BgWindow from "./bgwindow";
-import DesktopIcon from "../desktopicon";
-import MenuItem from "../menuitem";
+import BgWindow from "../Window-system/bgwindow";
+import DesktopIcon from "./desktopicon";
+import MenuItem from "./menuitem";
 import BearWebWindow from "../BearWeb/BearWebWindow";
 import BearWebFrame from "../BearWeb/BearWebFrame";
 import TrashWindow from "../RecycleBin/trashwindow";
