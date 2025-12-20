@@ -1,5 +1,4 @@
-import { color } from "framer-motion";
-import { Icon } from "lucide-react";
+
 import React from "react";
 
 import {
@@ -72,21 +71,39 @@ export default function TechStack() {
   ];
   return (
     <main
-      className=" relative  bg-cover bg-center min-h-screen text-amber-600 p-8 flex items-center justify-center"
+      className="
+      relative bg-cover bg-center 
+      min-h-screen p-8 flex 
+      items-center justify-center
+      text-amber-600
+      "
       style={{ backgroundImage: "url('/tech.jpg')" }}
     >
       <div className="absolute inset-0 bg-linear-to-b from-green-600/40 via-black/70 to-black/90">
 
       <div className="relative z-10 w-full ">
-      <h2 className="text-4xl font-bold mb-5 mt-5 text-center drop-shadow-[0_0_15px_rgba(16,255,100,0.4)]">
+      <h2 className="
+      text-4xl text-center font-bold 
+      mb-5 mt-5  
+      drop-shadow-[0_0_15px_rgba(16,255,100,0.4)]
+      "
+      >
         👨🏻‍💻 Tech Stack
         </h2>
 
-      <div className=" grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+      <div className="
+      grid grid-cols-1 md:grid-cols-2 
+      gap-10 max-w-5xl mx-auto
+      "
+      >
         {sections.map((section, i) => (
           <div
             key={i}
-            className="bg-white/5 bg-opacity-30 backdrop-blur-md rounded-2xl shadow-xl p-6 border-white/20"
+            className="
+            bg-white/5 bg-opacity-30 
+            backdrop-blur-md rounded-2xl 
+            shadow-xl p-6 
+            border-white/20"
           >
             <h3 className="text-2xl font-semibold text-green-500 mb-4 text-center">
               {section.title}
@@ -97,9 +114,12 @@ export default function TechStack() {
                 <div key={j} className="flex flex-col items-center">
                   <div
                     className={`
-                  bg-white/15 backdrop-blur-sm rounded-xl shadow-md p-5 flex items-center justify-center
-                  transition-all duration-300 hover:scale-105
-                  hover:shadow-[0_0_25px_rgba(16,255,100,0.5)]
+                    flex items-center justify-center
+                    rounded-xl shadow-md p-5 
+                  bg-white/15 backdrop-blur-sm 
+                    transition-all duration-300 
+                    hover:scale-105
+                    hover:shadow-[0_0_25px_rgba(16,255,100,0.5)]
                    `}
                     style={{
                       boxShadow: `0 0 25px ${color.replace("text-", "")}66`,

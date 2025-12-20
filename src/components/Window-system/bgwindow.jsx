@@ -16,25 +16,48 @@ export default function BgWindow({ onClose }) {
   }, []);
 
   return (
-    <section
+    <main
       className="
-    absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-          w-[90%] max-w-md p-6 z-10 rounded-xl
-         bg-[#1f1f1f]/90
-         border border-white/10
-         shadow-[0_4px_18px_rgba(0,0,0,0.45)]
-         text-gray-200
-         transition-transform duration-100 hover:scale[1.01]
-    "
+      absolute top-1/2 left-1/2 
+      -translate-x-1/2 -translate-y-1/2
+     
+      w-[90%] max-w-md rounded-xl
+      text-gray-200 bg-[#1f1f1f]/90
+     
+      border border-white/10
+      shadow-[0_4px_18px_rgba(0,0,0,0.45)]
+    
+      transition-transform duration-100 hover:scale[1.01]
+      p-6 z-10
+      "
       role="dialog"
       aria-modal="true"
     >
-      <div className="absolute inset-0 bg-black/30 rounded-xl pointer-events-none"></div>
 
-      <header className="relative z-10 flex justify-between items-center mb-4">
+      <div className="
+      absolute inset-0 
+      bg-black/30 rounded-xl 
+      pointer-events-none
+      "
+      >
+      </div>
+
+      <header className="
+      relative flex 
+      items-center justify-between 
+      mb-4 z-10
+      "
+      >
         <span className="opacity-0 pointer-events-none"></span>
 
-        <h2 className=" absolute left-1/2 -translate-x-1/2 text-xl text-center font-semibold pointer-events-none">
+        <h2 className="
+        absolute 
+        left-1/2 -translate-x-1/2 
+        text-xl text-center 
+        font-semibold 
+        pointer-events-none
+        "
+        >
           Backgrounds
         </h2>
 
@@ -43,8 +66,10 @@ export default function BgWindow({ onClose }) {
             onClick={onClose}
             aria-label="Close window"
             className="
-            ml-auto text-gray-400 hover:text-gray-100 
-            hover:scale-105 text-xl z-10 mb.05
+            text-xl text-gray-400 
+            hover:text-gray-100 
+            hover:scale-105 
+            z-10 mb.05 ml-auto
             "
           >
             ✕
@@ -52,7 +77,12 @@ export default function BgWindow({ onClose }) {
         </nav>
       </header>
 
-      <ul className="grid grid-cols-3 gap-4 relative z-10">
+      <ul className="
+      relative
+      grid grid-cols-3 
+      gap-4  z-10
+      "
+      >
         {images.map((img) => (
           <li key={img}>
             <button
@@ -60,13 +90,20 @@ export default function BgWindow({ onClose }) {
                 setBackground(img);
                 onClose();
               }}
-              className="flex flex-col items-center hover:scale-105 transition"
+              className="
+              flex flex-col 
+              items-center 
+              hover:scale-105 
+              transition
+              "
             >
               <figure className="flex flex-col items-center">
                 <div
                   className="
                 w-20 h-20 rounded-xl
-                bg-cover bg-center border border-white/30"
+                bg-cover bg-center 
+                border border-white/30
+                "
                   style={{ backgroundImage: `url(${img})` }}
                 />
                 <figcaption className="text-xs text-white mt-1 text-center">
@@ -77,6 +114,6 @@ export default function BgWindow({ onClose }) {
           </li>
         ))}
       </ul>
-    </section>
+    </main>
   );
 }

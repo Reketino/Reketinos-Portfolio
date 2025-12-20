@@ -3,18 +3,25 @@ import React from 'react'
 
 export default function TechEmailBg() {
   return (
-    <main className='absolute inset-0  pointer-events-none
+    <main className='
+    absolute inset-0  pointer-events-none
     bg-cover bg-center bg-no-repeat
-    bg-[crisp-edges]'
+    bg-[crisp-edges]
+    '
     style={{ backgroundImage: "url('/contact1.png')" }}
     >
       
-      <div className='absolute inset-0 bg-linear-to-br
-       from-black/10 via-transparent to-black/20' />
+      <div className='
+      absolute inset-0 bg-linear-to-br
+    from-black/10 via-transparent to-black/20
+    ' 
+    />
 
       <section className='absolute inset-0
       bg-[radial-gradient(circle,rgba(52,152,219,0.25) _1px,transparent_1px)]
-      bg-size-[22px_22px] opacity-10' />
+      bg-size-[22px_22px] opacity-10
+      ' 
+      />
 
       <svg
       className='absolute w-[500px] h-[500px] -top-20 -right-40 text-blue-500/5 blur-sm'
