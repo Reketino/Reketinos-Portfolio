@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import Draggable from "./draggable";
 
@@ -15,6 +15,8 @@ export default function Fullscreen({
   const [isMobile, setIsMobile] = useState(null);
   const [isReady, setIsReady] = useState(false);
 
+  const iframeRef = useRef(null);
+
 
   // Mobile detection once mounted
   useEffect(() => {
@@ -23,6 +25,58 @@ export default function Fullscreen({
       setIsReady(true);
     }
   }, []);
+
+
+  // Hard Scroll Lock  Flappy Bird /notworking
+  useEffect(() => {
+    if (title !== "Flappy Bird") return;
+
+    const html = document.documentElement;
+    const body = document.body;
+
+    const prevHtmlOverflow = html.style.overflow;
+    const prevBodyOverflow = body.style.overflow;
+
+    html.style.overflow = "hidden";
+    body.style.overflow = "hidden";
+    
+    return () => {
+      html.style.overflow = prevHtmlOverflow;
+      body.style.overflow = prevBodyOverflow;
+    };
+  }, [title]);
+
+
+// Block Space & enter (Flappy Bird) /notworking 
+  useEffect(() => {
+    if (title !== "Flappy Bird") return;
+
+    const block = (e) => {
+      if (e.code === "Space" || e.code === "Enter") {
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+      }
+    };
+
+    
+    document.addEventListener("keydown", block, true);
+    document.addEventListener("keyup", block, true);
+
+   
+    return () => {
+      document.removeEventListener("keydown", block, true);
+      document.removeEventListener("keyup", block, true);
+    };
+  }, [title]);
+
+
+  // Auto focus (Flappy Bird) iframe
+   useEffect(() => {
+    if  (title === "Flappy Bird") {
+      iframeRef.current?.focus();
+    }
+  }, [isFullscreen, title]);
 
 
   // Window position standard (mobile & desktop)
@@ -160,7 +214,7 @@ export default function Fullscreen({
           ${
             url
               ? title === "Flappy Bird"
-                ? "bg-linear-to-b from-sky-400 to-green-500 overflow-hidden"
+                ? "bg-linear-to-b from-sky-400 to-green-500 overflow-hidden overscroll-none"
                 : "bg-black overflow-hidden"
               : mode === "browser"
               ? "bg-black p-0 overflow-y-auto"
@@ -170,15 +224,12 @@ export default function Fullscreen({
       >
         {url ? (
           <iframe
-            id="iframe-fullscreen"
+            ref={iframeRef}
+            tabIndex={0}
             src={url}
             className=" w-full h-full border-none"
             title={title}
-            style={{
-              display: "block",
-              height: "100%",
-              width: "100%",
-            }}
+           
           />
         ) : fullContent ? (
           <div className="w-full h-full overflow-hidden">{children}</div>
