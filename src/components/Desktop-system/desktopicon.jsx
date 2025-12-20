@@ -1,7 +1,7 @@
 "use client";
 
-import Draggable from "./Window-system/draggable";
-import IsMobile from "./ismobile";
+import Draggable from "../Window-system/draggable";
+import IsMobile from "../Window-system/ismobile";
 import Folder from "./folder";
 
 export default function DesktopIcon({
