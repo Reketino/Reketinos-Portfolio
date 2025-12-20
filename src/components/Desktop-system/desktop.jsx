@@ -157,7 +157,9 @@ export default function Desktop() {
       {/* Background when opening apps */}
       {(openApp === "About" || openApp === "Projects") && (
         <div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+          className="
+          absolute top-1/2 left-1/2 
+          -translate-x-1/2 -translate-y-1/2
           w-[90%] max-w-md p-6 z-10 rounded-xl
          bg-[#1f1f1f]/85
          border border-white/10
@@ -167,18 +169,33 @@ export default function Desktop() {
           "
         >
           <div
-            className="absolute inset-0  rounded-xl pointer-events-none
+            className="
+            absolute inset-0 rounded-xl 
+            pointer-events-none
           "
           />
 
-          <div className="flex justify-between items-center mb-4 relative z-10">
-            <h2 className="absolute left-1/2 -translate-x-1/2 text-xl text-center font-semibold pointer-events-none mb-0.5">
+          <div className="
+          flex justify-between items-center 
+          mb-4 relative z-10
+          "
+          >
+            <h2 className="
+            absolute left-1/2 -translate-x-1/2 
+            text-xl text-center font-semibold 
+            pointer-events-none mb-0.5
+            "
+            >
               {openApp === "About" && "About Me"}
               {openApp === "Projects" && "My Projects"}
             </h2>
             <button
               onClick={() => setOpenApp(null)}
-              className="ml-auto text-gray-400 hover:text-gray-100 hover:scale-105 text-xl z-10 mb-0.5"
+              className="
+              text-gray-400 text-xl 
+              hover:text-gray-100 hover:scale-105 
+                z-10 mb-0.5 ml-auto
+              "
             >
               ✕
             </button>
@@ -186,7 +203,12 @@ export default function Desktop() {
 
           {/* Open about folder */}
           {openApp === "About" && (
-            <div className="relative z-10 grid grid-cols-3 gap-6 justify-items-center">
+            <div className="
+            relative justify-items-center 
+            grid grid-cols-3 
+            gap-6 z-10
+            "
+            >
               {AboutMenu.map((item) => (
                 <MenuItem
                   key={item.app}
@@ -200,7 +222,12 @@ export default function Desktop() {
 
           {/* Open projects folder */}
           {openApp === "Projects" && (
-            <div className="relative z-10 grid grid-cols-3 gap-6 justify-items-center">
+            <div className="
+            relative justify-items-center 
+            grid grid-cols-3 
+            gap-6 z-10
+            "
+            >
               {projectMenu.map((item) => (
                 <MenuItem
                   key={item.app}

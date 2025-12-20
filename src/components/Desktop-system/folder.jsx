@@ -17,17 +17,22 @@ export default function Folder({
   return (
     <button
       onClick={onOpen}
-      className="relative flex flex-col items-center hover:scale-105 transition cursor-pointer"
-    >
+      className="
+      relative 
+      flex flex-col items-center 
+      hover:scale-105 transition cursor-pointer
+      "
+      >
       {randomThumbs.length > 0 && (
         <ul className="absolute -top-3 -right-5 flex gap-1">
           {randomThumbs.map((src) => (
             <li key={src}>
               <figure
                 className="
-        w-6 h-6 rounded-sm bg-cover bg-center
-        border border-white/20 shadow
-        "
+                w-6 h-6 rounded-sm 
+                bg-cover bg-center
+                border border-white/20 shadow
+                "
                 style={{ backgroundImage: `url(${src})` }}
               />
             </li>
@@ -35,7 +40,11 @@ export default function Folder({
         </ul>
       )}
 
-      <figure className="flex flex-col items-center">
+      <figure className="
+      flex flex-col 
+      items-center
+      "
+      >
         {image && (
           <Image
             src={image}

@@ -3,7 +3,11 @@ import React from "react";
 export default function MenuItem({ icon, label, onClick }) {
   return (
     <main
-      className="flex flex-col items-center cursor-pointer hover:scale-105 transition-transform"
+      className="
+      flex flex-col items-center 
+      cursor-pointer hover:scale-105 
+      transition-transform
+      "
       onClick={onClick}
     >
       <span className="text-5xl">{icon}</span>

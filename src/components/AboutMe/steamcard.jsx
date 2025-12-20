@@ -53,14 +53,28 @@ export default function SteamCard({ steamId }) {
         href={profile.profileurl}
         target="_blank"
         rel="noopener noreferrer"
-        className="group relative flex flex-col items-center bg-white/10 backdrop-blur-lg border-white/20 rounded-3xl p-6 md:p-8 w-full max-w-sm
-    shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105"
+        className="
+        group relative flex flex-col 
+        items-center p-6 md:p-8 
+        w-full max-w-sm
+        rounded-3xl shadow-lg 
+        backdrop-blur-lg
+       bg-white/10  border-white/20
+        hover:shadow-2xl hover:scale-105 
+        duration-300  transition-all
+          "
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.3 }}
         whileHover={{ scale: 1.05 }}
       >
-        <section className="w-20 h-20 rounded-full border-2 border-amber-400 overflow-hidden shadow-md mb-4">
+        <section className="
+        w-20 h-20 mb-4
+        rounded-full 
+        border-2 border-amber-400 
+        overflow-hidden shadow-md
+        "
+        >
           <Image
             src={profile.avatarfull}
             width={80}
@@ -75,7 +89,14 @@ export default function SteamCard({ steamId }) {
           {profile.personaname}
         </h2>
 
-        <section className="flex items-center gap-2 text-gray-200 mb-4 group-hover:text-amber-400 transition-color duration-200">
+        <section className="
+        flex items-center 
+        gap-2 mb-4
+        text-gray-200 
+        group-hover:text-amber-400 
+        transition-color duration-200
+        "
+        >
           <FaSteam className="w-5 h-5" />
           <span className="text-sm">My Steam Profile</span>
         </section>
@@ -85,7 +106,16 @@ export default function SteamCard({ steamId }) {
             {statusText[profile.personastate]}
         </section>
 
-        <div className="absolute inset-0 rounded-3xl bg-amber-400 opacity-0 group-hover:opacity-10 transition-opacity duration-300 pointer-events-none"></div>
+        <div className="
+         absolute inset-0 rounded-3xl
+         bg-amber-400 opacity-0 
+         group-hover:opacity-10 
+         transition-opacity 
+         duration-300
+         pointer-events-none
+         "
+         >
+         </div>
       </motion.a>
     </main>
   );
