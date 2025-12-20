@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Draggable from "./draggable";
 
-export default function Fullskjerm({
+export default function Fullscreen({
   url,
   title,
   mode,
@@ -12,10 +12,11 @@ export default function Fullskjerm({
   fullContent = false,
 }) {
   const [isFullscreen, setIsFullscreen] = useState(false);
-
   const [isMobile, setIsMobile] = useState(null);
   const [isReady, setIsReady] = useState(false);
 
+
+  // Mobile detection once mounted
   useEffect(() => {
     if (typeof window !== "undefined") {
       setIsMobile(window.innerWidth < 768);
@@ -23,6 +24,8 @@ export default function Fullskjerm({
     }
   }, []);
 
+
+  // Window position standard (mobile & desktop)
   const initialPos = isMobile
     ? { x: 10, y: 60 }
     : typeof window !== "undefined"
@@ -42,6 +45,8 @@ export default function Fullskjerm({
     ? "100vh"
     : `${Math.min(900, Math.round(window.innerHeight * 0.7))}px`;
 
+
+    // Position recalculated on resize(applies only to desktop)
   useEffect(() => {
     if (isFullscreen) return;
 
@@ -65,7 +70,10 @@ export default function Fullskjerm({
     return () => window.removeEventListener("resize", recalc);
   }, [isFullscreen, isMobile, isReady]);
 
+  
+  // No rendering before client-only values / window values is available
   if (!isReady) return null;
+
 
   const WindowContent = (
     <div
