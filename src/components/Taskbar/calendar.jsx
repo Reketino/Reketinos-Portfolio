@@ -21,15 +21,21 @@ export default function Calendar() {
     const mondayOffset = (firstDay + 6) % 7;
 
   return (
-    <main className='flex flex-col gap-3 text-sm text-white
+    <main className='
+    flex flex-col gap-3 
+    text-sm text-white
     '>
 
-     <header className='text-center font-semibold capitalize
+     <header className='
+     text-center font-semibold capitalize
      '>
         {monthLabel}
         </header> 
 
-        <section className='grid grid-cols-7 gap-1 text-center text-xs opacity-70
+        <section className='
+        grid grid-cols-7 
+        text-center text-xs 
+        gap-1 opacity-70
         '>
         {["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"].map((d) => (
         <div 
@@ -38,7 +44,10 @@ export default function Calendar() {
         ))}
         </section>
 
-        <label className='grid grid-cols-7 gap-1 text-center'>
+        <label className='
+        grid grid-cols-7 
+        text-center gap-1 
+        '>
             {Array.from({ length: mondayOffset }).map((_,i) => (
                 <div 
                 key={`empty-${i}`}
