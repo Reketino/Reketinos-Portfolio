@@ -136,7 +136,7 @@ export default function Desktop() {
 
   // Main page
   return (
-    <main className="w-full h-screen overflow-hidden md:overflow-visible">
+    <main className="w-full h-screen overflow-hidden">
       <section
         className="
         relative
