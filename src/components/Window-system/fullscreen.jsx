@@ -131,9 +131,11 @@ export default function Fullscreen({
 
   const WindowContent = (
     <div
-      className={`bg-gray-900 z-50 rounded-lg shadow-2xl flex flex-col 
+      className={`
+    bg-gray-900 rounded-lg 
+      flex flex-col shadow-2xl 
       transition-all duration-300
-      animate-window-pop
+      animate-window-pop z-50
       ${isFullscreen || isMobile ? "fixed inset-0 pb-[--taskbar-height]" : ""}
     `}
       style={
@@ -144,12 +146,17 @@ export default function Fullscreen({
     >
       <div
       data-drag-handle
-        className=" relative flex items-center  bg-black px-4 py-2 text-white cursor-move select-none"
+        className="
+        relative flex items-center
+      text-white bg-black
+        px-4 py-2  
+        cursor-move select-none
+        "
         onPointerDown={(e) => {
           if (isFullscreen) e.stopPropagation();
         }}
       >
-        <div className=" absolute left-4 flex gap-2">
+        <div className="absolute left-4 flex gap-2">
           <button
             onClick={onBack}
             className="p-1 rounded-transition hover:bg-gray-700"
@@ -165,7 +172,7 @@ export default function Fullscreen({
 
         <h2 className="mx-auto text-center font-semibold">{title}</h2>
 
-        <div className=" absolute right-4 flex gap-2">
+        <div className="absolute right-4 flex gap-2">
           <button
             onClick={onMinimize}
             className="p-1 hover:bg-gray-700 rounded-transition"
@@ -227,7 +234,7 @@ export default function Fullscreen({
             ref={iframeRef}
             tabIndex={0}
             src={url}
-            className=" w-full h-full border-none"
+            className="w-full h-full border-none"
             title={title}
            
           />
