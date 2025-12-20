@@ -1,6 +1,6 @@
 "use client";
 import { React, useState } from "react";
-import Fullskjerm from "../Window-system/fullscreen";
+import Fullscreen from "../Window-system/fullscreen";
 import Taskbar from "../Taskbar/taskbar";
 import TechStack from "../AboutMe/techstack";
 import AboutMe from "../AboutMe/aboutme";
@@ -217,7 +217,7 @@ export default function Desktop() {
       {/* Open projects Apps */}
       {openApp === "project1" &&
         !minimizedApps.some((a) => a.id === "project1") && (
-          <Fullskjerm
+          <Fullscreen
             url="https://fjellturer.vercel.app/"
             title="Hiking Website"
             onBack={() => setOpenApp("Projects")}
@@ -227,7 +227,7 @@ export default function Desktop() {
 
       {openApp === "project2" &&
         !minimizedApps.some((a) => a.id === "project2") && (
-          <Fullskjerm
+          <Fullscreen
             url="https://kjodes-frisor.vercel.app/"
             title="Hairdresser Booking"
             onBack={() => setOpenApp("Projects")}
@@ -237,7 +237,7 @@ export default function Desktop() {
 
       {openApp === "project3" &&
         !minimizedApps.some((a) => a.id === "project3") && (
-          <Fullskjerm
+          <Fullscreen
             url="https://words-of-wisdom-iota.vercel.app/"
             title="Word Of Wisdom"
             onBack={() => setOpenApp("Projects")}
@@ -247,33 +247,33 @@ export default function Desktop() {
 
       {/* Open "About me" Apps */}
       {openApp === "AboutMe" && (
-        <Fullskjerm
+        <Fullscreen
           title="About Me"
           onBack={() => setOpenApp("About")}
           onMinimize={() => minimizeApp("AboutMe")}
         >
           <AboutMe />
-        </Fullskjerm>
+        </Fullscreen>
       )}
 
       {openApp === "TechStack" && (
-        <Fullskjerm
+        <Fullscreen
           title="Tech Stack"
           onBack={() => setOpenApp("About")}
           onMinimize={() => minimizeApp("TechStack")}
         >
           <TechStack />
-        </Fullskjerm>
+        </Fullscreen>
       )}
 
       {openApp === "Contact" && (
-        <Fullskjerm
+        <Fullscreen
           title="Contact"
           onBack={() => setOpenApp("About")}
           onMinimize={() => minimizeApp("Contact")}
         >
           <Contact />
-        </Fullskjerm>
+        </Fullscreen>
       )}
 
       {/* Open Recycle Bin + file */}
@@ -283,7 +283,7 @@ export default function Desktop() {
           onOpenFile={() => setOpenApp("Error")}
         />
       )}
-
+      
       {openApp === "Error" && !minimizedApps.some((a) => a.id === "Error") && (
         <Error
           onBack={() => setOpenApp("RecycleBin")}
@@ -294,7 +294,7 @@ export default function Desktop() {
       {/* Open Spotify */}
       {openApp === "Spotify" &&
         !minimizedApps.some((a) => a.id === "Spotify") && (
-          <Fullskjerm
+          <Fullscreen
             url="https://open.spotify.com/embed/playlist/0JSMbYLP1XQk0uIsqwdH9g?utm_source=generator&theme=0"
             title="Spotify"
             onBack={() => setOpenApp(null)}
@@ -305,7 +305,7 @@ export default function Desktop() {
       {/* Open Flappy Bird */}
       {openApp === "Flappy" &&
         !minimizedApps.some((a) => a.id === "Flappy") && (
-          <Fullskjerm
+          <Fullscreen
             url="https://flappy-bird-ruby-nine.vercel.app/"
             title="Flappy Bird"
             onBack={() => setOpenApp(null)}
@@ -325,7 +325,8 @@ export default function Desktop() {
             <BearWebWindow />
           </BearWebFrame>
         )}
-
+      
+      {/* Open BearCodeWindow */}
       {openApp === "BearCode" &&
         !minimizedApps.some((a) => a.id === "BearCode") && (
           <BearCodeWindow
