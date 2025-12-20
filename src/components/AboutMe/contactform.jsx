@@ -44,16 +44,21 @@ export default function ContactForm() {
         initial={{ opacity: 0, y: 25 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4 }}
-        className="relative z-10 p-8 rounded-2xl
-    bg-white/10 backdrop-blur-xl
-    border border-white/10
-    shadow-[0_0_30px_rgba(0,0,0,0.5)]
-    text-white"
+        className="
+        relative p-8 rounded-2xl
+      bg-white/10 backdrop-blur-xl
+        border border-white/10
+        shadow-[0_0_30px_rgba(0,0,0,0.5)]
+      text-white z-10"
       >
-        <h2 className="text-3xl font-bold text-center
+        <h2 className="
+        text-3xl font-bold text-center
         text-blue-400 mb-6
         drop-shadow-[0_0_15px_rgba(0,102,255,0.7)]
-        tracking-wider hover:text-blue-100">Shoot Me A Message</h2>
+        tracking-wider hover:text-blue-100
+        ">
+          Shoot Me A Message
+        </h2>
 
         <form
           ref={formRef}
@@ -65,9 +70,11 @@ export default function ContactForm() {
             name="user_name"
             placeholder="Name"
             required
-            className="p-3 rounded-lg bg-neutral-900/40 border border-neutral-700
+            className=" 
+          bg-neutral-900/40 border border-neutral-700
           focus:border-blue-400 focus:ring-2 focus:ring-blue-500/40
-          transition outline-none"
+            p-3 rounded-lg transition outline-none
+            "
           />
 
           <input
@@ -75,9 +82,11 @@ export default function ContactForm() {
             name="user_email"
             placeholder="E-mail"
             required
-            className="p-3 rounded-lg bg-neutral-900/40 border border-neutral-700
+            className="
+          bg-neutral-900/40 border border-neutral-700
           focus:border-blue-400 focus:ring-2 focus:ring-blue-500/40
-          transition outline-none"
+            p-3 rounded-lg transition outline-none
+            "
           />
 
           <textarea

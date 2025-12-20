@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-export default function Title3d({ text = "Reketino`s Homepage" }) {
+export default function Title3d({ text = "Reketino`s Portfolio" }) {
   return (
     <div className="
     relative flex 
