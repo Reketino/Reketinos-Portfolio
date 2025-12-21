@@ -106,7 +106,7 @@ export default function AboutMe() {
              
              
               <HobbyCard title="🏃‍♂️ Trail running / jogging">
-                  <MediaBox type="Image"src="/trailrun.jpg"alt="Jogging" />
+                  <MediaBox type="Image" src="/trailrun.jpg" alt="Jogging" />
               </HobbyCard>
               
               
@@ -135,19 +135,17 @@ export default function AboutMe() {
 
             <ul className="space-y-8 text-blue-300 text-lg">
                
-               <section className="bg-white/5 p-4 rounded-xl shadow-lg">
-              <li>🎮 PC Gaming</li>
+               <HobbyCard title="🎮 PC Gaming">
               <MediaBox src="https://www.youtube.com/embed/D_rQ4fOouk0?si=pHlv52uL3fiegLGx" />
               <div className="mt-4 flex justify-center">
                 <SteamCard steamId="76561198037781673" />
               </div>
-              </section>
+              </HobbyCard>
 
-              <section className="bg-white/5 p-4 rounded-xl shadow-lg">
-              <li className="mt-2">🎬 Video Editing
+              <HobbyCard title="🎬 Video Editing">
              <MediaBox src="https://www.youtube.com/embed/EVIE_8xvWws?si=4iDvqcDL7Pa79HSQ"/>
-             </li>
-             </section>
+             </HobbyCard>
+
               <NarrationTwo className="mt-4" />
             </ul>
           </section>
