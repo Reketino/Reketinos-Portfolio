@@ -2,9 +2,9 @@
 import { React, useState } from "react";
 import Fullscreen from "../Window-system/fullscreen";
 import Taskbar from "../Taskbar/taskbar";
-import TechStack from "../AboutMe/techstack";
+import TechStack from "../AboutMe/TechStack/techstack";
 import AboutMe from "../AboutMe/aboutme";
-import Contact from "../AboutMe/contact";
+import Contact from "../AboutMe/Contact/contact";
 import BgWindow from "../Window-system/bgwindow";
 import DesktopIcon from "./desktopicon";
 import MenuItem from "./menuitem";
