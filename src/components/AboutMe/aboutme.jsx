@@ -6,6 +6,7 @@ import Narration from "./narration";
 import NarrationTwo from "./narrationtwo";
 import SteamCard from "./steamcard";
 import MediaBox from "./mediabox";
+import HobbyCard from "./hobbycard";
 
 const outfit = Outfit({ subsets: ["latin"], weight: ["400", "600", "700"] });
 const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "600"] });
@@ -103,24 +104,23 @@ export default function AboutMe() {
 
             <ul className="space-y-8 text-emerald-300 text-lg">
              
-             <section className="bg-white/5 p-4 rounded-xl shadow-lg">
-              <li>
-                🏃‍♂️ Trail running / <span className="text-white">jogging</span>
+             
+              <HobbyCard title="🏃‍♂️ Trail running / jogging">
                   <MediaBox type="Image"src="/trailrun.jpg"alt="Jogging" />
-              </li>
-              </section>
-            
-             <section className="bg-white/5 p-4 rounded-xl shadow-lg">
-              <li>🚵🏻 <span className="text-gray-200">Cycling</span> (Mountain & <span className="text-gray-500">Road)</span></li>
-                      <MediaBox src="https://www.youtube.com/embed/Cm_TeuKtgRw?si=ungy74VpeyRF-BrO" />
+              </HobbyCard>
               
-              </section>
-             <section className="bg-white/5 p-4 rounded-xl shadow-lg">
-              <li className="text-white">🏋🏻 Crossfit</li>
-              <li className="text-blue-400">
+              
+              <HobbyCard title="🚵🏻 Cycling (Mountain & Road)">
+                      <MediaBox src="https://www.youtube.com/embed/Cm_TeuKtgRw?si=ungy74VpeyRF-BrO" />
+              </HobbyCard>
+
+             
+              <HobbyCard title="🏋🏻 Crossfit">
+              <p className="text-blue-400">
                 ❄️ Winter sports: snowshoeing, snowboarding, splitboarding
-              </li>
-              </section>
+              </p>
+             </HobbyCard>
+              
 
             </ul>
           </section>
