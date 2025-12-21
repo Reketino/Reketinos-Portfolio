@@ -14,13 +14,23 @@ const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "600"] });
 export default function AboutMe() {
   return (
     <main
-      className={`${outfit.className} relative bg-cover bg-center min-h-screen text-gray-100 flex flex-col items-center justify-center px-4 sm:px-6 md:px-12 py-10`}
+      className={`${outfit.className} 
+      relative bg-cover bg-center min-h-screen 
+      text-gray-100 
+      flex flex-col items-center justify-center 
+      px-4 sm:px-6 md:px-12 py-10`}
       style={{ backgroundImage: "url('/bg.png')" }}
     >
       <div className="absolute inset-0 bg-linear-to-b from-black/40 via-black/30 to-black/40" />
 
       <motion.section
-        className="relative z-10 w-full max-w-3xl bg-amber-700/10 backdrop-blur-lg rounded-3xl shadow-2xl p-8 md:p-12 border border-white/10 mb-12"
+        className="
+        relative w-full max-w-3xl 
+        bg-amber-700/10 backdrop-blur-lg 
+        rounded-3xl shadow-2xl 
+        p-8 md:p-12 mb-12 z-10
+        border border-white/10
+        "
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
@@ -32,7 +42,12 @@ export default function AboutMe() {
               width={600}
               height={600}
               alt="Bjørn Even Portrait"
-              className="rounded-full object-cover border-4 border-amber-500/40 shadow-2xl hover:scale-105 transition-transform duration-500"
+              className="
+              rounded-full object-cover 
+              border-4 border-amber-500/40 
+              shadow-2xl hover:scale-105 
+              transition-transform duration-500
+              "
             />
 
             <div className="absolute inset-0 rounded-full bg-amber-500/20 blur-2xl -z-10" />
@@ -86,20 +101,34 @@ export default function AboutMe() {
       </motion.section>
 
       <motion.section
-        className="relative z-10 w-full max-w-6xl bg-amber-900/10 backdrop-blur-lg rounded-3xl shadow-2xl p-10 md:p-14 border border-white/10"
+        className="
+        relative w-full max-w-6xl 
+        bg-amber-900/10 backdrop-blur-lg 
+        rounded-3xl shadow-2xl p-10 z-10 
+        md:p-14 border border-white/10
+        "
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
       >
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-amber-400 mb-10 drop-shadow-lg">
+        <h2 className="
+        text-3xl md:text-4xl font-bold text-center 
+        text-amber-400 mb-10 drop-shadow-lg
+        ">
           🦥 My Hobbies & Interests
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start md:items-stretch">
+        <div className="
+        grid grid-cols-1 md:grid-cols-2 
+        gap-12 items-start md:items-stretch
+        ">
           <section
-            className="flex flex-col items-center text-center bg-amber-500/10 p-8 rounded-2xl border border-amber-600/15 shadow-lg 
-          hover:shadow-2xl transition-all duration-300">
-
+            className="
+            flex flex-col items-center text-center 
+            bg-amber-500/10 p-8 rounded-2xl 
+            border border-amber-600/15 shadow-lg 
+            hover:shadow-2xl transition-all duration-300
+            ">
             <h3 className="text-2xl font-semibold text-amber-600 mb-6">Outdoors & Activity</h3>
 
             <ul className="space-y-8 text-emerald-300 text-lg">
@@ -126,9 +155,12 @@ export default function AboutMe() {
           </section>
 
           <section
-            className="flex flex-col items-center text-center bg-amber-500/10 p-8 rounded-2xl border-gray-700/40 shadow-lg 
-          hover:shadow-2xl transition-all duration-300"
-          >
+            className="
+            flex flex-col items-center 
+            text-center bg-amber-500/10 
+          border-gray-700/40 p-8 rounded-2xl shadow-lg 
+            hover:shadow-2xl transition-all duration-300
+            ">
             <h3 className="text-2xl font-semibold text-amber-600 mb-6">
               Gaming & Editing
             </h3>
