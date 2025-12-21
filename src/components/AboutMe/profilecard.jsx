@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { motion } from "framer-motion";
 import { Outfit, Inter } from 'next/font/google';
-import Narration from './narration';
+import Narration from './Narration/narration';
 
 const outfit = Outfit({ subsets: ["latin"], weight: ["400", "600", "700"] });
 const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "600"] });
