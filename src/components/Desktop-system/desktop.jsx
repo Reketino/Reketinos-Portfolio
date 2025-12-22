@@ -26,7 +26,7 @@ export default function Desktop() {
       id: "about",
       startX: 0,
       startY: 0,
-      label: "BEARME.MD",
+      label: "BEARME.md",
       icon: "📖",
       onOpen: () => setOpenApp("About"),
     },
@@ -125,6 +125,7 @@ export default function Desktop() {
     BearCode: "/vsbearcode.png",
   };
 
+  // Minimizing Apps statement
   const minimizeApp = (id) => {
     setMinimizedApps((prev) =>
       prev.some((a) => a.id === id)
