@@ -65,7 +65,7 @@ export default function SleepScreen() {
 
       <header className="relative text-center">
         <p className="font-mono text-red-950 text-4xl animate-pulse">
-          Bear Evens Portfolio
+          Reketino's Portfolio
         </p>
         <p className="mt-4 font-mono text-red-50 text-sm">
           press any button to wake
