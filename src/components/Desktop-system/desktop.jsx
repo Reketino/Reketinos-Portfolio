@@ -125,7 +125,7 @@ export default function Desktop() {
     BearCode: "/vsbearcode.png",
   };
 
-  // Minimizing Apps statement
+  // Minimizing Apps to taskbar event handler
   const minimizeApp = (id) => {
     setMinimizedApps((prev) =>
       prev.some((a) => a.id === id)
