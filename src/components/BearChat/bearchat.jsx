@@ -86,7 +86,10 @@ export default function BearChat({ setIsAnswering }) {
       <section className="flex gap-2">
         <input
           className="
-          flex-1 bg-neutral-900 p-2 rounded text-sm
+          flex-1 p-2 rounded text-sm
+          bg-neutral-100 text-neutral-900
+          dark:bg-neutral-900 dark:text-neutral-100
+          placeholder:text-neutral-500 dark:placeholder:text-neutral-400
           focus:outline-none
           focus:ring-2 focus:ring-amber-500/40
           "
