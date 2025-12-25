@@ -55,16 +55,26 @@ export default function BearChat({ setIsAnswering }) {
 
   return (
     <main className="max-w-xl mx-auto space-y-3">
-      <select
-        value={mode}
-        onChange={(e) => setMode(e.target.value)}
-        className="bg-neutral-900 p-2 rounded text-sm"
-      >
-        <option value="professional">Professional</option>
-        <option value="casual">Casual</option>
-        <option value="fun">Fun</option>
-        <option value="story">Story</option>
-      </select>
+      
+     <section className="flex gap-2 flex-wrap">
+      {["professional", "casual", "fun", "story"].map((m) => (
+        <button
+        key={m}
+        onClick={() => setMode(m)}
+        className={`
+          px-3 py-1 rounded text-sm
+          capitalize transition
+          ${
+            mode === m
+            ? "bg-amber-500 text-black"
+            : "bg-neutral-200 text-neutral-900 dark:bg-neutral-800 dark:text-neutral-100"
+            }
+        `}
+        >
+          {m}
+        </button>
+      ))}
+     </section>
 
       <section className="bg-black/40 rounded p-4 h-64 overflow-y-auto text-sm space-y-2">
         {messages.map((m, i) => (
