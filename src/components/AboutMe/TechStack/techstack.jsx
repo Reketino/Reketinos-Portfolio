@@ -20,7 +20,8 @@ import {
   SiAdobephotoshop,
   SiVercel,
   SiSupabase,
-  SiTailwindcss
+  SiTailwindcss,
+  SiTypescript
 } from "react-icons/si";
 
 import { VscVscode } from "react-icons/vsc";
@@ -32,8 +33,9 @@ export default function TechStack() {
       items: [
         { Icon: FaHtml5, color: "text-orange-500", name: "HTML" },
         { Icon: FaCss3Alt, color: "text-blue-600", name: "CSS" },
-        { Icon: FaJs, color: "text-amber-300", name: "JavaScript" },
         { Icon: SiTailwindcss, color: "text-sky-500", name: "Tailwind" },
+        { Icon: FaJs, color: "text-amber-300", name: "JavaScript" },
+        { Icon: SiTypescript, color: "text-blue-600", name: "TypeScript" },
         { Icon: FaReact, color: "text-cyan-500", name: "React" },
         { Icon: SiNextdotjs, color: "text-white", name: "Next.js" },
       ],
