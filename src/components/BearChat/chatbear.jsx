@@ -61,7 +61,8 @@ export default function ChatBear() {
         bg-neutral-950 border border-neutral-800
           rounded-xl shadow-2xl p-4
           animate-pop-from-bear
-          ">
+          "
+          >
             <header className="flex justify-between items-center mb-2">
               <h3 className="text-sm font-semibold text-amber-400">🐻BearAI</h3>
               <button
