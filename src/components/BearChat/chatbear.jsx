@@ -22,52 +22,60 @@ export default function ChatBear() {
 
   return (
     <>
-     <main className="fixed bottom-24 right-20">
-      <ChatBubble show={showBubble && !open} />
+      <main className="fixed bottom-24 right-20">
+        <ChatBubble show={showBubble && !open} />
 
-      <button
-        onClick={() => setOpen(!open)}
-        className={`
+        <button
+          onClick={() => setOpen(!open)}
+          className={`
                 text-black
                 w-20 h-20 rounded-full
                 flex items-center justify-center
                 shadow-lg hover:scale-105 transition group
                 ${isAnswering ? "animate-bear-nod" : ""}
                   `}
-        aria-label="Open BearAI chat"
-      >
-        <Image
-        src="/BearAI/bearai.png"
-        alt="BearAI"
-        width={80}
-        height={80}
-        className="object-contain transition-transform group-hover:scale-105"
-        />
-      </button>
-   
-
-      {open && (
-        <section
-          className="absolute bottom-full mb-4 right-0 z-50
-                   w-[360px] max-w-[90vw]
-                   bg-neutral-950 border border-neutral-800
-                   rounded-xl shadow-2xl p-4
-                   animate-pop-from-bear"
+          aria-label="Open BearAI chat"
         >
-          <header className="flex justify-between items-center mb-2">
-            <h3 className="text-sm font-semibold text-amber-400">🐻BearAI</h3>
-            <button
-              onClick={() => setOpen(false)}
-              className="text-neutral-400 hover:text-white"
-            >
-              X
-            </button>
-          </header>
+          <Image
+            src="/BearAI/bearai.png"
+            alt="BearAI"
+            width={80}
+            height={80}
+            className="
+            object-contain 
+            transition-transform 
+            group-hover:scale-105"
+          />
+        </button>
 
-          <BearChat setIsAnswering={setIsAnswering} />
-        </section>
-      )}
-       </main>
+        {open && (
+          <section
+            className="
+          absolute bottom-full mb-4 
+          right-1/2 translate-x-1/3
+          md:right-0 md:translate-x-0
+
+          w-[280px] md:w-[360px] 
+          max-w-[95vw]
+
+        bg-neutral-950 border border-neutral-800
+          rounded-xl shadow-2xl p-4
+          animate-pop-from-bear
+          ">
+            <header className="flex justify-between items-center mb-2">
+              <h3 className="text-sm font-semibold text-amber-400">🐻BearAI</h3>
+              <button
+                onClick={() => setOpen(false)}
+                className="text-neutral-400 hover:text-white"
+              >
+                X
+              </button>
+            </header>
+
+            <BearChat setIsAnswering={setIsAnswering} />
+          </section>
+        )}
+      </main>
     </>
   );
 }
