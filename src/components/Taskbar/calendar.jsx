@@ -6,32 +6,25 @@ export default function Calendar() {
     const todayDate = new Date();
 
 
-    const [year, setYear] = useState(todayDate.getFullYear());
-    const [monthIndex, setMonthIndex] = useState(todayDate.getMonth());
+    const [currentDate, setCurrentDate] = useState(
+        new Date(todayDate.getFullYear(), todayDate.getMonth(), 1)
+    );
 
-
-    const currentDate = new Date(year, monthIndex, 1);
+    const year = currentDate.getFullYear();
+    const monthIndex = currentDate.getMonth();
 
 
     function nextMonth() {
-        setMonthIndex((prev) => {
-            if (prev === 11) {
-                setYear((y) => y + 1);
-                return 0;
-            }
-            return prev + 1
-        });
+        setCurrentDate((prev) =>
+        new Date(prev.getFullYear(), prev.getMonth() + 1, 1)
+      );
     }
 
 
     function prevMonth() {
-        setMonthIndex((prev) => {
-            if (prev === 0) {
-                setYear((y) => y - 1);
-                return 11;
-            }
-            return prev - 1
-        });
+        setCurrentDate((prev) => 
+        new Date(prev.getFullYear(), prev.getMonth() - 1, 1)
+      );
     }
 
 
@@ -51,6 +44,10 @@ export default function Calendar() {
     const daysInMonth = new Date( year, monthIndex + 1, 0).getDate();
     const firstDay = new Date(year, monthIndex, 1).getDay();
     const mondayOffset = (firstDay + 6) % 7;
+
+    const totalCells = 42;
+    const usedCells = mondayOffset + daysInMonth;
+    const trailingEmptyCells = totalCells - usedCells;
 
 
   return (
@@ -93,7 +90,7 @@ export default function Calendar() {
         </section>
 
         <section className='
-        grid grid-cols-7 
+        grid grid-cols-7 grid-rows-6
         text-center gap-1 
         '>
             {Array.from({ length: mondayOffset }).map((_,i) => (
@@ -112,7 +109,7 @@ export default function Calendar() {
                 return (
                     <div
                     key={day}
-                    className={`py-1 rounded-md ${
+                    className={`h-6 flex items-center justify-center rounded-md ${
                         isToday
                         ? "bg-amber-500 text-white font-semibold"
                         :isSunday
@@ -124,6 +121,9 @@ export default function Calendar() {
                    </div>
                 );
             })}
+            {Array.from({length: trailingEmptyCells }).map((_, i) => (
+                <div key={`trailing-${i}`} />
+            ))}
         </section>
     </main>
   );
