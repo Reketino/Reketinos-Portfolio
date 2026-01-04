@@ -132,19 +132,27 @@ export default function Taskbar({ minimizedApps, onRestore }) {
          rounded-lg px-2 py-1"
          >
           <SocialIcon href="https://www.linkedin.com/in/beareven/">
-            <FaLinkedin size={18} />
+            <FaLinkedin 
+            title="LinkedIn"
+            size={18} />
           </SocialIcon>
 
           <SocialIcon href="https://github.com/Reketino">
-            <FaGithub size={18} />
+            <FaGithub
+            title="Github" 
+            size={18} />
           </SocialIcon>
 
           <SocialIcon href="https://www.facebook.com/bjorn.e.lyngstad/">
-            <FaFacebook size={18} />
+            <FaFacebook 
+            title="Facebook"
+            size={18} />
           </SocialIcon>
 
           <SocialIcon href="https://www.instagram.com/beareven/">
-            <FaInstagram size={18} />
+            <FaInstagram 
+            title="Instagram"
+            size={18} />
           </SocialIcon>
         </nav>
         
