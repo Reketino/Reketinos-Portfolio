@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useState } from 'react'
+import { isNorwegianHoliday } from '@/lib/norwegianHolidays';
+
 
 export default function Calendar() {
     const todayDate = new Date();
@@ -41,7 +43,7 @@ export default function Calendar() {
         : null;
 
 
-    const daysInMonth = new Date( year, monthIndex + 1, 0).getDate();
+    const daysInMonth = new Date(year, monthIndex + 1, 0).getDate();
     const firstDay = new Date(year, monthIndex, 1).getDay();
     const mondayOffset = (firstDay + 6) % 7;
 
@@ -106,12 +108,16 @@ export default function Calendar() {
                 const columnIndex = (mondayOffset + i) % 7;
                 const isSunday = columnIndex === 6;
 
+                const holiday = isNorwegianHoliday(monthIndex, day);
+
                 return (
                     <div
                     key={day}
                     className={`h-6 flex items-center justify-center rounded-md ${
                         isToday
                         ? "bg-amber-500 text-white font-semibold"
+                        : holiday
+                        ? "text-red-400 hover:bg-red-500/10 font-semibold"
                         :isSunday
                         ? "text-red-400 hover:bg-red-500/10"
                         : "hover:bg-white/10"

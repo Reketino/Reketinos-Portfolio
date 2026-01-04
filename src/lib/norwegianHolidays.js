@@ -1,4 +1,4 @@
-import React from 'react'
+
 
 export const norwegianHolidays = [
     { month: 0, day: 1, name: "New Year's Day" },
@@ -9,5 +9,12 @@ export const norwegianHolidays = [
     
     { month: 11, day: 24, name: "Christmas Eve" },
     { month: 11, day: 31, name: "New Year's Eve" },
-]
+];
+
+
+export function isNorwegianHoliday(month, day) {
+    return norwegianHolidays.find(
+        (h) => h.month === month && h.day === day
+    );
+}
   
