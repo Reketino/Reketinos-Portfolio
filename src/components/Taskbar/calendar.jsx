@@ -50,8 +50,7 @@ export default function Calendar() {
       className="
     flex flex-col gap-3 
     text-sm text-white
-    "
-    >
+    ">
       {selectedDay && (
         <section
           className="
@@ -63,9 +62,8 @@ export default function Calendar() {
         >
           <p
             className="
-                    font-semibold mt-2
-                    "
-          >
+            font-semibold mt-2
+            ">
             {new Date(year, monthIndex, selectedDay).toLocaleDateString(
               "en-US",
               {
@@ -83,8 +81,7 @@ export default function Calendar() {
                 <p
                   className="
                   text-red-400 p-2 mt-1
-                    "
-                >
+                    ">
                   {holiday.name} 🇳🇴
                 </p>
               );
@@ -93,9 +90,8 @@ export default function Calendar() {
             return (
               <p
                 className="
-                            text-neutral-300 p-3 mt-1
-                            "
-              >
+              text-neutral-300 p-3 mt-1
+                ">
                 No public holiday
               </p>
             );
@@ -105,20 +101,21 @@ export default function Calendar() {
             className="
           ml-3 text-sm 
           text-neutral-400 hover:text-white 
-          "
-          ></button>
+          ">
+            ✕
+          </button>
         </section>
       )}
 
       <header
         className="
-     flex items-center justify-between font-semibold
-     "
-      >
+        flex items-center justify-between font-semibold
+        ">
         <button
           onClick={prevMonth}
-          className="px-2 py-1 rounded hover:bg-white/10"
-        >
+          className="
+          px-2 py-1 rounded hover:bg-white/10
+          ">
           ‹
         </button>
 
@@ -126,8 +123,9 @@ export default function Calendar() {
 
         <button
           onClick={nextMonth}
-          className="px-2 py-1 rounded hover:bg-white/10"
-        >
+          className="
+          px-2 py-1 rounded hover:bg-white/10
+          ">
           ›
         </button>
       </header>
@@ -137,8 +135,7 @@ export default function Calendar() {
         grid grid-cols-7 
         text-center text-xs 
         gap-1 opacity-70
-        "
-      >
+        ">
         {["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"].map((d) => (
           <div key={d}>{d}</div>
         ))}
@@ -148,8 +145,7 @@ export default function Calendar() {
         className="
         grid grid-cols-7 grid-rows-6
         text-center gap-1 
-        "
-      >
+        ">
         {Array.from({ length: mondayOffset }).map((_, i) => (
           <div key={`empty-${i}`} />
         ))}
