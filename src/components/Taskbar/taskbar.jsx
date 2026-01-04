@@ -48,7 +48,6 @@ export default function Taskbar({ minimizedApps, onRestore }) {
 
   return (
     <footer
-      role="taskbar"
       className="
      fixed bottom-0 left-0 w-full
       h-14
