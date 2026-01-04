@@ -52,60 +52,63 @@ export default function Calendar() {
     text-sm text-white
     "
     >
-        {selectedDay && (
-          <section
-            className="
+      {selectedDay && (
+        <section
+          className="
                flex items-start 
              bg-neutral-900/95 rounded-lg
                shadow-lg border border-white/10
                text-sm p-3 justify-between
-                ">
-            <p
-              className="
+                "
+        >
+          <p
+            className="
                     font-semibold mt-2
                     "
-            >
-              {new Date(year, monthIndex, selectedDay).toLocaleDateString("en-US", {
+          >
+            {new Date(year, monthIndex, selectedDay).toLocaleDateString(
+              "en-US",
+              {
                 month: "long",
                 day: "numeric",
-              })}
-            </p>
-
-            {(() => {
-              const holiday = isNorwegianHoliday(monthIndex, selectedDay);
-
-              if (holiday) {
-                return (
-                  <p
-                    className="
-                  text-red-400 p-2 mt-1
-                    ">
-                    {holiday.name} 🇳🇴
-                  </p>
-                );
               }
+            )}
+          </p>
 
+          {(() => {
+            const holiday = isNorwegianHoliday(monthIndex, selectedDay);
+
+            if (holiday) {
               return (
                 <p
                   className="
-                            text-neutral-300 p-3 mt-1
-                            "
+                  text-red-400 p-2 mt-1
+                    "
                 >
-                  No public holiday
+                  {holiday.name} 🇳🇴
                 </p>
               );
-            })()}
-            <button 
-          onClick={() => setSelectedDay(null)}
-          className="
+            }
+
+            return (
+              <p
+                className="
+                            text-neutral-300 p-3 mt-1
+                            "
+              >
+                No public holiday
+              </p>
+            );
+          })()}
+          <button
+            onClick={() => setSelectedDay(null)}
+            className="
           ml-3 text-sm 
           text-neutral-400 hover:text-white 
-          ">
-            
-          </button>
-          </section>
-        )}
-
+          "
+          ></button>
+        </section>
+      )}
 
       <header
         className="
@@ -169,14 +172,14 @@ export default function Calendar() {
                 justify-center rounded-md 
                 hover:bg-white/10
                 ${
-                isToday
-                  ? "bg-amber-500 text-white font-semibold"
-                  : holiday
-                  ? "text-red-400 hover:bg-red-500/10 font-semibold"
-                  : isSunday
-                  ? "text-red-400 hover:bg-red-500/10"
-                  : "hover:bg-white/10"
-              }`}
+                  isToday
+                    ? "bg-amber-500 text-white font-semibold"
+                    : holiday
+                    ? "text-red-400 hover:bg-red-500/10 font-semibold"
+                    : isSunday
+                    ? "text-red-400 hover:bg-red-500/10"
+                    : "hover:bg-white/10"
+                }`}
             >
               {day}
             </button>
@@ -185,8 +188,6 @@ export default function Calendar() {
         {Array.from({ length: trailingEmptyCells }).map((_, i) => (
           <div key={`trailing-${i}`} />
         ))}
-
-        
       </section>
     </main>
   );
