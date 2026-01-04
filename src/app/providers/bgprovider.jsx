@@ -10,7 +10,7 @@ export default function BgProvider({ children }) {
 
 useEffect (()=> { 
     const saved = localStorage.getItem("selectedBackground");
-      setBackground(saved || "/backgrounds/desktop.jpg");
+      setBackground(saved || "/backgrounds/desktop6.webp");
       setIsclient(true);
    }, []);
 
