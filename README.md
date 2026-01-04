@@ -43,6 +43,17 @@ I use it to explore UI/UX ideas, animations, component structure and API integra
 - 💾 **Persistent UI State** – windows stay where you left them  
 - 📱 **Responsive** – works smoothly on desktop and mobile
 
+## 📊 Performance & Accessibility
+
+This portfolio has been tested using Google Lighthouse (Desktop):
+
+- Performance: 92
+- Accessibility: 96
+- Best Practices: 100
+- SEO: 100
+
+![Lighthouse Desktop Results](./docs/lighthouse.png)
+
 ## 🧠 Why I Built This
 
 I wanted a portfolio that stands out and feels more like a creative playground than a brochure.
