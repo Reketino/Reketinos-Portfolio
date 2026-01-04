@@ -78,8 +78,8 @@ export default function Taskbar({ minimizedApps, onRestore }) {
           <Image
             src="/windows2.png"
             alt="Windows"
-            fill
-            size="36px"
+            width={36}
+            height={36}
             className="object-contain"
             priority
           />
