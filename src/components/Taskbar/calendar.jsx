@@ -54,12 +54,11 @@ export default function Calendar() {
       {selectedDay && (
         <section
           className="
-               flex items-start 
-             bg-neutral-900/95 rounded-lg
-               shadow-lg border border-white/10
-               text-sm p-3 justify-between
-                "
-        >
+          flex items-start 
+        bg-neutral-900/95 rounded-lg
+          shadow-lg border border-white/10
+          text-sm p-3 justify-between
+          ">
           <p
             className="
             font-semibold mt-2
@@ -99,7 +98,7 @@ export default function Calendar() {
           <button
             onClick={() => setSelectedDay(null)}
             className="
-          ml-3 text-sm 
+            ml-3 text-sm 
           text-neutral-400 hover:text-white 
           ">
             ✕
