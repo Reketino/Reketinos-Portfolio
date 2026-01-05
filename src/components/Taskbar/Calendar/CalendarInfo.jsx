@@ -32,7 +32,10 @@ export default function CalendarInfo({ year, month, day, onClose }) {
       </section>
 
       <button
-        onClick={onClose}
+        onClick={(e) => {
+            e.stopPropagation();
+            onClose();
+        }}
         className="
         text-neutral-400 hover:text-white"
       >
