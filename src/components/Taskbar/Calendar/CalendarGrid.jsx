@@ -14,9 +14,11 @@ export default function CalendarGrid({
 
 
   return (
-    <section className="
+    <section 
+    onClick={(e) => e.stopPropagation()}
+    className="
     grid grid-cols-7
-    grid-rows-6 gap-1
+    grid-rows-[auto_repeat(6,1fr)] gap-1
     text-center
     ">
       {Array.from({ length: mondayOffset }).map((_, i) => (
@@ -31,6 +33,9 @@ export default function CalendarGrid({
         const holiday = isNorwegianHoliday(monthIndex, day);
         const isSelected = day === selectedDay;
 
+        const columnIndex = (mondayOffset + i) % 7;
+        const isSunday = columnIndex === 6;
+
 
         return (
             <button
@@ -40,10 +45,15 @@ export default function CalendarGrid({
             flex items-center
             justify-center
             rounded-md h-6
-            ${isSelected ? "bg-amber-500 text-amber-200 font-semibold" : ""}
-            ${day === today && isSelected ? "bg-amber-500 text-white font-semibold": ""}
-            ${holiday ? "text-red-400 font-semibold" : ""}
-            hover:bg-white/10
+            ${
+                isSelected 
+                ? "bg-amber-500 text-amber-200 font-semibold" 
+                : day === today  
+                ? "bg-amber-500 text-white font-semibold"
+                : holiday || isSunday
+                ? "text-red-400 font-semibold"
+                : "text-neutral-200 hover:bg-white/10"
+                }
             `}
             >
             {day}
