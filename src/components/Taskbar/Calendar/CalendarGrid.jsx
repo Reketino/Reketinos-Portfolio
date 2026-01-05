@@ -10,7 +10,7 @@ export default function CalendarGrid({
 }) {
 
     const totalCells = 42;
-    const trailing = totalCells - (mondayOffset + daysinMonth);
+    const trailing = totalCells - (mondayOffset + daysInMonth);
 
 
   return (
