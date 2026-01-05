@@ -15,7 +15,6 @@ export default function CalendarGrid({
 
   return (
     <section 
-    onClick={(e) => e.stopPropagation()}
     className="
     grid grid-cols-7
     grid-rows-[auto_repeat(6,1fr)] gap-1
