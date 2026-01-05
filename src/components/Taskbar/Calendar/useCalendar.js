@@ -14,7 +14,7 @@ export function useCalendar() {
 
   function changeMonth(offset) {
     setCurrentDate(
-      (prev) => new Date(prev.getFullYear(), prev.getMonth + offset, 1)
+      (prev) => new Date(prev.getFullYear(), prev.getMonth() + offset, 1)
     );
     setSelectedDay(null);
   }
