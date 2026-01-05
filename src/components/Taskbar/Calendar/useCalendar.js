@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState } from "react";
 
-export  function useCalendar() {
+export function useCalendar() {
   const todayDate = new Date();
 
   const [currentDate, setCurrentDate] = useState(
@@ -14,31 +14,29 @@ export  function useCalendar() {
 
   function changeMonth(offset) {
     setCurrentDate(
-        (prev) => new Date(prev.getFullYear(), prev.getMonth + offset, 1)
+      (prev) => new Date(prev.getFullYear(), prev.getMonth + offset, 1)
     );
     setSelectedDay(null);
   }
 
-  const today = 
-  year === todayDate.getFullYear() &&
-  monthIndex === todayDate.getMonth()
-  ? todayDate.getDate()
-  : null;
+  const today =
+    year === todayDate.getFullYear() && monthIndex === todayDate.getMonth()
+      ? todayDate.getDate()
+      : null;
 
-  const daysInMonth = new Date (year, monthIndex + 1, 0).getDate();
+  const daysInMonth = new Date(year, monthIndex + 1, 0).getDate();
   const firstDay = new Date(year, monthIndex, 1).getDay();
   const mondayOffset = (firstDay + 6) % 7;
-  
-  
-    return {
-        year,
-        monthIndex,
-        currentDate,
-        today,
-        daysInMonth,
-        mondayOffset,
-        selectedDay,
-        setSelectedDay,
-        changeMonth,
-    };
+
+  return {
+    year,
+    monthIndex,
+    currentDate,
+    today,
+    daysInMonth,
+    mondayOffset,
+    selectedDay,
+    setSelectedDay,
+    changeMonth,
+  };
 }
