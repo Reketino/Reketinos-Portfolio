@@ -7,7 +7,7 @@ import { FaLinkedin, FaGithub, FaFacebook, FaInstagram } from "react-icons/fa";
 import WeatherApp from "./weatherapp";
 import StartMenu from "./StartMenu/startmenu";
 import Clock from "./clock";
-import Calendar from "./calendar";
+import Calendar from "./Calendar/Calendar";
 
 
 export default function Taskbar({ minimizedApps, onRestore }) {

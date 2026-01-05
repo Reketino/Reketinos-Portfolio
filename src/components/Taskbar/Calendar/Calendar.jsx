@@ -54,14 +54,16 @@ export default function Calendar() {
       {selectedDay && (
         <section
           className="
-          flex items-start 
-        bg-neutral-900/95 rounded-lg
-          shadow-lg border border-white/10
-          text-sm p-3 justify-between
+          flex items-start justify-between
+          rounded-md border border-white/10
+          bg-white/5 backdrop-blur 
+          px-4 py-3
+          text-sm
           ">
           <p
             className="
-            font-semibold mt-2
+            text-xs uppercase 
+            tracking-wide text-neutral-400
             ">
             {new Date(year, monthIndex, selectedDay).toLocaleDateString(
               "en-US",
