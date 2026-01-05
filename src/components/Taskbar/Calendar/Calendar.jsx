@@ -18,7 +18,16 @@ export default function Calendar() {
     changeMonth,
   } = useCalendar();
   return (
-    <main className="
+    <main
+    onMouseDown={(e) => {
+      e.stopPropagation();
+      e.nativeEvent.stopImmediatePropagation();
+    }}
+    onPointerDown={(e) => {
+      e.stopPropagation();
+      e.nativeEvent.stopImmediatePropagation();
+    }}
+    className="
     flex flex-col gap-3
     text-white text-sm
     ">
