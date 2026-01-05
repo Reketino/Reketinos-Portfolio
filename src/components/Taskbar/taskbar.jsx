@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { FaLinkedin, FaGithub, FaFacebook, FaInstagram } from "react-icons/fa";
 
@@ -16,6 +16,8 @@ export default function Taskbar({ minimizedApps, onRestore }) {
 
   const [clockFormat, setClockFormat] = useState("24h");
   const [showTimezone, setShowTimezone] = useState(false);
+
+  const calendarRef = useRef(null);
   
 
   useEffect(() => {
@@ -37,10 +39,14 @@ export default function Taskbar({ minimizedApps, onRestore }) {
 
 
   useEffect(() => {
-    const handleClick = () => {
+    const handleClick = (e) => {
+      if (calendarRef.current?.contains(e.target)) {
+        return;
+      }
+
       setOpenStart(false);
       setCalendarOpen(false);
-    };
+    }
 
     window.addEventListener("click", handleClick);
     return () => window.removeEventListener("click", handleClick);
@@ -172,8 +178,8 @@ export default function Taskbar({ minimizedApps, onRestore }) {
         
         {/* CALENDAR IMPORT */}
         {calendarOpen && (
-          <label
-            onClick={(e) => e.stopPropagation()}
+          <div
+            ref={calendarRef}
             className="
           absolute bottom-12 right-4
           w-64 bg-black/90 backdrop-blur-xl
@@ -183,7 +189,7 @@ export default function Taskbar({ minimizedApps, onRestore }) {
           "
           >
             <Calendar />
-          </label>
+          </div>
         )}
       </section>
 
