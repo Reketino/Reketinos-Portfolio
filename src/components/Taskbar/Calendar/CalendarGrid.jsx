@@ -14,7 +14,7 @@ export default function CalendarGrid({
 
 
   return (
-    <main className="
+    <section className="
     grid grid-cols-7
     grid-rows-6 gap-1
     text-center
@@ -41,7 +41,7 @@ export default function CalendarGrid({
             justify-center
             rounded-md h-6
             ${isSelected ? "bg-amber-500 text-amber-200 font-semibold" : ""}
-            ${day === today ? "bg-amber-500 text-white font-semibold": ""}
+            ${day === today && isSelected ? "bg-amber-500 text-white font-semibold": ""}
             ${holiday ? "text-red-400 font-semibold" : ""}
             hover:bg-white/10
             `}
@@ -55,6 +55,6 @@ export default function CalendarGrid({
         <div 
         key={`trail-${i}`} />
       ))}
-    </main>
+    </section>
   )
 }
