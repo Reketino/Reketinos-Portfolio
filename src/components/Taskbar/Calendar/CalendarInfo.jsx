@@ -7,25 +7,25 @@ export default function CalendarInfo({ year, month, day, onClose }) {
   return (
     <main
       className="
-    flex items-start justify-between
-    backdrop-blur rounded-md 
-    border border-white/10
-    bg-white/10 px-4
-    py-3 text-sm
+      relative rounded-full
+      inline-flex items-start
+      gap-4 px-3 py-1.5
+    bg-amber-500/40 backdrop-blur  
+      border border-white/10
+      text-xs shadow-lg
     "
     >
       <section>
         <p
           className="
-            text-xs uppercase 
-            tracking-wide text-neutral-400
+          uppercase tracking-wide text-white
             "
         >
           {date.toLocaleDateString("en-US", { month: "long", day: "numeric" })}
         </p>
 
         {holiday ? (
-          <p className="mt-1 text-red-400">{holiday.name} 🇳🇴</p>
+          <p className="mt-1 text-red-500">{holiday.name} 🇳🇴</p>
         ) : (
           <p className="mt-1 text-neutral-400">No public holiday</p>
         )}
@@ -37,7 +37,14 @@ export default function CalendarInfo({ year, month, day, onClose }) {
           onClose();
         }}
         className="
-        text-neutral-400 hover:text-white"
+        ml-auto px-2 py-1
+        rounded-xl
+        text-white
+        hover:bg-white/15
+        hover:text-amber-400
+        leading-none
+        transition
+        "
       >
         X
       </button>

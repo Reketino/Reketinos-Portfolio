@@ -55,14 +55,14 @@ export default function Taskbar({ minimizedApps, onRestore }) {
   return (
     <footer
       className="
-     fixed bottom-0 left-0 w-full
-      h-14
-     backdrop-blur-md bg-white/10 
-     border-t border-white/20 
-     shadow-[0_-2px_10px_rgba(0,0,0,0.2)]
-      text-white z-50 
-      flex items-center justify-between 
-      px-4 
+    fixed bottom-0 left-0 
+    h-14 w-full
+    backdrop-blur-md bg-white/10 
+    border-t border-white/20 
+    shadow-[0_-2px_10px_rgba(0,0,0,0.2)]
+  text-white z-50 
+    flex items-center justify-between 
+    px-4 
       "
     >
 
@@ -181,13 +181,24 @@ export default function Taskbar({ minimizedApps, onRestore }) {
           <div
             ref={calendarRef}
             className="
-          absolute bottom-12 right-4
-          w-64 bg-black/90 backdrop-blur-xl
+          absolute bottom-14 right-4
+
+          bg-linear-to-br 
+          from-black
+          to-black/20 
+          backdrop-blur-2xl
+          
           border border-white/20
-          rounded-xl shadow-2xl p-4
-          z-50
+          rounded-br-lg shadow-2xl p-4
+          w-64 z-50
           "
           >
+            <div className="
+            absolute inset-0
+            bg-amber-
+            rounded-2xl
+            pointer-events-none
+            "/>
             <Calendar />
           </div>
         )}
