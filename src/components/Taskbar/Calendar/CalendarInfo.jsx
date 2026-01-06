@@ -1,8 +1,29 @@
+"use client";
+
 import { isNorwegianHoliday } from "@/lib/norwegianHolidays";
+import { useEffect, useState } from "react";
 
 export default function CalendarInfo({ year, month, day, onClose }) {
   const holiday = isNorwegianHoliday(month, day);
   const date = new Date(year, month, day);
+
+  const [fact, setFact] = useState(null);
+
+  useEffect(() => {
+    async function fetchFact() {
+      try {
+        const res = await fetch (
+           `/api/calendar-fact?month=${month}&day=${day}`
+        );
+        const data = await res.json();
+        setFact(data.fact);
+      } catch {
+        setFact(null);
+      }
+    }
+
+    fetchFact();
+  },[month, day]);
 
   return (
     <main
@@ -28,6 +49,15 @@ export default function CalendarInfo({ year, month, day, onClose }) {
           <p className="mt-1 text-red-500">{holiday.name} 🇳🇴</p>
         ) : (
           <p className="mt-1 text-neutral-400">No public holiday</p>
+        )}
+
+        {fact && (
+          <p className="
+         text-white/85 italic
+         mt-1 max-w-[200px]
+          ">
+            Fun fact: {fact}
+          </p>
         )}
       </section>
 
