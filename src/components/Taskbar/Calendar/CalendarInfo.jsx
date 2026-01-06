@@ -63,10 +63,12 @@ export default function CalendarInfo({ year, month, day, onClose }) {
         )}
 
         {loading && (
-          <p className="
+          <p
+            className="
           text-white/75 italic
-          mt-1">
-          Bear is trying to find a fun fact...
+          mt-1"
+          >
+            Bear is trying to find a fun fact...
           </p>
         )}
 
@@ -82,14 +84,15 @@ export default function CalendarInfo({ year, month, day, onClose }) {
         )}
 
         {!loading && fact === null && (
-          <p className="
+          <p
+            className="
           text-white/65 italic
           mt-1
-          ">
-          Bear failed to find a fun fact
+          "
+          >
+            Bear failed to find a fun fact
           </p>
         )}
-
       </section>
 
       <button
