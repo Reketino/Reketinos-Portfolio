@@ -5,6 +5,7 @@ export default function WeatherApp() {
     const[weather, setWeather]=useState(null);
 
 
+// Collecting location from user
 useEffect(() => {
     if ("geolocation" in navigator) {
         navigator.geolocation.getCurrentPosition(async (pos) => {
@@ -22,12 +23,15 @@ body: JSON.stringify({
     }
 }, []);
 
+
+// Error message if data fetch failed
 if (!weather) return ( 
 <div className="px-3 text-xs text-red-300">
     ⚠️ Reketino ain't fetching the weather today
 </div>
 );
 
+// Error message if no coordinates
 if (weather?.error) {
     return (
         <div className="px-3 text-xs opacity-70">
@@ -37,7 +41,7 @@ if (weather?.error) {
 }
 
 
-
+// Weathericons & temp in navbar 
   return (
     <main className="flex items-center gap-1 px-3 text-sm">
         <span>{Math.round(weather.temperature)}°</span>
