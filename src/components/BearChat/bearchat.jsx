@@ -16,6 +16,16 @@ export default function BearChat({ setIsAnswering }) {
   async function askBear() {
     if (!input.trim() || loading) return;
 
+
+    const userMessage = input;
+
+  // Usermessage pop up immediately
+    setMessages((prev) => [
+      ...prev,
+      { role: "user", text: userMessage },
+    ]);
+
+    setInput("");
     setLoading(true);
     setIsAnswering(true);
     setError(null);
@@ -25,7 +35,7 @@ export default function BearChat({ setIsAnswering }) {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          question: input,
+          question: userMessage,
           mode,
         }),
       });
@@ -37,10 +47,10 @@ export default function BearChat({ setIsAnswering }) {
       }
 
       const data = await res.json();
-
+      
+      // Adding BearAI reply
       setMessages((prev) => [
         ...prev,
-        { role: "user", text: input },
         { role: "bear", text: data.answer },
       ]);
 
