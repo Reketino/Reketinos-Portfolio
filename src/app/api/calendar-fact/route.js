@@ -29,7 +29,9 @@ export async function GET(request) {
         throw new Error(`Wikipedia responded ${res.status}`);
     }
 
-
+  
+    
+    
      const data = await res.json();
 
     if (!data?.events?.length) {
@@ -38,12 +40,27 @@ export async function GET(request) {
       );
     }
 
+      const shortEvents = data.events.filter(
+        (e) => e.text && e.text.length <= 120
+    );
+
+    const pool = shortEvents.length ? shortEvents: data.events;
+
+
     const event = 
-    data.events[Math.floor(Math.random() * data.events.length)];
+    pool[Math.floor(Math.random() * pool.length)];
+
+    function shorten(text, max = 90) {
+        if (!text) return null;
+        if (text.length <= max) return text;
+        return text.slice(0, text.lastIndexOf(" ", max)) + "…";
+    }
+
+    const shortText = shorten(event.text);
 
     return new Response(
         JSON.stringify({
-            fact: `${event.year}: ${event.text}`,
+            fact: `${event.year}: ${shortText}`,
         }),
         {
             status: 200,
