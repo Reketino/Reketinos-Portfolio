@@ -11,29 +11,26 @@ export default function CalendarInfo({ year, month, day, onClose }) {
 
   const lastKeyRef = useRef(null);
 
-
-    async function fetchFact() {
-      try {
-        const res = await fetch (
-           `/api/calendar-fact?month=${month}&day=${day}`
-        );
-        const data = await res.json();
-        setFact(data.fact);
-      } catch {
-        setFact(null);
-      }
+  async function fetchFact() {
+    try {
+      const res = await fetch(`/api/calendar-fact?month=${month}&day=${day}`);
+      const data = await res.json();
+      setFact(data.fact);
+    } catch {
+      setFact(null);
     }
+  }
 
-    useEffect(() => {
-      if (!day) return;
-    
-      const key = `${month}-${day}`;
-      if (lastKeyRef.current === key) return;
+  useEffect(() => {
+    if (!day) return;
+
+    const key = `${month}-${day}`;
+    if (lastKeyRef.current === key) return;
 
     lastKeyRef.current = key;
     setFact(null);
     fetchFact();
-  },[month, day]);
+  }, [month, day]);
 
   return (
     <main
@@ -62,10 +59,12 @@ export default function CalendarInfo({ year, month, day, onClose }) {
         )}
 
         {fact && (
-          <p className="
+          <p
+            className="
          text-white/85 italic
          mt-1 max-w-[200px]
-          ">
+          "
+          >
             Fun fact: {fact}
           </p>
         )}
