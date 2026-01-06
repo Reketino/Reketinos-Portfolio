@@ -1,6 +1,8 @@
 
 export const runtime = "nodejs"
 
+const cache = new Map();
+
 export async function GET(request) {
     const { searchParams } = new URL(request.url);
     const month = Number(searchParams.get("month")) + 1;
@@ -11,6 +13,15 @@ export async function GET(request) {
         return new Response(
             JSON.stringify({ error: "Month or day is Lost"}),
             { status: 400 }
+        );
+    }
+
+    const cacheKey = `${month.toString().padStart(2,"0")}-${day.toString().padStart(2,"0")}`;
+
+    if (cache.has(cacheKey)) {
+        return new Response(
+            JSON.stringify({ fact: cache.get(cacheKey) }),
+            { status: 200 }
         );
     }
 
@@ -30,8 +41,6 @@ export async function GET(request) {
     }
 
   
-    
-    
      const data = await res.json();
 
     if (!data?.events?.length) {
@@ -58,10 +67,12 @@ export async function GET(request) {
 
     const shortText = shorten(event.text);
 
+    const fact = `${event.year}: ${shortText}`;
+
+    cache.set(cacheKey, fact);
+
     return new Response(
-        JSON.stringify({
-            fact: `${event.year}: ${shortText}`,
-        }),
+        JSON.stringify({ fact }),
         {
             status: 200,
             headers: {
