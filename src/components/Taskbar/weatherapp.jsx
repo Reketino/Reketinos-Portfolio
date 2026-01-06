@@ -31,6 +31,7 @@ if (!weather) return (
 </div>
 );
 
+
 // Error message if no coordinates
 if (weather?.error) {
     return (
