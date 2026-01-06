@@ -40,7 +40,7 @@ export default function TrashWindow({ onClose, onOpenFile }) {
       hover:bg-white/10 transition p-2 rounded-lg
       '
       >
-        <img src='/brokenfile.png' className='w-8 h-8' alt="" />
+        <img src='/brokenfile.png' className='w-8 h-8' alt="Broken File" />
         <span className='text-sm'>system32_critical_error.log</span>
       </button>
 
