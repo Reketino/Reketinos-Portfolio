@@ -1,7 +1,7 @@
 "use client";
 
 import { isNorwegianHoliday } from "@/lib/norwegianHolidays";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 export default function CalendarInfo({ year, month, day, onClose }) {
   const holiday = isNorwegianHoliday(month, day);
@@ -9,7 +9,9 @@ export default function CalendarInfo({ year, month, day, onClose }) {
 
   const [fact, setFact] = useState(null);
 
-  useEffect(() => {
+  const lastKeyRef = useRef(null);
+
+
     async function fetchFact() {
       try {
         const res = await fetch (
@@ -22,6 +24,14 @@ export default function CalendarInfo({ year, month, day, onClose }) {
       }
     }
 
+    useEffect(() => {
+      if (!day) return;
+    
+      const key = `${month}-${day}`;
+      if (lastKeyRef.current === key) return;
+
+    lastKeyRef.current = key;
+    setFact(null);
     fetchFact();
   },[month, day]);
 
