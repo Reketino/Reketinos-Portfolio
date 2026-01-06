@@ -8,6 +8,7 @@ export default function CalendarInfo({ year, month, day, onClose }) {
   const date = new Date(year, month, day);
 
   const [fact, setFact] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const lastKeyRef = useRef(null);
 
@@ -18,6 +19,8 @@ export default function CalendarInfo({ year, month, day, onClose }) {
       setFact(data.fact);
     } catch {
       setFact(null);
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -29,6 +32,7 @@ export default function CalendarInfo({ year, month, day, onClose }) {
 
     lastKeyRef.current = key;
     setFact(null);
+    setLoading(true);
     fetchFact();
   }, [month, day]);
 
@@ -58,7 +62,15 @@ export default function CalendarInfo({ year, month, day, onClose }) {
           <p className="mt-1 text-neutral-400">No public holiday</p>
         )}
 
-        {fact && (
+        {loading && (
+          <p className="
+          text-white/75 italic
+          mt-1">
+          Bear is trying to find a fun fact...
+          </p>
+        )}
+
+        {!loading && fact && (
           <p
             className="
          text-white/85 italic
@@ -68,6 +80,16 @@ export default function CalendarInfo({ year, month, day, onClose }) {
             Fun fact: {fact}
           </p>
         )}
+
+        {!loading && fact === null && (
+          <p className="
+          text-white/65 italic
+          mt-1
+          ">
+          Bear failed to find a fun fact
+          </p>
+        )}
+
       </section>
 
       <button
