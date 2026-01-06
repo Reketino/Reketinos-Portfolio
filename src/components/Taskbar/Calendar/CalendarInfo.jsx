@@ -7,10 +7,10 @@ export default function CalendarInfo({ year, month, day, onClose }) {
   return (
     <main
       className="
-      relative rounded-full
+      relative rounded-tr-4xl
       inline-flex items-start
       gap-4 px-3 py-1.5
-    bg-amber-500/40 backdrop-blur  
+    bg-amber-400/50 backdrop-blur-3xl  
       border border-white/10
       text-xs shadow-lg
     "
