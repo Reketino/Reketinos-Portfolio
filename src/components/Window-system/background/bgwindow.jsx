@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { useBackground } from "@/app/providers/bgprovider";
+import BgThumbnail from "./BgThumbnail";
 
 export default function BgWindow({ onClose }) {
   const { background, setBackground } = useBackground();
@@ -83,64 +84,23 @@ export default function BgWindow({ onClose }) {
       gap-4  z-10
       "
       >
-        {images.map((img) => (
+        
+        {images.map((img) => {
+          const isActive = background === img;
+
+          return (
           <li key={img}>
-
-            <button
-            disabled={background === img}
-              onClick={() => {
-                setBackground(img);
-                onClose();
-              }}
-              className={`
-              flex flex-col 
-              items-center  
-              transition
-              ${
-                background === img
-                ? "opacity-80 cursor-default"
-                : "hover:scale-105"
-              }
-              `}
-            >
-              <figure className="
-              relative
-              flex flex-col 
-              items-center
-              ">
-                <div
-                  className={`
-                w-20 h-20 rounded-xl
-                bg-cover bg-center 
-                border 
-                ${
-                  background === img
-                  ?"border-green-400 ring-2 ring-green-400/40"
-                  :"border-white/30"
-                }
-                `}
-                  style={{ backgroundImage: `url(${img})` }}
-                />
-
-
-                {background === img && (
-                  <span className="
-                  absolute top-1 right-1
-                  text-green-300 text-sm
-                  ">
-                     ✓
-                  </span>
-                )}
-
-
-                <figcaption className="text-xs text-white mt-1 text-center">
-                  {img.split("/").pop()}
-                </figcaption>
-
-              </figure>
-            </button>
+          <BgThumbnail
+          image={img}
+          active={isActive}
+          onSelect={() => {
+          setBackground(img);
+          onClose();
+          }}
+           />
           </li>
-        ))}
+          ) 
+        })}
       </ul>
     </main>
   );
