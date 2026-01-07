@@ -7,6 +7,7 @@ export default function BgWindow({ onClose }) {
   const { background, setBackground } = useBackground();
   const [images, setImages] = useState([]);
 
+  // Collecting backgrounds using API
   useEffect(() => {
     async function load() {
       const res = await fetch("/api/backgrounds");
@@ -17,6 +18,7 @@ export default function BgWindow({ onClose }) {
   }, []);
 
   return (
+    // Styling for main section
     <main
       className="
       absolute top-1/2 left-1/2 
@@ -79,6 +81,7 @@ export default function BgWindow({ onClose }) {
         </nav>
       </header>
 
+      {/* Thumbnail used here */}
       <ul
         className="
       relative
