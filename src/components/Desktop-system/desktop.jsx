@@ -5,7 +5,7 @@ import Taskbar from "../Taskbar/taskbar";
 import TechStack from "../AboutMe/TechStack/techstack";
 import AboutMe from "../AboutMe/aboutme";
 import Contact from "../AboutMe/Contact/contact";
-import BgWindow from "../Window-system/bgwindow";
+import BgWindow from "../Window-system/background/bgwindow";
 import DesktopIcon from "./desktopicon";
 import MenuItem from "./menuitem";
 import BearWebWindow from "../BearWeb/BearWebWindow";
