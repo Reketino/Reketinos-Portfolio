@@ -90,7 +90,8 @@ export default function Taskbar({ minimizedApps, onRestore }) {
             priority
           />
         </button>
-
+        
+        {/* Minimized Apps showing up in Taskbar */}
         {minimizedApps.map((app) => (
           <button
             key={app.id}
@@ -217,7 +218,7 @@ export default function Taskbar({ minimizedApps, onRestore }) {
   );
 }
 
-//  REUSABLE WRAPPER FOR SOCIALICONS
+// REUSABLE WRAPPER FOR SOCIALICONS
 function SocialIcon({ href, children }) {
   return (
     <a
