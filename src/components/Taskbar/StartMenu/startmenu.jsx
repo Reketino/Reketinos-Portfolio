@@ -11,6 +11,7 @@ import {
 } from "react-icons/fa";
 import { VscVscode } from "react-icons/vsc";
 import SettingsPanel from "./SettingsPanel";
+import AppsGrid from "./AppsGrid";
 
 export default function StartMenu({
   clockFormat,
@@ -56,30 +57,9 @@ export default function StartMenu({
         />
       </label>
 
-      {/* APPS */}
-      <section className="grid grid-cols-3 gap-4 mb-4">
-        {apps.map((app) => (
-          <button
-            key={app.name}
-            className="
-             flex flex-col items-center gap-1
-             hover:bg-white/10 p-2 rounded-xl transition
-             "
-          >
-            <span
-              className="
-                w-10 h-10 bg-white/10 rounded-lg
-                flex items-center justify-center text-xs
-                "
-            >
-              {app.icon}
-            </span>
-            <span className="text-xs text-white/70">{app.name}</span>
-          </button>
-        ))}
-      </section>
+      <AppsGrid apps={apps} />
 
-      {/* SETTINGS */}
+      {/* Power & settings buttons */}
       <footer className="flex justify-between items-center mt-4 pt-3 border-t border-white/10 flex-row-reverse">
         <button
           onClick={() => setSettingsOpen((v) => !v)}
