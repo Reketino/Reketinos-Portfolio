@@ -85,17 +85,23 @@ export default function BgWindow({ onClose }) {
       >
         {images.map((img) => (
           <li key={img}>
+
             <button
+            disabled={background === img}
               onClick={() => {
                 setBackground(img);
                 onClose();
               }}
-              className="
+              className={`
               flex flex-col 
-              items-center 
-              hover:scale-105 
+              items-center  
               transition
-              "
+              ${
+                background === img
+                ? "opacity-80 cursor-default"
+                : "hover:scale-105"
+              }
+              `}
             >
               <figure className="
               relative
