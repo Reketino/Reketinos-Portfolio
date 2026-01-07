@@ -12,7 +12,6 @@ import {
 import { VscVscode } from "react-icons/vsc";
 import SettingsPanel from "./SettingsPanel";
 
-
 export default function StartMenu({
   clockFormat,
   setClockFormat,
@@ -102,16 +101,15 @@ export default function StartMenu({
       {/* SettingsPanel */}
       {settingsOpen && (
         <SettingsPanel
-        brightness={brightness}
-        setBrightness={setBrightness}
-        volume={volume}
-        setVolume={setVolume}
-        clockFormat={clockFormat}
-        setClockFormat={setClockFormat}
-        showTimezone={showTimezone}
-        setShowTimezone={setShowTimezone}
+          brightness={brightness}
+          setBrightness={setBrightness}
+          volume={volume}
+          setVolume={setVolume}
+          clockFormat={clockFormat}
+          setClockFormat={setClockFormat}
+          showTimezone={showTimezone}
+          setShowTimezone={setShowTimezone}
         />
-        
       )}
     </aside>
   );
