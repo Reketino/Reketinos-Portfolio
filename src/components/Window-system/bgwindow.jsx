@@ -97,18 +97,40 @@ export default function BgWindow({ onClose }) {
               transition
               "
             >
-              <figure className="flex flex-col items-center">
+              <figure className="
+              relative
+              flex flex-col 
+              items-center
+              ">
                 <div
-                  className="
+                  className={`
                 w-20 h-20 rounded-xl
                 bg-cover bg-center 
-                border border-white/30
-                "
+                border 
+                ${
+                  background === img
+                  ?"border-green-400 ring-2 ring-green-400/40"
+                  :"border-white/30"
+                }
+                `}
                   style={{ backgroundImage: `url(${img})` }}
                 />
+
+
+                {background === img && (
+                  <span className="
+                  absolute top-1 right-1
+                  text-green-300 text-sm
+                  ">
+                     ✓
+                  </span>
+                )}
+
+
                 <figcaption className="text-xs text-white mt-1 text-center">
                   {img.split("/").pop()}
                 </figcaption>
+
               </figure>
             </button>
           </li>
