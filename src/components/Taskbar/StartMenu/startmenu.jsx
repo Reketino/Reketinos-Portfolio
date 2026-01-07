@@ -19,7 +19,6 @@ export default function StartMenu({
 }) {
   const [brightness, setBrightness] = useState(100);
   const [volume, setVolume] = useState(50);
-  const [settingsVisible, setSettingsVisible] = useState(false);
   const [settingsOpen, setSettingsOpen] = useState(false);
 
   const apps = [
@@ -82,15 +81,7 @@ export default function StartMenu({
       {/* SETTINGS */}
       <footer className="flex justify-between items-center mt-4 pt-3 border-t border-white/10 flex-row-reverse">
         <button
-          onClick={() => {
-            if (!settingsVisible) {
-              setSettingsVisible(true);
-              setTimeout(() => setSettingsOpen(true), 10);
-            } else {
-              setSettingsOpen(false);
-              setTimeout(() => setSettingsVisible(false), 200);
-            }
-          }}
+          onClick={() => setSettingsOpen((v) => !v)}
           className="flex items-center gap-2 hover:bg-white/10 px-3 py-1.5 rounded-lg transition"
         >
           <FaCog />
@@ -111,9 +102,11 @@ export default function StartMenu({
           className="
         absolute bottom-14 left-0 w-full
         bg-black/95 backdrop-blur-2xl
-        border border-white/10 p-4 rounded-xl shadow-xl
+        border border-white/10 
+        
         animate-in fade-in slide-in-from-bottom-1
         flex flex-col gap-4
+        p-4 rounded-xl shadow-xl
         "
         >
           <h3 className="text-lg font-semibold mb-1"> Settings</h3>
