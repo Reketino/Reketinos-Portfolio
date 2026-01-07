@@ -34,16 +34,16 @@ export default function BgWindow({ onClose }) {
       role="dialog"
       aria-modal="true"
     >
-
-      <div className="
+      <div
+        className="
       absolute inset-0 
       bg-black/30 rounded-xl 
       pointer-events-none
       "
-      >
-      </div>
+      ></div>
 
-      <header className="
+      <header
+        className="
       relative flex 
       items-center justify-between 
       mb-4 z-10
@@ -51,7 +51,8 @@ export default function BgWindow({ onClose }) {
       >
         <span className="opacity-0 pointer-events-none"></span>
 
-        <h2 className="
+        <h2
+          className="
         absolute 
         left-1/2 -translate-x-1/2 
         text-xl text-center 
@@ -78,28 +79,28 @@ export default function BgWindow({ onClose }) {
         </nav>
       </header>
 
-      <ul className="
+      <ul
+        className="
       relative
       grid grid-cols-3 
       gap-4  z-10
       "
       >
-        
         {images.map((img) => {
           const isActive = background === img;
 
           return (
-          <li key={img}>
-          <BgThumbnail
-          image={img}
-          active={isActive}
-          onSelect={() => {
-          setBackground(img);
-          onClose();
-          }}
-           />
-          </li>
-          ) 
+            <li key={img}>
+              <BgThumbnail
+                image={img}
+                active={isActive}
+                onSelect={() => {
+                  setBackground(img);
+                  onClose();
+                }}
+              />
+            </li>
+          );
         })}
       </ul>
     </main>
