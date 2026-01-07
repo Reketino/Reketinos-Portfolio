@@ -4,18 +4,35 @@ import { isNorwegianHoliday } from "@/lib/norwegianHolidays";
 import { useEffect, useState, useRef } from "react";
 
 export default function CalendarInfo({ year, month, day, onClose }) {
+  
+
+  // Check if date is holiday in Norway
   const holiday = isNorwegianHoliday(month, day);
+
+  // Making Date-object
   const date = new Date(year, month, day);
 
+  // Text fetched from API used as "fact"
   const [fact, setFact] = useState(null);
+
+  // Loading-state shown in UI
   const [loading, setLoading] = useState(false);
 
+  // UseRef for remembering last mont-day
+  // w/o triggering re-render
   const lastKeyRef = useRef(null);
 
+  // Funfact from API
   async function fetchFact() {
     try {
+
+      // API endpoint
       const res = await fetch(`/api/calendar-fact?month=${month}&day=${day}`);
+      
+      // Parsing for JSON-response
       const data = await res.json();
+     
+      // Facts in state
       setFact(data.fact);
     } catch {
       setFact(null);
@@ -24,15 +41,28 @@ export default function CalendarInfo({ year, month, day, onClose }) {
     }
   }
 
+  // Useeffect running when day/month is changed
   useEffect(() => {
+    // If no date yet do nothing
     if (!day) return;
 
+    // Key for month/day
     const key = `${month}-${day}`;
+    
+    // If facts already shown on date
+    // -> Do not pick new fact
     if (lastKeyRef.current === key) return;
-
+    
+    // New date = update ref
     lastKeyRef.current = key;
+    
+    // Reset old fact
     setFact(null);
+    
+    // Loading before fetch
     setLoading(true);
+
+    // New fact
     fetchFact();
   }, [month, day]);
 
@@ -55,13 +85,17 @@ export default function CalendarInfo({ year, month, day, onClose }) {
         >
           {date.toLocaleDateString("en-US", { month: "long", day: "numeric" })}
         </p>
+        
 
+      {/* Showcasing pubilc holiday in Calendar */}
         {holiday ? (
           <p className="mt-1 text-red-500">{holiday.name} 🇳🇴</p>
         ) : (
           <p className="mt-1 text-neutral-400">No public holiday</p>
         )}
 
+
+      {/* Loading message in funfact window */}
         {loading && (
           <p
             className="
@@ -71,7 +105,9 @@ export default function CalendarInfo({ year, month, day, onClose }) {
             Bear is trying to find a fun fact...
           </p>
         )}
+      
 
+      {/* Funfact loaded & showing */}
         {!loading && fact && (
           <p
             className="
@@ -83,6 +119,7 @@ export default function CalendarInfo({ year, month, day, onClose }) {
           </p>
         )}
 
+      {/* Message if no fun fact */}
         {!loading && fact === null && (
           <p
             className="
@@ -95,6 +132,7 @@ export default function CalendarInfo({ year, month, day, onClose }) {
         )}
       </section>
 
+    {/* Button to exit Holiday/funfact section */}
       <button
         onClick={(e) => {
           e.stopPropagation();
