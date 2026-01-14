@@ -17,14 +17,12 @@ export const norwegianHolidays = [
     { month: 4, day: 24, name: "Whit Sunday" },
     { month: 4, day: 25, name: "Whit Monday" },
 
-
     // December & Christmas     
     { month: 11, day: 25, name: "Christmas Day" },
     { month: 11, day: 26, name: "Second Day of Christmas" },
     { month: 11, day: 24, name: "Christmas Eve" },
     { month: 11, day: 31, name: "New Year's Eve" },
 ];
-
 
 export function isNorwegianHoliday(month, day) {
     return norwegianHolidays.find(
