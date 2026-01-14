@@ -59,7 +59,7 @@ export default function ChatBear() {
           max-w-[95vw]
 
         bg-neutral-950 border border-neutral-800
-          rounded-xl shadow-2xl p-4 z-50
+          rounded-xl shadow-2xl p-4
           animate-pop-from-bear
           "
           >

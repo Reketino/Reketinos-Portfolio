@@ -16,7 +16,7 @@ const { background } = useBackground();
     >
       <div className="absolute inset bg-black/50" />
 
-      <div className="relative z-10">
+      <div className="relative">
 
         <Title3d />
 
