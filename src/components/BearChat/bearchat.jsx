@@ -64,7 +64,7 @@ export default function BearChat({ setIsAnswering }) {
   }
 
   return (
-    <main className="max-w-xl mx-auto space-y-3 z-50">
+    <main className="max-w-xl mx-auto space-y-3">
       <select
         value={mode}
         onChange={(e) => setMode(e.target.value)}
