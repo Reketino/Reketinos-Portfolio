@@ -22,7 +22,7 @@ export default function ChatBear() {
 
   return (
     <>
-      <main className="fixed bottom-24 right-20 z-50">
+      <main className="fixed bottom-24 right-20">
         <ChatBubble show={showBubble && !open} />
 
         <button
