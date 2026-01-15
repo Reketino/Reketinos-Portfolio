@@ -13,11 +13,9 @@ export default function ResizeWindow({
     const [pos, setPos] = useState({ x: startX, y: startY });
     const [size, setSize] = useState({ w: width, h: height });
 
-    const resizeDir = useRef("");
-
 
     function onDrag(e) {
-        if (e.target.dataset.resize);
+        if (e.target.dataset.resize) return;
         if (e.button !== 0) return;
 
         const startX0 = e.clientX;
@@ -131,7 +129,7 @@ export default function ResizeWindow({
         />
         <div 
         data-resize
-        onPointerDown={(e) => onResizeDown(e, "bottom right")}
+        onPointerDown={(e) => onResizeDown(e, "bottom-right")}
         className='absolute bottom-0 right-0 w-4 h-4 cursor-nwse-resize'
         />
 
