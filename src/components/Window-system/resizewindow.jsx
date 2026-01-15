@@ -4,6 +4,10 @@ import { useState } from 'react'
 
 const MIN_W = 300;
 const MIN_H = 200;
+const SAFE_LEFT = 240;
+const SAFE_TOP = 60;
+const SAFE_RIGHT = 16;
+const SAFE_BOTTOM = 16;
 const EDGE_PADDING = 16;
 
 export default function ResizeWindow({
@@ -78,10 +82,31 @@ export default function ResizeWindow({
                 if (direction.includes("left")) { newW = initW - dx; newX = initX + dx; }
                 if (direction.includes("top")) { newH = initH - dy; newY = initY + dy; }
 
-                if (newW > MIN_W && newH > MIN_H) {
-                    setSize({ w: newW, h: newH });
-                    setPos({ x: newX, y: newY });
-                }
+                const maxW = 
+                window.innerWidth - SAFE_RIGHT - pos.x;
+
+                const maxH = 
+                window.innerHeight - SAFE_BOTTOM - pos.y;
+
+                const clampedW = Math.min(
+                    Math.max(newW, MIN_W),
+                    maxW
+                );
+
+                const clampedH = Math.min(
+                    Math.max(newH, MIN_H),
+                    maxH
+                );
+
+                setSize({ w: clampedW, h: clampedH});
+                setPos({
+                    x: direction.includes("left")
+                    ? Math.max(newX, SAFE_LEFT)
+                    : pos.x,
+                    y: direction.includes("top")
+                    ? Math.max(newY, SAFE_TOP)
+                    : pos.y,
+                });
             }
             
         function up() {
