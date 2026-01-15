@@ -19,7 +19,7 @@ export default function Fullscreen({
 
   const isGame = title === "Flappy Bird";
 
-  
+
   // Mobile detection once mounted
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -80,7 +80,7 @@ export default function Fullscreen({
 
 
   const WindowContent = (
-    <div
+    <main
       className={`
       w-full h-full
     bg-gray-900 rounded-lg 
@@ -92,7 +92,7 @@ export default function Fullscreen({
       style={
         isFullscreen || isMobile ? {} : undefined}
     >
-      <div
+      <section
       data-drag-handle
         className="
         relative flex items-center
@@ -161,9 +161,9 @@ export default function Fullscreen({
             />
           </button>
         </div>
-      </div>
+      </section>
 
-      <div
+      <section
         className={`
           flex-1 w-full min-h-0
           ${
@@ -192,8 +192,8 @@ export default function Fullscreen({
         ) : (
           <div className="p-6">{children}</div>
         )}
-      </div>
-    </div>
+      </section>
+    </main>
   );
 
   if (isFullscreen || isMobile) return WindowContent;
