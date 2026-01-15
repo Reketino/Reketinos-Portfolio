@@ -1,6 +1,5 @@
 import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
-import Draggable from "./draggable";
 import ResizeWindow from "./resizewindow";
 
 export default function Fullscreen({
@@ -20,7 +19,7 @@ export default function Fullscreen({
 
   const isGame = title === "Flappy Bird";
 
-
+  
   // Mobile detection once mounted
   useEffect(() => {
     if (typeof window !== "undefined") {
