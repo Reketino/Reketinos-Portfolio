@@ -4,6 +4,7 @@ import { useState } from 'react'
 
 const MIN_W = 300;
 const MIN_H = 200;
+const EDGE_PADDING = 16;
 
 export default function ResizeWindow({
     id,
@@ -19,7 +20,7 @@ export default function ResizeWindow({
 
     function onDrag(e) {
         if (!e.target.closest("[data-drag-handle]")) return;
-        if (e.target.dataset.resize) return;
+        if (e.target.closest("[data-resize]")) return;
         if (e.button !== 0) return;
 
         const startX0 = e.clientX;
@@ -29,10 +30,16 @@ export default function ResizeWindow({
 
 
         function move (ev) {
-            setPos({
-                x: initX + (ev.clientX - startX0),
-                y: initY + (ev.clientY - startY0),
-            });
+        const nextX = initX + (ev.clientX - startX0);
+        const nextY = initY + (ev.clientY - startY0);
+
+        const maxX = window.innerWidth - size.w - EDGE_PADDING;
+        const maxY = window.innerHeight - size.h - EDGE_PADDING;
+
+        setPos({
+            x: Math.min(Math.max(nextX, EDGE_PADDING), maxX),
+            y: Math.min(Math.max(nextY, EDGE_PADDING), maxY),
+        })
         }
 
         function up() {
@@ -103,16 +110,16 @@ export default function ResizeWindow({
         </section>
 
     {/* Rezise handling/corners */}
-        <div data-resize onPointerDown={(e) => onResizeDown(e, "top-left")} className='absolute top-0 left-0 w-4 h-4 cursor-nwse-resize'/>
-        <div data-resize onPointerDown={(e) => onResizeDown(e, "top-right")} className='absolute top-0 right-0 w-4 h-4 cursor-nwse-resize'/>
-        <div data-resize onPointerDown={(e) => onResizeDown(e, "bottom-left")} className='absolute bottom-0 left-0 w-4 h-4 cursor-nwse-resize'/>
-        <div data-resize onPointerDown={(e) => onResizeDown(e, "bottom-right")} className='absolute bottom-0 right-0 w-4 h-4 cursor-nwse-resize'/>
+        <div data-resize onPointerDown={(e) => onResizeDown(e, "top-left")} className='absolute top-0 left-0 w-4 h-4 cursor-nwse-resize z-50'/>
+        <div data-resize onPointerDown={(e) => onResizeDown(e, "top-right")} className='absolute top-0 right-0 w-4 h-4 cursor-nwse-resize z-50'/>
+        <div data-resize onPointerDown={(e) => onResizeDown(e, "bottom-left")} className='absolute bottom-0 left-0 w-4 h-4 cursor-nwse-resize z-50'/>
+        <div data-resize onPointerDown={(e) => onResizeDown(e, "bottom-right")} className='absolute bottom-0 right-0 w-4 h-4 cursor-nwse-resize z-50'/>
 
     {/* Resize handling edges */}
-        <section data-resize onPointerDown={(e) => onResizeDown(e, "top")} className='absolute top-0 left-4 right-4 h-2 cursor-ns-resize'/>
-        <section data-resize onPointerDown={(e) => onResizeDown(e, "bottom")} className='absolute bottom-0 left-4 right-4 h-2 cursor-ns-resize'/>
-        <section data-resize onPointerDown={(e) => onResizeDown(e, "left")} className='absolute left-0 top-4 bottom-4 w-2 cursor-ew-resize'/>
-        <section data-resize onPointerDown={(e) => onResizeDown(e, "right")} className='absolute right-0 top-4 bottom-4 w-2 cursor-ew-resize'/>
+        <section data-resize onPointerDown={(e) => onResizeDown(e, "top")} className='absolute top-0 left-4 right-4 h-2 cursor-ns-resize z-50'/>
+        <section data-resize onPointerDown={(e) => onResizeDown(e, "bottom")} className='absolute bottom-0 left-4 right-4 h-2 cursor-ns-resize z-50'/>
+        <section data-resize onPointerDown={(e) => onResizeDown(e, "left")} className='absolute left-0 top-4 bottom-4 w-2 cursor-ew-resize z-50'/>
+        <section data-resize onPointerDown={(e) => onResizeDown(e, "right")} className='absolute right-0 top-4 bottom-4 w-2 cursor-ew-resize z-50'/>
     </main>
   );
 }
