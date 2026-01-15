@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import Draggable from "./draggable";
+import ResizeWindow from "./resizewindow";
 
 export default function Fullscreen({
   url,
@@ -42,12 +43,12 @@ export default function Fullscreen({
   const [startPos, setStartPos] = useState(initialPos);
 
   const wrapperWidth = isMobile
-    ? "100vw"
-    : `${Math.min(1400, Math.round(window.innerWidth * 0.7))}px`;
+    ? window.innerWidth
+    : Math.min(1400, Math.round(window.innerWidth * 0.7));
 
   const wrapperHeight = isMobile
-    ? "100vh"
-    : `${Math.min(900, Math.round(window.innerHeight * 0.7))}px`;
+    ? window.innerHeight
+    : Math.min(900, Math.round(window.innerHeight * 0.7));
 
 
     // Position recalculated on resize(applies only to desktop)
@@ -82,6 +83,7 @@ export default function Fullscreen({
   const WindowContent = (
     <div
       className={`
+      w-full h-full
     bg-gray-900 rounded-lg 
       flex flex-col shadow-2xl 
       transition-all duration-300
@@ -89,10 +91,7 @@ export default function Fullscreen({
       ${isFullscreen || isMobile ? "fixed inset-0 pb-[--taskbar-height]" : ""}
     `}
       style={
-        isFullscreen || isMobile
-          ? {}
-          : { width: wrapperWidth, height: wrapperHeight }
-      }
+        isFullscreen || isMobile ? {} : undefined}
     >
       <div
       data-drag-handle
@@ -201,7 +200,7 @@ export default function Fullscreen({
   if (isFullscreen || isMobile) return WindowContent;
 
   return (
-    <Draggable
+    <ResizeWindow
       id={title}
       startX={startPos.x}
       startY={startPos.y}
@@ -209,6 +208,6 @@ export default function Fullscreen({
       height={wrapperHeight}
     >
       {WindowContent}
-    </Draggable>
+    </ResizeWindow>
   );
 }
