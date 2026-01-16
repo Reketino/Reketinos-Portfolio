@@ -31,11 +31,11 @@ export default function Fullscreen({
   const initialPos = isMobile
     ? { x: 10, y: 60 }
     : typeof window !== "undefined"
-    ? {
-        x: window.innerWidth * 0.5 - (window.innerWidth * 0.96) / 2,
-        y: window.innerHeight * 0.5 - (window.innerHeight * 0.95) / 2,
-      }
-    : { x: 0, y: 0 };
+      ? {
+          x: window.innerWidth * 0.5 - (window.innerWidth * 0.96) / 2,
+          y: window.innerHeight * 0.5 - (window.innerHeight * 0.95) / 2,
+        }
+      : { x: 0, y: 0 };
 
   const [startPos, setStartPos] = useState(initialPos);
 
@@ -169,8 +169,8 @@ export default function Fullscreen({
                 ? "bg-linear-to-b from-sky-400 to-green-500 overflow-hidden overscroll-none"
                 : "bg-black overflow-hidden"
               : mode === "browser"
-              ? "bg-black p-0 overflow-y-auto"
-              : "bg-black rounded-b-lg overflow-y-auto"
+                ? "bg-black p-0 overflow-y-auto"
+                : "bg-black rounded-b-lg overflow-y-auto"
           }
         `}
       >

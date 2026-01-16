@@ -38,7 +38,7 @@ export default function ResizeWindow({
     const initX = pos.x;
     const initY = pos.y;
 
-    // Scaling of container 
+    // Scaling of container
     function move(ev) {
       const nextX = initX + (ev.clientX - startX0);
       const nextY = initY + (ev.clientY - startY0);
@@ -118,7 +118,7 @@ export default function ResizeWindow({
 
     // Pointer Event
     function up(ev) {
-        try {
+      try {
         ev?.currentTarget?.releasePointerCapture?.(ev.pointerId);
       } catch {}
 
@@ -146,55 +146,54 @@ export default function ResizeWindow({
       <div className="w-full h-full relative rounded-lg overflow-hidden shadow-xl">
         {children}
       </div>
-      
+
       {/* Resize disabled for Flappy Bird */}
       {!disableResize && (
         <>
+          {/* Rezise handling/corners */}
+          <div
+            data-resize
+            onPointerDown={(e) => onResizeDown(e, "top-left")}
+            className="absolute top-0 left-0 w-4 h-4 cursor-nwse-resize z-50"
+          />
+          <div
+            data-resize
+            onPointerDown={(e) => onResizeDown(e, "top-right")}
+            className="absolute top-0 right-0 w-4 h-4 cursor-nwse-resize z-50"
+          />
+          <div
+            data-resize
+            onPointerDown={(e) => onResizeDown(e, "bottom-left")}
+            className="absolute bottom-0 left-0 w-4 h-4 cursor-nwse-resize z-50"
+          />
+          <div
+            data-resize
+            onPointerDown={(e) => onResizeDown(e, "bottom-right")}
+            className="absolute bottom-0 right-0 w-4 h-4 cursor-nwse-resize z-50"
+          />
 
-      {/* Rezise handling/corners */}
-      <div
-        data-resize
-        onPointerDown={(e) => onResizeDown(e, "top-left")}
-        className="absolute top-0 left-0 w-4 h-4 cursor-nwse-resize z-50"
-      />
-      <div
-        data-resize
-        onPointerDown={(e) => onResizeDown(e, "top-right")}
-        className="absolute top-0 right-0 w-4 h-4 cursor-nwse-resize z-50"
-      />
-      <div
-        data-resize
-        onPointerDown={(e) => onResizeDown(e, "bottom-left")}
-        className="absolute bottom-0 left-0 w-4 h-4 cursor-nwse-resize z-50"
-      />
-      <div
-        data-resize
-        onPointerDown={(e) => onResizeDown(e, "bottom-right")}
-        className="absolute bottom-0 right-0 w-4 h-4 cursor-nwse-resize z-50"
-      />
-
-      {/* Resize handling edges */}
-      <div
-        data-resize
-        onPointerDown={(e) => onResizeDown(e, "top")}
-        className="absolute top-0 left-4 right-4 h-2 cursor-ns-resize z-50"
-      />
-      <div
-        data-resize
-        onPointerDown={(e) => onResizeDown(e, "bottom")}
-        className="absolute bottom-0 left-4 right-4 h-2 cursor-ns-resize z-50"
-      />
-      <div
-        data-resize
-        onPointerDown={(e) => onResizeDown(e, "left")}
-        className="absolute left-0 top-4 bottom-4 w-2 cursor-ew-resize z-50"
-      />
-      <div
-        data-resize
-        onPointerDown={(e) => onResizeDown(e, "right")}
-        className="absolute right-0 top-4 bottom-4 w-2 cursor-ew-resize z-50"
-      />
-      </>
+          {/* Resize handling edges */}
+          <div
+            data-resize
+            onPointerDown={(e) => onResizeDown(e, "top")}
+            className="absolute top-0 left-4 right-4 h-2 cursor-ns-resize z-50"
+          />
+          <div
+            data-resize
+            onPointerDown={(e) => onResizeDown(e, "bottom")}
+            className="absolute bottom-0 left-4 right-4 h-2 cursor-ns-resize z-50"
+          />
+          <div
+            data-resize
+            onPointerDown={(e) => onResizeDown(e, "left")}
+            className="absolute left-0 top-4 bottom-4 w-2 cursor-ew-resize z-50"
+          />
+          <div
+            data-resize
+            onPointerDown={(e) => onResizeDown(e, "right")}
+            className="absolute right-0 top-4 bottom-4 w-2 cursor-ew-resize z-50"
+          />
+        </>
       )}
     </main>
   );
