@@ -80,28 +80,31 @@ export default function Fullscreen({
 
 
   const WindowContent = (
-    <main
-      className={`
-      w-full h-full
-    bg-gray-900 rounded-lg 
-      flex flex-col shadow-2xl 
-      transition-all duration-300
-      animate-window-pop z-50
-      ${isFullscreen || isMobile ? "fixed inset-0 pb-[--taskbar-height]" : ""}
+    <div
+    role="dialog"
+    aria-label={title}
+    className={`
+    w-full h-full
+  bg-gray-900 rounded-lg 
+    flex flex-col shadow-2xl 
+    transition-all duration-300
+    animate-window-pop z-50
+    ${isFullscreen || isMobile ? "fixed inset-0 pb-[--taskbar-height]" : ""}
     `}
       style={
-        isFullscreen || isMobile ? {} : undefined}
+        isFullscreen || isMobile ? {} : undefined
+      }
     >
-      <section
+      <header
       data-drag-handle
-        className="
-        relative flex items-center
-      text-white bg-black
-        px-4 py-2  
-        cursor-move select-none
-        "
-        onPointerDown={(e) => {
-          if (isFullscreen) e.stopPropagation();
+      className="
+      relative flex items-center
+    text-white bg-black
+      px-4 py-2  
+      cursor-move select-none
+      "
+      onPointerDown={(e) => {
+        if (isFullscreen) e.stopPropagation();
         }}
       >
         <div className="absolute left-4 flex gap-2">
@@ -122,8 +125,9 @@ export default function Fullscreen({
 
         <div className="absolute right-4 flex gap-2">
           <button
-            onClick={onMinimize}
-            className="p-1 hover:bg-gray-700 rounded-transition"
+          aria-label="Minimize-window"
+          onClick={onMinimize}
+          className="p-1 hover:bg-gray-700 rounded-transition"
           >
             <Image
               src="/fscreenicon/minimize.png"
@@ -161,9 +165,9 @@ export default function Fullscreen({
             />
           </button>
         </div>
-      </section>
+      </header>
 
-      <section
+      <div
         className={`
           flex-1 w-full min-h-0
           ${
@@ -192,8 +196,8 @@ export default function Fullscreen({
         ) : (
           <div className="p-6">{children}</div>
         )}
-      </section>
-    </main>
+      </div>
+    </div>
   );
 
   if (isFullscreen || isMobile) return WindowContent;
