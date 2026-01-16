@@ -24,9 +24,11 @@ export default function ResizeWindow({
 }) {
   const [pos, setPos] = useState({ x: startX, y: startY });
   const [size, setSize] = useState({ w: width, h: height });
+  const [isResizing, setIsResizing] = useState(false);
 
   // Logic behind dragging container around
   function onDrag(e) {
+    if (isResizing) return;
     if (!e.target.closest("[data-drag-handle]")) return;
     if (e.target.closest("[data-resize]")) return;
     if (e.button !== 0) return;
@@ -66,6 +68,9 @@ export default function ResizeWindow({
   // Resizing container down
   function onResizeDown(e, direction) {
     e.stopPropagation();
+    e.preventDefault();
+    e.currentTarget.setPointerCapture(e.pointerId);
+    setIsResizing(true);
 
     const startX0 = e.clientX;
     const startY0 = e.clientY;
@@ -112,7 +117,12 @@ export default function ResizeWindow({
     }
 
     // Pointer Event
-    function up() {
+    function up(ev) {
+        try {
+        ev?.currentTarget?.releasePointerCapture?.(ev.pointerId);
+      } catch {}
+
+      setIsResizing(false);
       document.removeEventListener("pointermove", move);
       document.removeEventListener("pointerup", up);
     }
