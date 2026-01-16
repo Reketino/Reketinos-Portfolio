@@ -20,6 +20,7 @@ export default function ResizeWindow({
   startY = 0,
   width = 800,
   height = 500,
+  disableResize = false,
 }) {
   const [pos, setPos] = useState({ x: startX, y: startY });
   const [size, setSize] = useState({ w: width, h: height });

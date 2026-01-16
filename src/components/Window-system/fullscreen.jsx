@@ -201,6 +201,7 @@ export default function Fullscreen({
       startY={startPos.y}
       width={wrapperWidth}
       height={wrapperHeight}
+      disableResize={isGame}
     >
       {WindowContent}
     </ResizeWindow>
