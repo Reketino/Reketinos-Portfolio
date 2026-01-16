@@ -136,6 +136,10 @@ export default function ResizeWindow({
       <div className="w-full h-full relative rounded-lg overflow-hidden shadow-xl">
         {children}
       </div>
+      
+      {/* Resize disabled for Flappy Bird */}
+      {!disableResize && (
+        <>
 
       {/* Rezise handling/corners */}
       <div
@@ -180,6 +184,8 @@ export default function ResizeWindow({
         onPointerDown={(e) => onResizeDown(e, "right")}
         className="absolute right-0 top-4 bottom-4 w-2 cursor-ew-resize z-50"
       />
+      </>
+      )}
     </main>
   );
 }
