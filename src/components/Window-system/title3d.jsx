@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function Title3d({ text = "Reketino`s Portfolio" }) {
   return (
-    <div className="
+    <main className="
     relative flex 
     items-center justify-center 
     perspective-[1000px]
@@ -43,7 +43,7 @@ export default function Title3d({ text = "Reketino`s Portfolio" }) {
         {text}
       </motion.h1>
 
-      <div className="
+      <section className="
       absolut inset-0 flex  
       items-center justify-center
       ">
@@ -64,7 +64,7 @@ export default function Title3d({ text = "Reketino`s Portfolio" }) {
             ease: "easeInOut",
           }}
         />
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }

@@ -1,6 +1,5 @@
 import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
-import Draggable from "./draggable";
 import ResizeWindow from "./resizewindow";
 
 export default function Fullscreen({
@@ -20,7 +19,6 @@ export default function Fullscreen({
 
   const isGame = title === "Flappy Bird";
 
-
   // Mobile detection once mounted
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -28,7 +26,6 @@ export default function Fullscreen({
       setIsReady(true);
     }
   }, []);
-
 
   // Window position standard (mobile & desktop)
   const initialPos = isMobile
@@ -50,8 +47,7 @@ export default function Fullscreen({
     ? window.innerHeight
     : Math.min(900, Math.round(window.innerHeight * 0.7));
 
-
-    // Position recalculated on resize(applies only to desktop)
+  // Position recalculated on resize(applies only to desktop)
   useEffect(() => {
     if (isFullscreen) return;
 
@@ -75,32 +71,31 @@ export default function Fullscreen({
     return () => window.removeEventListener("resize", recalc);
   }, [isFullscreen, isMobile, isReady]);
 
-  
   // No rendering before client-only values / window values is available
   if (!isReady) return null;
 
-
   const WindowContent = (
     <div
+      role="dialog"
+      aria-label={title}
       className={`
-      w-full h-full
-    bg-gray-900 rounded-lg 
-      flex flex-col shadow-2xl 
-      transition-all duration-300
-      animate-window-pop z-50
-      ${isFullscreen || isMobile ? "fixed inset-0 pb-[--taskbar-height]" : ""}
+    w-full h-full
+  bg-gray-900 rounded-lg 
+    flex flex-col shadow-2xl 
+    transition-all duration-300
+    animate-window-pop z-50
+    ${isFullscreen || isMobile ? "fixed inset-0 pb-[--taskbar-height]" : ""}
     `}
-      style={
-        isFullscreen || isMobile ? {} : undefined}
+      style={isFullscreen || isMobile ? {} : undefined}
     >
-      <div
-      data-drag-handle
+      <header
+        data-drag-handle
         className="
-        relative flex items-center
-      text-white bg-black
-        px-4 py-2  
-        cursor-move select-none
-        "
+      relative flex items-center
+    text-white bg-black
+      px-4 py-2  
+      cursor-move select-none
+      "
         onPointerDown={(e) => {
           if (isFullscreen) e.stopPropagation();
         }}
@@ -123,6 +118,7 @@ export default function Fullscreen({
 
         <div className="absolute right-4 flex gap-2">
           <button
+            aria-label="Minimize-window"
             onClick={onMinimize}
             className="p-1 hover:bg-gray-700 rounded-transition"
           >
@@ -162,7 +158,7 @@ export default function Fullscreen({
             />
           </button>
         </div>
-      </div>
+      </header>
 
       <div
         className={`
@@ -186,7 +182,6 @@ export default function Fullscreen({
             className="w-full h-full border-none"
             title={title}
             scrolling={isGame ? "no" : "auto"}
-            
           />
         ) : fullContent ? (
           <div className="w-full h-full overflow-hidden">{children}</div>

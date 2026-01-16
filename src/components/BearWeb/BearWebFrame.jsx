@@ -34,7 +34,7 @@ export default function BearWebFrame({ title, onBack, onMinimize, children }) {
 
         <div className="flex gap-2">
           <button
-            onClick={onMinimize}
+            onClick={handleMinimize}
             className="hover:bg-neutral-700 p-1 rounded"
           >
             <Image
