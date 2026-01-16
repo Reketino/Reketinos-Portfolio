@@ -12,7 +12,7 @@ const SAFE_TOP = 0; // Header / taskbar
 const SAFE_RIGHT = 0; // Air around container
 const SAFE_BOTTOM = 0;
 
-
+// Width & height when opening component
 export default function ResizeWindow({
   id,
   children,
@@ -23,7 +23,8 @@ export default function ResizeWindow({
 }) {
   const [pos, setPos] = useState({ x: startX, y: startY });
   const [size, setSize] = useState({ w: width, h: height });
-
+  
+  // Logic behind dragging container around
   function onDrag(e) {
     if (!e.target.closest("[data-drag-handle]")) return;
     if (e.target.closest("[data-resize]")) return;
@@ -34,6 +35,7 @@ export default function ResizeWindow({
     const initX = pos.x;
     const initY = pos.y;
 
+    // Scaling of container logic 
     function move(ev) {
       const nextX = initX + (ev.clientX - startX0);
       const nextY = initY + (ev.clientY - startY0);
@@ -50,6 +52,7 @@ export default function ResizeWindow({
       });
     }
 
+    // Pointer Event
     function up() {
       document.removeEventListener("pointermove", move);
       document.removeEventListener("pointerup", up);
@@ -59,6 +62,7 @@ export default function ResizeWindow({
     document.addEventListener("pointerup", up);
   }
 
+  // Resizing container down 
   function onResizeDown(e, direction) {
     e.stopPropagation();
 
@@ -105,6 +109,7 @@ export default function ResizeWindow({
       });
     }
 
+    // Pointer Event
     function up() {
       document.removeEventListener("pointermove", move);
       document.removeEventListener("pointerup", up);
@@ -126,9 +131,9 @@ export default function ResizeWindow({
         zIndex: 999,
       }}
     >
-      <section className="w-full h-full relative rounded-lg overflow-hidden shadow-xl">
+      <div className="w-full h-full relative rounded-lg overflow-hidden shadow-xl">
         {children}
-      </section>
+      </div>
 
       {/* Rezise handling/corners */}
       <div
@@ -153,22 +158,22 @@ export default function ResizeWindow({
       />
 
       {/* Resize handling edges */}
-      <section
+      <div
         data-resize
         onPointerDown={(e) => onResizeDown(e, "top")}
         className="absolute top-0 left-4 right-4 h-2 cursor-ns-resize z-50"
       />
-      <section
+      <div
         data-resize
         onPointerDown={(e) => onResizeDown(e, "bottom")}
         className="absolute bottom-0 left-4 right-4 h-2 cursor-ns-resize z-50"
       />
-      <section
+      <div
         data-resize
         onPointerDown={(e) => onResizeDown(e, "left")}
         className="absolute left-0 top-4 bottom-4 w-2 cursor-ew-resize z-50"
       />
-      <section
+      <div
         data-resize
         onPointerDown={(e) => onResizeDown(e, "right")}
         className="absolute right-0 top-4 bottom-4 w-2 cursor-ew-resize z-50"
