@@ -81,9 +81,10 @@ export default function TechStack() {
       "
       style={{ backgroundImage: "url('/tech.jpg')" }}
     >
-      <div className="absolute inset-0 bg-linear-to-b from-green-600/40 via-black/70 to-black/90">
+      <div className="absolute inset-0 bg-linear-to-b from-green-600/40 via-black/70 to-black/90" />
 
-      <div className="relative z-10 w-full ">
+      <section className="relative z-10 w-full ">
+        <header>
       <h2 className="
       text-4xl text-center font-bold 
       mb-5 mt-5  
@@ -92,15 +93,16 @@ export default function TechStack() {
       >
         👨🏻‍💻 Tech Stack
         </h2>
+        </header>
 
       <div className="
       grid grid-cols-1 md:grid-cols-2 
       gap-10 max-w-5xl mx-auto
       "
       >
-        {sections.map((section, i) => (
-          <div
-            key={i}
+        {sections.map((section) => (
+          <section
+            key={section.title}
             className="
             bg-white/5 bg-opacity-30 
             backdrop-blur-md rounded-2xl 
@@ -111,9 +113,9 @@ export default function TechStack() {
               {section.title}
             </h3>
 
-            <div className="grid grid-cols-3 sm:grid-cols-4 gap-6 text-center">
-              {section.items.map(({ Icon, color, name }, j) => (
-                <div key={j} className="flex flex-col items-center">
+            <ul className="grid grid-cols-3 sm:grid-cols-4 gap-6 text-center">
+              {section.items.map(({ Icon, color, name }) => (
+                <li key={name} className="flex flex-col items-center">
                   <div
                     className={`
                     flex items-center justify-center
@@ -127,17 +129,24 @@ export default function TechStack() {
                       boxShadow: `0 0 25px ${color.replace("text-", "")}66`,
                     }}
                   >
-                    <Icon className={`text-5xl ${color}`} title={name} />
+                    <Icon 
+                    className={`text-5xl ${color}`} 
+                    title={name} 
+                    aria-hidden
+                    />
                   </div>
-                  <p className="text-sm text-gray-300 mt-2">{name}</p>
-                </div>
+
+                  <span 
+                  className="text-sm text-gray-300 mt-2">
+                    {name}
+                    </span>
+                </li>
               ))}
-            </div>
-          </div>
+            </ul>
+          </section>
         ))}
       </div>
-      </div>
-      </div>
+      </section>
     </main>
   );
 }
