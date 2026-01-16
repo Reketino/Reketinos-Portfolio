@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 // Min width & Height
-const MIN_W = 800; 
+const MIN_W = 800;
 const MIN_H = 200;
 
 // Air around container
@@ -23,7 +23,7 @@ export default function ResizeWindow({
 }) {
   const [pos, setPos] = useState({ x: startX, y: startY });
   const [size, setSize] = useState({ w: width, h: height });
-  
+
   // Logic behind dragging container around
   function onDrag(e) {
     if (!e.target.closest("[data-drag-handle]")) return;
@@ -35,7 +35,7 @@ export default function ResizeWindow({
     const initX = pos.x;
     const initY = pos.y;
 
-    // Scaling of container logic 
+    // Scaling of container logic
     function move(ev) {
       const nextX = initX + (ev.clientX - startX0);
       const nextY = initY + (ev.clientY - startY0);
@@ -62,7 +62,7 @@ export default function ResizeWindow({
     document.addEventListener("pointerup", up);
   }
 
-  // Resizing container down 
+  // Resizing container down
   function onResizeDown(e, direction) {
     e.stopPropagation();
 
