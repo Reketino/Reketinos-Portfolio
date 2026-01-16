@@ -2,13 +2,16 @@
 
 import { useState } from "react";
 
-const MIN_W = 300;
+// Min width & Height
+const MIN_W = 800; 
 const MIN_H = 200;
-const SAFE_LEFT = 240;
-const SAFE_TOP = 60;
-const SAFE_RIGHT = 16;
-const SAFE_BOTTOM = 16;
-const EDGE_PADDING = 16;
+
+// Air around container
+const SAFE_LEFT = 0; //Sidebar width
+const SAFE_TOP = 0; // Header / taskbar
+const SAFE_RIGHT = 0; // Air around container
+const SAFE_BOTTOM = 0;
+
 
 export default function ResizeWindow({
   id,
@@ -35,12 +38,15 @@ export default function ResizeWindow({
       const nextX = initX + (ev.clientX - startX0);
       const nextY = initY + (ev.clientY - startY0);
 
-      const maxX = window.innerWidth - size.w - EDGE_PADDING;
-      const maxY = window.innerHeight - size.h - EDGE_PADDING;
+      const minX = SAFE_LEFT;
+      const minY = SAFE_TOP;
+
+      const maxX = window.innerWidth - size.w - SAFE_RIGHT;
+      const maxY = window.innerHeight - size.h - SAFE_BOTTOM;
 
       setPos({
-        x: Math.min(Math.max(nextX, EDGE_PADDING), maxX),
-        y: Math.min(Math.max(nextY, EDGE_PADDING), maxY),
+        x: Math.min(Math.max(nextX, minX), maxX),
+        y: Math.min(Math.max(nextY, minY), maxY),
       });
     }
 
