@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-// Min width & Height
+// Min Width & Height
 const MIN_W = 800;
 const MIN_H = 200;
 
@@ -12,7 +12,7 @@ const SAFE_TOP = 0; // Header / taskbar
 const SAFE_RIGHT = 0; // Air around container
 const SAFE_BOTTOM = 0;
 
-// Width & height when opening component
+// Width & Height when opening component
 export default function ResizeWindow({
   id,
   children,
@@ -35,7 +35,7 @@ export default function ResizeWindow({
     const initX = pos.x;
     const initY = pos.y;
 
-    // Scaling of container logic
+    // Scaling of container 
     function move(ev) {
       const nextX = initX + (ev.clientX - startX0);
       const nextY = initY + (ev.clientY - startY0);
@@ -74,6 +74,7 @@ export default function ResizeWindow({
     const initX = pos.x;
     const initY = pos.y;
 
+    // Container movement
     function move(ev) {
       const dx = ev.clientX - startX0;
       const dy = ev.clientY - startY0;
