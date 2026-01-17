@@ -1,17 +1,16 @@
 "use client";
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from "react";
 
-export  function useSleepScreen() {
- const [active, setActive] = useState(false);
+export function useSleepScreen() {
+  const [active, setActive] = useState(false);
   const [fade, setFade] = useState(false);
   const [bgFade, setBgFade] = useState(false);
-
 
   //   Trigger functions globally
   useEffect(() => {
     window.enterSleep = () => {
       if (window.closeStartMenu) window.closeStartMenu();
-      window.disableStartMenuClick = true
+      window.disableStartMenuClick = true;
       setActive(true);
     };
 
@@ -44,10 +43,9 @@ export  function useSleepScreen() {
     };
   }, [active]);
 
-
   return {
     active,
     fade,
     bgFade,
-   }
   };
+}
