@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useSleepScreen } from "./useSleepScreen";
 
 export default function SleepScreen() {
-  const { active, fade } = useSleepScreen();
+  const { active, fade, bgFade } = useSleepScreen();
 
   if (!active) return null;
 
@@ -19,7 +19,7 @@ export default function SleepScreen() {
       
       <section 
       className="
-      absoulte inset-0
+      absolute inset-0
       ">
       <Image
       src="/sleepscreen/sleepscreen.webp"
@@ -28,11 +28,13 @@ export default function SleepScreen() {
       className="object-cover"
       />
 
-      <div className="
+      <div className={`
       absolute inset-0 
       bg-black/90
       backdrop-blur-[0.5px]
-      " 
+      transition-opacity duration-700
+      ${bgFade ? "opacity-90" : "opacity-10"}
+      `}
       />
   </section>
 
