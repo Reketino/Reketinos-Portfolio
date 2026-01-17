@@ -18,8 +18,8 @@ export default function SleepScreen() {
       <section 
       className={`
       absolute inset-0
-    bg-black transition-opacity duration-300
-      ${fade ? "opacity-100" : "opacity-0"}
+    transition-opacity duration-700
+      ${bgFade ? "opacity-100" : "opacity-0"}
       `}>
       <Image
       src="/sleepscreen/sleepscreen.webp"
@@ -28,17 +28,20 @@ export default function SleepScreen() {
       className="object-cover"
       />
 
-      <div className={`
+      <div className="
       absolute inset-0 
       bg-black/90
       backdrop-blur-[0.5px]
-      transition-opacity duration-700
-      ${bgFade ? "opacity-90" : "opacity-10"}
-      `}
+      "
       />
   </section>
 
-      <header className="relative text-center">
+      <header 
+      className={`
+      relative text-center
+      transition-opacity duration-300
+      ${fade ? "opacity-100" : "opacity-0"}
+      `}>
         <p className="font-mono text-red-950 text-4xl animate-pulse">
           Reketino's Portfolio
         </p>

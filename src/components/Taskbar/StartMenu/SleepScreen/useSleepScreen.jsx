@@ -28,8 +28,8 @@ export  function useSleepScreen() {
   // Fade & background fade
   useEffect(() => {
     if (!active) return;
-    setTimeout(() => setFade(true), 10);
-    setTimeout(() => setBgFade(true), 20);
+    setTimeout(() => setFade(true), 0);
+    setTimeout(() => setBgFade(true), 50);
 
     const wake = () => {
       window.exitSleep();
