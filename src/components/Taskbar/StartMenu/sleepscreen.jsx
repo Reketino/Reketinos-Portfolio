@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function SleepScreen() {
@@ -55,13 +55,25 @@ export default function SleepScreen() {
         ${fade ? "opacity-100" : "opacity-0"}
         `}
     >
-      <section
-        className="
-    absolute inset-0 pointer-events-none
-    before:content-[''] before:absolute before:inset-0
-    before:bg-[linear-gradient(rgba(255,0,0,0.04)_1px,transparent_1px)]
-    "
+      
+      <section 
+      className="
+      absoulte inset-0
+      ">
+      <Image
+      src="/sleepscreen/sleepscreen.webp"
+      alt="Gimsdalstind"
+      fill
+      className="object-cover"
       />
+
+      <div className="
+      absolute inset-0 
+      bg-black/85
+      backdrop-blur-[0.5px]
+      " 
+      />
+  </section>
 
       <header className="relative text-center">
         <p className="font-mono text-red-950 text-4xl animate-pulse">
