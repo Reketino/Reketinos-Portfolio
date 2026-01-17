@@ -117,8 +117,8 @@ export default function Taskbar({ minimizedApps, onRestore }) {
         ))}
       </nav>
 
-      {/* GITHUB SIGNATURE */}
-      <div className="absolute left-1/2 -translate-x-1/2 pointer-events-none hidden sm:block">
+      {/* SIGNATURE W/ LINK TO G/HUB */}
+      <div className="absolute left-1/2 -translate-x-1/2 hidden sm:block">
         <Link
           href="https://github.com/Reketino"
           target="_blank"
