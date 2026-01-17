@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react'
 export  function useSleepScreen() {
  const [active, setActive] = useState(false);
   const [fade, setFade] = useState(false);
+  const [bgFade, setBgFade] = useState(false);
+
 
   //   Trigger functions globally
   useEffect(() => {
@@ -23,9 +25,12 @@ export  function useSleepScreen() {
     };
   }, []);
 
+  // Fade & background fade
   useEffect(() => {
     if (!active) return;
     setTimeout(() => setFade(true), 10);
+    setTimeout(() => setBgFade(true), 20);
+
     const wake = () => {
       window.exitSleep();
     };
@@ -39,10 +44,10 @@ export  function useSleepScreen() {
     };
   }, [active]);
 
-  
 
   return {
     active,
-    fade
+    fade,
+    bgFade,
    }
   };
