@@ -69,7 +69,7 @@ export default function SleepScreen() {
 
       <div className="
       absolute inset-0 
-      bg-black/85
+      bg-black/90
       backdrop-blur-[0.5px]
       " 
       />
