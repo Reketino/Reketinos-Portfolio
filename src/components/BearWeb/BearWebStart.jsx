@@ -6,8 +6,8 @@ export default function BearWebStart({ onOpen }) {
   const [query, setQuery] = useState("");
 
   const shortcuts = [
-    { label: "BearStocks", page: "stocks", icon: "/bearicon.png" },
-    { label: "Bear HoldEm", page: "holdem", icon: "/bearholdem.png"},
+    { label: "BearStocks", page: "stocks", icon: "/icons/bearicon.png" },
+    { label: "Bear HoldEm", page: "holdem", icon: "/icons/bearholdem.png"},
   ];
 
   return (
