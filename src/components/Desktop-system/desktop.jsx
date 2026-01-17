@@ -118,11 +118,11 @@ export default function Desktop() {
     AboutMe: "📝",
     TechStack: "💻",
     Contact: "📨",
-    Spotify: "/spoti.png",
-    Flappy: "/flappy.png",
-    BearWeb: "/ohmybjorn.png",
-    Error: "/brokenfile.png",
-    BearCode: "/vsbearcode.png",
+    Spotify: "/icons/spoti.png",
+    Flappy: "/icons/flappy.png",
+    BearWeb: "/icons/ohmybjorn.png",
+    Error: "/icons/brokenfile.png",
+    BearCode: "/icons/vsbearcode.png",
   };
 
   // Minimizing Apps to taskbar event handler
