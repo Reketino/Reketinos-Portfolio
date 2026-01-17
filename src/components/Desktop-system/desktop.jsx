@@ -59,7 +59,7 @@ export default function Desktop() {
       startX: 0,
       startY: 360,
       label: "Spotify",
-      image: "/spoti.png",
+      image: "/icons/spoti.png",
       onOpen: () => setOpenApp("Spotify"),
     },
     {
@@ -67,7 +67,7 @@ export default function Desktop() {
       startX: 0,
       startY: 480,
       label: "Flappy Bird",
-      image: "/flappy.png",
+      image: "/icons/flappy.png",
       onOpen: () => setOpenApp("Flappy"),
     },
     {
@@ -75,7 +75,7 @@ export default function Desktop() {
       startX: 150,
       startY: 0,
       label: "BearWeb",
-      image: "/ohmybjorn.png",
+      image: "/icons/ohmybjorn.png",
       onOpen: () => setOpenApp("BearWeb"),
     },
     {
@@ -83,7 +83,7 @@ export default function Desktop() {
       startX: 150,
       startY: 120,
       label: "Recycle Bin",
-      image: "/trash.png",
+      image: "/icons/trash.png",
       onOpen: () => setOpenApp("RecycleBin"),
     },
     {
@@ -91,7 +91,7 @@ export default function Desktop() {
       startX: 150,
       startY: 240,
       label: "BearCode",
-      image: "/vsbearcode.png",
+      image: "/icons/vsbearcode.png",
       onOpen: () => setOpenApp("BearCode"),
     },
   ];

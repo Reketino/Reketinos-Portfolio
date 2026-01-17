@@ -82,7 +82,7 @@ export default function Taskbar({ minimizedApps, onRestore }) {
        "
         >
           <Image
-            src="/windows2.png"
+            src="/icons/windows2.png"
             alt="Windows"
             width={36}
             height={36}
@@ -118,7 +118,7 @@ export default function Taskbar({ minimizedApps, onRestore }) {
       </nav>
 
       {/* GITHUB SIGNATURE */}
-      <div className="absolute left-1/2 -translate-x-1/2 pointer-events-none hidden md:block">
+      <div className="absolute left-1/2 -translate-x-1/2 pointer-events-none hidden sm:block">
         <Link
           href="https://github.com/Reketino"
           target="_blank"
