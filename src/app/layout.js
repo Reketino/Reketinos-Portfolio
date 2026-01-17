@@ -1,7 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import BgProvider from "@/app/providers/bgprovider";
-import SleepScreen from "@/components/Taskbar/StartMenu/sleepscreen";
+import SleepScreen from "@/components/Taskbar/StartMenu/SleepScreen/sleepscreen";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
