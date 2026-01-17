@@ -9,18 +9,18 @@ export default function SleepScreen() {
 
   return (
     <main
-      className={`
+      className="
         fixed inset-0 z-999999
         flex items-center justify-center
-        bg-black transition-opacity duration-300
-        ${fade ? "opacity-100" : "opacity-0"}
-        `}
+        "
     >
       
       <section 
-      className="
+      className={`
       absolute inset-0
-      ">
+    bg-black transition-opacity duration-300
+      ${fade ? "opacity-100" : "opacity-0"}
+      `}>
       <Image
       src="/sleepscreen/sleepscreen.webp"
       alt="Gimsdalstind"
