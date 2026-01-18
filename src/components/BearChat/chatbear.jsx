@@ -42,9 +42,24 @@ export default function ChatBear() {
             width={80}
             height={80}
             className="
+            hidden md:block
             object-contain 
             transition-transform 
-            group-hover:scale-105"
+            group-hover:scale-105
+            "
+          />
+
+          <Image
+          src="/BearAI/beariicon.png"
+          alt="BearAI Mobile"
+          width={48}
+          height={48}
+          className="
+          block md:hidden
+          object-contain
+          transition-transform
+          group-hover:scale-105
+          "
           />
         </button>
 
