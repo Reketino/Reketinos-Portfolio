@@ -16,14 +16,10 @@ export default function BearChat({ setIsAnswering }) {
   async function askBear() {
     if (!input.trim() || loading) return;
 
-
     const userMessage = input;
 
-  // Usermessage pop up immediately
-    setMessages((prev) => [
-      ...prev,
-      { role: "user", text: userMessage },
-    ]);
+    // Usermessage pop up immediately
+    setMessages((prev) => [...prev, { role: "user", text: userMessage }]);
 
     setInput("");
     setLoading(true);
@@ -47,12 +43,9 @@ export default function BearChat({ setIsAnswering }) {
       }
 
       const data = await res.json();
-      
+
       // Adding BearAI reply
-      setMessages((prev) => [
-        ...prev,
-        { role: "bear", text: data.answer },
-      ]);
+      setMessages((prev) => [...prev, { role: "bear", text: data.answer }]);
 
       setInput("");
     } catch {
@@ -81,7 +74,12 @@ export default function BearChat({ setIsAnswering }) {
 
       <section className="bg-black/40 rounded p-4 h-64 overflow-y-auto text-sm space-y-2">
         {messages.map((m, i) => (
-          <p key={i} className={m.role === "bear" ? "text-amber-400" : "text-neutral-200"}>
+          <p
+            key={i}
+            className={
+              m.role === "bear" ? "text-amber-400" : "text-neutral-200"
+            }
+          >
             <strong>{m.role === "bear" ? "🐻BearAI" : "You"}:</strong> {m.text}
           </p>
         ))}

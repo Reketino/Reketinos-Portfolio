@@ -22,11 +22,13 @@ export default function ChatBear() {
 
   return (
     <>
-      <main className="
+      <main
+        className="
       fixed bottom-15 right-3
 
       md:bottom-24 md:right-20
-      ">
+      "
+      >
         <ChatBubble show={showBubble && !open} />
 
         <button
@@ -54,11 +56,11 @@ export default function ChatBear() {
           />
 
           <Image
-          src="/BearAI/beariicon.png"
-          alt="BearAI Mobile"
-          width={48}
-          height={48}
-          className="
+            src="/BearAI/beariicon.png"
+            alt="BearAI Mobile"
+            width={48}
+            height={48}
+            className="
           block md:hidden
           object-contain
           transition-transform
