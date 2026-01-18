@@ -72,11 +72,14 @@ export default function ChatBear() {
         {open && (
           <section
             className="
-          absolute bottom-full mb-4 
-          right-1/2 translate-x-1/3
-          md:right-0 md:translate-x-0
+          absolute bottom-full mb-3 
+          right-20 translate-x-1/4
 
-          w-[280px] md:w-[360px] 
+          
+          md:right-0 md:translate-x-0
+          md:mb-5
+
+          w-[300px] md:w-[360px] 
           max-w-[95vw]
 
         bg-neutral-950 border border-neutral-800
