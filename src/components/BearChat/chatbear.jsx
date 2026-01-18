@@ -76,7 +76,7 @@ export default function ChatBear() {
           right-20 translate-x-1/4
 
           md:right-0 md:translate-x-0
-          md:mb-5
+          md:mb-8
 
           w-[300px] md:w-[360px] 
           max-w-[95vw]
