@@ -72,7 +72,8 @@ export default function BearChat({ setIsAnswering }) {
         <option value="story">Story</option>
       </select>
 
-      <section className="
+      <section
+        className="
       bg-black/40 rounded 
       p-4 h-44 
       md:h-64 text-sm 
