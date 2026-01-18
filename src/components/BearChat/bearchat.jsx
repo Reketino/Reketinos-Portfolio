@@ -72,7 +72,14 @@ export default function BearChat({ setIsAnswering }) {
         <option value="story">Story</option>
       </select>
 
-      <section className="bg-black/40 rounded p-4 h-64 overflow-y-auto text-sm space-y-2">
+      <section
+        className="
+      bg-black/40 rounded 
+      p-4 h-44 
+      md:h-64 text-sm 
+      overflow-y-auto space-y-2
+      "
+      >
         {messages.map((m, i) => (
           <p
             key={i}
