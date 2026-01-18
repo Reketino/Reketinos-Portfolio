@@ -1,22 +1,13 @@
 "use client";
 import { FaTimes } from 'react-icons/fa';
 import React from 'react'
+import { useTrashWindow } from './useTrashWindow';
 
-export default function TrashWindow({ onClose, onOpenFile }) {
-    const playErrorSound = () => {
-        const audio = new Audio("/audio/error.mp3")
-        audio.volume = 0.5;
-        audio.play();
-    };
+export default function TrashWindow({ onClose, onOpenFile }) { 
+  const { handleClick } = useTrashWindow({ onOpenFile});
+   
 
-
-    const handleClick = () => {
-        playErrorSound();
-        setTimeout(() => {
-            onOpenFile();
-        }, 200);
-    }
-
+  
   return (
     <main 
     className='
