@@ -94,6 +94,14 @@ export default function Desktop() {
       image: "/icons/vsbearcode.png",
       onOpen: () => setOpenApp("BearCode"),
     },
+    {
+      id: "BearFlights",
+      startX: 150,
+      startY: 360,
+      label: "BearFlights",
+      image: "/icons/bearflights.png",
+      onOpen: () => setOpenApp("BearFlights")  
+    },
   ];
 
   // Menu to "Aboutme"
@@ -123,6 +131,7 @@ export default function Desktop() {
     BearWeb: "/icons/ohmybjorn.png",
     Error: "/icons/brokenfile.png",
     BearCode: "/icons/vsbearcode.png",
+    BearFlights: "/icons/bearflights.png"
   };
 
   // Minimizing Apps to taskbar event handler
@@ -362,6 +371,17 @@ export default function Desktop() {
             onMinimize={() => minimizeApp("BearCode")}
           />
         )}
+      
+      {/* Open BearFlights */}
+      { openApp === "BearFlights" && 
+      !minimizedApps.some((a) => a.id === "BearFlights") && (
+      <Fullscreen
+      url="https://bearflightradar.vercel.app/"
+      title="Bear Flights"
+      onBack={() => setOpenApp(null)}
+      onMinimize={()=> minimizeApp("BearFlights")}
+      />
+      )}
 
       {/* Backgrounds folder */}
       {openFolder && <BgWindow onClose={() => setOpenFolder(false)} />}
