@@ -54,6 +54,9 @@ export default function Taskbar({ minimizedApps, onRestore }) {
 
   return (
     <footer
+    style={{
+      "--taskbar-height": "56px",
+    }}
       className="
     fixed bottom-0 left-0 
     h-14 w-full

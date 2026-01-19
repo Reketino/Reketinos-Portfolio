@@ -9,14 +9,14 @@ export default function BearWebFrame({ title, onBack, onMinimize, children }) {
     if (onMinimize) onMinimize();
   };
 
+   const framePosition = fullscreen
+    ? "fixed top-0 left-0 right-0 bottom-(--taskbar-height)"
+    : "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[96%] h-[80%]"
+
   return (
     <section
       className={`
-                ${
-                  fullscreen
-                    ? "fixed inset-0 pb-[--taskbar-height]"
-                    : "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[96%] h-[95%]"
-                }
+                ${framePosition}
                 bg-black text-white rounded-lg flex flex-col shadow-xl z-50             
                 `}
     >
