@@ -8,10 +8,6 @@ export default function BearWebTopbar({
   onNavigate, 
   onReload, 
   onHome, 
-  onMinimize, 
-  onClose,
-  onToggleFullscreen,
-  fullscreen, 
 }) {
     const [backDisabled] = useState(true);
     const [forwardDisabled] = useState(true);
@@ -20,10 +16,6 @@ export default function BearWebTopbar({
   return (
     <header className="bw-topbar">
         <BearWebTabs 
-        fullscreen={fullscreen}
-        onMinimize={onMinimize}
-        onToggleFullscreen={onToggleFullscreen}
-        onClose={onClose}
         />
       
       <section className="bw-toolbar">
