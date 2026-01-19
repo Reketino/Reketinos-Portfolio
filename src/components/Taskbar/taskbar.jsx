@@ -9,7 +9,6 @@ import StartMenu from "./StartMenu/startmenu";
 import Clock from "./clock";
 import Calendar from "./Calendar/Calendar";
 
-
 export default function Taskbar({ minimizedApps, onRestore }) {
   const [openStart, setOpenStart] = useState(false);
   const [calendarOpen, setCalendarOpen] = useState(false);
@@ -18,7 +17,6 @@ export default function Taskbar({ minimizedApps, onRestore }) {
   const [showTimezone, setShowTimezone] = useState(false);
 
   const calendarRef = useRef(null);
-  
 
   useEffect(() => {
     const savedFormat = localStorage.getItem("clockFormat");
@@ -28,7 +26,6 @@ export default function Taskbar({ minimizedApps, onRestore }) {
     if (savedTZ) setShowTimezone(savedTZ === "true");
   }, []);
 
-
   useEffect(() => {
     localStorage.setItem("clockFormat", clockFormat);
   }, [clockFormat]);
@@ -36,7 +33,6 @@ export default function Taskbar({ minimizedApps, onRestore }) {
   useEffect(() => {
     localStorage.setItem("showTimezone", showTimezone);
   }, [showTimezone]);
-
 
   useEffect(() => {
     const handleClick = (e) => {
@@ -46,7 +42,7 @@ export default function Taskbar({ minimizedApps, onRestore }) {
 
       setOpenStart(false);
       setCalendarOpen(false);
-    }
+    };
 
     window.addEventListener("click", handleClick);
     return () => window.removeEventListener("click", handleClick);
@@ -54,9 +50,9 @@ export default function Taskbar({ minimizedApps, onRestore }) {
 
   return (
     <footer
-    style={{
-      "--taskbar-height": "56px",
-    }}
+      style={{
+        "--taskbar-height": "56px",
+      }}
       className="
     fixed bottom-0 left-0 
     h-14 w-full
@@ -68,7 +64,6 @@ export default function Taskbar({ minimizedApps, onRestore }) {
     px-4 
       "
     >
-
       {/* WINDOWS BUTTON */}
       <nav className="flex items-center shrink-0">
         <button
@@ -93,7 +88,7 @@ export default function Taskbar({ minimizedApps, onRestore }) {
             priority
           />
         </button>
-        
+
         {/* Minimized Apps showing up in Taskbar */}
         {minimizedApps.map((app) => (
           <button
@@ -135,51 +130,43 @@ export default function Taskbar({ minimizedApps, onRestore }) {
       {/* SOCIAL LINKS BOX */}
       <section className="flex items-center gap-3 shrink-0">
         <nav
-        aria-label="Social links"
-        className="grid grid-cols-2 grid-rows-2 gap-1
+          aria-label="Social links"
+          className="grid grid-cols-2 grid-rows-2 gap-1
          bg-white/10 backdrop-blur-md 
          rounded-lg px-2 py-1"
-         >
+        >
           <SocialIcon href="https://www.linkedin.com/in/beareven/">
-            <FaLinkedin 
-            title="LinkedIn"
-            size={18} />
+            <FaLinkedin title="LinkedIn" size={18} />
           </SocialIcon>
 
           <SocialIcon href="https://github.com/Reketino">
-            <FaGithub
-            title="Github" 
-            size={18} />
+            <FaGithub title="Github" size={18} />
           </SocialIcon>
 
           <SocialIcon href="https://www.facebook.com/bjorn.e.lyngstad/">
-            <FaFacebook 
-            title="Facebook"
-            size={18} />
+            <FaFacebook title="Facebook" size={18} />
           </SocialIcon>
 
           <SocialIcon href="https://www.instagram.com/beareven/">
-            <FaInstagram 
-            title="Instagram"
-            size={18} />
+            <FaInstagram title="Instagram" size={18} />
           </SocialIcon>
         </nav>
-        
+
         {/* WEATHER FROM YR.NO */}
         <section className="flex items-center gap-3">
           <WeatherApp />
         </section>
-        
+
         {/* CLOCK + TIMEZONE & CALENDAR OPEN ON CLICK */}
         <Clock
-        clockFormat={clockFormat}
-        showTimezone={showTimezone}
-        onClick={(e) => {
-          e.stopPropagation();
-          setCalendarOpen(!calendarOpen);
-        }}
+          clockFormat={clockFormat}
+          showTimezone={showTimezone}
+          onClick={(e) => {
+            e.stopPropagation();
+            setCalendarOpen(!calendarOpen);
+          }}
         />
-        
+
         {/* CALENDAR IMPORT */}
         {calendarOpen && (
           <div
@@ -197,12 +184,14 @@ export default function Taskbar({ minimizedApps, onRestore }) {
           w-64 z-50
           "
           >
-            <div className="
+            <div
+              className="
             absolute inset-0
             bg-amber-
             rounded-2xl
             pointer-events-none
-            "/>
+            "
+            />
             <Calendar />
           </div>
         )}
