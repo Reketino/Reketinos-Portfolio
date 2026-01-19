@@ -3,10 +3,8 @@ import { React, useState } from "react";
 import BearWebTopbar from "./BearWebTopbar";
 import BearWebStart from "./BearWebStart";
 
-
 export default function BearWebWindow() {
   const [page, setPage] = useState("home");
- 
 
   const navigate = (value) => {
     if (!value) return;
@@ -22,13 +20,13 @@ export default function BearWebWindow() {
   };
 
   return (
-      <main className="flex flex-col h-full min-h-0">
+    <main className="flex flex-col h-full min-h-0">
       <BearWebTopbar
         currentUrl={page}
         onNavigate={navigate}
         onHome={() => setPage("home")}
         onReload={() => setPage(page)}
-       />
+      />
 
       <section className="bw-content min-h-0 overflow-auto">
         {page === "home" && <BearWebStart onOpen={navigate} />}
