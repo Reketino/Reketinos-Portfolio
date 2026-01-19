@@ -360,10 +360,11 @@ export default function Desktop() {
           <BearWebFrame
             title="Bear Web"
             mode="browser"
-            onBack={() => setOpenApp(null)}
-            onMinimize={() => minimizeApp("BearWeb")}
           >
-            <BearWebWindow />
+            <BearWebWindow
+            onMinimize={() => minimizeApp("BearWeb")}
+            onClose={() => setOpenApp(null)}
+            />
           </BearWebFrame>
         )}
 
