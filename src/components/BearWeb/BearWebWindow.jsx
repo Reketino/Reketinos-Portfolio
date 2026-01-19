@@ -4,9 +4,9 @@ import BearWebTopbar from "./BearWebTopbar";
 import BearWebStart from "./BearWebStart";
 
 
-export default function BearWebWindow({ onMinimize, onClose }) {
+export default function BearWebWindow() {
   const [page, setPage] = useState("home");
-  const [fullscreen, setFullscreen] = useState(false);
+ 
 
   const navigate = (value) => {
     if (!value) return;
@@ -28,12 +28,8 @@ export default function BearWebWindow({ onMinimize, onClose }) {
         onNavigate={navigate}
         onHome={() => setPage("home")}
         onReload={() => setPage(page)}
-        onMinimize={onMinimize}
-        onClose={onClose}
-        onToggleFullscreen={() => setFullscreen(f => !f)}
-        fullscreen={fullscreen}
        />
-       
+
       <section className="bw-content min-h-0 overflow-auto">
         {page === "home" && <BearWebStart onOpen={navigate} />}
 
