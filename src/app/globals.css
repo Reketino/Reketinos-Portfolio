@@ -67,18 +67,18 @@ body {
 
 /* Bearweb Window */
 .bw-window {
-  @apply w-full h-full bg-neutral-900 rounded-xl  border border-neutral-700 flex flex-col min-h-0;
+  @apply w-full h-full bg-neutral-800 rounded-xl border border-neutral-700 flex flex-col min-h-0;
 }
 
 
 /* Bearweb Topbar */
 .bw-topbar {
-  @apply flex flex-col mb-4 bg-neutral-950 text-neutral-200 border-b border-neutral-700;
+  @apply flex flex-col  bg-neutral-950 text-neutral-200 border-b border-neutral-700;
 }
 
 /* Toolbar for nav & address bar*/
 .bw-toolbar {
-  @apply flex items-center gap-2 px-3 py-1;
+  @apply flex items-center px-2 py-1;
 }
 
 /* Bearweb Tabs */

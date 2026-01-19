@@ -1,8 +1,8 @@
 import React from "react";
 
-export default function BearWebTabs({}) {
+export default function BearWebTabs() {
   return (
-    <section className="flex items-center gap-2">
+    <section className="flex items-center">
       <div className="bw-tab active">
         <img src="/icons/webbear-favicon.png" className="w-4 h-4" />
         <span>BearWeb</span>
