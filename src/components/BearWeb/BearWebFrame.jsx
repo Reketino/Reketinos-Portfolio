@@ -1,9 +1,15 @@
 "use client";
-import { React, useState } from "react";
+import { useState } from "react";
+import BearWebTabs from "./BearWebTabs";
+import WindowControls from "./WindowControls";
 
 
-export default function BearWebFrame({ children }) {
-  const [fullscreen] = useState(false);
+export default function BearWebFrame({ 
+  children,
+  onBack,
+  onMinimize,
+}) {
+  const [fullscreen, setFullScreen] = useState(false);
 
   const framePosition = fullscreen
     ? "fixed top-0 left-0 right-0 bottom-[var(--taskbar-height)]"
@@ -16,7 +22,20 @@ export default function BearWebFrame({ children }) {
                 bg-black text-white rounded-lg flex flex-col shadow-xl z-50             
                 `}
     >
+      <header className="flex items-center justify-between px-2 py-1 border-b border-white/10">
+      <BearWebTabs />
+
+      <WindowControls
+      fullscreen={fullscreen}
+      onToggleFullscreen={()=> setFullScreen(f => !f)}
+      onMinimize={onMinimize}
+      onClose={onBack}
+      />
+      </header>
+
+      <main className="flex-1 overflow-hidden">
       {children}
+      </main>
     </section>
   );
 }

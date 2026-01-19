@@ -1,7 +1,7 @@
 "use client";
 import { React, useState } from "react";
 import BearWebAddressBar from "./BearWebAddressBar";
-import BearWebTabs from "./BearWebTabs";
+
 
 export default function BearWebTopbar({ 
   currentUrl, 
@@ -15,8 +15,7 @@ export default function BearWebTopbar({
 
   return (
     <header className="bw-topbar">
-        <BearWebTabs 
-        />
+        
       
       <section className="bw-toolbar">
       <nav className="bw-nav">

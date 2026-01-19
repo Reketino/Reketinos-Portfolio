@@ -1,4 +1,5 @@
-import React from 'react'
+import Image from 'next/image';
+import React from 'react';
 
 export default function WindowControls({
     fullscreen,
@@ -48,5 +49,5 @@ export default function WindowControls({
               </button>
             </div>
           </nav>
-  )
+  );
 }
