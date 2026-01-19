@@ -76,18 +76,14 @@ body {
   @apply flex flex-col mb-4 bg-neutral-950 text-neutral-200 border-b border-neutral-700;
 }
 
-/* Toolbar for nav & address bar*/
-.bw-toolbar {
-  @apply flex items-center gap-2 px-3 py-1;
-}
 
 /* Bearweb Tabs */
 .bw-tabs {
-  @apply flex flex-row px-2 py-2 items-center shrink-0;
+  @apply flex gap-1 px-2 py-1 items-center;
 }
 
 .bw-tab {
-  @apply flex gap-2 px-2 py-1 rounded-t-md text-sm bg-neutral-800 cursor-pointer;
+  @apply flex items-center gap-2 px-4 py-1 rounded-t-md text-sm bg-neutral-800 cursor-pointer;
 }
 
 .bw-tab.active {
@@ -101,7 +97,7 @@ body {
 
 /* Bearweb Navigatoni Buttoni */
 .bw-nav {
-  @apply flex  py-0.5 items-center;
+  @apply flex gap-2 px-3 py-2 items-center;
 }
 
 .bw-nav-btn {
@@ -111,11 +107,11 @@ body {
 
 /* Bearweb Address bar  */
 .bw-addr-form {
-  @apply w-full px-2;
+  @apply w-full px-3 pb-2;
 }
 
 .bw-addr-input {
-  @apply w-full bg-neutral-700 px-3 py-1 rounded-md outline-none text-sm;
+  @apply w-full bg-neutral-700 px-4 py-2 rounded-md outline-none text-sm;
 }
 
 .bw-addr-url {

@@ -4,6 +4,9 @@ import { React, useState } from "react";
 export default function BearWebAddressBar({ onNavigate }) {
   const [input, setInput] = useState("");
 
+
+const safeURL = typeof currentUrl === "string" ? currentUrl : "";
+
   return (
     <form
       onSubmit={(e) => {
