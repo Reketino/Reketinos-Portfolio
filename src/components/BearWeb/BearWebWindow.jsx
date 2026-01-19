@@ -22,7 +22,7 @@ export default function BearWebWindow() {
   };
 
   return (
-      <main>
+      <main className="flex flex-col h-full min-h-0">
       <BearWebTopbar
         currentUrl={page}
         onNavigate={navigate}
