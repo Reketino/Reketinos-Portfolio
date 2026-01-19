@@ -100,7 +100,7 @@ export default function Desktop() {
       startY: 360,
       label: "BearFlights",
       image: "/icons/bearflights.png",
-      onOpen: () => setOpenApp("BearFlights"),
+      onOpen: () => setOpenApp("BearFlights")  
     },
   ];
 
@@ -131,7 +131,7 @@ export default function Desktop() {
     BearWeb: "/icons/ohmybjorn.png",
     Error: "/icons/brokenfile.png",
     BearCode: "/icons/vsbearcode.png",
-    BearFlights: "/icons/bearflights.png",
+    BearFlights: "/icons/bearflights.png"
   };
 
   // Minimizing Apps to taskbar event handler
@@ -139,7 +139,7 @@ export default function Desktop() {
     setMinimizedApps((prev) =>
       prev.some((a) => a.id === id)
         ? prev
-        : [...prev, { id, icon: appIcons[id] }],
+        : [...prev, { id, icon: appIcons[id] }]
     );
     setOpenApp(null);
   };
@@ -185,14 +185,12 @@ export default function Desktop() {
           "
           />
 
-          <div
-            className="
+          <div className="
           flex justify-between items-center 
           mb-4 relative z-10
           "
           >
-            <h2
-              className="
+            <h2 className="
             absolute left-1/2 -translate-x-1/2 
             text-xl text-center font-semibold 
             pointer-events-none mb-0.5
@@ -215,8 +213,7 @@ export default function Desktop() {
 
           {/* Open about folder */}
           {openApp === "About" && (
-            <div
-              className="
+            <div className="
             relative justify-items-center 
             grid grid-cols-3 
             gap-6 z-10
@@ -235,8 +232,7 @@ export default function Desktop() {
 
           {/* Open projects folder */}
           {openApp === "Projects" && (
-            <div
-              className="
+            <div className="
             relative justify-items-center 
             grid grid-cols-3 
             gap-6 z-10
@@ -324,7 +320,7 @@ export default function Desktop() {
           onOpenFile={() => setOpenApp("Error")}
         />
       )}
-
+      
       {openApp === "Error" && !minimizedApps.some((a) => a.id === "Error") && (
         <Error
           onBack={() => setOpenApp("RecycleBin")}
@@ -360,14 +356,13 @@ export default function Desktop() {
           <BearWebFrame
             title="Bear Web"
             mode="browser"
-          >
-            <BearWebWindow
+            onBack={() => setOpenApp(null)}
             onMinimize={() => minimizeApp("BearWeb")}
-            onClose={() => setOpenApp(null)}
-            />
+          >
+            <BearWebWindow />
           </BearWebFrame>
         )}
-
+      
       {/* Open BearCodeWindow */}
       {openApp === "BearCode" &&
         !minimizedApps.some((a) => a.id === "BearCode") && (
@@ -376,17 +371,17 @@ export default function Desktop() {
             onMinimize={() => minimizeApp("BearCode")}
           />
         )}
-
+      
       {/* Open BearFlights */}
-      {openApp === "BearFlights" &&
-        !minimizedApps.some((a) => a.id === "BearFlights") && (
-          <Fullscreen
-            url="https://bearflightradar.vercel.app/"
-            title="Bear Flights"
-            onBack={() => setOpenApp(null)}
-            onMinimize={() => minimizeApp("BearFlights")}
-          />
-        )}
+      { openApp === "BearFlights" && 
+      !minimizedApps.some((a) => a.id === "BearFlights") && (
+      <Fullscreen
+      url="https://bearflightradar.vercel.app/"
+      title="Bear Flights"
+      onBack={() => setOpenApp(null)}
+      onMinimize={()=> minimizeApp("BearFlights")}
+      />
+      )}
 
       {/* Backgrounds folder */}
       {openFolder && <BgWindow onClose={() => setOpenFolder(false)} />}

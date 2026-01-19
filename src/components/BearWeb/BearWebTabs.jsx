@@ -1,12 +1,11 @@
-import Image from 'next/image';
 import React from 'react'
 
 
-export default function BearWebTabs() {
+export default function BearWebTabs({
+}) {
   return (
 
-
-    <section className='bw-tabs flex items-center justify-between'>
+    <section className='flex items-center gap-2'>
       <div className='bw-tab active'>
         <img src='/icons/webbear-favicon.png' className='w-4 h-4' />
         <span>BearWeb</span>
