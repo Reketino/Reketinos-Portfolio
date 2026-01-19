@@ -1,8 +1,11 @@
 "use client";
 import { React, useState } from 'react'
 
-export default function BearWebAddressBar({ onNavigate }) {
+export default function BearWebAddressBar({ currentUrl, onNavigate }) {
 const [input, setInput] = useState("");
+
+
+const safeURL = typeof currentUrl === "string" ? currentUrl : "";
 
   return (
     <form 
@@ -15,13 +18,17 @@ const [input, setInput] = useState("");
     className="bw-addr-form"
     >
       <input
-      name="SearchBar"
       className="bw-addr-input"
       placeholder="Search or type URL"
       value={input}
       onChange={(e) => setInput(e.target.value)}
       />
 
+      {safeURL !== "" && safeURL !== "bearweb://start" && (
+        <span className="bw-addr-url">
+          {safeURL.toLocaleUpperCase()}
+          </span>
+      )}
     </form>
   );
 }
