@@ -2,12 +2,14 @@
 import Image from "next/image";
 import { React, useState } from "react";
 import BearWebAddressBar from "./BearWebAddressBar";
+import ThreeDotMenu from "./ThreeDotMenu";
 
 export default function BearWebTopbar({
   currentUrl,
   onNavigate,
   onReload,
   onHome,
+  onClose
 }) {
   const [backDisabled] = useState(true);
   const [forwardDisabled] = useState(true);
@@ -54,6 +56,12 @@ export default function BearWebTopbar({
             className="rounded-full"
           />
         </button>
+
+        <ThreeDotMenu
+        onReload={onReload}
+        onHome={onHome}
+        onCloseApp={onClose}
+        />
       </section>
     </header>
   );

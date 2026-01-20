@@ -26,7 +26,7 @@ export default function ThreeDotMenu({ onReload, onHome, onCloseApp }) {
         w-44
         bg-neutral-900
         border border-neutral-700
-        rounded-md
+        rounded-full
         shadow-xl
         overflow-hidden
         animate-window-pop
@@ -45,17 +45,4 @@ export default function ThreeDotMenu({ onReload, onHome, onCloseApp }) {
   );
 }
 
-function MenuItem({ label, onClick, danger }) {
-  return (
-    <button
-      onClick={onClick}
-      className={`
-        w-full text-left px-3 py-2 
-        text-sm hover:bg-neutral-800
-        ${danger ? "text-red-400 hover:bg-red-500/15" : ""}
-            `}
-    >
-      {label}
-    </button>
-  );
-}
+
