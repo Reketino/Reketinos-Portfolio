@@ -9,7 +9,7 @@ export default function BearWebTopbar({
   onNavigate,
   onReload,
   onHome,
-  onClose
+  onClose,
 }) {
   const [backDisabled] = useState(true);
   const [forwardDisabled] = useState(true);
@@ -58,9 +58,9 @@ export default function BearWebTopbar({
         </button>
 
         <ThreeDotMenu
-        onReload={onReload}
-        onHome={onHome}
-        onCloseApp={onClose}
+          onReload={onReload}
+          onHome={onHome}
+          onCloseApp={onClose}
         />
       </section>
     </header>
