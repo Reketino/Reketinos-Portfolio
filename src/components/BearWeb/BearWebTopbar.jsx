@@ -13,8 +13,10 @@ export default function BearWebTopbar({
 
   return (
     <header className="bw-topbar">
-      <section className="bw-toolbar">
-        <nav className="bw-nav">
+      <section className="bw-toolbar flex items-center gap-2">
+
+
+        <nav className="bw-nav shrink-0">
           <button disabled={backDisabled} className="bw-nav-btn">
             ←
           </button>
@@ -30,6 +32,8 @@ export default function BearWebTopbar({
         </nav>
 
         <BearWebAddressBar currentUrl={currentUrl} onNavigate={onNavigate} />
+
+        
       </section>
     </header>
   );
