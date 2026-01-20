@@ -3,7 +3,7 @@ import { useState, useRef } from "react";
 import { useClickOutside } from "@/hooks/useClickOutside";
 import MenuItem from "../Desktop-system/menuitem";
 
-export default function ThreeDotMenu({ onReload, onHome, onCloseApp }) {
+export default function ThreeDotMenu({ onNewTab, onSettings, onCloseApp }) {
   const [open, setOpen] = useState(false);
   const ref = useRef(null);
 
@@ -22,19 +22,19 @@ export default function ThreeDotMenu({ onReload, onHome, onCloseApp }) {
       {open && (
         <menu
           className="
-        absolute right-0 top-full mt-2
-        w-44
+        absolute right-0.5 top-full mt-3
+        w-50
         bg-neutral-900
         border border-neutral-700
-        rounded-full
+        rounded-md
         shadow-xl
         overflow-hidden
         animate-window-pop
         z-50
         "
         >
-          <MenuItem label="Reload" onClick={onReload} />
-          <MenuItem label="Home" onClick={onHome} />
+          <MenuItem label="New Tab" onClick={onNewTab} />
+          <MenuItem label="Settings" onClick={onSettings} />
 
           <div className="h-px bg-neutral-700 my-1" />
 
