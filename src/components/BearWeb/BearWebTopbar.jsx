@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { React, useState } from "react";
 import BearWebAddressBar from "./BearWebAddressBar";
 
@@ -31,9 +32,30 @@ export default function BearWebTopbar({
           </button>
         </nav>
 
+        <header className="flex-1 flex justify-center">
+          <div className="w-full max-w[640px]">
         <BearWebAddressBar currentUrl={currentUrl} onNavigate={onNavigate} />
+        </div>
+        </header>
 
-        
+
+        <button
+        className=" 
+        ml-4 p-2
+        rounded-full shrink-0 
+        hover:bg-neutral-800"
+        title="Bjørn Even (Bear Even)"
+        >
+          <Image
+          src="/chrome.png"
+          alt="Chrome Profile"
+          width={20}
+          height={20}
+          className="rounded-full"
+          />
+
+        </button>
+
       </section>
     </header>
   );
