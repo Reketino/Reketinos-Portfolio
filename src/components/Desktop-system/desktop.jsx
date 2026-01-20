@@ -15,6 +15,7 @@ import Error from "../RecycleBin/error";
 import BearCodeWindow from "../BearCode/bearcodewindow";
 import ChatBear from "../BearChat/chatbear";
 
+
 export default function Desktop() {
   const [openFolder, setOpenFolder] = useState(false);
   const [openApp, setOpenApp] = useState(null);
@@ -96,10 +97,10 @@ export default function Desktop() {
     },
     {
       id: "BearFlights",
-      startX: 150,
-      startY: 360,
+      startX: 145,
+      startY: 375,
       label: "BearFlights",
-      image: "/icons/bearflights.png",
+      image: "/icons/bearflight.png",
       onOpen: () => setOpenApp("BearFlights")  
     },
   ];
@@ -131,7 +132,7 @@ export default function Desktop() {
     BearWeb: "/icons/ohmybjorn.png",
     Error: "/icons/brokenfile.png",
     BearCode: "/icons/vsbearcode.png",
-    BearFlights: "/icons/bearflights.png"
+    BearFlights: "/icons/bearflight.png"
   };
 
   // Minimizing Apps to taskbar event handler
