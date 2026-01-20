@@ -44,5 +44,3 @@ export default function ThreeDotMenu({ onReload, onHome, onCloseApp }) {
     </section>
   );
 }
-
-
