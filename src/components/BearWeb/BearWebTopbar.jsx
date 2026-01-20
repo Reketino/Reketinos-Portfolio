@@ -15,8 +15,6 @@ export default function BearWebTopbar({
   return (
     <header className="bw-topbar">
       <section className="bw-toolbar flex items-center gap-2">
-
-
         <nav className="bw-nav shrink-0">
           <button disabled={backDisabled} className="bw-nav-btn">
             ←
@@ -34,28 +32,28 @@ export default function BearWebTopbar({
 
         <header className="flex-1 flex justify-center">
           <div className="w-full max-w[640px]">
-        <BearWebAddressBar currentUrl={currentUrl} onNavigate={onNavigate} />
-        </div>
+            <BearWebAddressBar
+              currentUrl={currentUrl}
+              onNavigate={onNavigate}
+            />
+          </div>
         </header>
 
-
         <button
-        className=" 
+          className=" 
         ml-4 p-2
         rounded-full shrink-0 
         hover:bg-neutral-800"
-        title="Bjørn Even (Bear Even)"
+          title="Bjørn Even (Bear Even)"
         >
           <Image
-          src="/chrome.png"
-          alt="Chrome Profile"
-          width={20}
-          height={20}
-          className="rounded-full"
+            src="/chrome.png"
+            alt="Chrome Profile"
+            width={20}
+            height={20}
+            className="rounded-full"
           />
-
         </button>
-
       </section>
     </header>
   );
