@@ -5,11 +5,11 @@ export default function BearWebAddressBar({ onNavigate, currentUrl }) {
   const [input, setInput] = useState("");
   const [isEditing, setIsEditing] = useState(false);
 
-const safeURL = typeof currentUrl === "string" ? currentUrl : "";
+  const safeURL = typeof currentUrl === "string" ? currentUrl : "";
 
-useEffect(() => {
-  if (!isEditing) setInput(safeURL);
-}, [safeURL, isEditing]);
+  useEffect(() => {
+    if (!isEditing) setInput(safeURL);
+  }, [safeURL, isEditing]);
 
   return (
     <form
