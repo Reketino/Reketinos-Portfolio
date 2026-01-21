@@ -31,19 +31,19 @@ export default function BearWebAddressBar({ onNavigate, currentUrl }) {
       />
 
       <button
-      type="button"
-      title="Bookmark"
-      className="
+        type="button"
+        title="Bookmark"
+        className="
       absolute right-5 top-1/2 -translate-y-1/2
        rounded-full
       text-neutral-400
       text-xl
       hover:bg-neutral-600
       "
-      onClick={() => console.log("bookmark clicked")}
+        onClick={() => console.log("bookmark clicked")}
       >
-      <MdOutlineStarRate />
-    </button>
+        <MdOutlineStarRate />
+      </button>
     </form>
   );
 }
