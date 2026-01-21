@@ -111,11 +111,11 @@ body {
 
 /* Bearweb Address bar  */
 .bw-addr-form {
-  @apply w-full px-3 pb-2;
+  @apply w-full px-2;
 }
 
 .bw-addr-input {
-  @apply w-full bg-neutral-700 px-4 py-2 rounded-md outline-none text-sm;
+  @apply w-full bg-neutral-700 px-4 py-2 rounded-full outline-none text-sm;
 }
 
 .bw-addr-url {
