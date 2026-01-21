@@ -1,5 +1,5 @@
 "use client";
-import { React, useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function BearWebAddressBar({ onNavigate }) {
   const [input, setInput] = useState("");
@@ -7,12 +7,15 @@ export default function BearWebAddressBar({ onNavigate }) {
 
 const safeURL = typeof currentUrl === "string" ? currentUrl : "";
 
+useEffect(() => {
+  setInput(safeURL);
+}, [safeURL]);
+
   return (
     <form
       onSubmit={(e) => {
         e.preventDefault();
         onNavigate(input);
-        setInput("");
       }}
       className="bw-addr-form"
     >
