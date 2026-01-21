@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { React, useState } from "react";
+import { useState } from "react";
 import BearWebAddressBar from "./BearWebAddressBar";
 import ThreeDotMenu from "./ThreeDotMenu";
 import { IoExtensionPuzzle } from "react-icons/io5";
@@ -34,7 +34,7 @@ export default function BearWebTopbar({
         </nav>
 
         <header className="flex-1 flex justify-center">
-          <div className="w-full max-w[640px]">
+          <div className="w-full">
             <BearWebAddressBar
               currentUrl={currentUrl}
               onNavigate={onNavigate}
