@@ -14,7 +14,7 @@ export default function BearWebWindow() {
       return setUrl("https://bearstocks.vercel.app/");
     if (lower.includes("holdem"))
       return setUrl("https://bear-hold-em-frontend.vercel.app/");
-    if (lower.includes("home")) return setUrl("home");
+    if (lower.includes("home")) return setUrl("Home");
 
     if (lower.startsWith("http")) return setUrl(value);
   };
@@ -22,7 +22,7 @@ export default function BearWebWindow() {
   return (
     <main className="flex flex-col h-full min-h-0">
       <BearWebTopbar
-        currentUrl={url || "home"}
+        currentUrl={url || "Home"}
         onNavigate={navigate}
         onHome={() => setUrl("")}
         onReload={() => setUrl((u) => u)}
