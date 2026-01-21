@@ -41,15 +41,15 @@ export default function BearWebTopbar({
             />
           </div>
         </header>
-         
-         <button 
-         className="
+
+        <button
+          className="
          p-2 rounded-full shrink-0
          text-neutral-500
          hover:bg-neutral-800"
-         title="Extension">
-        <IoExtensionPuzzle 
-        />
+          title="Extension"
+        >
+          <IoExtensionPuzzle />
         </button>
 
         <button
