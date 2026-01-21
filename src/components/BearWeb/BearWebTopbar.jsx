@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { React, useState } from "react";
 import BearWebAddressBar from "./BearWebAddressBar";
-import ThreeDotMenu from "./ThreeDotMenu";
+import ThreeDotMenu from "./ThreeDotMenu"
 
 export default function BearWebTopbar({
   currentUrl,
@@ -41,10 +41,18 @@ export default function BearWebTopbar({
           </div>
         </header>
 
+
+        <button
+        className="
+        rounded-full text-neutral-600"
+        aria-label="line"
+        >
+          |
+        </button>
+
         <button
           className=" 
-        ml-4 p-2
-        rounded-full shrink-0 
+        p-2 rounded-full shrink-0 
         hover:bg-neutral-800"
           title="Bjørn Even (Bear Even)"
         >
