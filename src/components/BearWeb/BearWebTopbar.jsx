@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { React, useState } from "react";
 import BearWebAddressBar from "./BearWebAddressBar";
-import ThreeDotMenu from "./ThreeDotMenu"
+import ThreeDotMenu from "./ThreeDotMenu";
 
 export default function BearWebTopbar({
   currentUrl,
@@ -41,11 +41,10 @@ export default function BearWebTopbar({
           </div>
         </header>
 
-
         <button
-        className="
+          className="
         rounded-full text-neutral-600"
-        aria-label="line"
+          aria-label="line"
         >
           |
         </button>
