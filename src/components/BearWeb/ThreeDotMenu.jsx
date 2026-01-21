@@ -13,7 +13,7 @@ export default function ThreeDotMenu({ onNewTab, onSettings, onCloseApp }) {
     <section ref={ref} className="relative shrink-0">
       <button
         onClick={() => setOpen((o) => !o)}
-        className="p-2 rounded-full hover:bg-neutral-800"
+        className="p-2 rounded-full text-neutral-300 hover:bg-neutral-800"
         aria-label="Menu"
       >
         ⋮
@@ -22,7 +22,7 @@ export default function ThreeDotMenu({ onNewTab, onSettings, onCloseApp }) {
       {open && (
         <menu
           className="
-        absolute right-0.5 top-full mt-3
+        absolute -right-1.5 top-full mt-3
         w-50
         bg-neutral-900
         border border-neutral-700
