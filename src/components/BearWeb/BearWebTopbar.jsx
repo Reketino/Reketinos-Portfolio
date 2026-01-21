@@ -3,7 +3,7 @@ import Image from "next/image";
 import { React, useState } from "react";
 import BearWebAddressBar from "./BearWebAddressBar";
 import ThreeDotMenu from "./ThreeDotMenu";
-import { IoExtensionPuzzleOutline } from "react-icons/io5";
+import { IoExtensionPuzzle } from "react-icons/io5";
 
 export default function BearWebTopbar({
   currentUrl,
@@ -41,6 +41,16 @@ export default function BearWebTopbar({
             />
           </div>
         </header>
+         
+         <button 
+         className="
+         p-2 rounded-full shrink-0
+         text-neutral-500
+         hover:bg-neutral-800"
+         title="Extension">
+        <IoExtensionPuzzle 
+        />
+        </button>
 
         <button
           className="
