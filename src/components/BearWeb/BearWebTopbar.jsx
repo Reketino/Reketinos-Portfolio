@@ -3,6 +3,7 @@ import Image from "next/image";
 import { React, useState } from "react";
 import BearWebAddressBar from "./BearWebAddressBar";
 import ThreeDotMenu from "./ThreeDotMenu";
+import { IoExtensionPuzzleOutline } from "react-icons/io5";
 
 export default function BearWebTopbar({
   currentUrl,
