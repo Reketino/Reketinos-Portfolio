@@ -4,11 +4,13 @@ import { motion } from "framer-motion";
 
 export default function Title3d({ text = "Reketino`s Portfolio" }) {
   return (
-    <main className="
+    <main
+      className="
     relative flex 
     items-center justify-center 
     perspective-[1000px]
-    ">
+    "
+    >
       <motion.h1
         initial={{ rotateX: 30, opacity: 0, y: 50 }}
         animate={{ rotateX: 0, opacity: 1, y: 0 }}
@@ -43,10 +45,12 @@ export default function Title3d({ text = "Reketino`s Portfolio" }) {
         {text}
       </motion.h1>
 
-      <section className="
+      <section
+        className="
       absolut inset-0 flex  
       items-center justify-center
-      ">
+      "
+      >
         <motion.div
           className="
           w-[60%] h-[30%] rounded-full blur-3xl 
