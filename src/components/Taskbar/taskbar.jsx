@@ -1,6 +1,5 @@
 "use client";
 import Link from "next/link";
-import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { FaLinkedin, FaGithub, FaFacebook, FaInstagram } from "react-icons/fa";
 
@@ -8,45 +7,18 @@ import WeatherApp from "./weatherapp";
 import StartMenu from "./StartMenu/startmenu";
 import Clock from "./clock";
 import Calendar from "./Calendar/Calendar";
+import { useTaskbarState } from "@/hooks/useTaskbarState";
 
 export default function Taskbar({ minimizedApps, onRestore }) {
-  const [openStart, setOpenStart] = useState(false);
-  const [calendarOpen, setCalendarOpen] = useState(false);
-
-  const [clockFormat, setClockFormat] = useState("24h");
-  const [showTimezone, setShowTimezone] = useState(false);
-
-  const calendarRef = useRef(null);
-
-  useEffect(() => {
-    const savedFormat = localStorage.getItem("clockFormat");
-    const savedTZ = localStorage.getItem("showTimezone");
-
-    if (savedFormat) setClockFormat(savedFormat);
-    if (savedTZ) setShowTimezone(savedTZ === "true");
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem("clockFormat", clockFormat);
-  }, [clockFormat]);
-
-  useEffect(() => {
-    localStorage.setItem("showTimezone", showTimezone);
-  }, [showTimezone]);
-
-  useEffect(() => {
-    const handleClick = (e) => {
-      if (calendarRef.current?.contains(e.target)) {
-        return;
-      }
-
-      setOpenStart(false);
-      setCalendarOpen(false);
-    };
-
-    window.addEventListener("click", handleClick);
-    return () => window.removeEventListener("click", handleClick);
-  }, []);
+  const {
+    openStart,
+    setOpenStart,
+    calendarOpen,
+    setCalendarOpen,
+    showTimezone,
+    setShowTimezone,
+    calendarRef,
+  } = useTaskbarState();
 
   return (
     <footer
