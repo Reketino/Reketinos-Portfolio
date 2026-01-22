@@ -68,7 +68,8 @@ export default function SteamCard({ steamId }) {
         transition={{ duration: 0.8, delay: 0.3 }}
         whileHover={{ scale: 1.05 }}
       >
-        <section className="
+        <section
+          className="
         w-20 h-20 mb-4
         rounded-full 
         border-2 border-amber-400 
@@ -89,7 +90,8 @@ export default function SteamCard({ steamId }) {
           {profile.personaname}
         </h2>
 
-        <section className="
+        <section
+          className="
         flex items-center 
         gap-2 mb-4
         text-gray-200 
@@ -102,11 +104,13 @@ export default function SteamCard({ steamId }) {
         </section>
 
         <section
-          className={`text-sm font-medium ${statusColors[profile.personastate]}`}>
-            {statusText[profile.personastate]}
+          className={`text-sm font-medium ${statusColors[profile.personastate]}`}
+        >
+          {statusText[profile.personastate]}
         </section>
 
-        <div className="
+        <div
+          className="
          absolute inset-0 rounded-3xl
          bg-amber-400 opacity-0 
          group-hover:opacity-10 
@@ -114,8 +118,7 @@ export default function SteamCard({ steamId }) {
          duration-300
          pointer-events-none
          "
-         >
-         </div>
+        ></div>
       </motion.a>
     </main>
   );
