@@ -44,16 +44,17 @@ export default function Clock({ clockFormat, showTimezone, onClick }) {
     >
       <span className="text-sm font-medium">{formattedTime}</span>
       <small className="text-xs text-white/70">{formattedDate}</small>
-      
-      <small className={`
+
+      <small
+        className={`
       block h-1 leading-2
       text-[10px] text-white/50
       transition-opacity
       ${showTimezone ? "opacity-100" : "opacity-0"}
         `}
-        >
-      {timezone}
-        </small>
+      >
+        {timezone}
+      </small>
     </time>
   );
 }
