@@ -29,13 +29,12 @@ export function useTaskbarState() {
     localStorage.setItem("showTimezone", showTimezone);
   }, [showTimezone]);
 
-  
+
   useEffect(() => {
     const handleClick = (e) => {
       if (calendarRef.current?.contains(e.target)) {
         return;
       }
-
       setOpenStart(false);
       setCalendarOpen(false);
     };
