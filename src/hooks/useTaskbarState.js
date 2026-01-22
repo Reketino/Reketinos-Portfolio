@@ -44,6 +44,8 @@ export function useTaskbarState() {
     setOpenStart,
     calendarOpen,
     setCalendarOpen,
+    clockFormat,
+    setClockFormat,
     showTimezone,
     setShowTimezone,
     calendarRef,
