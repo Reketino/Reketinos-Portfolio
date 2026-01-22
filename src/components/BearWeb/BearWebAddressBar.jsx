@@ -13,13 +13,12 @@ export default function BearWebAddressBar({ onNavigate, currentUrl }) {
     if (!isEditing) setInput(safeURL);
   }, [safeURL, isEditing]);
 
-  
   const toggleBookmarked = () => {
     setIsBookmarked((prev) => !prev);
   };
 
   useEffect(() => {
-    localStorage.setItem ("Bookmark", isBookmarked)
+    localStorage.setItem("Bookmark", isBookmarked);
   }, [isBookmarked]);
 
   return (
@@ -52,11 +51,11 @@ export default function BearWebAddressBar({ onNavigate, currentUrl }) {
       hover:bg-neutral-600
       "
       >
-    { isBookmarked ? (
-      <MdStarRate className="text-neutral-400" />  
-    ) : (
-      <MdOutlineStarRate className="text-neutral-400" />
-         )}
+        {isBookmarked ? (
+          <MdStarRate className="text-neutral-400" />
+        ) : (
+          <MdOutlineStarRate className="text-neutral-400" />
+        )}
       </button>
     </form>
   );
