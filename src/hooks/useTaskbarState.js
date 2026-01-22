@@ -1,9 +1,8 @@
 "use client";
 import { useEffect, useState, useRef } from "react";
 
-
 export function useTaskbarState() {
- const [openStart, setOpenStart] = useState(false);
+  const [openStart, setOpenStart] = useState(false);
   const [calendarOpen, setCalendarOpen] = useState(false);
 
   const [clockFormat, setClockFormat] = useState("24h");
@@ -19,16 +18,13 @@ export function useTaskbarState() {
     if (savedTZ) setShowTimezone(savedTZ === "true");
   }, []);
 
-
   useEffect(() => {
     localStorage.setItem("clockFormat", clockFormat);
   }, [clockFormat]);
 
-
   useEffect(() => {
     localStorage.setItem("showTimezone", showTimezone);
   }, [showTimezone]);
-
 
   useEffect(() => {
     const handleClick = (e) => {
