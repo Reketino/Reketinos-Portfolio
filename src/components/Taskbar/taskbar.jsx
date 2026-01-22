@@ -15,6 +15,8 @@ export default function Taskbar({ minimizedApps, onRestore }) {
     setOpenStart,
     calendarOpen,
     setCalendarOpen,
+    clockFormat,
+    setClockFormat,
     showTimezone,
     setShowTimezone,
     calendarRef,
