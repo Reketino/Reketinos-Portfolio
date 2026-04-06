@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 
 export default function Contact() {
   return (
-    <main className="relative w-full max-2xl mx-auto overflow-x-hidden overflow-y-auto overscroll-contain">
+    <main className="relative w-full max-2xl mx-auto overflow-x-hidden">
       <TechEmailBg />
       
       
