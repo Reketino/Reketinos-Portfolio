@@ -5,16 +5,14 @@ import TechEmailBg from "./techemailbg";
 import { FaPhoneAlt, FaGithub, FaEnvelope, FaLinkedin } from "react-icons/fa";
 import { motion } from "framer-motion";
 
-
 export default function Contact() {
   return (
     <main className="relative w-full max-2xl mx-auto overflow-x-hidden">
       <TechEmailBg />
-      
-      
+
       <motion.div
-        initial={{ opacity: 0,  }}
-        animate={{ opacity: 1,  }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{ duration: 0.4 }}
         className=" 
         relative z-10 text-white p-6 rounded-2xl
@@ -33,10 +31,9 @@ export default function Contact() {
           {" "}
           Get In Touch With Me
         </h1>
-      
+
         {/* CONTACT SECTION */}
         <section className="grid grid-cols-2 gap-4">
-
           {/* TELEPHONE */}
           <a
             href="tel:+4798666484"
@@ -75,7 +72,7 @@ export default function Contact() {
             <FaGithub size={28} className="mb-2 text-blue-400" />
             <span>Github</span>
           </a>
-          
+
           {/* LINKEDIN */}
           <a
             href="https://www.linkedin.com/in/beareven/"
@@ -89,7 +86,6 @@ export default function Contact() {
             <FaLinkedin size={28} className="mb-2 text-blue-400" />
             <span>LinkedIn</span>
           </a>
-
         </section>
         <ContactForm />
       </motion.div>
