@@ -2,6 +2,8 @@
 Building things with Next.js 16, Tailwind 4, custom APIs and a UI that feels more like a tiny desktop OS than a traditional portfolio.  
 Cycling, trail running, gaming and coding are the things that keep me moving — and this project is where I learn and experiment the most.
 
+---
+
 ## 🚀 About this Portfolio
 
 This portfolio is not a classic “scroll and read” website.  
@@ -22,6 +24,8 @@ I use it to explore UI/UX ideas, animations, component structure and API integra
 - 📱 Full mobile-friendly layout  
 - 💻 Built entirely with **JavaScript + JSX** (no TypeScript)
 
+---
+
 ## 🛠️ Tech Stack
 
 - **Next.js 16**
@@ -33,6 +37,8 @@ I use it to explore UI/UX ideas, animations, component structure and API integra
 - **Vercel**
 - **Custom API Routes (Background API & Steam API)**
 
+---
+
 ## 📂 Features
 
 - 🪟 **Draggable Windows** – move small “apps” freely around the screen  
@@ -42,6 +48,7 @@ I use it to explore UI/UX ideas, animations, component structure and API integra
 - 💬 **Contact Page** – email, socials and built-in form  
 - 💾 **Persistent UI State** – windows stay where you left them  
 - 📱 **Responsive** – works smoothly on desktop and mobile
+---
 
 ## 📊 Performance & Accessibility
 
@@ -53,6 +60,8 @@ This portfolio has been tested using Google Lighthouse (Desktop):
 - SEO: 100
 
 ![Lighthouse Desktop Results](./docs/lighthouse.png)
+
+---
 
 ## 🧠 Why I Built This
 
@@ -68,6 +77,20 @@ This project lets me explore:
 - Real-time data  
 
 It represents me better than a simple static page ever could.
+
+---
+
+## 🟢 Currently Working On:
+
+- BearWeb layout to have more Chromestyle & feel.
+
+---
+
+## 🪄 Future Ideas
+
+- Windows XP Mode Toggle
+
+---
 
 ## 🧩 Run Locally
 
