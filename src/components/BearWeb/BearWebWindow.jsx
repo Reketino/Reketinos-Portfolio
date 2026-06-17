@@ -7,7 +7,9 @@ export default function BearWebWindow() {
   const [url, setUrl] = useState("");
 
   const navigate = (value) => {
-    if (!value) return;
+    if (!value.trim()) return;
+
+    const input = value.trim();
     const lower = value.toLowerCase().trim();
 
     if (lower.includes("stock"))
