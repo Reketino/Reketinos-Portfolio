@@ -21,7 +21,11 @@ export default function BearWebWindow() {
        setUrl("https://bear-hold-em-frontend.vercel.app/");
        return;
        }
-    if (lower.includes("home")) return setUrl("Search BearWeb or Type a URL");
+
+    if (lower.includes("home")) {
+      setUrl("Search BearWeb or Type a URL");
+      return;
+      }
 
     if (lower.startsWith("http")) return setUrl(value);
   };
