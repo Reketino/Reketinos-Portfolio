@@ -27,7 +27,10 @@ export default function BearWebWindow() {
       return;
       }
 
-    if (lower.startsWith("http")) return setUrl(value);
+    if (lower === "google") {
+       setUrl("https://www.google.com/webhp?igu=1");
+       return;
+       }
   };
 
   return (
