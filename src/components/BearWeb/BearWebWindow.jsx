@@ -12,8 +12,11 @@ export default function BearWebWindow() {
     const input = value.trim();
     const lower = value.toLowerCase().trim();
 
-    if (lower.includes("stock"))
-      return setUrl("https://bearstocks.vercel.app/");
+    if (lower.includes("stock")) {
+       setUrl("https://bearstocks.vercel.app/");
+       return;
+       }
+       
     if (lower.includes("holdem"))
       return setUrl("https://bear-hold-em-frontend.vercel.app/");
     if (lower.includes("home")) return setUrl("Search BearWeb or Type a URL");
