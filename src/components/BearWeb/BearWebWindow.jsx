@@ -22,7 +22,7 @@ export default function BearWebWindow() {
        return;
        }
 
-    if (lower.includes("home")) {
+    if (lower === "home") {
       setUrl("");
       return;
       }
