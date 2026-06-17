@@ -39,6 +39,8 @@ export default function BearWebWindow() {
       setUrl(input);
       return;
     }
+
+    setUrl(`https://${input}`);
   };
 
   return (
