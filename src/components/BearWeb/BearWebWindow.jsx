@@ -31,6 +31,11 @@ export default function BearWebWindow() {
        setUrl("https://www.google.com/webhp?igu=1");
        return;
        }
+
+    if (
+      input.startsWidth("http://") ||
+      input.startsWidth("https://")
+    )
   };
 
   return (
