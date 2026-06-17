@@ -32,7 +32,7 @@ export default function BearWebWindow() {
       return;
     }
 
-    if (input.startsWidth("http://") || input.startsWidth("https://")) {
+    if (input.startsWith("http://") || input.startsWith("https://")) {
       setUrl(input);
       return;
     }
