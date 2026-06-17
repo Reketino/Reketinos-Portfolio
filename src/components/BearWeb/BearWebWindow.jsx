@@ -16,9 +16,11 @@ export default function BearWebWindow() {
        setUrl("https://bearstocks.vercel.app/");
        return;
        }
-       
-    if (lower.includes("holdem"))
-      return setUrl("https://bear-hold-em-frontend.vercel.app/");
+
+    if (lower.includes("holdem")) {
+       setUrl("https://bear-hold-em-frontend.vercel.app/");
+       return;
+       }
     if (lower.includes("home")) return setUrl("Search BearWeb or Type a URL");
 
     if (lower.startsWith("http")) return setUrl(value);
