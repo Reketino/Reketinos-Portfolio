@@ -55,7 +55,13 @@ export default function BearWebWindow() {
       <section className="bw-content min-h-0 overflow-auto">
         {!url && <BearWebStart onOpen={navigate} />}
 
-        {url && <iframe src={url} className="bw-iframe" />}
+        {url && 
+        <iframe 
+        src={url} 
+        title="BearWeb Browser"
+        className="bw-iframe" 
+        />
+        }
       </section>
     </main>
   );
