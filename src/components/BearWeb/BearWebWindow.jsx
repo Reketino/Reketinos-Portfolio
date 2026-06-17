@@ -13,29 +13,26 @@ export default function BearWebWindow() {
     const lower = value.toLowerCase().trim();
 
     if (lower.includes("stock")) {
-       setUrl("https://bearstocks.vercel.app/");
-       return;
-       }
+      setUrl("https://bearstocks.vercel.app/");
+      return;
+    }
 
     if (lower.includes("holdem")) {
-       setUrl("https://bear-hold-em-frontend.vercel.app/");
-       return;
-       }
+      setUrl("https://bear-hold-em-frontend.vercel.app/");
+      return;
+    }
 
     if (lower === "home") {
       setUrl("");
       return;
-      }
+    }
 
     if (lower === "google") {
-       setUrl("https://www.google.com/webhp?igu=1");
-       return;
-       }
+      setUrl("https://www.google.com/webhp?igu=1");
+      return;
+    }
 
-    if (
-      input.startsWidth("http://") ||
-      input.startsWidth("https://")
-    ) {
+    if (input.startsWidth("http://") || input.startsWidth("https://")) {
       setUrl(input);
       return;
     }
@@ -55,13 +52,9 @@ export default function BearWebWindow() {
       <section className="bw-content min-h-0 overflow-auto">
         {!url && <BearWebStart onOpen={navigate} />}
 
-        {url && 
-        <iframe 
-        src={url} 
-        title="BearWeb Browser"
-        className="bw-iframe" 
-        />
-        }
+        {url && (
+          <iframe src={url} title="BearWeb Browser" className="bw-iframe" />
+        )}
       </section>
     </main>
   );
