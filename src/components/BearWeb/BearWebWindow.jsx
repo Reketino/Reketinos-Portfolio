@@ -23,7 +23,7 @@ export default function BearWebWindow() {
        }
 
     if (lower.includes("home")) {
-      setUrl("Search BearWeb or Type a URL");
+      setUrl("");
       return;
       }
 
