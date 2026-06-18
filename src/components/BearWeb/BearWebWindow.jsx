@@ -40,6 +40,8 @@ export default function BearWebWindow() {
     setUrl(`https://${input}`);
   };
 
+  console.log("Loading:", url);
+
   return (
     <main className="flex flex-col h-full min-h-0">
       <BearWebTopbar
