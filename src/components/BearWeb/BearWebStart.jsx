@@ -1,4 +1,5 @@
 "use client";
+import { label } from "framer-motion/client";
 import React, { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 
@@ -6,6 +7,7 @@ export default function BearWebStart({ onOpen }) {
   const [query, setQuery] = useState("");
 
   const shortcuts = [
+    { label: "Google", page: "google", icon: "/icons/google.png" },
     { label: "BearStocks", page: "stocks", icon: "/icons/bearicon.png" },
     { label: "Bear HoldEm", page: "holdem", icon: "/icons/bearholdem.png" },
   ];
