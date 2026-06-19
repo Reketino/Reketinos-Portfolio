@@ -82,7 +82,7 @@ It represents me better than a simple static page ever could.
 
 ## 🟢 Currently Working On:
 
-- BearWeb layout to have more Chromestyle & feel.
+- Improve BearWeb w/ new tab showing my projects
 
 ---
 
