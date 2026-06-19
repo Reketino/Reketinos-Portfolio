@@ -6,7 +6,7 @@ import BearWebStart from "./BearWebStart";
 export default function BearWebWindow() {
   const HOME_URL = "https://www.google.com/webhp?igu=1";
   
-  const [url, setUrl] = useState("");
+  const [url, setUrl] = useState(HOME_URL);
 
   const navigate = (value) => {
     if (!value.trim()) return;
@@ -25,7 +25,7 @@ export default function BearWebWindow() {
     }
 
     if (lower === "home") {
-      setUrl("");
+      setUrl(HOME_URL);
       return;
     }
 
