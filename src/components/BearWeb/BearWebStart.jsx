@@ -26,7 +26,7 @@ export default function BearWebStart({ onOpen }) {
       </h1>
 
       <header className="flex justify-center mt-2">
-        <div
+        <form
           className="
       flex items-center gap-2
       bg-neutral-800/80 border border-neutral-700
@@ -48,7 +48,7 @@ export default function BearWebStart({ onOpen }) {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
           />
-        </div>
+        </form>
       </header>
 
       <p className="bw-start-sub">Your Bearowser - powered by Bear Even 🐻</p>
