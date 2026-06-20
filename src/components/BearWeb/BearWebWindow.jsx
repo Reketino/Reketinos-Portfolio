@@ -38,6 +38,11 @@ export default function BearWebWindow() {
       window.open("https://github.com/Reketino", "_blank");
       return;
     }
+    if (lower === "linkedin") {
+      window.open("https://www.linkedin.com/in/beareven/", "_blank");
+      return;
+    }
+
 
     if (input.startsWith("http://") || input.startsWith("https://")) {
       setUrl(input);
