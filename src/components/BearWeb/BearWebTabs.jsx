@@ -8,7 +8,11 @@ export default function BearWebTabs() {
         <span>BearWeb</span>
       </div>
 
-      <button className="bw-tab">+</button>
+      <button 
+      className="bw-tab"
+      >
+        +
+      </button>
     </section>
   );
 }
