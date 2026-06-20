@@ -5,7 +5,7 @@ import BearWebStart from "./BearWebStart";
 
 export default function BearWebWindow() {
   const HOME_URL = "https://www.google.com/webhp?igu=1";
-  
+
   const [url, setUrl] = useState("");
 
   const navigate = (value) => {
@@ -34,6 +34,15 @@ export default function BearWebWindow() {
       return;
     }
 
+    if (lower === "github") {
+      window.open("https://github.com/Reketino", "_blank");
+      return;
+    }
+    if (lower === "linkedin") {
+      window.open("https://www.linkedin.com/in/beareven/", "_blank");
+      return;
+    }
+
     if (input.startsWith("http://") || input.startsWith("https://")) {
       setUrl(input);
       return;
@@ -49,7 +58,7 @@ export default function BearWebWindow() {
       <BearWebTopbar
         currentUrl={url || "Search BearWeb or Type a URL"}
         onNavigate={navigate}
-        onHome={() => setUrl("")}
+        onHome={() => setUrl(HOME_URL)}
         onReload={() => setUrl((u) => u)}
       />
 

@@ -95,7 +95,7 @@ export default function BearWebStart({ onOpen }) {
         ))}
       </section>
 
-      <p className="bw-start-sub">Your Bearowser - powered by Bear Even 🐻</p>
+      <p className="bw-start-sub mt-8">Your Bearowser - powered by Bear Even 🐻</p>
     </section>
   );
 }
