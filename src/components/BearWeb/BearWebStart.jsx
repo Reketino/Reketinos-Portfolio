@@ -9,7 +9,7 @@ export default function BearWebStart({ onOpen }) {
     { label: "Google", page: "google", icon: "/icons/google.png" },
     { label: "BearStocks", page: "stocks", icon: "/icons/bearicon.png" },
     { label: "Bear HoldEm", page: "holdem", icon: "/icons/bearholdem.png" },
-    { label: "Github", page: "github", icon: "/icons/github.png"},
+    { label: "Github", page: "github", icon: "/icons/github.png" },
     { label: "Linkedin", page: "linkedin", icon: "/icons/linkedin.png" },
   ];
 
@@ -35,10 +35,10 @@ export default function BearWebStart({ onOpen }) {
 
       <header className="flex justify-center mt-2">
         <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          onOpen(query);
-        }}
+          onSubmit={(e) => {
+            e.preventDefault();
+            onOpen(query);
+          }}
           className="
       flex items-center gap-2
       bg-neutral-800/80 border border-neutral-700
@@ -62,8 +62,6 @@ export default function BearWebStart({ onOpen }) {
           />
         </form>
       </header>
-
-      
 
       <section className="mt-6 flex flex-wrap justify-center gap-6">
         {shortcuts.map((item) => (
