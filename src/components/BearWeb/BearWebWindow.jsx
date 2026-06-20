@@ -6,7 +6,9 @@ import BearWebStart from "./BearWebStart";
 export default function BearWebWindow() {
   const HOME_URL = "https://www.google.com/webhp?igu=1";
 
+
   const [url, setUrl] = useState("");
+  const [reloadKey, setReloadKey] = useState(0);
 
   const navigate = (value) => {
     if (!value.trim()) return;
