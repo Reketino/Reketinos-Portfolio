@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function BearWebTabs() {
+export default function BearWebTabs({ onNewTab }) {
   return (
     <section className="flex items-center">
       <div className="bw-tab active">
