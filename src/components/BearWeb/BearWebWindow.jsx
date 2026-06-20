@@ -58,7 +58,7 @@ export default function BearWebWindow() {
       <BearWebTopbar
         currentUrl={url || "Search BearWeb or Type a URL"}
         onNavigate={navigate}
-        onHome={() => setUrl("")}
+        onHome={() => setUrl(HOME_URL)}
         onReload={() => setUrl((u) => u)}
       />
 
