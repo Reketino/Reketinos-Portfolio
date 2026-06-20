@@ -25,6 +25,14 @@ export default function BearWebStart({ onOpen }) {
         <span className="text-cyan-400">b</span>
       </h1>
 
+      <h2 className="mt-4 text-xl font-semibold text-neutral-200 text-center">
+        🐻 Reketino Projects
+      </h2>
+
+      <p className="mt-1 text-xl font-semibold text-neutral-200 text-center">
+        Your gateway to projects, code and creative experiments
+      </p>
+
       <header className="flex justify-center mt-2">
         <form
         onSubmit={(e) => {
@@ -88,7 +96,7 @@ export default function BearWebStart({ onOpen }) {
           </button>
         ))}
       </section>
-      
+
       <p className="bw-start-sub">Your Bearowser - powered by Bear Even 🐻</p>
     </section>
   );
