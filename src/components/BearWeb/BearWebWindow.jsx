@@ -34,6 +34,11 @@ export default function BearWebWindow() {
       return;
     }
 
+    if (lower === "github") {
+      window.open("https://github.com/Reketino", "_blank");
+      return;
+    }
+
     if (input.startsWith("http://") || input.startsWith("https://")) {
       setUrl(input);
       return;
