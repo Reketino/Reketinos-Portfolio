@@ -9,7 +9,7 @@ export default function BearWebStart({ onOpen }) {
     { label: "Google", page: "google", icon: "/icons/google.png" },
     { label: "BearStocks", page: "stocks", icon: "/icons/bearicon.png" },
     { label: "Bear HoldEm", page: "holdem", icon: "/icons/bearholdem.png" },
-    { label: "Github", page: "github", icon: "/icons/github.png"},
+    { label: "Github", page: "github", icon: "/icons/github.png" },
     { label: "Linkedin", page: "linkedin", icon: "/icons/linkedin.png" },
   ];
 
@@ -25,8 +25,20 @@ export default function BearWebStart({ onOpen }) {
         <span className="text-cyan-400">b</span>
       </h1>
 
+      <h2 className="mt-4 text-xl font-semibold text-neutral-200 text-center">
+        🐻 Reketino Projects
+      </h2>
+
+      <p className="mt-1 text-xl font-semibold text-neutral-200 text-center">
+        Your gateway to projects, code and creative experiments
+      </p>
+
       <header className="flex justify-center mt-2">
         <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            onOpen(query);
+          }}
           className="
       flex items-center gap-2
       bg-neutral-800/80 border border-neutral-700
@@ -50,8 +62,6 @@ export default function BearWebStart({ onOpen }) {
           />
         </form>
       </header>
-
-      <p className="bw-start-sub">Your Bearowser - powered by Bear Even 🐻</p>
 
       <section className="mt-6 flex flex-wrap justify-center gap-6">
         {shortcuts.map((item) => (
@@ -84,6 +94,8 @@ export default function BearWebStart({ onOpen }) {
           </button>
         ))}
       </section>
+
+      <p className="bw-start-sub">Your Bearowser - powered by Bear Even 🐻</p>
     </section>
   );
 }
