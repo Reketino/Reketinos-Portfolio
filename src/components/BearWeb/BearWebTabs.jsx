@@ -10,6 +10,7 @@ export default function BearWebTabs() {
 
       <button 
       className="bw-tab"
+      onClick={onNewTab}
       >
         +
       </button>
