@@ -55,7 +55,7 @@ export default function BearWebStart({ onOpen }) {
         </form>
       </header>
 
-      <p className="bw-start-sub">Your Bearowser - powered by Bear Even 🐻</p>
+      
 
       <section className="mt-6 flex flex-wrap justify-center gap-6">
         {shortcuts.map((item) => (
@@ -88,6 +88,7 @@ export default function BearWebStart({ onOpen }) {
           </button>
         ))}
       </section>
+      <p className="bw-start-sub">Your Bearowser - powered by Bear Even 🐻</p>
     </section>
   );
 }
