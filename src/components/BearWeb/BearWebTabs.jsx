@@ -8,10 +8,7 @@ export default function BearWebTabs({ onNewTab }) {
         <span>BearWeb</span>
       </div>
 
-      <button 
-      className="bw-tab"
-      onClick={onNewTab}
-      >
+      <button className="bw-tab" onClick={onNewTab}>
         +
       </button>
     </section>
