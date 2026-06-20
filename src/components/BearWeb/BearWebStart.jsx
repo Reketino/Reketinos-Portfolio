@@ -27,6 +27,10 @@ export default function BearWebStart({ onOpen }) {
 
       <header className="flex justify-center mt-2">
         <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          onOpen(query);
+        }}
           className="
       flex items-center gap-2
       bg-neutral-800/80 border border-neutral-700
