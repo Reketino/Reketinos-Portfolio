@@ -6,7 +6,6 @@ import BearWebStart from "./BearWebStart";
 export default function BearWebWindow() {
   const HOME_URL = "https://www.google.com/webhp?igu=1";
 
-
   const [url, setUrl] = useState("");
   const [reloadKey, setReloadKey] = useState(0);
 
@@ -72,11 +71,11 @@ export default function BearWebWindow() {
         {!url && <BearWebStart onOpen={navigate} />}
 
         {url && (
-          <iframe 
-          key={reloadKey}
-          src={url} 
-          title="BearWeb Browser" 
-          className="bw-iframe" 
+          <iframe
+            key={reloadKey}
+            src={url}
+            title="BearWeb Browser"
+            className="bw-iframe"
           />
         )}
       </section>
