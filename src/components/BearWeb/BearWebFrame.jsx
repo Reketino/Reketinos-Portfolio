@@ -3,7 +3,7 @@ import { useState } from "react";
 import BearWebTabs from "./BearWebTabs";
 import WindowControls from "./WindowControls";
 
-export default function BearWebFrame({ children, onBack, onMinimize }) {
+export default function BearWebFrame({ children, onBack, onMinimize, onNewTab, }) {
   const [fullscreen, setFullScreen] = useState(false);
 
   const framePosition = fullscreen
@@ -18,7 +18,7 @@ export default function BearWebFrame({ children, onBack, onMinimize }) {
                 `}
     >
       <header className="flex items-center justify-between px-2 py-1 border-b border-white/10">
-        <BearWebTabs />
+        <BearWebTabs onNewTab={onNewTab} />
 
         <WindowControls
           fullscreen={fullscreen}

@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import BearWebTopbar from "./BearWebTopbar";
 import BearWebStart from "./BearWebStart";
 
@@ -26,7 +26,7 @@ export default function BearWebWindow() {
     }
 
     if (lower === "home") {
-      setUrl(HOME_URL);
+      setUrl("");
       return;
     }
 
@@ -56,14 +56,12 @@ export default function BearWebWindow() {
     setReloadKey((prev) => prev + 1);
   };
 
-  console.log("Loading:", url);
-
   return (
     <main className="flex flex-col h-full min-h-0">
       <BearWebTopbar
         currentUrl={url || "Search BearWeb or Type a URL"}
         onNavigate={navigate}
-        onHome={() => setUrl(HOME_URL)}
+        onHome={() => setUrl("")}
         onReload={reloadPage}
       />
 
