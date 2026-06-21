@@ -53,6 +53,10 @@ export default function BearWebWindow() {
     setUrl(`https://${input}`);
   };
 
+  const reloadPage = () => {
+    setReloadKey((prev) => prev + 1);
+  };
+
   console.log("Loading:", url);
 
   return (
