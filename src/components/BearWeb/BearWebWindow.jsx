@@ -6,7 +6,6 @@ import BearWebStart from "./BearWebStart";
 export default function BearWebWindow() {
   const HOME_URL = "https://www.google.com/webhp?igu=1";
 
-
   const [url, setUrl] = useState("");
   const [reloadKey, setReloadKey] = useState(0);
 
@@ -53,6 +52,10 @@ export default function BearWebWindow() {
     setUrl(`https://${input}`);
   };
 
+  const reloadPage = () => {
+    setReloadKey((prev) => prev + 1);
+  };
+
   console.log("Loading:", url);
 
   return (
@@ -61,14 +64,19 @@ export default function BearWebWindow() {
         currentUrl={url || "Search BearWeb or Type a URL"}
         onNavigate={navigate}
         onHome={() => setUrl(HOME_URL)}
-        onReload={() => setUrl((u) => u)}
+        onReload={reloadPage}
       />
 
       <section className="bw-content min-h-0 overflow-auto">
         {!url && <BearWebStart onOpen={navigate} />}
 
         {url && (
-          <iframe src={url} title="BearWeb Browser" className="bw-iframe" />
+          <iframe
+            key={reloadKey}
+            src={url}
+            title="BearWeb Browser"
+            className="bw-iframe"
+          />
         )}
       </section>
     </main>
