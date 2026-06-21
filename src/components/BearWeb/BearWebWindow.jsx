@@ -68,7 +68,11 @@ export default function BearWebWindow() {
         {!url && <BearWebStart onOpen={navigate} />}
 
         {url && (
-          <iframe src={url} title="BearWeb Browser" className="bw-iframe" />
+          <iframe 
+          src={url} 
+          title="BearWeb Browser" 
+          className="bw-iframe" 
+          />
         )}
       </section>
     </main>
