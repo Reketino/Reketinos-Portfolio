@@ -65,7 +65,7 @@ export default function BearWebWindow() {
         currentUrl={url || "Search BearWeb or Type a URL"}
         onNavigate={navigate}
         onHome={() => setUrl(HOME_URL)}
-        onReload={() => setUrl((u) => u)}
+        onReload={reloadPage}
       />
 
       <section className="bw-content min-h-0 overflow-auto">
