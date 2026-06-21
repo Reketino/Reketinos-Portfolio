@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function BearWebTabs({ onNewTab }) {
+export default function BearWebTabs() {
   return (
     <section className="flex items-center">
       <div className="bw-tab active">
@@ -8,7 +8,10 @@ export default function BearWebTabs({ onNewTab }) {
         <span>BearWeb</span>
       </div>
 
-      <button className="bw-tab" onClick={onNewTab}>
+      <button 
+      className="bw-tab" 
+      onClick={() => window.dispatchEvent(new Event("bearweb:newtab"))}
+      >
         +
       </button>
     </section>
