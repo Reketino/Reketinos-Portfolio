@@ -56,6 +56,10 @@ export default function BearWebWindow() {
     setReloadKey((prev) => prev + 1);
   };
 
+  const openNewTab = () => {
+    setUrl("");
+  }
+
   console.log("Loading:", url);
 
   return (
