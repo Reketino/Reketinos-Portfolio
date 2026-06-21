@@ -26,7 +26,7 @@ export default function BearWebWindow() {
     }
 
     if (lower === "home") {
-      setUrl(HOME_URL);
+      setUrl("");
       return;
     }
 
@@ -61,7 +61,7 @@ export default function BearWebWindow() {
       <BearWebTopbar
         currentUrl={url || "Search BearWeb or Type a URL"}
         onNavigate={navigate}
-        onHome={() => setUrl(HOME_URL)}
+        onHome={() => setUrl("")}
         onReload={reloadPage}
       />
 
