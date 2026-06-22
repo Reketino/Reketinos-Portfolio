@@ -3,7 +3,7 @@ import React from "react";
 export default function BearWebTabs({
   tabs,
   activeTabId,
-  onswitchTab,
+  onSwitchTab,
   onCloseTab,
   onNewTab,
 }) {
@@ -12,7 +12,7 @@ export default function BearWebTabs({
       {tabs.map((tab) => (
         <div
           key={tab.id}
-          onClick={() => onswitchTab(tab.id)}
+          onClick={() => onSwitchTab(tab.id)}
           className={`
           bw-tab flex items-center gap-2 px-3 py-1 cursor-pointer
           ${activeTabId === tab.id ? "active" : ""}
