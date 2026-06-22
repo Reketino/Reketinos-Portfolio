@@ -27,7 +27,13 @@ export default function BearWebFrame({
                 `}
     >
       <header className="flex items-center justify-between px-2 py-1 border-b border-white/10">
-        <BearWebTabs onNewTab={onNewTab} />
+        <BearWebTabs 
+        tabs={tabs}
+        activeTabId={activeTabId}
+        onswitchTab={onSwitchTab}
+        onCloseTab={onCloseTab}
+        onNewTab={onNewTab} 
+        />
 
         <WindowControls
           fullscreen={fullscreen}
