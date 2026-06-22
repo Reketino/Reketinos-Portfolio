@@ -30,7 +30,7 @@ export default function BearWebFrame({
         <BearWebTabs
           tabs={tabs}
           activeTabId={activeTabId}
-          onswitchTab={onSwitchTab}
+          onSwitchTab={onSwitchTab}
           onCloseTab={onCloseTab}
           onNewTab={onNewTab}
         />
