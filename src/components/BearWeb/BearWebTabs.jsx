@@ -18,6 +18,11 @@ export default function BearWebTabs({
           ${activeTabId === tab.id ? "active" : ""}
           `}
           >
+            <img
+            src="/icons/webbear-favicon-png"
+            className="w-4 h-4"
+            alt=""
+            />
             
           </div>
       ))}
