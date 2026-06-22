@@ -27,6 +27,18 @@ export default function BearWebTabs({
             <span className="max-w-[120px] truncate">
               {tab.title}
             </span>
+
+            {tabs.length > 1 && (
+              <button
+              onClick={(e) => {
+                e.stopPropagation();
+                onCloseTab(tab.id);
+              }}
+              className="ml-1 text-xs hover:text-red-400"
+              >
+                 ×
+              </button>
+            )}
           </div>
       ))}
     </section>
