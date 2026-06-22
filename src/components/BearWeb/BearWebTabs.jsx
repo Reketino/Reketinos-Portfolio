@@ -41,6 +41,13 @@ export default function BearWebTabs({
             )}
           </div>
       ))}
+
+      <button
+      className="bw-tab px-3 py-1"
+      onClick={onNewTab}
+      >
+        +
+      </button>
     </section>
   );
 }
