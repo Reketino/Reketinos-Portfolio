@@ -23,7 +23,10 @@ export default function BearWebTabs({
             className="w-4 h-4"
             alt=""
             />
-            
+
+            <span className="max-w-[120px] truncate">
+              {tab.title}
+            </span>
           </div>
       ))}
     </section>
