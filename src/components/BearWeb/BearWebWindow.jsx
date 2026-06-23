@@ -20,6 +20,15 @@ const [activeTabId, setActiveTabId] = useState(1);
 const activeTab = 
 tabs.find((tab) => tab.id === activeTabId) ?? tabs[0];
 
+const createNewTab = () => {
+  const newTab = {
+    id: Date.now(),
+    title: "New Tab",
+    url: "",
+    reloadKey: 0,
+  }
+}
+
   const navigate = (value) => {
     if (!value.trim()) return;
 
