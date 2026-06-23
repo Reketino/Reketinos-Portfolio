@@ -32,6 +32,10 @@ const createNewTab = () => {
   setActiveTabId(newTab.id);
 };
 
+const switchTab = (tabId) => {
+  setActiveTabId(tabId);
+};
+
   const navigate = (value) => {
     if (!value.trim()) return;
 
