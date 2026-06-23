@@ -15,8 +15,10 @@ const [tabs, setTabs] = useState([
   },
 ]);
 
-const [activeTabID, setActiveTabId] = useState(1);
+const [activeTabId, setActiveTabId] = useState(1);
 
+const activeTab = 
+tabs.find((tab) => tab.id === activeTabId) ?? tabs[0];
 
   const navigate = (value) => {
     if (!value.trim()) return;
