@@ -39,7 +39,10 @@ const switchTab = (tabId) => {
 const closeTab = (tabId) => {
   if (tabs.length === 1) return;
 
-  
+  const updatedTabs = tabs.filter(
+    (tab) => tab.id !== tabId
+  );
+
 }
 
   const navigate = (value) => {
