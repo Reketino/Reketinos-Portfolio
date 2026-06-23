@@ -36,6 +36,12 @@ const switchTab = (tabId) => {
   setActiveTabId(tabId);
 };
 
+const closeTab = (tabId) => {
+  if (tabs.length === 1) return;
+
+  
+}
+
   const navigate = (value) => {
     if (!value.trim()) return;
 
