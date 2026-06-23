@@ -15,6 +15,8 @@ const [tabs, setTabs] = useState([
   },
 ]);
 
+const [activeTabID, setActiveTabId] = useState(1);
+
 
   const navigate = (value) => {
     if (!value.trim()) return;
