@@ -6,49 +6,46 @@ import BearWebStart from "./BearWebStart";
 export default function BearWebWindow() {
   const HOME_URL = "https://www.google.com/webhp?igu=1";
 
-const [tabs, setTabs] = useState([
-  {
-    id: 1,
-    title: "New Tab",
-    url: "",
-    reloadKey: 0,
-  },
-]);
+  const [tabs, setTabs] = useState([
+    {
+      id: 1,
+      title: "New Tab",
+      url: "",
+      reloadKey: 0,
+    },
+  ]);
 
-const [activeTabId, setActiveTabId] = useState(1);
+  const [activeTabId, setActiveTabId] = useState(1);
 
-const activeTab = 
-tabs.find((tab) => tab.id === activeTabId) ?? tabs[0];
+  const activeTab = tabs.find((tab) => tab.id === activeTabId) ?? tabs[0];
 
-const createNewTab = () => {
-  const newTab = {
-    id: Date.now(),
-    title: "New Tab",
-    url: "",
-    reloadKey: 0,
+  const createNewTab = () => {
+    const newTab = {
+      id: Date.now(),
+      title: "New Tab",
+      url: "",
+      reloadKey: 0,
+    };
+
+    setTabs((prev) => [...prev, newTab]);
+    setActiveTabId(newTab.id);
   };
 
-  setTabs((prev) => [...prev, newTab]);
-  setActiveTabId(newTab.id);
-};
+  const switchTab = (tabId) => {
+    setActiveTabId(tabId);
+  };
 
-const switchTab = (tabId) => {
-  setActiveTabId(tabId);
-};
+  const closeTab = (tabId) => {
+    if (tabs.length === 1) return;
 
-const closeTab = (tabId) => {
-  if (tabs.length === 1) return;
+    const updatedTabs = tabs.filter((tab) => tab.id !== tabId);
 
-  const updatedTabs = tabs.filter(
-    (tab) => tab.id !== tabId
-  );
+    setTabs(updatedTabs);
 
-  setTabs(updatedTabs);
-
-  if (activeTabId === tabId) {
-    setActiveTabId(updatedTabs[0].id);
-  }
-};
+    if (activeTabId === tabId) {
+      setActiveTabId(updatedTabs[0].id);
+    }
+  };
 
   const navigate = (value) => {
     if (!value.trim()) return;
