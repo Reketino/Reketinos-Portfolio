@@ -43,6 +43,8 @@ const closeTab = (tabId) => {
     (tab) => tab.id !== tabId
   );
 
+  setTabs(updatedTabs);
+
 }
 
   const navigate = (value) => {
