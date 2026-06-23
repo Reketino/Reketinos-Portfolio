@@ -26,8 +26,11 @@ const createNewTab = () => {
     title: "New Tab",
     url: "",
     reloadKey: 0,
-  }
-}
+  };
+
+  setTabs((prev) => [...prev, newTab]);
+  setActiveTabId(newTab.id);
+};
 
   const navigate = (value) => {
     if (!value.trim()) return;
