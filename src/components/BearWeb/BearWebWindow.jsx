@@ -12,8 +12,9 @@ const [tabs, setTabs] = useState([
     title: "New Tab",
     url: "",
     reloadKey: 0,
-  }
-])
+  },
+]);
+
 
   const navigate = (value) => {
     if (!value.trim()) return;
