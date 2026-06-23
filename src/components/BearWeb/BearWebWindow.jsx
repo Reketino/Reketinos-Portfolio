@@ -47,6 +47,10 @@ export default function BearWebWindow() {
     }
   };
 
+  const updateActiveTab = (updates) => {
+    
+  }
+
   const navigate = (value) => {
     if (!value.trim()) return;
 
