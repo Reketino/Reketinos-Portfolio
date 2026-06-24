@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import BearWebTopbar from "./BearWebTopbar";
 import BearWebStart from "./BearWebStart";
+import BearWebTabs from "./BearWebTabs";
 
 export default function BearWebWindow() {
   const HOME_URL = "https://www.google.com/webhp?igu=1";
@@ -124,20 +125,33 @@ export default function BearWebWindow() {
 
   return (
     <main className="flex flex-col h-full min-h-0">
+      <BearWebTabs
+        tabs={tabs}
+        activeTabId={activeTabId}
+        onSwitchTab={switchTab}
+        onCloseTab={closeTab}
+        onNewTab={createNewTab}
+      />
+
       <BearWebTopbar
-        currentUrl={url || "Search BearWeb or Type a URL"}
+        currentUrl={activeTab.url || "Search BearWeb or Type a URL"}
         onNavigate={navigate}
-        onHome={() => setUrl("")}
+        onHome={() =>
+          updateActiveTab({
+            url: "",
+            title: "New Tab",
+          })
+        }
         onReload={reloadPage}
       />
 
       <section className="bw-content min-h-0 overflow-auto">
-        {!url && <BearWebStart onOpen={navigate} />}
+        {!activeTab.url && <BearWebStart onOpen={navigate} />}
 
-        {url && (
+        {activeTab.url && (
           <iframe
-            key={reloadKey}
-            src={url}
+            key={activeTab.reloadKey}
+            src={activeTab.url}
             title="BearWeb Browser"
             className="bw-iframe"
           />
