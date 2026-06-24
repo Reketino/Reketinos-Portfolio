@@ -105,7 +105,10 @@ export default function BearWebWindow() {
     }
 
     if (input.startsWith("http://") || input.startsWith("https://")) {
-      setUrl(input);
+      updateActiveTab({
+      url: input,
+      title: input,
+      })
       return;
     }
 
