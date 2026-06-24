@@ -8,7 +8,7 @@ export default function BearWebTabs({
   onNewTab,
 }) {
   return (
-    <section className="flex items-center gap-1 overflow-x-auto">
+    <section className="flex items-center gap-1 overflow-x-auto px-2">
       {tabs.map((tab) => (
         <div
           key={tab.id}

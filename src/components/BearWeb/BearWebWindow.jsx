@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import BearWebTopbar from "./BearWebTopbar";
 import BearWebStart from "./BearWebStart";
+import BearWebTabs from "./BearWebTabs";
 
 export default function BearWebWindow() {
   const HOME_URL = "https://www.google.com/webhp?igu=1";
