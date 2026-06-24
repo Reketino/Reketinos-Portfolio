@@ -72,7 +72,10 @@ export default function BearWebWindow() {
     }
 
     if (lower.includes("holdem")) {
-      setUrl("https://bear-hold-em-frontend.vercel.app/");
+      updateActiveTab({
+      url: "https://bear-hold-em-frontend.vercel.app/",
+      title: "Bear Hold Em",
+      })
       return;
     }
 
@@ -82,7 +85,10 @@ export default function BearWebWindow() {
     }
 
     if (lower === "google") {
-      setUrl("https://www.google.com/webhp?igu=1");
+      updateActiveTab({
+    url: HOME_URL,
+    title: "Google",
+    });
       return;
     }
 
