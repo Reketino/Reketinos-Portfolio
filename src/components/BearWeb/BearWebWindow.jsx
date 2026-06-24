@@ -126,9 +126,16 @@ export default function BearWebWindow() {
   return (
     <main className="flex flex-col h-full min-h-0">
       <BearWebTopbar
-        currentUrl={url || "Search BearWeb or Type a URL"}
+        currentUrl={
+          activeTab.url || "Search BearWeb or Type a URL"
+        }
         onNavigate={navigate}
-        onHome={() => setUrl("")}
+        onHome={() =>
+          updateActiveTab({
+          url: "",
+          title: "New Tab",
+          }) 
+        }
         onReload={reloadPage}
       />
 
