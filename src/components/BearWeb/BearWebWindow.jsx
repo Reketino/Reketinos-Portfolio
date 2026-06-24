@@ -126,31 +126,27 @@ export default function BearWebWindow() {
   return (
     <main className="flex flex-col h-full min-h-0">
       <BearWebTabs
-      tabs={tabs}
-      activeTabId={activeTabId}
-      onSwitchTab={switchTab}
-      onCloseTab={closeTab}
-      onNewTab={createNewTab}
+        tabs={tabs}
+        activeTabId={activeTabId}
+        onSwitchTab={switchTab}
+        onCloseTab={closeTab}
+        onNewTab={createNewTab}
       />
 
       <BearWebTopbar
-        currentUrl={
-          activeTab.url || "Search BearWeb or Type a URL"
-        }
+        currentUrl={activeTab.url || "Search BearWeb or Type a URL"}
         onNavigate={navigate}
         onHome={() =>
           updateActiveTab({
-          url: "",
-          title: "New Tab",
-          }) 
+            url: "",
+            title: "New Tab",
+          })
         }
         onReload={reloadPage}
       />
 
       <section className="bw-content min-h-0 overflow-auto">
-        {!activeTab.url && (
-          <BearWebStart onOpen={navigate} /> 
-        )}
+        {!activeTab.url && <BearWebStart onOpen={navigate} />}
 
         {activeTab.url && (
           <iframe
