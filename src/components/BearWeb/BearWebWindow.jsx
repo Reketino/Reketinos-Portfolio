@@ -125,6 +125,14 @@ export default function BearWebWindow() {
 
   return (
     <main className="flex flex-col h-full min-h-0">
+      <BearWebTabs
+      tabs={tabs}
+      activeTabId={activeTabId}
+      onSwitchTab={switchTab}
+      onCloseTab={closeTab}
+      onNewTab={createNewTab}
+      />
+      
       <BearWebTopbar
         currentUrl={
           activeTab.url || "Search BearWeb or Type a URL"
