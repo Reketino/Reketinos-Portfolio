@@ -152,7 +152,7 @@ export default function BearWebWindow() {
           <BearWebStart onOpen={navigate} /> 
         )}
 
-        {url && (
+        {activeTab.url && (
           <iframe
             key={activeTab.reloadKey}
             src={activeTab.url}
