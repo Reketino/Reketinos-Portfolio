@@ -154,8 +154,8 @@ export default function BearWebWindow() {
 
         {url && (
           <iframe
-            key={reloadKey}
-            src={url}
+            key={activeTab.reloadKey}
+            src={activeTab.url}
             title="BearWeb Browser"
             className="bw-iframe"
           />
