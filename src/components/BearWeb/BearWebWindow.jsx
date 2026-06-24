@@ -48,8 +48,12 @@ export default function BearWebWindow() {
   };
 
   const updateActiveTab = (updates) => {
-    
-  }
+    setTabs((prev) =>
+      prev.map((tab) =>
+        tab.id === activeTabId ? { ...tab, ...updates } : tab,
+      ),
+    );
+  };
 
   const navigate = (value) => {
     if (!value.trim()) return;
@@ -58,22 +62,34 @@ export default function BearWebWindow() {
     const lower = value.toLowerCase().trim();
 
     if (lower.includes("stock")) {
-      setUrl("https://bearstocks.vercel.app/");
+      updateActiveTab({
+        url: "https://bearstocks.vercel.app/",
+        title: "BearStocks",
+      });
       return;
     }
 
     if (lower.includes("holdem")) {
-      setUrl("https://bear-hold-em-frontend.vercel.app/");
+      updateActiveTab({
+        url: "https://bear-hold-em-frontend.vercel.app/",
+        title: "Bear Hold Em",
+      });
       return;
     }
 
     if (lower === "home") {
-      setUrl("");
+      updateActiveTab({
+        url: "",
+        title: "New Tab",
+      });
       return;
     }
 
     if (lower === "google") {
-      setUrl("https://www.google.com/webhp?igu=1");
+      updateActiveTab({
+        url: HOME_URL,
+        title: "Google",
+      });
       return;
     }
 
@@ -87,15 +103,23 @@ export default function BearWebWindow() {
     }
 
     if (input.startsWith("http://") || input.startsWith("https://")) {
-      setUrl(input);
+      updateActiveTab({
+        url: input,
+        title: input,
+      });
       return;
     }
 
-    setUrl(`https://${input}`);
+    updateActiveTab({
+      url: `https://${input}`,
+      title: input,
+    });
   };
 
   const reloadPage = () => {
-    setReloadKey((prev) => prev + 1);
+    updateActiveTab({
+      reloadKey: activeTab.reloadKey + 1,
+    });
   };
 
   return (
