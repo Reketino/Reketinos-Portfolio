@@ -80,7 +80,10 @@ export default function BearWebWindow() {
     }
 
     if (lower === "home") {
-      setUrl("");
+      updateActiveTab({
+      url: "",
+      title: "New Tab",
+      });
       return;
     }
 
