@@ -111,9 +111,12 @@ export default function BearWebWindow() {
       })
       return;
     }
-
-    setUrl(`https://${input}`);
-  };
+    
+    updateActiveTab({
+    url: `https://${input}`,
+    title: input,
+  });
+}
 
   const reloadPage = () => {
     setReloadKey((prev) => prev + 1);
