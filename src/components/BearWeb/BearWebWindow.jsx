@@ -48,8 +48,14 @@ export default function BearWebWindow() {
   };
 
   const updateActiveTab = (updates) => {
-    
-  }
+    setTabs((prev) => 
+    prev.map((tab) =>
+    tab.id === activeTabId
+    ? { ...tab, ...updates }
+    : tab
+    )
+    );
+  };
 
   const navigate = (value) => {
     if (!value.trim()) return;
