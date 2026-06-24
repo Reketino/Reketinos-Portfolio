@@ -119,7 +119,9 @@ export default function BearWebWindow() {
 }
 
   const reloadPage = () => {
-    setReloadKey((prev) => prev + 1);
+    updateActiveTab({
+    ReloadKey: activeTab.reloadKey + 1,
+    });
   };
 
   return (
