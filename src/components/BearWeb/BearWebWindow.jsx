@@ -64,7 +64,10 @@ export default function BearWebWindow() {
     const lower = value.toLowerCase().trim();
 
     if (lower.includes("stock")) {
-      setUrl("https://bearstocks.vercel.app/");
+      updateActiveTab({
+      url: "https://bearstocks.vercel.app/",
+      title: "BearStocks",
+      })
       return;
     }
 
