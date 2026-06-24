@@ -132,7 +132,7 @@ export default function BearWebWindow() {
       onCloseTab={closeTab}
       onNewTab={createNewTab}
       />
-      
+
       <BearWebTopbar
         currentUrl={
           activeTab.url || "Search BearWeb or Type a URL"
@@ -148,7 +148,9 @@ export default function BearWebWindow() {
       />
 
       <section className="bw-content min-h-0 overflow-auto">
-        {!url && <BearWebStart onOpen={navigate} />}
+        {!activeTab.url && (
+          <BearWebStart onOpen={navigate} /> 
+        )}
 
         {url && (
           <iframe
