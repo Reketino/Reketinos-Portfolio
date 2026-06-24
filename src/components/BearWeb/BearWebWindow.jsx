@@ -48,12 +48,10 @@ export default function BearWebWindow() {
   };
 
   const updateActiveTab = (updates) => {
-    setTabs((prev) => 
-    prev.map((tab) =>
-    tab.id === activeTabId
-    ? { ...tab, ...updates }
-    : tab
-    )
+    setTabs((prev) =>
+      prev.map((tab) =>
+        tab.id === activeTabId ? { ...tab, ...updates } : tab,
+      ),
     );
   };
 
@@ -65,33 +63,33 @@ export default function BearWebWindow() {
 
     if (lower.includes("stock")) {
       updateActiveTab({
-      url: "https://bearstocks.vercel.app/",
-      title: "BearStocks",
-      })
+        url: "https://bearstocks.vercel.app/",
+        title: "BearStocks",
+      });
       return;
     }
 
     if (lower.includes("holdem")) {
       updateActiveTab({
-      url: "https://bear-hold-em-frontend.vercel.app/",
-      title: "Bear Hold Em",
-      })
+        url: "https://bear-hold-em-frontend.vercel.app/",
+        title: "Bear Hold Em",
+      });
       return;
     }
 
     if (lower === "home") {
       updateActiveTab({
-      url: "",
-      title: "New Tab",
+        url: "",
+        title: "New Tab",
       });
       return;
     }
 
     if (lower === "google") {
       updateActiveTab({
-    url: HOME_URL,
-    title: "Google",
-    });
+        url: HOME_URL,
+        title: "Google",
+      });
       return;
     }
 
@@ -106,21 +104,21 @@ export default function BearWebWindow() {
 
     if (input.startsWith("http://") || input.startsWith("https://")) {
       updateActiveTab({
-      url: input,
-      title: input,
-      })
+        url: input,
+        title: input,
+      });
       return;
     }
-    
+
     updateActiveTab({
-    url: `https://${input}`,
-    title: input,
-  });
-}
+      url: `https://${input}`,
+      title: input,
+    });
+  };
 
   const reloadPage = () => {
     updateActiveTab({
-    ReloadKey: activeTab.reloadKey + 1,
+      reloadKey: activeTab.reloadKey + 1,
     });
   };
 
