@@ -109,7 +109,7 @@ export default function BearWebWindow() {
       
       updateActiveTab({
         url: input,
-        title: input,
+        title: hostname,
       });
       return;
     }
