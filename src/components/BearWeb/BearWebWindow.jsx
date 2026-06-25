@@ -114,20 +114,13 @@ export default function BearWebWindow() {
       return;
     }
 
-    updateActiveTab({
-      url: `https://${input}`,
-      title: input,
-    });
-
-    return;
-  }
-
   const finalUrl = `https://${input}`;
 
   updateActiveTab({
     url: finalUrl,
     title: input,
   });
+  };
 
   const reloadPage = () => {
     updateActiveTab({
