@@ -14,6 +14,8 @@ export default function BearWebWindow() {
       title: "New Tab",
       url: "",
       reloadKey: 0,
+      history: [],
+      historyIndex: -1,
     },
   ]);
 
