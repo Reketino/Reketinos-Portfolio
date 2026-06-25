@@ -3,7 +3,7 @@ import { useState } from "react";
 import BearWebTopbar from "./BearWebTopbar";
 import BearWebStart from "./BearWebStart";
 import BearWebTabs from "./BearWebTabs";
-import { input } from "framer-motion/client";
+
 
 export default function BearWebWindow() {
   const HOME_URL = "https://www.google.com/webhp?igu=1";
@@ -105,6 +105,7 @@ export default function BearWebWindow() {
     }
 
     if (input.startsWith("http://") || input.startsWith("https://")) {
+      const hostname = new URL(input).hostname.replace("www.", "");
       updateActiveTab({
         url: input,
         title: input,
