@@ -115,7 +115,9 @@ export default function BearWebWindow() {
       url: `https://${input}`,
       title: input,
     });
-  };
+
+    return;
+  }
 
   const reloadPage = () => {
     updateActiveTab({
