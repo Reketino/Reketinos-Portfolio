@@ -4,6 +4,7 @@ import BearWebTopbar from "./BearWebTopbar";
 import BearWebStart from "./BearWebStart";
 import BearWebTabs from "./BearWebTabs";
 
+
 export default function BearWebWindow() {
   const HOME_URL = "https://www.google.com/webhp?igu=1";
 
@@ -104,17 +105,21 @@ export default function BearWebWindow() {
     }
 
     if (input.startsWith("http://") || input.startsWith("https://")) {
+      const hostname = new URL(input).hostname.replace("www.", "");
+      
       updateActiveTab({
         url: input,
-        title: input,
+        title: hostname,
       });
       return;
     }
 
-    updateActiveTab({
-      url: `https://${input}`,
-      title: input,
-    });
+  const finalUrl = `https://${input}`;
+
+  updateActiveTab({
+    url: finalUrl,
+    title: input,
+  });
   };
 
   const reloadPage = () => {
