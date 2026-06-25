@@ -80,6 +80,8 @@ export default function BearWebWindow() {
 
   const goBack = () => {
     if (activeTab.historyIndex <= 0) return;
+
+    const newIndex = activeTab.historyIndex - 1;
   }
 
   const navigate = (value) => {
