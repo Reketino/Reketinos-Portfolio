@@ -78,6 +78,10 @@ export default function BearWebWindow() {
     );
   };
 
+  const goBack = () => {
+    if (activeTab.historyIndex <= 0) return;
+  }
+
   const navigate = (value) => {
     if (!value.trim()) return;
 
