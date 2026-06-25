@@ -106,6 +106,7 @@ export default function BearWebWindow() {
 
     if (input.startsWith("http://") || input.startsWith("https://")) {
       const hostname = new URL(input).hostname.replace("www.", "");
+      
       updateActiveTab({
         url: input,
         title: input,
