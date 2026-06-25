@@ -4,7 +4,6 @@ import BearWebTopbar from "./BearWebTopbar";
 import BearWebStart from "./BearWebStart";
 import BearWebTabs from "./BearWebTabs";
 
-
 export default function BearWebWindow() {
   const HOME_URL = "https://www.google.com/webhp?igu=1";
 
@@ -63,22 +62,19 @@ export default function BearWebWindow() {
 
   const navigateTab = (url, title) => {
     setTabs((prev) =>
-    prev.map((tab) => {
-      if (tab.id !== activeTabId) return tab;
+      prev.map((tab) => {
+        if (tab.id !== activeTabId) return tab;
 
-      const newHistory = [
-        ...tab.history.slice(0, tab.historyIndex + 1),
-        url,
-      ];
+        const newHistory = [...tab.history.slice(0, tab.historyIndex + 1), url];
 
-      return {
-        ...tab,
-        url,
-        title,
-        history: newHistory,
-        historyIndex: newHistory.length - 1,
-      };
-    }),
+        return {
+          ...tab,
+          url,
+          title,
+          history: newHistory,
+          historyIndex: newHistory.length - 1,
+        };
+      }),
     );
   };
 
@@ -131,7 +127,7 @@ export default function BearWebWindow() {
 
     if (input.startsWith("http://") || input.startsWith("https://")) {
       const hostname = new URL(input).hostname.replace("www.", "");
-      
+
       updateActiveTab({
         url: input,
         title: hostname,
@@ -139,12 +135,12 @@ export default function BearWebWindow() {
       return;
     }
 
-  const finalUrl = `https://${input}`;
+    const finalUrl = `https://${input}`;
 
-  updateActiveTab({
-    url: finalUrl,
-    title: input,
-  });
+    updateActiveTab({
+      url: finalUrl,
+      title: input,
+    });
   };
 
   const reloadPage = () => {
