@@ -82,7 +82,19 @@ export default function BearWebWindow() {
     if (activeTab.historyIndex <= 0) return;
 
     const newIndex = activeTab.historyIndex - 1;
-  }
+
+    setTabs((prev) =>
+    prev.map((tab) =>
+    tab.id === activeTabId
+    ? {
+      ...tab,
+      url: tab.history[newIndex],
+      historyIndex: newIndex,
+    }
+    : tab,
+    ),
+    );
+  };
 
   const navigate = (value) => {
     if (!value.trim()) return;
