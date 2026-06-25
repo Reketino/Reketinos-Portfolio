@@ -29,6 +29,8 @@ export default function BearWebWindow() {
       title: "New Tab",
       url: "",
       reloadKey: 0,
+      history: [],
+      historyIndex: -1,
     };
 
     setTabs((prev) => [...prev, newTab]);
@@ -58,6 +60,18 @@ export default function BearWebWindow() {
       ),
     );
   };
+
+  const navigateTab = (url, title) => {
+    setTabs((prev) =>
+    prev.map((tab) => {
+      if (tab.id !== activeTabId) return tab;
+
+      const newHistory = [
+        ...tab.history.slice(0, tab.historyIndex + 1)
+      ];
+    })
+    )
+  }
 
   const navigate = (value) => {
     if (!value.trim()) return;
