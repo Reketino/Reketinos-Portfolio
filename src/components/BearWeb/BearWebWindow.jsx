@@ -96,6 +96,15 @@ export default function BearWebWindow() {
     );
   };
 
+  const goForward = () => {
+    if (
+      activeTab.historyIndex >=
+      activeTab.history.length - 1
+    )
+    return;
+    
+  }
+
   const navigate = (value) => {
     if (!value.trim()) return;
 
