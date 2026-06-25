@@ -67,11 +67,20 @@ export default function BearWebWindow() {
       if (tab.id !== activeTabId) return tab;
 
       const newHistory = [
-        ...tab.history.slice(0, tab.historyIndex + 1)
+        ...tab.history.slice(0, tab.historyIndex + 1),
+        url,
       ];
-    })
-    )
-  }
+
+      return {
+        ...tab,
+        url,
+        title,
+        history: newHistory,
+        historyIndex: newHistory.length - 1,
+      };
+    }),
+    );
+  };
 
   const navigate = (value) => {
     if (!value.trim()) return;
