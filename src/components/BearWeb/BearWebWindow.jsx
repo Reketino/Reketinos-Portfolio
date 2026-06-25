@@ -3,6 +3,7 @@ import { useState } from "react";
 import BearWebTopbar from "./BearWebTopbar";
 import BearWebStart from "./BearWebStart";
 import BearWebTabs from "./BearWebTabs";
+import { input } from "framer-motion/client";
 
 export default function BearWebWindow() {
   const HOME_URL = "https://www.google.com/webhp?igu=1";
@@ -118,6 +119,8 @@ export default function BearWebWindow() {
 
     return;
   }
+
+  const finalUrl = `https://${input}`;
 
   const reloadPage = () => {
     updateActiveTab({
