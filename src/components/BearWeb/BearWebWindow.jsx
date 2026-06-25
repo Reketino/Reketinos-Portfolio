@@ -122,6 +122,11 @@ export default function BearWebWindow() {
 
   const finalUrl = `https://${input}`;
 
+  updateActiveTab({
+    url: finalUrl,
+    title: input,
+  });
+
   const reloadPage = () => {
     updateActiveTab({
       reloadKey: activeTab.reloadKey + 1,
