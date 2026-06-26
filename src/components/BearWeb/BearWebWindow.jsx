@@ -103,6 +103,7 @@ export default function BearWebWindow() {
     )
     return;
     
+    const newIndex = activeTab.historyIndex + 1;
   }
 
   const navigate = (value) => {
