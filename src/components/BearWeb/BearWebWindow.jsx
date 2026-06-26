@@ -173,10 +173,10 @@ export default function BearWebWindow() {
 
     const finalUrl = `https://${input}`;
 
-    updateActiveTab({
-      url: finalUrl,
-      title: input,
-    });
+    navigateTab(
+      finalUrl,
+      input,
+    );
   };
 
   const reloadPage = () => {
