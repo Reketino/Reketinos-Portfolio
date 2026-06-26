@@ -145,10 +145,10 @@ export default function BearWebWindow() {
     }
 
     if (lower === "google") {
-      updateActiveTab({
-        url: HOME_URL,
-        title: "Google",
-      });
+      navigateTab(
+        HOME_URL,
+        "Google",
+      );
       return;
     }
 
