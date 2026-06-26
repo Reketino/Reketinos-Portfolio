@@ -104,6 +104,18 @@ export default function BearWebWindow() {
     return;
     
     const newIndex = activeTab.historyIndex + 1;
+
+    setTabs((prev) =>
+    prev.map((tab) =>
+    tab.id === activeTabId
+    ? {
+      ...tab,
+      url: tab.history[newIndex],
+      historyIndex: newIndex,
+    }
+    : tab,
+    )
+    )
   }
 
   const navigate = (value) => {
