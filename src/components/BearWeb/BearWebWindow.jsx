@@ -137,7 +137,7 @@ export default function BearWebWindow() {
     }
 
     if (lower === "home") {
-      updateActiveTab({
+      navigateTab({
         url: "",
         title: "New Tab",
       });
