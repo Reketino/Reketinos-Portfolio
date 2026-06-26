@@ -129,7 +129,7 @@ export default function BearWebWindow() {
     }
 
     if (lower.includes("holdem")) {
-      updateActiveTab({
+      navigateTab({
         url: "https://bear-hold-em-frontend.vercel.app/",
         title: "Bear Hold Em",
       });
