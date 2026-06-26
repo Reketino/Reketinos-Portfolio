@@ -121,34 +121,28 @@ export default function BearWebWindow() {
     const lower = value.toLowerCase().trim();
 
     if (lower.includes("stock")) {
-      navigateTab({
-        url: "https://bearstocks.vercel.app/",
-        title: "BearStocks",
-      });
+      navigateTab(
+        "https://bearstocks.vercel.app/",
+        "BearStocks",
+      );
       return;
     }
 
     if (lower.includes("holdem")) {
-      navigateTab({
-        url: "https://bear-hold-em-frontend.vercel.app/",
-        title: "Bear Hold Em",
-      });
+      navigateTab(
+        "https://bear-hold-em-frontend.vercel.app/",
+        "Bear Hold Em",
+      );
       return;
     }
 
     if (lower === "home") {
-      navigateTab({
-        url: "",
-        title: "New Tab",
-      });
+      navigateTab("", "New Tab");
       return;
     }
 
     if (lower === "google") {
-      navigateTab(
-        HOME_URL,
-        "Google",
-      );
+      navigateTab(HOME_URL, "Google");
       return;
     }
 
