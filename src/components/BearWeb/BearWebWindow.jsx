@@ -97,26 +97,22 @@ export default function BearWebWindow() {
   };
 
   const goForward = () => {
-    if (
-      activeTab.historyIndex >=
-      activeTab.history.length - 1
-    )
-    return;
-    
+    if (activeTab.historyIndex >= activeTab.history.length - 1) return;
+
     const newIndex = activeTab.historyIndex + 1;
 
     setTabs((prev) =>
-    prev.map((tab) =>
-    tab.id === activeTabId
-    ? {
-      ...tab,
-      url: tab.history[newIndex],
-      historyIndex: newIndex,
-    }
-    : tab,
-    )
-    )
-  }
+      prev.map((tab) =>
+        tab.id === activeTabId
+          ? {
+              ...tab,
+              url: tab.history[newIndex],
+              historyIndex: newIndex,
+            }
+          : tab,
+      ),
+    );
+  };
 
   const navigate = (value) => {
     if (!value.trim()) return;
