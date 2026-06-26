@@ -97,13 +97,22 @@ export default function BearWebWindow() {
   };
 
   const goForward = () => {
-    if (
-      activeTab.historyIndex >=
-      activeTab.history.length - 1
-    )
-    return;
-    
-  }
+    if (activeTab.historyIndex >= activeTab.history.length - 1) return;
+
+    const newIndex = activeTab.historyIndex + 1;
+
+    setTabs((prev) =>
+      prev.map((tab) =>
+        tab.id === activeTabId
+          ? {
+              ...tab,
+              url: tab.history[newIndex],
+              historyIndex: newIndex,
+            }
+          : tab,
+      ),
+    );
+  };
 
   const navigate = (value) => {
     if (!value.trim()) return;
@@ -112,34 +121,28 @@ export default function BearWebWindow() {
     const lower = value.toLowerCase().trim();
 
     if (lower.includes("stock")) {
-      updateActiveTab({
-        url: "https://bearstocks.vercel.app/",
-        title: "BearStocks",
-      });
+      navigateTab(
+        "https://bearstocks.vercel.app/",
+        "BearStocks",
+      );
       return;
     }
 
     if (lower.includes("holdem")) {
-      updateActiveTab({
-        url: "https://bear-hold-em-frontend.vercel.app/",
-        title: "Bear Hold Em",
-      });
+      navigateTab(
+        "https://bear-hold-em-frontend.vercel.app/",
+        "Bear Hold Em",
+      );
       return;
     }
 
     if (lower === "home") {
-      updateActiveTab({
-        url: "",
-        title: "New Tab",
-      });
+      navigateTab("", "New Tab");
       return;
     }
 
     if (lower === "google") {
-      updateActiveTab({
-        url: HOME_URL,
-        title: "Google",
-      });
+      navigateTab(HOME_URL, "Google");
       return;
     }
 
@@ -155,19 +158,19 @@ export default function BearWebWindow() {
     if (input.startsWith("http://") || input.startsWith("https://")) {
       const hostname = new URL(input).hostname.replace("www.", "");
 
-      updateActiveTab({
-        url: input,
-        title: hostname,
-      });
+      navigateTab(
+      input,
+      hostname,
+      );
       return;
     }
 
     const finalUrl = `https://${input}`;
 
-    updateActiveTab({
-      url: finalUrl,
-      title: input,
-    });
+    navigateTab(
+      finalUrl,
+      input,
+    );
   };
 
   const reloadPage = () => {
@@ -190,10 +193,7 @@ export default function BearWebWindow() {
         currentUrl={activeTab.url || "Search BearWeb or Type a URL"}
         onNavigate={navigate}
         onHome={() =>
-          updateActiveTab({
-            url: "",
-            title: "New Tab",
-          })
+          navigateTab("", "New Tab")
         }
         onReload={reloadPage}
       />
