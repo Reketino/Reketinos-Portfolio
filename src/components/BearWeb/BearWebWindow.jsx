@@ -193,10 +193,7 @@ export default function BearWebWindow() {
         currentUrl={activeTab.url || "Search BearWeb or Type a URL"}
         onNavigate={navigate}
         onHome={() =>
-          updateActiveTab({
-            url: "",
-            title: "New Tab",
-          })
+          navigateTab("", "New Tab")
         }
         onReload={reloadPage}
       />
