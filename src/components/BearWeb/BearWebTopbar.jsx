@@ -30,6 +30,7 @@ export default function BearWebTopbar({
           </button>
           <button 
           disabled={!canGoForward} 
+          onClick={onForward}
           className="bw-nav-btn"
           >
             →
