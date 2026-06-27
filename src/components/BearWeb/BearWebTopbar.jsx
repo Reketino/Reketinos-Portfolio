@@ -28,7 +28,10 @@ export default function BearWebTopbar({
           >
             ←
           </button>
-          <button disabled={forwardDisabled} className="bw-nav-btn">
+          <button 
+          disabled={!canGoForward} 
+          className="bw-nav-btn"
+          >
             →
           </button>
           <button onClick={onReload} className="bw-nav-btn">
