@@ -194,6 +194,12 @@ export default function BearWebWindow() {
         onNavigate={navigate}
         onHome={() => navigateTab("", "New Tab")}
         onReload={reloadPage}
+        onBack={goBack}
+        onForward={goForward}
+        canGoback={activeTab.historyIndex > 0}
+        canGoForward={
+          activeTab.historyIndex < activeTab.history.length - 1
+        }
       />
 
       <section className="bw-content min-h-0 overflow-auto">
