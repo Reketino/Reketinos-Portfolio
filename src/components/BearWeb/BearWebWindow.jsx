@@ -110,15 +110,17 @@ export default function BearWebWindow() {
     const newIndex = activeTab.historyIndex + 1;
 
     setTabs((prev) =>
-      prev.map((tab) =>
-        tab.id === activeTabId
-          ? {
+      prev.map((tab) => { 
+        if (tab.id !== activeTabId) return tab;
+
+    const entry = tab.history[newIndex];
+    
+              return {
               ...tab,
               url: tab.history[newIndex],
               historyIndex: newIndex,
-            }
-          : tab,
-      ),
+            };
+      }),
     );
   };
 
