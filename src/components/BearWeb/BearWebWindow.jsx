@@ -196,6 +196,10 @@ export default function BearWebWindow() {
         onReload={reloadPage}
         onBack={goBack}
         onForward={goForward}
+        canGoback={activeTab.historyIndex > 0}
+        canGoForward={
+          activeTab.historyIndex < activeTab.history.length - 1
+        }
       />
 
       <section className="bw-content min-h-0 overflow-auto">
