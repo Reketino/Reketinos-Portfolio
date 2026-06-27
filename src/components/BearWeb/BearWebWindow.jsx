@@ -65,7 +65,13 @@ export default function BearWebWindow() {
       prev.map((tab) => {
         if (tab.id !== activeTabId) return tab;
 
-        const newHistory = [...tab.history.slice(0, tab.historyIndex + 1), url];
+        const newHistory = [
+          ...tab.history.slice(0, tab.historyIndex + 1),
+          { 
+          url,
+          title,
+          },
+        ];
 
         return {
           ...tab,
@@ -84,15 +90,18 @@ export default function BearWebWindow() {
     const newIndex = activeTab.historyIndex - 1;
 
     setTabs((prev) =>
-      prev.map((tab) =>
-        tab.id === activeTabId
-          ? {
+      prev.map((tab) => { 
+        if (tab.id !== activeTabId) return tab;
+
+    const entry = tab.history[newIndex];
+    
+              return {
               ...tab,
-              url: tab.history[newIndex],
+              url: entry.url,
+              title: entry.title,
               historyIndex: newIndex,
-            }
-          : tab,
-      ),
+            };
+      }),
     );
   };
 
@@ -102,15 +111,18 @@ export default function BearWebWindow() {
     const newIndex = activeTab.historyIndex + 1;
 
     setTabs((prev) =>
-      prev.map((tab) =>
-        tab.id === activeTabId
-          ? {
+      prev.map((tab) => { 
+        if (tab.id !== activeTabId) return tab;
+
+    const entry = tab.history[newIndex];
+    
+              return {
               ...tab,
-              url: tab.history[newIndex],
+              url: entry.url,
+              title: entry.title,
               historyIndex: newIndex,
-            }
-          : tab,
-      ),
+            };
+      }),
     );
   };
 
@@ -196,7 +208,7 @@ export default function BearWebWindow() {
         onReload={reloadPage}
         onBack={goBack}
         onForward={goForward}
-        canGoback={activeTab.historyIndex > 0}
+        canGoBack={activeTab.historyIndex > 0}
         canGoForward={
           activeTab.historyIndex < activeTab.history.length - 1
         }
