@@ -97,7 +97,8 @@ export default function BearWebWindow() {
     
               return {
               ...tab,
-              url: tab.history[newIndex],
+              url: entry.url,
+              title: entry.title,
               historyIndex: newIndex,
             };
       }),
