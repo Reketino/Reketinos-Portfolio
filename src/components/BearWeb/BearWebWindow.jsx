@@ -65,7 +65,13 @@ export default function BearWebWindow() {
       prev.map((tab) => {
         if (tab.id !== activeTabId) return tab;
 
-        const newHistory = [...tab.history.slice(0, tab.historyIndex + 1), url];
+        const newHistory = [
+          ...tab.history.slice(0, tab.historyIndex + 1),
+          { 
+          url,
+          title,
+          },
+        ];
 
         return {
           ...tab,
