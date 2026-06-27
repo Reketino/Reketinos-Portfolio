@@ -23,6 +23,7 @@ export default function BearWebTopbar({
         <nav className="bw-nav shrink-0">
           <button 
           disabled={!canGoBack} 
+          onClick={onBack}
           className="bw-nav-btn"
           >
             ←
