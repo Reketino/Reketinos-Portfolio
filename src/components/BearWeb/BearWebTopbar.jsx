@@ -10,6 +10,10 @@ export default function BearWebTopbar({
   onNavigate,
   onReload,
   onHome,
+  onBack,
+  onForward,
+  canGoBack,
+  canGoForward,
   onClose,
 }) {
   const [backDisabled] = useState(true);
