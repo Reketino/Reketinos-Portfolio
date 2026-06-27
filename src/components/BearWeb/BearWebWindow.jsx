@@ -196,7 +196,7 @@ export default function BearWebWindow() {
         onReload={reloadPage}
         onBack={goBack}
         onForward={goForward}
-        canGoback={activeTab.historyIndex > 0}
+        canGoBack={activeTab.historyIndex > 0}
         canGoForward={
           activeTab.historyIndex < activeTab.history.length - 1
         }
