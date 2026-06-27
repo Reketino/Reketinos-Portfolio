@@ -16,8 +16,6 @@ export default function BearWebTopbar({
   canGoForward,
   onClose,
 }) {
-  const [backDisabled] = useState(true);
-  const [forwardDisabled] = useState(true);
 
   return (
     <header className="bw-topbar">
