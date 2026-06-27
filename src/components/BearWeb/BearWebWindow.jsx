@@ -67,9 +67,9 @@ export default function BearWebWindow() {
 
         const newHistory = [
           ...tab.history.slice(0, tab.historyIndex + 1),
-          { 
-          url,
-          title,
+          {
+            url,
+            title,
           },
         ];
 
@@ -90,17 +90,17 @@ export default function BearWebWindow() {
     const newIndex = activeTab.historyIndex - 1;
 
     setTabs((prev) =>
-      prev.map((tab) => { 
+      prev.map((tab) => {
         if (tab.id !== activeTabId) return tab;
 
-    const entry = tab.history[newIndex];
-    
-              return {
-              ...tab,
-              url: entry.url,
-              title: entry.title,
-              historyIndex: newIndex,
-            };
+        const entry = tab.history[newIndex];
+
+        return {
+          ...tab,
+          url: entry.url,
+          title: entry.title,
+          historyIndex: newIndex,
+        };
       }),
     );
   };
@@ -111,17 +111,17 @@ export default function BearWebWindow() {
     const newIndex = activeTab.historyIndex + 1;
 
     setTabs((prev) =>
-      prev.map((tab) => { 
+      prev.map((tab) => {
         if (tab.id !== activeTabId) return tab;
 
-    const entry = tab.history[newIndex];
-    
-              return {
-              ...tab,
-              url: entry.url,
-              title: entry.title,
-              historyIndex: newIndex,
-            };
+        const entry = tab.history[newIndex];
+
+        return {
+          ...tab,
+          url: entry.url,
+          title: entry.title,
+          historyIndex: newIndex,
+        };
       }),
     );
   };
@@ -133,18 +133,12 @@ export default function BearWebWindow() {
     const lower = value.toLowerCase().trim();
 
     if (lower.includes("stock")) {
-      navigateTab(
-        "https://bearstocks.vercel.app/",
-        "BearStocks",
-      );
+      navigateTab("https://bearstocks.vercel.app/", "BearStocks");
       return;
     }
 
     if (lower.includes("holdem")) {
-      navigateTab(
-        "https://bear-hold-em-frontend.vercel.app/",
-        "Bear Hold Em",
-      );
+      navigateTab("https://bear-hold-em-frontend.vercel.app/", "Bear Hold Em");
       return;
     }
 
@@ -170,19 +164,13 @@ export default function BearWebWindow() {
     if (input.startsWith("http://") || input.startsWith("https://")) {
       const hostname = new URL(input).hostname.replace("www.", "");
 
-      navigateTab(
-      input,
-      hostname,
-      );
+      navigateTab(input, hostname);
       return;
     }
 
     const finalUrl = `https://${input}`;
 
-    navigateTab(
-      finalUrl,
-      input,
-    );
+    navigateTab(finalUrl, input);
   };
 
   const reloadPage = () => {
@@ -209,9 +197,7 @@ export default function BearWebWindow() {
         onBack={goBack}
         onForward={goForward}
         canGoBack={activeTab.historyIndex > 0}
-        canGoForward={
-          activeTab.historyIndex < activeTab.history.length - 1
-        }
+        canGoForward={activeTab.historyIndex < activeTab.history.length - 1}
       />
 
       <section className="bw-content min-h-0 overflow-auto">
