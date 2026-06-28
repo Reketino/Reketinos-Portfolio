@@ -3,8 +3,9 @@ import { useState } from "react";
 import BearWebTopbar from "./BearWebTopbar";
 import BearWebStart from "./BearWebStart";
 import BearWebTabs from "./BearWebTabs";
+import WindowControls from "./WindowControls";
 
-export default function BearWebWindow() {
+export default function BearWebWindow({ onBack, onMinimize }) {
   const HOME_URL = "https://www.google.com/webhp?igu=1";
 
   const [tabs, setTabs] = useState([
@@ -181,6 +182,8 @@ export default function BearWebWindow() {
 
   return (
     <main className="flex flex-col h-full min-h-0">
+
+      <header className="flex items-center  justify-between border-b border-white/10 px-2 py-1">
       <BearWebTabs
         tabs={tabs}
         activeTabId={activeTabId}
@@ -188,6 +191,14 @@ export default function BearWebWindow() {
         onCloseTab={closeTab}
         onNewTab={createNewTab}
       />
+
+      <WindowControls
+      fullscreen={false}
+      onToggleFullscreen={() => {}}
+      onMinimize={onMinimize}
+      onClose={onBack}
+      />
+      </header>
 
       <BearWebTopbar
         currentUrl={activeTab.url || "Search BearWeb or Type a URL"}
