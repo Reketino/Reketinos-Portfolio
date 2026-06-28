@@ -13,7 +13,11 @@ export default function BearWebFrame({ children }) {
     <section
       className={`
                 ${framePosition}
-                bg-black text-white rounded-lg flex flex-col shadow-xl z-50             
+                bg-black 
+                rounded-lg 
+                overflow-hidden
+                flex flex-col 
+                shadow-xl           
                 `}
     >
       <main className="flex-1 overflow-hidden">{children}</main>
