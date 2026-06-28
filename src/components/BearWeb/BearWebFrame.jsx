@@ -1,12 +1,8 @@
 "use client";
 import { useState } from "react";
-import WindowControls from "./WindowControls";
 
-export default function BearWebFrame({
-  children,
-  onBack,
-  onMinimize,
-}) {
+
+export default function BearWebFrame({ children }) {
   const [fullscreen, setFullScreen] = useState(false);
 
   const framePosition = fullscreen
@@ -20,15 +16,6 @@ export default function BearWebFrame({
                 bg-black text-white rounded-lg flex flex-col shadow-xl z-50             
                 `}
     >
-      <header className="flex items-center justify-between px-2 py-1 border-b border-white/10">
-        <WindowControls
-          fullscreen={fullscreen}
-          onToggleFullscreen={() => setFullScreen((f) => !f)}
-          onMinimize={onMinimize}
-          onClose={onBack}
-        />
-      </header>
-
       <main className="flex-1 overflow-hidden">{children}</main>
     </section>
   );
