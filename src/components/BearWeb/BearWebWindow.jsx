@@ -182,6 +182,8 @@ export default function BearWebWindow() {
 
   return (
     <main className="flex flex-col h-full min-h-0">
+
+      <header className="flex items-center  justify-between border-b border-white/10 px-2 py-1">
       <BearWebTabs
         tabs={tabs}
         activeTabId={activeTabId}
@@ -196,6 +198,7 @@ export default function BearWebWindow() {
       onMinimize={onMinimize}
       onClose={onClose}
       />
+      </header>
 
       <BearWebTopbar
         currentUrl={activeTab.url || "Search BearWeb or Type a URL"}
