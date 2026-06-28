@@ -354,14 +354,14 @@ export default function Desktop() {
       {/* Open BearWeb */}
       {openApp === "BearWeb" &&
         !minimizedApps.some((a) => a.id === "BearWeb") && (
-          <BearWebWindow
+          <BearWebFrame
             title="Bear Web"
             mode="browser"
             onBack={() => setOpenApp(null)}
             onMinimize={() => minimizeApp("BearWeb")}
           >
-            
-          </BearWebWindow>
+            <BearWebWindow />
+          </BearWebFrame>
         )}
       
       {/* Open BearCodeWindow */}
