@@ -5,7 +5,12 @@ import BearWebStart from "./BearWebStart";
 import BearWebTabs from "./BearWebTabs";
 import WindowControls from "./WindowControls";
 
-export default function BearWebWindow({ onBack, onMinimize }) {
+export default function BearWebWindow({ 
+  onBack, 
+  onMinimize,
+  fullscreen,
+onToggleFullscreen
+ }) {
   const HOME_URL = "https://www.google.com/webhp?igu=1";
 
   const [tabs, setTabs] = useState([
@@ -193,8 +198,8 @@ export default function BearWebWindow({ onBack, onMinimize }) {
       />
 
       <WindowControls
-      fullscreen={false}
-      onToggleFullscreen={() => {}}
+      fullscreen={fullscreen}
+      onToggleFullscreen={onToggleFullscreen}
       onMinimize={onMinimize}
       onClose={onBack}
       />
