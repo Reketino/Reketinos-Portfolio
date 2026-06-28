@@ -47,6 +47,7 @@ export default function ChatBear() {
             alt="BearAI"
             width={80}
             height={80}
+            priority
             className="
             hidden md:block
             object-contain 
