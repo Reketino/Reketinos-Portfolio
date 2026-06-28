@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 
-
 export default function BearWebFrame({ children }) {
   const [fullscreen, setFullScreen] = useState(false);
 
