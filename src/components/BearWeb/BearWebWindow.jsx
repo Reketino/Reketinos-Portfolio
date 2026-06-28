@@ -5,12 +5,12 @@ import BearWebStart from "./BearWebStart";
 import BearWebTabs from "./BearWebTabs";
 import WindowControls from "./WindowControls";
 
-export default function BearWebWindow({ 
-  onBack, 
+export default function BearWebWindow({
+  onBack,
   onMinimize,
   fullscreen,
-onToggleFullscreen
- }) {
+  onToggleFullscreen,
+}) {
   const HOME_URL = "https://www.google.com/webhp?igu=1";
 
   const [tabs, setTabs] = useState([
@@ -187,22 +187,21 @@ onToggleFullscreen
 
   return (
     <main className="flex flex-col h-full min-h-0">
-
       <header className="flex items-center  justify-between border-b border-white/10 px-2 py-1">
-      <BearWebTabs
-        tabs={tabs}
-        activeTabId={activeTabId}
-        onSwitchTab={switchTab}
-        onCloseTab={closeTab}
-        onNewTab={createNewTab}
-      />
+        <BearWebTabs
+          tabs={tabs}
+          activeTabId={activeTabId}
+          onSwitchTab={switchTab}
+          onCloseTab={closeTab}
+          onNewTab={createNewTab}
+        />
 
-      <WindowControls
-      fullscreen={fullscreen}
-      onToggleFullscreen={onToggleFullscreen}
-      onMinimize={onMinimize}
-      onClose={onBack}
-      />
+        <WindowControls
+          fullscreen={fullscreen}
+          onToggleFullscreen={onToggleFullscreen}
+          onMinimize={onMinimize}
+          onClose={onBack}
+        />
       </header>
 
       <BearWebTopbar
