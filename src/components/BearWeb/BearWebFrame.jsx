@@ -19,7 +19,13 @@ export default function BearWebFrame({ children, onBack, onMinimize }) {
                 shadow-xl           
                 `}
     >
-      {children}
+      {React.cloneElement(children, {
+        onBack,
+        onMinimize,
+        fullscreen,
+        onToggleFullscreen: () =>
+          setFullScreen((prev) => !prev)
+      })}
     </section>
   );
 }
