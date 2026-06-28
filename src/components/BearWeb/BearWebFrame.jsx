@@ -20,7 +20,7 @@ export default function BearWebFrame({ children }) {
                 shadow-xl           
                 `}
     >
-      <main className="flex-1 overflow-hidden">{children}</main>
+      {children}
     </section>
   );
 }
