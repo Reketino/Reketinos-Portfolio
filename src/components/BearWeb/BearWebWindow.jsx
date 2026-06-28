@@ -190,6 +190,13 @@ export default function BearWebWindow() {
         onNewTab={createNewTab}
       />
 
+      <WindowControls
+      fullscreen={false}
+      onToggleFullscreen={() => {}}
+      onMinimize={onMinimize}
+      onClose={onClose}
+      />
+
       <BearWebTopbar
         currentUrl={activeTab.url || "Search BearWeb or Type a URL"}
         onNavigate={navigate}
