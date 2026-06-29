@@ -48,10 +48,19 @@ export default function BearWebWindow({
   const addBookmark = () => {
     if (!activeTab.url) return;
 
-    const exist = bookmarks.some(
+    const exists = bookmarks.some(
       (bookmark) => bookmark.url === activeTab.url,
     );
-  }
+
+    if (exists) return;
+    saveBookmarks([
+      ...bookmarks,
+      {
+        title: activeTab.title,
+        url: activeTab.url,
+      },
+    ]);
+  };
 
 
   const createNewTab = () => {
