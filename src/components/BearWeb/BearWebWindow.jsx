@@ -62,6 +62,15 @@ export default function BearWebWindow({
     ]);
   };
 
+  const removeBookmark = () => {
+    saveBookmarks(
+      bookmarks.filter(
+        (bookmark) =>
+          bookmark.url !== activeTab.url,
+      ),
+    );
+  };
+
 
   const createNewTab = () => {
     const newTab = {
