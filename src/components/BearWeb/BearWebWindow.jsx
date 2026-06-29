@@ -28,7 +28,7 @@ export default function BearWebWindow({
 
   const [activeTabId, setActiveTabId] = useState(1);
   const activeTab = tabs.find((tab) => tab.id === activeTabId) ?? tabs[0];
-  
+
   useEffect(() => {
     const saved = localStorage.getItem("bearweb-bookmarks");
 
@@ -39,18 +39,13 @@ export default function BearWebWindow({
 
   const saveBookmarks = (list) => {
     setBookmarks(list);
-    localStorage.setItem(
-      "bearweb-bookmarks",
-      JSON.stringify(list),
-    );
+    localStorage.setItem("bearweb-bookmarks", JSON.stringify(list));
   };
 
   const addBookmark = () => {
     if (!activeTab.url) return;
 
-    const exists = bookmarks.some(
-      (bookmark) => bookmark.url === activeTab.url,
-    );
+    const exists = bookmarks.some((bookmark) => bookmark.url === activeTab.url);
 
     if (exists) return;
     saveBookmarks([
@@ -64,13 +59,9 @@ export default function BearWebWindow({
 
   const removeBookmark = () => {
     saveBookmarks(
-      bookmarks.filter(
-        (bookmark) =>
-          bookmark.url !== activeTab.url,
-      ),
+      bookmarks.filter((bookmark) => bookmark.url !== activeTab.url),
     );
   };
-
 
   const createNewTab = () => {
     const newTab = {
