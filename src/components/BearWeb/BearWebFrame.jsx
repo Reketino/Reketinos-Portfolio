@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 export default function BearWebFrame({ children, onBack, onMinimize }) {
   const [fullscreen, setFullScreen] = useState(false);
-  const ToggleFullScreen = () => {
+  const toggleFullscreen = () => {
     setFullScreen((prev) => !prev);
   };
 
@@ -26,8 +26,7 @@ export default function BearWebFrame({ children, onBack, onMinimize }) {
         onBack,
         onMinimize,
         fullscreen,
-        onToggleFullscreen: () =>
-          setFullScreen((prev) => !prev)
+        onToggleFullscreen: toggleFullscreen
       })}
     </section>
   );
