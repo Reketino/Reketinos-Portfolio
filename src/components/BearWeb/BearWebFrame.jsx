@@ -3,6 +3,9 @@ import React, { useState } from "react";
 
 export default function BearWebFrame({ children, onBack, onMinimize }) {
   const [fullscreen, setFullScreen] = useState(false);
+  const ToggleFullScreen = () => {
+    setFullScreen((prev) => !prev);
+  };
 
   const framePosition = fullscreen
     ? "fixed top-0 left-0 right-0 bottom-[var(--taskbar-height)]"
