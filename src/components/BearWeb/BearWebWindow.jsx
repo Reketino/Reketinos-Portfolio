@@ -39,6 +39,14 @@ export default function BearWebWindow({
 
   const saveBookmarks = (list) => {
     setBookmarks(list);
+    localStorage.setItem(
+      "bearweb-bookmarks",
+      JSON.stringify(list),
+    );
+  };
+
+  const addBookmark = () => {
+    if (!activeTab.url) return;
   }
 
   const createNewTab = () => {
