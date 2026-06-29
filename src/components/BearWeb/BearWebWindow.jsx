@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import BearWebTopbar from "./BearWebTopbar";
 import BearWebStart from "./BearWebStart";
 import BearWebTabs from "./BearWebTabs";
@@ -24,9 +24,53 @@ export default function BearWebWindow({
     },
   ]);
 
-  const [activeTabId, setActiveTabId] = useState(1);
+  const [bookmarks, setBookmarks] = useState([]);
 
+  const [activeTabId, setActiveTabId] = useState(1);
   const activeTab = tabs.find((tab) => tab.id === activeTabId) ?? tabs[0];
+  
+  useEffect(() => {
+    const saved = localStorage.getItem("bearweb-bookmarks");
+
+    if (saved) {
+      setBookmarks(JSON.parse(saved));
+    }
+  }, []);
+
+  const saveBookmarks = (list) => {
+    setBookmarks(list);
+    localStorage.setItem(
+      "bearweb-bookmarks",
+      JSON.stringify(list),
+    );
+  };
+
+  const addBookmark = () => {
+    if (!activeTab.url) return;
+
+    const exists = bookmarks.some(
+      (bookmark) => bookmark.url === activeTab.url,
+    );
+
+    if (exists) return;
+    saveBookmarks([
+      ...bookmarks,
+      {
+        title: activeTab.title,
+        url: activeTab.url,
+      },
+    ]);
+  };
+
+  const removeBookmark = () => {
+    saveBookmarks(
+      bookmarks.filter(
+        (bookmark) =>
+          bookmark.url !== activeTab.url,
+      ),
+    );
+  };
+
 
   const createNewTab = () => {
     const newTab = {
