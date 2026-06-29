@@ -37,6 +37,10 @@ export default function BearWebWindow({
     }
   }, []);
 
+  const saveBookmarks = (list) => {
+    setBookmarks(list);
+  }
+
   const createNewTab = () => {
     const newTab = {
       id: Date.now(),
