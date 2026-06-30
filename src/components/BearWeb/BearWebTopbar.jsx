@@ -91,8 +91,13 @@ export default function BearWebTopbar({
         </button>
 
         <ThreeDotMenu
+          onNewTab={onNewTab}
           onReload={onReload}
           onHome={onHome}
+          onBookmark={onBookmark}
+          isBookmarked={isBookmarked}
+          bookmarks={bookmarks}
+          onNavigate={onNavigate}
           onCloseApp={onClose}
         />
       </section>
