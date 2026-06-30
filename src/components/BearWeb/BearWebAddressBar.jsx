@@ -39,7 +39,7 @@ export default function BearWebAddressBar({
       <button
         type="button"
         title="Bookmark"
-        onClick={toggleBookmarked}
+        onClick={onBookmark}
         className="
       absolute right-5 
       top-1/2 -translate-y-1/2
@@ -49,7 +49,7 @@ export default function BearWebAddressBar({
       "
       >
         {isBookmarked ? (
-          <MdStarRate className="text-neutral-400" />
+          <MdStarRate className="text-yellow-400" />
         ) : (
           <MdOutlineStarRate className="text-neutral-400" />
         )}
