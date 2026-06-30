@@ -15,6 +15,8 @@ export default function BearWebTopbar({
   canGoForward,
   isBookmarked,
   onBookmark,
+  bookmarks,
+  onNewTab,
   onClose,
 }) {
 
