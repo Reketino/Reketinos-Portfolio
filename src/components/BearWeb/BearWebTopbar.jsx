@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
 import BearWebAddressBar from "./BearWebAddressBar";
 import ThreeDotMenu from "./ThreeDotMenu";
 import { IoExtensionPuzzle } from "react-icons/io5";
@@ -14,6 +13,10 @@ export default function BearWebTopbar({
   onForward,
   canGoBack,
   canGoForward,
+  isBookmarked,
+  onBookmark,
+  bookmarks,
+  onNewTab,
   onClose,
 }) {
 
@@ -48,6 +51,8 @@ export default function BearWebTopbar({
             <BearWebAddressBar
               currentUrl={currentUrl}
               onNavigate={onNavigate}
+              isBookmarked={isBookmarked}
+              onBookmark={onBookmark}
             />
           </div>
         </header>

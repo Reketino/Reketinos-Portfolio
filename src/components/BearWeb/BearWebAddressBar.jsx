@@ -2,10 +2,14 @@
 import { useEffect, useState } from "react";
 import { MdOutlineStarRate, MdStarRate } from "react-icons/md";
 
-export default function BearWebAddressBar({ onNavigate, currentUrl }) {
+export default function BearWebAddressBar({ 
+  onNavigate, 
+  currentUrl,
+  isBookmarked,
+  onBookmark, 
+}) {
   const [input, setInput] = useState("");
   const [isEditing, setIsEditing] = useState(false);
-  const [isBookmarked, setIsBookmarked] = useState(false);
 
   const safeURL = typeof currentUrl === "string" ? currentUrl : "";
 
@@ -13,13 +17,6 @@ export default function BearWebAddressBar({ onNavigate, currentUrl }) {
     if (!isEditing) setInput(safeURL);
   }, [safeURL, isEditing]);
 
-  const toggleBookmarked = () => {
-    setIsBookmarked((prev) => !prev);
-  };
-
-  useEffect(() => {
-    localStorage.setItem("Bookmark", isBookmarked);
-  }, [isBookmarked]);
 
   return (
     <form
@@ -42,7 +39,8 @@ export default function BearWebAddressBar({ onNavigate, currentUrl }) {
       <button
         type="button"
         title="Bookmark"
-        onClick={toggleBookmarked}
+        onClick={onBookmark}
+        disabled={!currentUrl}
         className="
       absolute right-5 
       top-1/2 -translate-y-1/2
@@ -52,7 +50,7 @@ export default function BearWebAddressBar({ onNavigate, currentUrl }) {
       "
       >
         {isBookmarked ? (
-          <MdStarRate className="text-neutral-400" />
+          <MdStarRate className="text-yellow-400" />
         ) : (
           <MdOutlineStarRate className="text-neutral-400" />
         )}
