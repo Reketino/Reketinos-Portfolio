@@ -40,6 +40,7 @@ export default function BearWebAddressBar({
         type="button"
         title="Bookmark"
         onClick={onBookmark}
+        disabled={!currentUrl}
         className="
       absolute right-5 
       top-1/2 -translate-y-1/2
