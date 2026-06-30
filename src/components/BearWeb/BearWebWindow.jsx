@@ -253,6 +253,7 @@ export default function BearWebWindow({
         onForward={goForward}
         canGoBack={activeTab.historyIndex > 0}
         canGoForward={activeTab.historyIndex < activeTab.history.length - 1}
+        isBookmarked={isBookmarked}
       />
 
       <section className="bw-content min-h-0 overflow-auto">
