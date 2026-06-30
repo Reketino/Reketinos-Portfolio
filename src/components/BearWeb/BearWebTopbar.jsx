@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
 import BearWebAddressBar from "./BearWebAddressBar";
 import ThreeDotMenu from "./ThreeDotMenu";
 import { IoExtensionPuzzle } from "react-icons/io5";
