@@ -49,6 +49,8 @@ export default function BearWebTopbar({
             <BearWebAddressBar
               currentUrl={currentUrl}
               onNavigate={onNavigate}
+              isBookmarked={isBookmarked}
+              onBookmark={onBookmark}
             />
           </div>
         </header>
