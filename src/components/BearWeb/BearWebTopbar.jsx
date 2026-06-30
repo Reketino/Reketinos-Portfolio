@@ -13,6 +13,8 @@ export default function BearWebTopbar({
   onForward,
   canGoBack,
   canGoForward,
+  isBookmarked,
+  onBookmark,
   onClose,
 }) {
 
