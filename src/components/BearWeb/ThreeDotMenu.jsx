@@ -68,6 +68,26 @@ export default function ThreeDotMenu({
             Recent
           </p>
 
+          {bookmarks.length === 0 ? (
+            <p className="px-3 py-2 text-sm text-neutral-700">
+              No bookmarks
+            </p> 
+          ) : (
+            bookmarks
+            .slice(-5)
+            .reverse()
+            .map((bookmark) => (
+              <MenuItem
+              key={bookmark.url}
+              label={bookmark.title}
+              onClick={() => {
+                onNavigate(bookmark.url);
+                setOpen(false);
+              }}
+              />
+            ))
+          )}
+
           <MenuItem 
           label="Settings" 
           onClick={() => {
