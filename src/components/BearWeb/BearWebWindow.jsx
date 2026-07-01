@@ -64,8 +64,7 @@ export default function BearWebWindow({
   };
 
   const isBookmarked = bookmarks.some(
-    (bookmark) =>
-      bookmark.url === activeTab.url,
+    (bookmark) => bookmark.url === activeTab.url,
   );
 
   const createNewTab = () => {
