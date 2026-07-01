@@ -3,7 +3,15 @@ import { useState, useRef } from "react";
 import { useClickOutside } from "@/hooks/useClickOutside";
 import MenuItem from "../Desktop-system/menuitem";
 
-export default function ThreeDotMenu({ onNewTab, onSettings, onCloseApp }) {
+export default function ThreeDotMenu({ 
+  onNewTab, 
+  onSettings, 
+  onCloseApp, 
+  onBookmark,
+  isBookmarked,
+  bookmarks,
+  onNavigate,
+}) {
   const [open, setOpen] = useState(false);
   const ref = useRef(null);
 
