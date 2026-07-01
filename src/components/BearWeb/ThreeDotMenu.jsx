@@ -41,7 +41,13 @@ export default function ThreeDotMenu({ onNewTab, onSettings, onCloseApp }) {
           }} 
           
           />
-          <MenuItem label="Settings" onClick={onSettings} />
+          <MenuItem 
+          label="Settings" 
+          onClick={() => {
+            onSettings?.();
+            setOpen(false);
+          }} 
+          />
 
           <div className="h-px bg-neutral-700 my-1" />
 
