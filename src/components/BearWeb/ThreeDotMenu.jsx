@@ -49,6 +49,19 @@ export default function ThreeDotMenu({
           }} 
           
           />
+
+          <MenuItem 
+          label={
+            isBookmarked
+            ? "★ Remove Bookmark"
+            : "☆ Add Bookmark"
+          }
+          onClick={() => {
+            onBookmark();
+            setOpen(false);
+          }}
+          />
+          
           <MenuItem 
           label="Settings" 
           onClick={() => {
