@@ -64,6 +64,10 @@ export default function ThreeDotMenu({
 
           <div className="h-px bg-neutral-700 my-1" />
 
+          <p className="px-3 py-2 text-xs text-neutral-500">
+            Recent
+          </p>
+
           <MenuItem 
           label="Settings" 
           onClick={() => {
