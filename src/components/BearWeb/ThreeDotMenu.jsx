@@ -3,7 +3,15 @@ import { useState, useRef } from "react";
 import { useClickOutside } from "@/hooks/useClickOutside";
 import MenuItem from "../Desktop-system/menuitem";
 
-export default function ThreeDotMenu({ onNewTab, onSettings, onCloseApp }) {
+export default function ThreeDotMenu({ 
+  onNewTab, 
+  onSettings, 
+  onCloseApp, 
+  onBookmark,
+  isBookmarked,
+  bookmarks,
+  onNavigate,
+}) {
   const [open, setOpen] = useState(false);
   const ref = useRef(null);
 
@@ -33,12 +41,50 @@ export default function ThreeDotMenu({ onNewTab, onSettings, onCloseApp }) {
         z-50
         "
         >
-          <MenuItem label="New Tab" onClick={onNewTab} />
-          <MenuItem label="Settings" onClick={onSettings} />
+          <MenuItem 
+          label="New Tab" 
+          onClick={() => {
+            onNewTab();
+            setOpen(false);
+          }} 
+          
+          />
+
+          <MenuItem 
+          label={
+            isBookmarked
+            ? "★ Remove Bookmark"
+            : "☆ Add Bookmark"
+          }
+          onClick={() => {
+            onBookmark();
+            setOpen(false);
+          }}
+          />
 
           <div className="h-px bg-neutral-700 my-1" />
 
-          <MenuItem label="Close" onClick={onCloseApp} />
+          <p className="px-3 py-2 text-xs text-neutral-500">
+            Recent
+          </p>
+
+          <MenuItem 
+          label="Settings" 
+          onClick={() => {
+            onSettings?.();
+            setOpen(false);
+          }} 
+          />
+
+          <div className="h-px bg-neutral-700 my-1" />
+
+          <MenuItem 
+          label="Close" 
+          onClick={() => {
+            onCloseApp();
+            setOpen(false);
+          }} 
+          />
         </menu>
       )}
     </section>
