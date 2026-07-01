@@ -61,7 +61,9 @@ export default function ThreeDotMenu({
             setOpen(false);
           }}
           />
-          
+
+          <div className="h-px bg-neutral-700 my-1" />
+
           <MenuItem 
           label="Settings" 
           onClick={() => {
