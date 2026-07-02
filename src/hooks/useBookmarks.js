@@ -19,7 +19,7 @@ export default function useBookmarks(activeTab) {
   };
 
   const addBookmark = () => {
-    if (!activeTab.url) return;
+    if (!activeTab?.url) return;
 
     const exists = bookmarks.some((bookmark) => bookmark.url === activeTab.url);
 
@@ -34,6 +34,7 @@ export default function useBookmarks(activeTab) {
   };
 
   const removeBookmark = () => {
+    if (!activeTab?.url) return;
     saveBookmarks(
       bookmarks.filter((bookmark) => bookmark.url !== activeTab.url),
     );
@@ -43,8 +44,14 @@ export default function useBookmarks(activeTab) {
     () =>
         bookmarks.some(
     (bookmark) => bookmark.url === activeTab?.url,
-    )
-    [bookmarks, activeTab]
+    ),
+    [bookmarks, activeTab],
   );
 
+  return {
+    bookmarks,
+    isBookmarked,
+    addBookmark,
+    removeBookmark,
+  };
 }
