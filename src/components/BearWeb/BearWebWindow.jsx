@@ -1,9 +1,10 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import BearWebTopbar from "./BearWebTopbar";
 import BearWebStart from "./BearWebStart";
 import BearWebTabs from "./BearWebTabs";
 import WindowControls from "./WindowControls";
+import useBookmarks from "@/hooks/useBookmarks";
 
 export default function BearWebWindow({
   onBack,
@@ -24,48 +25,15 @@ export default function BearWebWindow({
     },
   ]);
 
-  const [bookmarks, setBookmarks] = useState([]);
-
   const [activeTabId, setActiveTabId] = useState(1);
   const activeTab = tabs.find((tab) => tab.id === activeTabId) ?? tabs[0];
 
-  useEffect(() => {
-    const saved = localStorage.getItem("bearweb-bookmarks");
-
-    if (saved) {
-      setBookmarks(JSON.parse(saved));
-    }
-  }, []);
-
-  const saveBookmarks = (list) => {
-    setBookmarks(list);
-    localStorage.setItem("bearweb-bookmarks", JSON.stringify(list));
-  };
-
-  const addBookmark = () => {
-    if (!activeTab.url) return;
-
-    const exists = bookmarks.some((bookmark) => bookmark.url === activeTab.url);
-
-    if (exists) return;
-    saveBookmarks([
-      ...bookmarks,
-      {
-        title: activeTab.title,
-        url: activeTab.url,
-      },
-    ]);
-  };
-
-  const removeBookmark = () => {
-    saveBookmarks(
-      bookmarks.filter((bookmark) => bookmark.url !== activeTab.url),
-    );
-  };
-
-  const isBookmarked = bookmarks.some(
-    (bookmark) => bookmark.url === activeTab.url,
-  );
+ const {
+  bookmarks,
+  isBookmarked,
+  addBookmark,
+  removeBookmark,
+ } = useBookmarks(activeTab);
 
   const createNewTab = () => {
     const newTab = {
@@ -246,8 +214,8 @@ export default function BearWebWindow({
       <BearWebTopbar
         currentUrl={activeTab.url || "Search BearWeb or Type a URL"}
         onNavigate={navigate}
-        onHome={() => navigateTab("", "New Tab")}
         onReload={reloadPage}
+        onHome={() => navigateTab("", "New Tab")}
         onBack={goBack}
         onForward={goForward}
         canGoBack={activeTab.historyIndex > 0}

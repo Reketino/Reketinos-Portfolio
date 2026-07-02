@@ -1,4 +1,4 @@
-"use Client";
+"use client";
 import { useState, useRef } from "react";
 import { useClickOutside } from "@/hooks/useClickOutside";
 import MenuItem from "../Desktop-system/menuitem";
