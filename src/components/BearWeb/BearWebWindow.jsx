@@ -28,12 +28,8 @@ export default function BearWebWindow({
   const [activeTabId, setActiveTabId] = useState(1);
   const activeTab = tabs.find((tab) => tab.id === activeTabId) ?? tabs[0];
 
- const {
-  bookmarks,
-  isBookmarked,
-  addBookmark,
-  removeBookmark,
- } = useBookmarks(activeTab);
+  const { bookmarks, isBookmarked, addBookmark, removeBookmark } =
+    useBookmarks(activeTab);
 
   const createNewTab = () => {
     const newTab = {
