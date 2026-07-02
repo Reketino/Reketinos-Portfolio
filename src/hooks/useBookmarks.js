@@ -3,9 +3,9 @@
 import { useEffect, useMemo, useState } from "react";
 
 export default function useBookmarks(activeTab) {
-    const [bookmarks, setBookmarks] = useState([]);
+  const [bookmarks, setBookmarks] = useState([]);
 
-    useEffect(() => {
+  useEffect(() => {
     const saved = localStorage.getItem("bearweb-bookmarks");
 
     if (saved) {
@@ -41,10 +41,7 @@ export default function useBookmarks(activeTab) {
   };
 
   const isBookmarked = useMemo(
-    () =>
-        bookmarks.some(
-    (bookmark) => bookmark.url === activeTab?.url,
-    ),
+    () => bookmarks.some((bookmark) => bookmark.url === activeTab?.url),
     [bookmarks, activeTab],
   );
 
