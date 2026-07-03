@@ -171,6 +171,8 @@ export default function useBearWebTabs() {
   };
 
     const reloadPage = () => {
+        if (!activeTab) return;
+        
     updateActiveTab({
       reloadKey: activeTab.reloadKey + 1,
     });
