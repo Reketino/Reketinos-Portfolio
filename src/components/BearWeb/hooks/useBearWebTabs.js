@@ -19,4 +19,12 @@ export default function useBearWebTabs() {
   const [activeTabId, setActiveTabId] = useState(1);
   const activeTab = tabs.find((tab) => tab.id === activeTabId) ?? tabs[0];
 
+  
+
+    const reloadPage = () => {
+    updateActiveTab({
+      reloadKey: activeTab.reloadKey + 1,
+    });
+  };
+
 }
