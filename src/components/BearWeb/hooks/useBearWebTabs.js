@@ -192,5 +192,8 @@ export default function useBearWebTabs() {
     goForward,
 
     reloadPage,
+
+    canGoBack: activeTab?.historyIndex > 0,
+    canGoForward: activeTab?.historyIndex < activeTab?.history.length - 1
   }
 }
