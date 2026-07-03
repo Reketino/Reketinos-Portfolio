@@ -176,5 +176,21 @@ export default function useBearWebTabs() {
     });
   };
 
-  
+  return {
+    tabs,
+    activeTab,
+    activeTabId,
+
+    createNewTab,
+    switchTab,
+    closeTab,
+
+    navigate,
+    navigateTab,
+
+    goBack,
+    goForward,
+
+    reloadPage,
+  }
 }
