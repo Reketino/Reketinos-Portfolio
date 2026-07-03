@@ -4,7 +4,7 @@ import BearWebTopbar from "./BearWebTopbar";
 import BearWebStart from "./BearWebStart";
 import BearWebTabs from "./BearWebTabs";
 import WindowControls from "./WindowControls";
-import useBookmarks from "@/hooks/useBookmarks";
+import useBookmarks from "@/components/BearWeb/hooks/useBookmarks";
 
 export default function BearWebWindow({
   onBack,
