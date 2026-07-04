@@ -5,6 +5,7 @@ import BearWebStart from "./BearWebStart";
 import BearWebTabs from "./BearWebTabs";
 import WindowControls from "./WindowControls";
 import useBookmarks from "@/components/BearWeb/hooks/useBookmarks";
+import useBearWebTabs from "./hooks/useBearWebTabs";
 
 export default function BearWebWindow({
   onBack,
@@ -12,21 +13,7 @@ export default function BearWebWindow({
   fullscreen,
   onToggleFullscreen,
 }) {
-  const HOME_URL = "https://www.google.com/webhp?igu=1";
 
-  const [tabs, setTabs] = useState([
-    {
-      id: 1,
-      title: "New Tab",
-      url: "",
-      reloadKey: 0,
-      history: [],
-      historyIndex: -1,
-    },
-  ]);
-
-  const [activeTabId, setActiveTabId] = useState(1);
-  const activeTab = tabs.find((tab) => tab.id === activeTabId) ?? tabs[0];
 
   const { bookmarks, isBookmarked, addBookmark, removeBookmark } =
     useBookmarks(activeTab);
