@@ -66,8 +66,8 @@ const {
         onHome={() => navigateTab("", "New Tab")}
         onBack={goBack}
         onForward={goForward}
-        canGoBack={activeTab.historyIndex > 0}
-        canGoForward={activeTab.historyIndex < activeTab.history.length - 1}
+        canGoBack={canGoBack}
+        canGoForward={canGoForward}
         isBookmarked={isBookmarked}
         onBookmark={isBookmarked ? removeBookmark : addBookmark}
         bookmarks={bookmarks}
