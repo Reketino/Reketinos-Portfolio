@@ -14,6 +14,27 @@ export default function BearWebWindow({
   onToggleFullscreen,
 }) {
 
+const {
+  tabs,
+  activeTab,
+  activeTabId,
+
+  createNewTab,
+  switchTab,
+  closeTab,
+
+  navigate,
+  navigateTab,
+
+  goBack,
+  goForward,
+
+  reloadPage,
+
+  canGoBack,
+  canGoForward
+
+} = useBearWebTabs();
 
   const { bookmarks, isBookmarked, addBookmark, removeBookmark } =
     useBookmarks(activeTab);
