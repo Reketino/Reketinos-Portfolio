@@ -193,7 +193,7 @@ export default function useBearWebTabs() {
 
     reloadPage,
 
-    canGoBack: activeTab?.historyIndex > 0,
-    canGoForward: activeTab?.historyIndex < activeTab?.history.length - 1,
+    canGoBack: activeTab.historyIndex > 0,
+    canGoForward: activeTab.historyIndex < activeTab?.history.length - 1,
   };
 }
