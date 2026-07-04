@@ -82,7 +82,7 @@ export default function useBearWebTabs() {
   };
 
   const goBack = () => {
-    if (!activeTab || activeTab.historyIndex <= 0) return;
+    if (activeTab.historyIndex <= 0) return;
 
     const newIndex = activeTab.historyIndex - 1;
 
