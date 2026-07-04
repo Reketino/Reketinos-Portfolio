@@ -103,8 +103,7 @@ export default function useBearWebTabs() {
   };
 
   const goForward = () => {
-    if (activeTab.historyIndex >= activeTab.history.length - 1)
-      return;
+    if (activeTab.historyIndex >= activeTab.history.length - 1) return;
 
     const newIndex = activeTab.historyIndex + 1;
 
