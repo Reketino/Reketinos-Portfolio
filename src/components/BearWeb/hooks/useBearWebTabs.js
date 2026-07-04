@@ -168,11 +168,7 @@ export default function useBearWebTabs() {
     const finalUrl = `https://${input}`;
 
     navigateTab(finalUrl, input);
-  };
 
-    const reloadPage = () => {
-        if (!activeTab) return;
-        
     updateActiveTab({
       reloadKey: activeTab.reloadKey + 1,
     });
