@@ -18,6 +18,7 @@ export default function BearWebTopbar({
   bookmarks,
   onNewTab,
   onClose,
+  onSettings,
 }) {
 
   return (
@@ -99,6 +100,7 @@ export default function BearWebTopbar({
           bookmarks={bookmarks}
           onNavigate={onNavigate}
           onCloseApp={onClose}
+          onSettings={onSettings}
         />
       </section>
     </header>

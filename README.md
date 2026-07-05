@@ -82,7 +82,7 @@ It represents me better than a simple static page ever could.
 
 ## 🟢 Currently Working On:
 
-- Improve BearWeb w/ new tab showing my projects
+- Adding settings to bearweb
 
 ---
 

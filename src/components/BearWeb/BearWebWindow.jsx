@@ -1,10 +1,13 @@
 "use client";
+import { useState } from "react";
 import BearWebTopbar from "./BearWebTopbar";
 import BearWebStart from "./BearWebStart";
 import BearWebTabs from "./BearWebTabs";
 import WindowControls from "./WindowControls";
 import useBookmarks from "@/components/BearWeb/hooks/useBookmarks";
 import useBearWebTabs from "./hooks/useBearWebTabs";
+import BearWebSettings from "./BearWebSettings";
+
 
 export default function BearWebWindow({
   onBack,
@@ -12,6 +15,7 @@ export default function BearWebWindow({
   fullscreen,
   onToggleFullscreen,
 }) {
+
   const {
     tabs,
     activeTab,
@@ -35,6 +39,8 @@ export default function BearWebWindow({
 
   const { bookmarks, isBookmarked, addBookmark, removeBookmark } =
     useBookmarks(activeTab);
+
+    const [settingsOpen, setSettingsOpen] = useState(false);
 
   return (
     <main className="flex flex-col h-full min-h-0">
@@ -69,6 +75,7 @@ export default function BearWebWindow({
         bookmarks={bookmarks}
         onNewTab={createNewTab}
         onClose={onBack}
+        onSettings={() => setSettingsOpen(true)}
       />
 
       <section className="bw-content min-h-0 overflow-auto">
