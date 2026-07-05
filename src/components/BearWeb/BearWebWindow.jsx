@@ -14,8 +14,6 @@ export default function BearWebWindow({
   onToggleFullscreen,
 }) {
 
-  const [settingsOpen, setSettingsOpen] = useState(false);
-  
   const {
     tabs,
     activeTab,
@@ -39,6 +37,8 @@ export default function BearWebWindow({
 
   const { bookmarks, isBookmarked, addBookmark, removeBookmark } =
     useBookmarks(activeTab);
+
+    const [settingsOpen, setSettingsOpen] = useState(false);
 
   return (
     <main className="flex flex-col h-full min-h-0">
