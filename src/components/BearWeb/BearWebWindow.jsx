@@ -1,11 +1,13 @@
 "use client";
+import { useState } from "react";
 import BearWebTopbar from "./BearWebTopbar";
 import BearWebStart from "./BearWebStart";
 import BearWebTabs from "./BearWebTabs";
 import WindowControls from "./WindowControls";
 import useBookmarks from "@/components/BearWeb/hooks/useBookmarks";
 import useBearWebTabs from "./hooks/useBearWebTabs";
-import { useState } from "react";
+import BearWebSettings from "./BearWebSettings";
+
 
 export default function BearWebWindow({
   onBack,
