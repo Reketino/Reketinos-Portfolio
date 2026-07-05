@@ -17,9 +17,16 @@ export default function BearWebSettings({ onClose }) {
             <h2 className="text-lg font-semibold">
                 BearWeb Settings
             </h2>
+
+            <button
+            onClick={onClose}
+            className="rounded px-2 py-1 hover:bg-neutral-800"
+            >
+                ✕
+            </button>
             </header>
             <p className="text-sm text-neutral-400">
-                Work in progress
+                Work'in on it!
             </p>
         </section>
     )
