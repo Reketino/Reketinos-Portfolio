@@ -5,6 +5,7 @@ import BearWebTabs from "./BearWebTabs";
 import WindowControls from "./WindowControls";
 import useBookmarks from "@/components/BearWeb/hooks/useBookmarks";
 import useBearWebTabs from "./hooks/useBearWebTabs";
+import { useState } from "react";
 
 export default function BearWebWindow({
   onBack,
@@ -12,6 +13,9 @@ export default function BearWebWindow({
   fullscreen,
   onToggleFullscreen,
 }) {
+
+  const [settingsOpen, setSettingsOpen] = useState(false);
+  
   const {
     tabs,
     activeTab,
