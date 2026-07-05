@@ -13,9 +13,11 @@ export default function BearWebSettings({ onClose }) {
         shadow-2xl
         "
         >
-            <h2>
-                Settings
+            <header className="mb-4 flex items-center justify-between">
+            <h2 className="text-lg font-semibold">
+                BearWeb Settings
             </h2>
+            </header>
             <p className="text-sm text-neutral-400">
                 Work in progress
             </p>
