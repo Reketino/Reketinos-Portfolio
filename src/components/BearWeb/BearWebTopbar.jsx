@@ -18,6 +18,7 @@ export default function BearWebTopbar({
   bookmarks,
   onNewTab,
   onClose,
+  onSettings,
 }) {
 
   return (
