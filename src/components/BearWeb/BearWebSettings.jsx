@@ -44,8 +44,9 @@ export default function BearWebSettings({ onClose }) {
           <span>Dark Theme</span>
           <span>🌙</span>
         </button>
-
         </div>
+
+        <hr className="border-neutral-700" />
 
       </section>
       <p className="text-sm text-neutral-400">Work'in on it!</p>
