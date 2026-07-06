@@ -60,6 +60,15 @@ export default function BearWebSettings({ onClose }) {
           </label>
         </div>
 
+        <hr className="border-neutral-700" />
+
+        <div>
+          <h3 className="mb-2 flex items-center gap-2 text-sm font-semibold text-neutral-300">
+            <FaSearch />
+            Search Engine
+          </h3>
+        </div>
+
       </section>
       <p className="text-sm text-neutral-400">Work'in on it!</p>
     </section>
