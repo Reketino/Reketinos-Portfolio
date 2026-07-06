@@ -1,5 +1,11 @@
 "use client";
 
+import { MdDarkMode } from "react-icons/md";
+import { IoRocketSharp } from "react-icons/io5";
+import { FaSearch } from "react-icons/fa";
+import { PiFlaskFill } from "react-icons/pi";
+
+
 export default function BearWebSettings({ onClose }) {
   return (
     <section
