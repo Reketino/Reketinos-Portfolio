@@ -90,6 +90,7 @@ export default function BearWebWindow({
           />
         )}
       </section>
+      {settingsOpen && <BearWebSettings />}
     </main>
   );
 }
