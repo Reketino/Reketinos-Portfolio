@@ -31,6 +31,23 @@ export default function BearWebSettings({ onClose }) {
           ✕
         </button>
       </header>
+
+      <section className="space-y-5 p-5">
+
+        <div>
+          <h3 className="mb-2 flex items-center gap-2 text-sm font-semibold">
+        <MdDarkMode />
+        Appearance
+        </h3>
+
+        <button className="flex w-full items-center justify-between rounded-md bg-neutral-800 px-3 py-2 hover">
+          <span>Dark Theme</span>
+          <span>🌙</span>
+        </button>
+
+        </div>
+
+      </section>
       <p className="text-sm text-neutral-400">Work'in on it!</p>
     </section>
   );
