@@ -67,6 +67,13 @@ export default function BearWebSettings({ onClose }) {
             <FaSearch />
             Search Engine
           </h3>
+
+          <select className="w-full rounded-md border border-neutral-700 bg-neutral-800 px-3 py-2 outline-none">
+            <option>Google</option>
+            <option>DuckDuckGo</option>
+            <option>Bing</option>
+            <option>Brave</option>
+          </select>
         </div>
 
       </section>
