@@ -53,6 +53,11 @@ export default function BearWebSettings({ onClose }) {
             <IoRocketSharp />
             Startup
           </h3>
+
+          <label className="mb-2 flex items-center gap-2 text-sm font-semibold text-neutral-300">
+            <input type="checkbox" defaultChecked />
+            <span> Open New Tab</span>
+          </label>
         </div>
 
       </section>
