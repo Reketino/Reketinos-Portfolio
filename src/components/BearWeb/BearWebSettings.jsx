@@ -80,7 +80,6 @@ export default function BearWebSettings({ onClose }) {
           </h3>
 
           <div className="space-y-2">
-
             <label className="flex cursor-pointer items-center gap-3">
               <input type="checkbox" />
               <span>Bear Mode 🐻</span>
@@ -95,10 +94,8 @@ export default function BearWebSettings({ onClose }) {
               <input type="checkbox" />
               <span>Animations</span>
             </label>
-
           </div>
         </div>
-        
       </section>
     </section>
   );
