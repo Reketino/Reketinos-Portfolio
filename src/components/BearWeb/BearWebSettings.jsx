@@ -19,7 +19,10 @@ export default function BearWebSettings({ onClose }) {
         "
     >
       <header className="mb-4 flex items-center justify-between">
-        <h2 className="text-lg font-semibold">⚙ BearWeb Settings</h2>
+        <h2 className="flex items-center gap-2 text-lg font-semibold">
+          <PiFlaskFill /> 
+          BearWeb Settings
+          </h2>
 
         <button
           onClick={onClose}
