@@ -91,6 +91,12 @@ export default function BearWebSettings({ onClose }) {
               <span>Glass Effect</span>
             </label>
 
+            <label className="flex cursor-pointer items-center gap-3">
+              <input type="checkbox" />
+              <span>Animations</span>
+            </label>
+
+
           </div>
         </div>
       </section>
