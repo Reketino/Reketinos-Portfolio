@@ -78,6 +78,10 @@ export default function BearWebSettings({ onClose }) {
           <h3 className="mb-3 flex items-center gap-2 text-sm font-semibold text-neutral-300">
             Experimental
           </h3>
+
+          <div className="space-y-2">
+            
+          </div>
         </div>
       </section>
       <p className="text-sm text-neutral-400">Work'in on it!</p>
