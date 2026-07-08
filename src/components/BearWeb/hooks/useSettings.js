@@ -27,4 +27,16 @@ export default function useSettings() {
             JSON.stringify(settings),
         );
     }, [settings])
+
+    const updateSetting = (key, value) => {
+        setSettings((prev) => ({
+            ...prev, 
+            [key]: value,
+        }));
+    };
+
+    return {
+        settings,
+        updateSetting,
+    }
 }
