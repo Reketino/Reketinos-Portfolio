@@ -20,4 +20,11 @@ export default function useSettings() {
             setSettings(JSON.parse(saved));
         }
     }, []);
+
+    useEffect(() => {
+        localStorage.setItem(
+            "bearweb-settings",
+            JSON.stringify(settings),
+        );
+    }, [settings])
 }
