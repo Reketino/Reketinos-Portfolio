@@ -41,7 +41,9 @@ export default function BearWebWindow({
   const { bookmarks, isBookmarked, addBookmark, removeBookmark } =
     useBookmarks(activeTab);
 
+    const { settings, updateSettings } = useSettings(); 
     const [settingsOpen, setSettingsOpen] = useState(false);
+    
 
   return (
     <main className="flex flex-col h-full min-h-0">
