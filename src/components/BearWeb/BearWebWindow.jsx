@@ -9,14 +9,12 @@ import useBearWebTabs from "./hooks/useBearWebTabs";
 import BearWebSettings from "./BearWebSettings";
 import useSettings from "./hooks/useSettings";
 
-
 export default function BearWebWindow({
   onBack,
   onMinimize,
   fullscreen,
   onToggleFullscreen,
 }) {
-
   const {
     tabs,
     activeTab,
@@ -41,7 +39,8 @@ export default function BearWebWindow({
   const { bookmarks, isBookmarked, addBookmark, removeBookmark } =
     useBookmarks(activeTab);
 
-    const [settingsOpen, setSettingsOpen] = useState(false);
+  const { settings, updateSettings } = useSettings();
+  const [settingsOpen, setSettingsOpen] = useState(false);
 
   return (
     <main className="flex flex-col h-full min-h-0">
@@ -91,10 +90,9 @@ export default function BearWebWindow({
           />
         )}
       </section>
-      {settingsOpen && 
-      <BearWebSettings 
-      onClose={()=> setSettingsOpen(false)}
-      />}
+      {settingsOpen && (
+        <BearWebSettings onClose={() => setSettingsOpen(false)} />
+      )}
     </main>
   );
 }
