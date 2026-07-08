@@ -32,7 +32,7 @@ export default function BearWebSettings({ onClose }) {
         </button>
       </header>
 
-      <section className="space-y-5 p-5">
+      <section className="space-y-6 p-6">
         <div>
           <h3 className="mb-2 flex items-center gap-2 text-sm font-semibold">
             <MdDarkMode />
