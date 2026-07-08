@@ -20,9 +20,9 @@ export default function BearWebSettings({ onClose }) {
     >
       <header className="mb-4 flex items-center justify-between">
         <h2 className="flex items-center gap-2 text-lg font-semibold">
-          <PiFlaskFill /> 
+          <PiFlaskFill />
           BearWeb Settings
-          </h2>
+        </h2>
 
         <button
           onClick={onClose}
@@ -32,7 +32,7 @@ export default function BearWebSettings({ onClose }) {
         </button>
       </header>
 
-      <section className="space-y-5 p-5">
+      <section className="space-y-6 p-6">
         <div>
           <h3 className="mb-2 flex items-center gap-2 text-sm font-semibold">
             <MdDarkMode />
@@ -100,6 +100,11 @@ export default function BearWebSettings({ onClose }) {
           </div>
         </div>
       </section>
+
+      <footer className="border-t border-neutral-700 px-6 py-4 text-xs text-neutral-500">
+        <span>BearWeb v0.1</span>
+        <span>Made by Bear Even 🐻</span>
+      </footer>
     </section>
   );
 }
