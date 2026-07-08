@@ -7,6 +7,7 @@ import WindowControls from "./WindowControls";
 import useBookmarks from "@/components/BearWeb/hooks/useBookmarks";
 import useBearWebTabs from "./hooks/useBearWebTabs";
 import BearWebSettings from "./BearWebSettings";
+import useSettings from "./hooks/useSettings";
 
 
 export default function BearWebWindow({
