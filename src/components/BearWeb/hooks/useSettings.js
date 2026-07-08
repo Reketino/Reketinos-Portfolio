@@ -8,4 +8,16 @@ const DEFAULT_SETTINGS = {
     animations: true,
     glass: true,
     bearMode: false,
+};
+
+export default function useSettings() {
+    const [settings, setSettings] = useState(DEFAULT_SETTINGS)
+
+    useEffect(() => {
+        const saved = localStorage.getItem("bearweb-settings");
+
+        if (saved) {
+            setSettings(JSON.parse(saved));
+        }
+    }, []);
 }
