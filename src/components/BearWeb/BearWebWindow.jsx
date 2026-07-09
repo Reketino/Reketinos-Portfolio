@@ -91,10 +91,10 @@ export default function BearWebWindow({
         )}
       </section>
       {settingsOpen && (
-        <BearWebSettings 
-        onClose={() => setSettingsOpen(false)} 
-        settings={settings}
-        updateSetting={updateSetting}
+        <BearWebSettings
+          onClose={() => setSettingsOpen(false)}
+          settings={settings}
+          updateSetting={updateSetting}
         />
       )}
     </main>
