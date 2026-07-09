@@ -88,7 +88,13 @@ export default function BearWebSettings({
 
           <div className="space-y-2">
             <label className="flex cursor-pointer items-center gap-3">
-              <input type="checkbox" />
+              <input 
+              type="checkbox"
+              checked={settings.bearMode}
+              onChange={(e) => 
+                updateSettings("bearmode", e.target.checked)
+              } 
+              />
               <span>Bear Mode 🐻</span>
             </label>
 
