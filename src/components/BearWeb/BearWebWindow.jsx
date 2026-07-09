@@ -39,7 +39,7 @@ export default function BearWebWindow({
   const { bookmarks, isBookmarked, addBookmark, removeBookmark } =
     useBookmarks(activeTab);
 
-  const { settings, updateSettings } = useSettings();
+  const { settings, updateSetting } = useSettings();
   const [settingsOpen, setSettingsOpen] = useState(false);
 
   return (
