@@ -5,11 +5,7 @@ import { IoRocketSharp } from "react-icons/io5";
 import { FaSearch } from "react-icons/fa";
 import { PiFlaskFill } from "react-icons/pi";
 
-export default function BearWebSettings({ 
-  onClose,
-  settings,
-  updateSettings,
-}) {
+export default function BearWebSettings({ onClose, settings, updateSettings }) {
   return (
     <section
       className="
@@ -88,12 +84,10 @@ export default function BearWebSettings({
 
           <div className="space-y-2">
             <label className="flex cursor-pointer items-center gap-3">
-              <input 
-              type="checkbox"
-              checked={settings.bearMode}
-              onChange={(e) => 
-                updateSettings("bearmode", e.target.checked)
-              } 
+              <input
+                type="checkbox"
+                checked={settings.bearMode}
+                onChange={(e) => updateSettings("bearmode", e.target.checked)}
               />
               <span>Bear Mode 🐻</span>
             </label>
