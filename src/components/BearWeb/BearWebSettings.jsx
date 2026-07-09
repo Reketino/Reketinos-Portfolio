@@ -5,7 +5,11 @@ import { IoRocketSharp } from "react-icons/io5";
 import { FaSearch } from "react-icons/fa";
 import { PiFlaskFill } from "react-icons/pi";
 
-export default function BearWebSettings({ onClose }) {
+export default function BearWebSettings({ 
+  onClose,
+  settings,
+  updateSettings,
+}) {
   return (
     <section
       className="
