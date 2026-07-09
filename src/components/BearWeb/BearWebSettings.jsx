@@ -87,7 +87,7 @@ export default function BearWebSettings({ onClose, settings, updateSetting }) {
               <input
                 type="checkbox"
                 checked={settings.bearMode}
-                onChange={(e) => updateSetting("bearmode", e.target.checked)}
+                onChange={(e) => updateSetting("bearMode", e.target.checked)}
               />
               <span>Bear Mode 🐻</span>
             </label>
