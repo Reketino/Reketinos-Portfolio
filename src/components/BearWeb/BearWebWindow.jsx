@@ -76,6 +76,7 @@ export default function BearWebWindow({
         onNewTab={createNewTab}
         onClose={onBack}
         onSettings={() => setSettingsOpen(true)}
+        settings={settings}
       />
 
       <section className="bw-content min-h-0 overflow-auto">
