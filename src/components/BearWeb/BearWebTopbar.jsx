@@ -19,6 +19,7 @@ export default function BearWebTopbar({
   onNewTab,
   onClose,
   onSettings,
+  settings,
 }) {
 
   return (
@@ -101,6 +102,7 @@ export default function BearWebTopbar({
           onNavigate={onNavigate}
           onCloseApp={onClose}
           onSettings={onSettings}
+          settings={settings}
         />
       </section>
     </header>
