@@ -99,7 +99,13 @@ export default function BearWebSettings({ onClose, settings, updateSetting }) {
             </label>
 
             <label className="flex cursor-pointer items-center gap-3">
-              <input type="checkbox" />
+              <input 
+              type="checkbox" 
+              checked={settings.glass}
+              onChange={(e) =>
+                updateSetting("glass", e.target.checked)
+              }
+              />
               <span>Glass Effect</span>
             </label>
 
