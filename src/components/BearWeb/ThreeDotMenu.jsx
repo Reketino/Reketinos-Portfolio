@@ -12,7 +12,7 @@ export default function ThreeDotMenu({
   isBookmarked,
   bookmarks,
   onNavigate,
-  Settings
+  settings
 }) {
   const [open, setOpen] = useState(false);
   const ref = useRef(null);
@@ -41,7 +41,7 @@ export default function ThreeDotMenu({
         overflow-hidden
         animate-window-pop
         z-50
-        ${Settings.animations ? "animate-window-pop" : ""}
+        ${settings.animations ? "animate-window-pop" : ""}
         `}
         >
           <MenuItem 
