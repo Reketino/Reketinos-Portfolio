@@ -8,7 +8,7 @@ import { PiFlaskFill } from "react-icons/pi";
 export default function BearWebSettings({ onClose, settings, updateSetting }) {
   return (
     <section
-      className="
+      className={`
         absolute right-6 top-18
         z-50 w-80 p-5
         rounded-xl
@@ -16,7 +16,7 @@ export default function BearWebSettings({ onClose, settings, updateSetting }) {
         border-neutral-700
         bg-neutral-900
         shadow-2xl
-        "
+        `}
     >
       <header className="mb-4 flex items-center justify-between">
         <h2 className="flex items-center gap-2 text-lg font-semibold">
