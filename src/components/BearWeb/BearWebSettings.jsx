@@ -16,6 +16,11 @@ export default function BearWebSettings({ onClose, settings, updateSetting }) {
         border-neutral-700
         bg-neutral-900
         shadow-2xl
+        ${
+          settings.glass
+          ? "bg-neutral-900/70 backdrop-blur-xl"
+          : "bg-neutral-900"
+        }
         `}
     >
       <header className="mb-4 flex items-center justify-between">
