@@ -18,7 +18,7 @@ export default function BearWebSettings({ onClose, settings, updateSetting }) {
         shadow-2xl
         ${
           settings.glass
-          ? "bg-neutral-900/70 backdrop-blur-xl"
+          ? "bg-neutral-900/70 backdrop-blur-xl border border-white/10"
           : "bg-neutral-900"
         }
         `}
