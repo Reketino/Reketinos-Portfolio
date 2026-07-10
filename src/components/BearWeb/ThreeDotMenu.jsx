@@ -29,7 +29,7 @@ export default function ThreeDotMenu({
 
       {open && (
         <menu
-          className="
+          className={`
         absolute -right-1.5 top-full mt-3
         w-50
         bg-neutral-900
@@ -39,7 +39,7 @@ export default function ThreeDotMenu({
         overflow-hidden
         animate-window-pop
         z-50
-        "
+        `}
         >
           <MenuItem 
           label="New Tab" 
