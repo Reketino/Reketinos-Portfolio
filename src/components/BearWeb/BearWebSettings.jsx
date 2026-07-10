@@ -18,8 +18,8 @@ export default function BearWebSettings({ onClose, settings, updateSetting }) {
         shadow-2xl
         ${
           settings.glass
-          ? "bg-neutral-900/70 backdrop-blur-xl border border-white/10"
-          : "bg-neutral-900"
+            ? "bg-neutral-900/70 backdrop-blur-xl border border-white/10"
+            : "bg-neutral-900"
         }
         `}
     >
@@ -59,12 +59,10 @@ export default function BearWebSettings({ onClose, settings, updateSetting }) {
           </h3>
 
           <label className="mb-2 flex items-center gap-2 text-sm font-semibold text-neutral-300">
-            <input 
-            type="checkbox"
-            checked={settings.startupNewTab}
-            onChange={(e) =>
-              updateSetting("startupNewTab", e.target.checked)
-            }
+            <input
+              type="checkbox"
+              checked={settings.startupNewTab}
+              onChange={(e) => updateSetting("startupNewTab", e.target.checked)}
             />
             <span> Open New Tab</span>
           </label>
@@ -78,12 +76,10 @@ export default function BearWebSettings({ onClose, settings, updateSetting }) {
             Search Engine
           </h3>
 
-          <select 
-          value={settings.searchEngine}
-          onChange={(e) =>
-            updateSetting("searchEngine", e.target.value)
-          }
-          className="w-full rounded-md border border-neutral-700 bg-neutral-800 px-3 py-2 outline-none"
+          <select
+            value={settings.searchEngine}
+            onChange={(e) => updateSetting("searchEngine", e.target.value)}
+            className="w-full rounded-md border border-neutral-700 bg-neutral-800 px-3 py-2 outline-none"
           >
             <option value="google">Google</option>
             <option value="duckduckgo">DuckDuckGo</option>
@@ -110,23 +106,19 @@ export default function BearWebSettings({ onClose, settings, updateSetting }) {
             </label>
 
             <label className="flex cursor-pointer items-center gap-3">
-              <input 
-              type="checkbox" 
-              checked={settings.glass}
-              onChange={(e) =>
-                updateSetting("glass", e.target.checked)
-              }
+              <input
+                type="checkbox"
+                checked={settings.glass}
+                onChange={(e) => updateSetting("glass", e.target.checked)}
               />
               <span>Glass Effect</span>
             </label>
 
             <label className="flex cursor-pointer items-center gap-3">
-              <input 
-              type="checkbox" 
-              checked={settings.animations}
-              onChange={(e) =>
-                updateSetting("animations", e.target.checked)
-              }
+              <input
+                type="checkbox"
+                checked={settings.animations}
+                onChange={(e) => updateSetting("animations", e.target.checked)}
               />
               <span>Animations</span>
             </label>
