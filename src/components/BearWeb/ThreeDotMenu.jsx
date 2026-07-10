@@ -12,6 +12,7 @@ export default function ThreeDotMenu({
   isBookmarked,
   bookmarks,
   onNavigate,
+  Settings
 }) {
   const [open, setOpen] = useState(false);
   const ref = useRef(null);
