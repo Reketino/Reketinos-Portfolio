@@ -2,6 +2,7 @@
 import { useState, useRef } from "react";
 import { useClickOutside } from "@/hooks/useClickOutside";
 import MenuItem from "../Desktop-system/menuitem";
+import { Settings } from "lucide-react";
 
 export default function ThreeDotMenu({ 
   onNewTab, 
@@ -29,7 +30,7 @@ export default function ThreeDotMenu({
 
       {open && (
         <menu
-          className="
+          className={`
         absolute -right-1.5 top-full mt-3
         w-50
         bg-neutral-900
@@ -39,7 +40,8 @@ export default function ThreeDotMenu({
         overflow-hidden
         animate-window-pop
         z-50
-        "
+        ${Settings.animations ? "animate-window-pop" : ""}
+        `}
         >
           <MenuItem 
           label="New Tab" 
