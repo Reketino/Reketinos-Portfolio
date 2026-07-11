@@ -2,7 +2,7 @@
 import { useState, useRef } from "react";
 import { useClickOutside } from "@/hooks/useClickOutside";
 import MenuItem from "../Desktop-system/menuitem";
-import { Settings } from "lucide-react";
+
 
 export default function ThreeDotMenu({ 
   onNewTab, 
