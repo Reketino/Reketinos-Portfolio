@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 
-export default function BearWebStart({ onOpen }) {
+export default function BearWebStart({ onOpen, settings }) {
   const [query, setQuery] = useState("");
 
   const shortcuts = [
@@ -16,6 +16,12 @@ export default function BearWebStart({ onOpen }) {
   return (
     <section className="bw-start">
       <h1 className="text-6xl font-bold tracking-tight text-center">
+        {settings.bearMode ? (
+          <>
+          <span className="text-amber-300">BearWeb</span>
+          </>
+           ) : (
+          <>
         <span className="text-red-400">B</span>
         <span className="text-yellow-400">e</span>
         <span className="text-green-400">a</span>
@@ -23,6 +29,8 @@ export default function BearWebStart({ onOpen }) {
         <span className="text-purple-400">W</span>
         <span className="text-pink-400">e</span>
         <span className="text-cyan-400">b</span>
+        </>
+        )}
       </h1>
 
 
