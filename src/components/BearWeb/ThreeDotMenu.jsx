@@ -39,7 +39,6 @@ export default function ThreeDotMenu({
         rounded-md
         shadow-xl
         overflow-hidden
-        animate-window-pop
         z-50
         ${settings.animations ? "animate-window-pop" : ""}
         `}
