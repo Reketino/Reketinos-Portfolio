@@ -6,12 +6,7 @@ export default function BearWebStart({ onOpen, settings }) {
   const [query, setQuery] = useState("");
 
   const shortcuts = [
-    { label: settings.bearMode ? "Bear Search" : "Google", 
-      page: "google", 
-      icon: settings.bearMode
-      ? "/icons/bearchrome.png" 
-      : "/icons/google.png",
-    },
+    { label: "Google", page: "google", icon: "/icons/google.png" },
     { label: "BearStocks", page: "stocks", icon: "/icons/bearicon.png" },
     { label: "Bear HoldEm", page: "holdem", icon: "/icons/bearholdem.png" },
     { label: "Github", page: "github", icon: "/icons/github.png" },
