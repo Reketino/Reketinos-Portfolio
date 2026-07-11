@@ -18,21 +18,20 @@ export default function BearWebStart({ onOpen, settings }) {
       <h1 className="text-6xl font-bold tracking-tight text-center">
         {settings.bearMode ? (
           <>
-          <span className="text-amber-300">BearWeb</span>
+            <span className="text-amber-300">BearWeb</span>
           </>
-           ) : (
+        ) : (
           <>
-        <span className="text-red-400">B</span>
-        <span className="text-yellow-400">e</span>
-        <span className="text-green-400">a</span>
-        <span className="text-blue-400">r</span>
-        <span className="text-purple-400">W</span>
-        <span className="text-pink-400">e</span>
-        <span className="text-cyan-400">b</span>
-        </>
+            <span className="text-red-400">B</span>
+            <span className="text-yellow-400">e</span>
+            <span className="text-green-400">a</span>
+            <span className="text-blue-400">r</span>
+            <span className="text-purple-400">W</span>
+            <span className="text-pink-400">e</span>
+            <span className="text-cyan-400">b</span>
+          </>
         )}
       </h1>
-
 
       <p className="mt-1 text-xl font-semibold text-neutral-200 text-center">
         Your gateway to projects, code and creative experiments
@@ -100,7 +99,9 @@ export default function BearWebStart({ onOpen, settings }) {
         ))}
       </section>
 
-      <p className="bw-start-sub mt-8">Your Bearowser - powered by Bear Even 🐻</p>
+      <p className="bw-start-sub mt-8">
+        Your Bearowser - powered by Bear Even 🐻
+      </p>
     </section>
   );
 }
