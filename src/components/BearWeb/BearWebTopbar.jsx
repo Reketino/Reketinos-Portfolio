@@ -84,7 +84,7 @@ export default function BearWebTopbar({
           title="Bjørn Even (Bear Even)"
         >
           <Image
-            src="/chrome.png"
+            src={settings.bearMode ? "/bearchrome.png" : "/chrome.png"}
             alt="Chrome Profile"
             width={20}
             height={20}
