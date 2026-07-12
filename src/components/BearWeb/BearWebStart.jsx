@@ -18,7 +18,11 @@ export default function BearWebStart({ onOpen, settings }) {
     bw-start 
     relative 
     overflow-hidden
-    
+    ${
+      settings.bearMode
+      ? "bg-linear-to-br from-[#0f1c12] via-[#1d2418] to-[#2b1e16]"
+      : ""
+    }
     `}
     >
 
@@ -33,7 +37,7 @@ export default function BearWebStart({ onOpen, settings }) {
         w-[550px]
         -translate-x-1/2
         -translate-y-1/2
-        opacity-25
+        opacity-10
         pointer-events-none
         select-none
         blur-[1px]
