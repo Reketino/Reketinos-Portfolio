@@ -14,23 +14,23 @@ export default function BearWebStart({ onOpen, settings }) {
   ];
 
   return (
-    <section className={`
+    <section
+      className={`
     bw-start 
     relative 
     overflow-hidden
     ${
       settings.bearMode
-      ? "bg-linear-to-br from-[#0f1c12] via-[#1d2418] to-[#2b1e16]"
-      : ""
+        ? "bg-linear-to-br from-[#0f1c12] via-[#1d2418] to-[#2b1e16]"
+        : ""
     }
     `}
     >
-
       {settings.bearMode && (
         <img
-        src="/icons/bearchrome.png"
-        alt=""
-        className="
+          src="/icons/bearchrome.png"
+          alt=""
+          className="
         absolute
         left-1/2
         top-1/2
@@ -42,41 +42,40 @@ export default function BearWebStart({ onOpen, settings }) {
         select-none
         blur-[1px]
         "
-        draggable={false}
-        /> 
+          draggable={false}
+        />
       )}
 
       <section className="relative z-10 flex flex-col items-center">
+        <h1 className="text-6xl font-bold tracking-tight text-center">
+          {settings.bearMode ? (
+            <>
+              <span className="text-amber-300">BearWeb</span>
+            </>
+          ) : (
+            <>
+              <span className="text-red-400">B</span>
+              <span className="text-yellow-400">e</span>
+              <span className="text-green-400">a</span>
+              <span className="text-blue-400">r</span>
+              <span className="text-purple-400">W</span>
+              <span className="text-pink-400">e</span>
+              <span className="text-cyan-400">b</span>
+            </>
+          )}
+        </h1>
 
-      <h1 className="text-6xl font-bold tracking-tight text-center">
-        {settings.bearMode ? (
-          <>
-            <span className="text-amber-300">BearWeb</span>
-          </>
-        ) : (
-          <>
-            <span className="text-red-400">B</span>
-            <span className="text-yellow-400">e</span>
-            <span className="text-green-400">a</span>
-            <span className="text-blue-400">r</span>
-            <span className="text-purple-400">W</span>
-            <span className="text-pink-400">e</span>
-            <span className="text-cyan-400">b</span>
-          </>
-        )}
-      </h1>
+        <p className="mt-1 text-xl font-semibold text-neutral-200 text-center">
+          Your gateway to projects, code and creative experiments
+        </p>
 
-      <p className="mt-1 text-xl font-semibold text-neutral-200 text-center">
-        Your gateway to projects, code and creative experiments
-      </p>
-
-      <header className="flex justify-center mt-2">
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            onOpen(query);
-          }}
-          className="
+        <header className="flex justify-center mt-2">
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              onOpen(query);
+            }}
+            className="
       flex items-center gap-2
       bg-neutral-800/80 border border-neutral-700
       px-4 py-2 rounded-full shadow-md
@@ -84,28 +83,28 @@ export default function BearWebStart({ onOpen, settings }) {
       focus-within:border-neutral-500
       transition-all
       "
-        >
-          <FaSearch className="text-neutral-400 text-sm" />
+          >
+            <FaSearch className="text-neutral-400 text-sm" />
 
-          <input
-            type="text"
-            placeholder="Search the BearWeb"
-            className="
+            <input
+              type="text"
+              placeholder="Search the BearWeb"
+              className="
         bg-transparent text-neutral-200 placeholder-neutral-500
         focus:outline-none text-sm w-full
         "
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-          />
-        </form>
-      </header>
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+            />
+          </form>
+        </header>
 
-      <section className="mt-6 flex flex-wrap justify-center gap-6">
-        {shortcuts.map((item) => (
-          <button
-            key={item.label}
-            onClick={() => onOpen(item.page || item.url)}
-            className={`
+        <section className="mt-6 flex flex-wrap justify-center gap-6">
+          {shortcuts.map((item) => (
+            <button
+              key={item.label}
+              onClick={() => onOpen(item.page || item.url)}
+              className={`
             flex flex-col 
             items-center justify-center
              w-25 h-23
@@ -115,34 +114,32 @@ export default function BearWebStart({ onOpen, settings }) {
              hover:scale-105
              transition-all
              ${
-              settings.bearMode
-              ? "bg-[#253121] hover:bg-[#31452b]"
-              : "bg-neutral-800 hover:bg-neutral-700"
+               settings.bearMode
+                 ? "bg-[#253121] hover:bg-[#31452b]"
+                 : "bg-neutral-800 hover:bg-neutral-700"
              }
             `}
-          >
-            {typeof item.icon === "string" ? (
-              <img
-                src={item.icon}
-                alt=""
-                className="w-10 h-10 object-contain mb-1"
-                draggable="false"
-              />
-            ) : (
-              <div className="text-3xl mb-1">{item.icon}</div>
-            )}
+            >
+              {typeof item.icon === "string" ? (
+                <img
+                  src={item.icon}
+                  alt=""
+                  className="w-10 h-10 object-contain mb-1"
+                  draggable="false"
+                />
+              ) : (
+                <div className="text-3xl mb-1">{item.icon}</div>
+              )}
 
-            <span className="text-xs text-neutral-200">{item.label}</span>
-          </button>
-        ))}
+              <span className="text-xs text-neutral-200">{item.label}</span>
+            </button>
+          ))}
+        </section>
+
+        <p className="bw-start-sub mt-8">
+          Your Bearowser - powered by Bear Even 🐻
+        </p>
       </section>
-
-      <p className="bw-start-sub mt-8">
-        Your Bearowser - powered by Bear Even 🐻
-      </p>
-
-      </section>
-
     </section>
   );
 }
