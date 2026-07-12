@@ -36,7 +36,8 @@ export default function BearWebStart({ onOpen, settings }) {
         /> 
       )}
 
-      <section className="relative z-10">
+      <section className="relative z-10 flex flex-col items-center">
+
       <h1 className="text-6xl font-bold tracking-tight text-center">
         {settings.bearMode ? (
           <>
