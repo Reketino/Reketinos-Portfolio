@@ -14,7 +14,40 @@ export default function BearWebStart({ onOpen, settings }) {
   ];
 
   return (
-    <section className="bw-start">
+    <section className={`
+    bw-start 
+    relative 
+    overflow-hidden
+    ${
+      settings.bearMode
+      ? "bg-linear-to-br from-[#0f1c12] via-[#1d2418] to-[#2b1e16]"
+      : ""
+    }
+    `}
+    >
+
+      {settings.bearMode && (
+        <img
+        src="/icons/bearchrome.png"
+        alt=""
+        className="
+        absolute
+        left-1/2
+        top-1/2
+        w-[550px]
+        -translate-x-1/2
+        -translate-y-1/2
+        opacity-10
+        pointer-events-none
+        select-none
+        blur-[1px]
+        "
+        draggable={false}
+        /> 
+      )}
+
+      <section className="relative z-10 flex flex-col items-center">
+
       <h1 className="text-6xl font-bold tracking-tight text-center">
         {settings.bearMode ? (
           <>
@@ -102,6 +135,9 @@ export default function BearWebStart({ onOpen, settings }) {
       <p className="bw-start-sub mt-8">
         Your Bearowser - powered by Bear Even 🐻
       </p>
+
+      </section>
+
     </section>
   );
 }
