@@ -110,8 +110,6 @@ export default function BearWebStart({ onOpen, settings }) {
             items-center justify-center
              w-25 h-23
              rounded-full
-             bg-neutral-800
-             hover:bg-neutral-700
              shadow-md
              hover:shadow-lg
              hover:scale-105
