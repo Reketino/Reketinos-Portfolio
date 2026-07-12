@@ -14,7 +14,13 @@ export default function BearWebStart({ onOpen, settings }) {
   ];
 
   return (
-    <section className="bw-start relative overflow-hidden">
+    <section className={`
+    bw-start 
+    relative 
+    overflow-hidden
+    
+    `}
+    >
 
       {settings.bearMode && (
         <img
