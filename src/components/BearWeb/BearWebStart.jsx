@@ -105,16 +105,21 @@ export default function BearWebStart({ onOpen, settings }) {
           <button
             key={item.label}
             onClick={() => onOpen(item.page || item.url)}
-            className="flex flex-col items-center justify-center
+            className={`
+            flex flex-col 
+            items-center justify-center
              w-25 h-23
              rounded-full
-             bg-neutral-800
-             hover:bg-neutral-700
              shadow-md
              hover:shadow-lg
              hover:scale-105
              transition-all
-             "
+             ${
+              settings.bearMode
+              ? "bg-[#253121] hover:bg-[#31452b]"
+              : "bg-neutral-800 hover:bg-neutral-700"
+             }
+            `}
           >
             {typeof item.icon === "string" ? (
               <img
