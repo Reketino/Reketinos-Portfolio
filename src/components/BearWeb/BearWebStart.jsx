@@ -116,6 +116,11 @@ export default function BearWebStart({ onOpen, settings }) {
              hover:shadow-lg
              hover:scale-105
              transition-all
+             ${
+              settings.bearMode
+              ? "bg-[#253121] hover:bg-[#31452b]"
+              : "bg-neutral-800 hover:bg-neutral-700"
+             }
             `}
           >
             {typeof item.icon === "string" ? (
