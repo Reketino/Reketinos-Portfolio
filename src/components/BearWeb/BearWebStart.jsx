@@ -14,7 +14,7 @@ export default function BearWebStart({ onOpen, settings }) {
   ];
 
   return (
-    <section className="bw-start">
+    <section className="bw-start relative overflow-hidden">
       <h1 className="text-6xl font-bold tracking-tight text-center">
         {settings.bearMode ? (
           <>
