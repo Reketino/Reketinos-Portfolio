@@ -93,7 +93,11 @@ export default function BearWebStart({ onOpen, settings }) {
 
             <input
               type="text"
-              placeholder="Search the BearWeb"
+              placeholder={
+                settings.bearMode
+                ? "Search the forest..."
+                : "Search the BearWeb"
+              }
               className="
         bg-transparent text-neutral-200 placeholder-neutral-500
         focus:outline-none text-sm w-full
