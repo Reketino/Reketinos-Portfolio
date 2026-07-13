@@ -47,16 +47,16 @@ export default function BearWebStart({ onOpen, settings }) {
       )}
 
       <section className="relative z-10 flex flex-col items-center">
-        <h1 
-        className={`
+        <h1
+          className={`
         text-6xl 
         font-bold 
         tracking-tight 
         text-center
         ${
           settings.bearMode
-          ? "drop-shadow-[0_0_20_px_rgba(245,180,60,.35)]"
-          : ""
+            ? "drop-shadow-[0_0_20_px_rgba(245,180,60,.35)]"
+            : ""
         }
         `}
         >
@@ -96,8 +96,8 @@ export default function BearWebStart({ onOpen, settings }) {
       transition-all
       ${
         settings.bearMode
-        ? "bg-[#243120] border border-[#5c7b45] focus-within:border-amber-400"
-        : "bg-neutral-800/80 border border-neutral-700 focus-within:border-neutral-500"
+          ? "bg-[#243120] border border-[#5c7b45] focus-within:border-amber-400"
+          : "bg-neutral-800/80 border border-neutral-700 focus-within:border-neutral-500"
       }
       `}
           >
@@ -107,8 +107,8 @@ export default function BearWebStart({ onOpen, settings }) {
               type="text"
               placeholder={
                 settings.bearMode
-                ? "Search the forest..."
-                : "Search the BearWeb"
+                  ? "Search the forest..."
+                  : "Search the BearWeb"
               }
               className="
         bg-transparent text-neutral-200 placeholder-neutral-500
