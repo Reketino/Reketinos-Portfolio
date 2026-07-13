@@ -56,6 +56,7 @@ export default function BearWebStart({ onOpen, settings }) {
         ${
           settings.bearMode
           ? "drop-shadow-[0_0_20_px_rgba(245,180,60,.35)]"
+          : ""
         }
         `}
         >
