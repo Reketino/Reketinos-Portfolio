@@ -115,7 +115,7 @@ export default function BearWebStart({ onOpen, settings }) {
              transition-all
              ${
                settings.bearMode
-                 ? "bg-[#253121] hover:bg-[#31452b]"
+                 ? "bg-[#253121] border border-[#4c6b2c] hover:bg-[#31452b]"
                  : "bg-neutral-800 hover:bg-neutral-700"
              }
             `}
