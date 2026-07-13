@@ -75,14 +75,14 @@ export default function BearWebStart({ onOpen, settings }) {
               e.preventDefault();
               onOpen(query);
             }}
-            className="
+            className={`
       flex items-center gap-2
       bg-neutral-800/80 border border-neutral-700
       px-4 py-2 rounded-full shadow-md
       w-[500px]
       focus-within:border-neutral-500
       transition-all
-      "
+      `}
           >
             <FaSearch className="text-neutral-400 text-sm" />
 
