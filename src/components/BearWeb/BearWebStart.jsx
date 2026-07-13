@@ -47,7 +47,18 @@ export default function BearWebStart({ onOpen, settings }) {
       )}
 
       <section className="relative z-10 flex flex-col items-center">
-        <h1 className="text-6xl font-bold tracking-tight text-center">
+        <h1 
+        className={`
+        text-6xl 
+        font-bold 
+        tracking-tight 
+        text-center
+        ${
+          settings.bearMode
+          ? "drop-shadow-[0_0_20_px_rgba(245,180,60,.35)]"
+        }
+        `}
+        >
           {settings.bearMode ? (
             <>
               <span className="text-amber-300">BearWeb</span>
