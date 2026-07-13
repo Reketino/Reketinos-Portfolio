@@ -84,7 +84,8 @@ export default function BearWebStart({ onOpen, settings }) {
       transition-all
       ${
         settings.bearMode
-        ? "bg-[#243120] border border-[#5c7b45 focus-within:border-amber-400]"
+        ? "bg-[#243120] border border-[#5c7b45] focus-within:border-amber-400"
+        : "bg-neutral-800/80 border border-neutral-700 focus-within:border-neutral-500"
       }
       `}
           >
