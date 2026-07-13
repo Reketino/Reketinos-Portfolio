@@ -75,20 +75,29 @@ export default function BearWebStart({ onOpen, settings }) {
               e.preventDefault();
               onOpen(query);
             }}
-            className="
+            className={`
       flex items-center gap-2
-      bg-neutral-800/80 border border-neutral-700
-      px-4 py-2 rounded-full shadow-md
+      px-4 py-2 
+      rounded-full 
+      shadow-md
       w-[500px]
-      focus-within:border-neutral-500
       transition-all
-      "
+      ${
+        settings.bearMode
+        ? "bg-[#243120] border border-[#5c7b45] focus-within:border-amber-400"
+        : "bg-neutral-800/80 border border-neutral-700 focus-within:border-neutral-500"
+      }
+      `}
           >
             <FaSearch className="text-neutral-400 text-sm" />
 
             <input
               type="text"
-              placeholder="Search the BearWeb"
+              placeholder={
+                settings.bearMode
+                ? "Search the forest..."
+                : "Search the BearWeb"
+              }
               className="
         bg-transparent text-neutral-200 placeholder-neutral-500
         focus:outline-none text-sm w-full
@@ -115,7 +124,7 @@ export default function BearWebStart({ onOpen, settings }) {
              transition-all
              ${
                settings.bearMode
-                 ? "bg-[#253121] hover:bg-[#31452b]"
+                 ? "bg-[#253121] border border-[#4c6b2c] hover:bg-[#31452b]"
                  : "bg-neutral-800 hover:bg-neutral-700"
              }
             `}
