@@ -82,6 +82,10 @@ export default function BearWebStart({ onOpen, settings }) {
       shadow-md
       w-[500px]
       transition-all
+      ${
+        settings.bearMode
+        ? "bg-[#243120] border border-[#5c7b45 focus-within:border-amber-400]"
+      }
       `}
           >
             <FaSearch className="text-neutral-400 text-sm" />
