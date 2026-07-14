@@ -134,6 +134,40 @@ export default function BearWebStart({ onOpen, settings }) {
           </form>
         </header>
 
+        <section className="mt-10 w-full max-w-3xl">
+          <h2 className="mb-4 text-lg font-semibold text-neutral-200">
+            ✈ BearFlights
+          </h2>
+
+          <button 
+          onClick={() => onOpen("bearflights")}
+          className={`
+            w-full
+            rounded-2xl
+            border
+            p-6
+            text-left
+            transition-all
+            hover:scale-[1.01]
+            ${
+              settings.bearMode
+              ? "border-cyan-700/40 bg-cyan-950/20 hover:bg-cyan-900/30"
+              : "border-neutral-700 bg-neutral-800 hover:bg-neutral-700"
+            }
+            `}
+            >
+              <h3 className="text-2xl font-semibold">
+                ✈ Aircraft around Sykkylven
+              </h3>
+              <p className="mt-2 text-sm text-neutral-400">
+                Local flight tracker
+              </p>
+              <div className="mt-6 flex items-center gap-6 text-sm text-neutral-300">
+                
+              </div>
+            </button>
+        </section>
+
         <section className="mt-6 flex flex-wrap justify-center gap-6">
           {shortcuts.map((item) => (
             <button
