@@ -159,6 +159,9 @@ export default function BearWebStart({ onOpen, settings }) {
               <h3 className="text-2xl font-semibold">
                 ✈ Aircraft around Sykkylven
               </h3>
+              <p className="mt-2 text-sm text-neutral-400">
+                Local flight tracker
+              </p>
             </button>
         </section>
 
