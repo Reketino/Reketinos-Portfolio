@@ -46,6 +46,20 @@ export default function BearWebStart({ onOpen, settings }) {
         />
       )}
 
+      {settings.bearMode && (
+        <div 
+        className="
+        absolute
+        inset-0
+        bg-linear-to-b
+        from-transparent 
+        via-black/10
+        to-black/30
+        pointer-events-auto
+        "
+        />
+      )}
+
       <section className="relative z-10 flex flex-col items-center">
         <h1
           className={`
