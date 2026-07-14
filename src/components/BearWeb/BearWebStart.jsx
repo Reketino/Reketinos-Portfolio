@@ -163,7 +163,10 @@ export default function BearWebStart({ onOpen, settings }) {
                 Local flight tracker
               </p>
               <div className="mt-6 flex items-center gap-6 text-sm text-neutral-300">
-                
+                <span>Sykkylven Area</span>
+                <span>Updated every 10 minutes</span>
+
+
               </div>
             </button>
         </section>
