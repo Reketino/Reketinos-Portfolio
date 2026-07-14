@@ -162,6 +162,9 @@ export default function BearWebStart({ onOpen, settings }) {
               <p className="mt-2 text-sm text-neutral-400">
                 Local flight tracker
               </p>
+              <div className="mt-6 flex items-center gap-6 text-sm text-neutral-300">
+                
+              </div>
             </button>
         </section>
 
