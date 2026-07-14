@@ -154,6 +154,11 @@ export default function BearWebStart({ onOpen, settings }) {
 
               <span className={`
                 text-xs
+                ${
+                  settings.bearMode 
+                  ? "text-amber-100"
+                  : "text-neutral-200"
+                }
                 `}
                 >
                   {item.label}
