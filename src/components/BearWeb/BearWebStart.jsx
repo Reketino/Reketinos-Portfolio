@@ -135,7 +135,10 @@ export default function BearWebStart({ onOpen, settings }) {
         </header>
 
         <section className="mt-10 w-full max-w-3xl">
-          
+          <h2 className="mb-4 text-lg font-semibold text-neutral-200">
+            ✈ Bearflights
+          </h2>
+
         </section>
 
         <section className="mt-6 flex flex-wrap justify-center gap-6">
