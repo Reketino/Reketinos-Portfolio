@@ -47,8 +47,8 @@ export default function BearWebStart({ onOpen, settings }) {
       )}
 
       {settings.bearMode && (
-        <div 
-        className="
+        <div
+          className="
         absolute
         inset-0
         bg-linear-to-b
@@ -169,17 +169,14 @@ export default function BearWebStart({ onOpen, settings }) {
                 <div className="text-3xl mb-1">{item.icon}</div>
               )}
 
-              <span className={`
+              <span
+                className={`
                 text-xs
-                ${
-                  settings.bearMode 
-                  ? "text-amber-100"
-                  : "text-neutral-200"
-                }
+                ${settings.bearMode ? "text-amber-100" : "text-neutral-200"}
                 `}
-                >
-                  {item.label}
-                  </span>
+              >
+                {item.label}
+              </span>
             </button>
           ))}
         </section>
