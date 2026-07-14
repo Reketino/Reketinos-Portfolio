@@ -152,7 +152,12 @@ export default function BearWebStart({ onOpen, settings }) {
                 <div className="text-3xl mb-1">{item.icon}</div>
               )}
 
-              <span className="text-xs text-neutral-200">{item.label}</span>
+              <span className={`
+                text-xs
+                `}
+                >
+                  {item.label}
+                  </span>
             </button>
           ))}
         </section>
