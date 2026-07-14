@@ -145,7 +145,10 @@ export default function BearWebStart({ onOpen, settings }) {
                 <img
                   src={item.icon}
                   alt=""
-                  className="w-10 h-10 object-contain mb-1"
+                  className={`
+                  w-10 h-10 object-contain mb-1
+                  ${settings.bearMode ? "drop-shadow-[0_0_8px_rgba(255,200,80,.25)]" : ""}
+                  `}
                   draggable="false"
                 />
               ) : (
