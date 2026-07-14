@@ -42,7 +42,7 @@ export default function BgWindow({ onClose }) {
       bg-black/30 rounded-xl 
       pointer-events-none
       "
-      ></div>
+      />
 
       <header
         className="

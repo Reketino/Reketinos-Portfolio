@@ -46,6 +46,20 @@ export default function BearWebStart({ onOpen, settings }) {
         />
       )}
 
+      {settings.bearMode && (
+        <div
+          className="
+        absolute
+        inset-0
+        bg-linear-to-b
+        from-transparent 
+        via-black/10
+        to-black/30
+        pointer-events-auto
+        "
+        />
+      )}
+
       <section className="relative z-10 flex flex-col items-center">
         <h1
           className={`
@@ -145,14 +159,24 @@ export default function BearWebStart({ onOpen, settings }) {
                 <img
                   src={item.icon}
                   alt=""
-                  className="w-10 h-10 object-contain mb-1"
+                  className={`
+                  w-10 h-10 object-contain mb-1
+                  ${settings.bearMode ? "drop-shadow-[0_0_8px_rgba(255,200,80,.25)]" : ""}
+                  `}
                   draggable="false"
                 />
               ) : (
                 <div className="text-3xl mb-1">{item.icon}</div>
               )}
 
-              <span className="text-xs text-neutral-200">{item.label}</span>
+              <span
+                className={`
+                text-xs
+                ${settings.bearMode ? "text-amber-100" : "text-neutral-200"}
+                `}
+              >
+                {item.label}
+              </span>
             </button>
           ))}
         </section>
