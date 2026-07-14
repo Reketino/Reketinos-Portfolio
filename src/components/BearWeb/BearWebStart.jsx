@@ -134,6 +134,10 @@ export default function BearWebStart({ onOpen, settings }) {
           </form>
         </header>
 
+        <section className="mt-10 w-full max-w-3xl">
+          
+        </section>
+
         <section className="mt-6 flex flex-wrap justify-center gap-6">
           {shortcuts.map((item) => (
             <button
