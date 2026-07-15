@@ -39,6 +39,16 @@ export default function ProjectCard({
             "
             draggable={false}
             />
+
+            <div className="space-y-2 p-5">
+                <h3
+                className={`text-xl font-bold ${
+                    bearMode ? "text-amber-200" : "text-white"
+                }`}
+                >
+                    {title}
+                </h3>
+            </div>
         </button>
     )
 }
