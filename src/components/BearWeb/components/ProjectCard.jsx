@@ -48,6 +48,10 @@ export default function ProjectCard({
                 >
                     {title}
                 </h3>
+
+                <p className="text-sm text-neutral-400">
+                    {description}
+                </p>
             </div>
         </button>
     )
