@@ -139,6 +139,10 @@ export default function BearWebStart({ onOpen, settings }) {
          <h2 className="mb-4 text-lg font-semibold text-violet-200">
           Bear Prjoects
          </h2>
+
+         <div className="grid grid-cols-1 gap-6">
+          
+         </div>
         </section>
 
         <section className="mt-6 flex flex-wrap justify-center gap-6">
