@@ -139,6 +139,12 @@ export default function useBearWebTabs() {
       return;
     }
 
+    
+    if (lower.includes("bearflights")) {
+      navigateTab("https://bearflightradar.vercel.app/", "BearFlights");
+      return;
+    }
+
     if (lower === "home") {
       navigateTab("", "New Tab");
       return;
