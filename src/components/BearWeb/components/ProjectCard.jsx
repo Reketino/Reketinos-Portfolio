@@ -26,8 +26,8 @@ export default function ProjectCard({
             }
             `}
     >
-      <div 
-      className={`
+      <div
+        className={`
         flex
             h-52
             items-center
@@ -35,14 +35,15 @@ export default function ProjectCard({
             p-6
       ${
         bearMode
-        ?"bg-linear-to-br from-[#305a38] to-[#1f2f1b]"
-        : "bg-neutral-900"
+          ? "bg-linear-to-br from-[#305a38] to-[#1f2f1b]"
+          : "bg-neutral-900"
       }
-      `}>
-      <img
-        src={image}
-        alt={title}
-        className="
+      `}
+      >
+        <img
+          src={image}
+          alt={title}
+          className="
         h-56
         object-contain
         transition-transform
@@ -50,8 +51,8 @@ export default function ProjectCard({
         group-hover:scale-105
         group-hover:-translate-y-1
             "
-        draggable={false}
-      />
+          draggable={false}
+        />
       </div>
 
       <div className="space-y-2 p-5">
