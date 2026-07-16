@@ -21,8 +21,8 @@ export default function ProjectCard({
             hover:shadow-xl
             ${
               bearMode
-                ? "border-[#4c6b2c] bg-[#253121] hover:bg-[#31452b]"
-                : "border-neutral-700 bg-neutral-800 hover:bg-neutral-700"
+                ? "border-[#4c6b2c] bg-[#253121] hover:bg-[#31452b] hover:shadow-amber-500/20"
+                : "border-neutral-700 bg-neutral-800 hover:bg-neutral-700 hover:shadow-cyan-500/20"
             }
             `}
     >
