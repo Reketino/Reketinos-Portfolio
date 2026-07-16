@@ -48,6 +48,7 @@ export default function ProjectCard({
         transition-transform
         duration-300
         group-hover:scale-105
+        group-hover:-translate-y-1
             "
         draggable={false}
       />
