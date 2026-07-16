@@ -144,7 +144,7 @@ export default function BearWebStart({ onOpen, settings }) {
           <ProjectCard
           title="BearFlights"
           description="Aircraft around Sykkylven"
-          image="/icons/bearflight.png"
+          image="/icons/bearflights.png"
           bearMode={settings.bearMode}
           onClick={() => onOpen("bearflights")}
           />

@@ -26,19 +26,32 @@ export default function ProjectCard({
             }
             `}
     >
+      <div 
+      className={`
+        flex
+            h-52
+            items-center
+            justify-center
+            p-6
+      ${
+        bearMode
+        ?"bg-linear-to-br from-[#305a38] to-[#1f2f1b]"
+        : "bg-neutral-900"
+      }
+      `}>
       <img
         src={image}
         alt={title}
         className="
-            h-40
-            w-full
-            object-cover
-            transition-transform
-            duration-300
-            group-hover:scale-105
+        h-56
+        object-contain
+        transition-transform
+        duration-300
+        group-hover:scale-105
             "
         draggable={false}
       />
+      </div>
 
       <div className="space-y-2 p-5">
         <h3
