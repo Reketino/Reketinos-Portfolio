@@ -16,7 +16,7 @@ export default function ProjectCard({
             rounded-2xl
             border
             text-left
-            transsition-all
+            transition-all
             hover:-translate-y-1
             hover:shadow-xl
             ${

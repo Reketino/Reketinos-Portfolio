@@ -137,14 +137,14 @@ export default function BearWebStart({ onOpen, settings }) {
 
         <section className="mt-10 w-full max-w-3xl">
          <h2 className="mb-4 text-lg font-semibold text-violet-200">
-          Bear Prjoects
+          Bear Projects
          </h2>
 
          <div className="grid grid-cols-1 gap-6">
           <ProjectCard
           title="BearFlights"
           description="Aircraft around Sykkylven"
-          image="/icons/bearflights.png"
+          image="/icons/bearflight.png"
           bearMode={settings.bearMode}
           onClick={() => onOpen("bearflights")}
           />
