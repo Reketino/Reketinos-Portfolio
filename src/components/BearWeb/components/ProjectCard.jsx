@@ -56,7 +56,7 @@ export default function ProjectCard({
         />
       </div>
 
-      <div className="space-y-2 p-5">
+      <div className="flex min-h-[140px] flex-col p-5">
         <h3
           className={`text-xl font-bold ${
             bearMode ? "text-amber-200" : "text-white"
