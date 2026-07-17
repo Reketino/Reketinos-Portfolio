@@ -65,17 +65,18 @@ export default function ProjectCard({
             transition-colors
             duration-300
             ${
-            bearMode 
-            ? "text-amber-200 group-hover:text-amber-100" 
-            : "text-white group-hover:text-cyan-300"
-          }
+              bearMode
+                ? "text-amber-200 group-hover:text-amber-100"
+                : "text-white group-hover:text-cyan-300"
+            }
           `}
         >
           {title}
         </h3>
 
         <p className="text-sm text-neutral-400">{description}</p>
-        <div className={`
+        <div
+          className={`
         mt-auto
         flex
         items-center
@@ -89,11 +90,7 @@ export default function ProjectCard({
         group-hover:translate-x-1
         group-hover:opacity-100
         
-        ${
-          bearMode
-          ? "text-amber-300"
-          :"text-cyan-200"
-        }
+        ${bearMode ? "text-amber-300" : "text-cyan-200"}
         `}
         >
           Open Project →
