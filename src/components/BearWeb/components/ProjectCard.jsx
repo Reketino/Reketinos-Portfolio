@@ -67,12 +67,14 @@ export default function ProjectCard({
 
         <p className="text-sm text-neutral-400">{description}</p>
         <div className={`
-        mt-4 
+        mt-auto
         flex
         items-center
+        pt-5
         text-sm
         font-medium
         opacity-0
+        -translate-x-2
         transition-all
         duration-300
         group-hover:translate-x-1
