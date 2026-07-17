@@ -4,6 +4,7 @@ export default function ProjectCard({
   title,
   description,
   image,
+  imageClassName = "h-56",
   onClick,
   bearMode,
 }) {
@@ -18,7 +19,7 @@ export default function ProjectCard({
             text-left
             transition-all
             hover:-translate-y-1
-            hover:shadow-xl
+            hover:shadow-2xl
             ${
               bearMode
                 ? "border-[#4c6b2c] bg-[#253121] hover:bg-[#31452b] hover:shadow-amber-500/20"
@@ -43,28 +44,60 @@ export default function ProjectCard({
         <img
           src={image}
           alt={title}
-          className="
-        h-56
+          className={`
+            ${imageClassName}
         object-contain
         transition-transform
         duration-300
         group-hover:scale-105
         group-hover:-translate-y-1
-            "
+        group-hover:rotate-1
+            `}
           draggable={false}
         />
       </div>
 
-      <div className="space-y-2 p-5">
+      <div className="flex min-h-[140px] flex-col p-5">
         <h3
-          className={`text-xl font-bold ${
-            bearMode ? "text-amber-200" : "text-white"
-          }`}
+          className={`
+            text-xl 
+            font-bold 
+            transition-colors
+            duration-300
+            ${
+            bearMode 
+            ? "text-amber-200 group-hover:text-amber-100" 
+            : "text-white group-hover:text-cyan-300"
+          }
+          `}
         >
           {title}
         </h3>
 
         <p className="text-sm text-neutral-400">{description}</p>
+        <div className={`
+        mt-auto
+        flex
+        items-center
+        pt-5
+        text-sm
+        font-medium
+        opacity-0
+        -translate-x-2
+        transition-all
+        duration-300
+        group-hover:translate-x-1
+        group-hover:opacity-100
+        
+        ${
+          bearMode
+          ? "text-amber-300"
+          :"text-cyan-200"
+        }
+        `}
+        >
+          Open Project →
+        </div>
       </div>
     </button>
   );
