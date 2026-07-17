@@ -58,9 +58,17 @@ export default function ProjectCard({
 
       <div className="flex min-h-[140px] flex-col p-5">
         <h3
-          className={`text-xl font-bold ${
-            bearMode ? "text-amber-200" : "text-white"
-          }`}
+          className={`
+            text-xl 
+            font-bold 
+            transition-colors
+            duration-300
+            ${
+            bearMode 
+            ? "text-amber-200 group-hover:text-amber-100" 
+            : "text-white group-hover:text-cyan-300"
+          }
+          `}
         >
           {title}
         </h3>
