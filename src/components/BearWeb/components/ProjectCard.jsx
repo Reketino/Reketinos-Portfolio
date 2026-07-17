@@ -4,6 +4,7 @@ export default function ProjectCard({
   title,
   description,
   image,
+  imageClassName = "h-56",
   onClick,
   bearMode,
 }) {
@@ -43,15 +44,15 @@ export default function ProjectCard({
         <img
           src={image}
           alt={title}
-          className="
-        h-56
+          className={`
+            ${imageClassName}
         object-contain
         transition-transform
         duration-300
         group-hover:scale-105
         group-hover:-translate-y-1
         group-hover:rotate-1
-            "
+            `}
           draggable={false}
         />
       </div>

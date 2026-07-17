@@ -140,7 +140,7 @@ export default function BearWebStart({ onOpen, settings }) {
           Bear Projects
          </h2>
 
-         <div className="grid grid-cols-1 gap-6">
+         <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
           <ProjectCard
           title="BearFlights"
           description="Aircraft around Sykkylven"
@@ -148,6 +148,17 @@ export default function BearWebStart({ onOpen, settings }) {
           bearMode={settings.bearMode}
           onClick={() => onOpen("bearflights")}
           />
+
+          <ProjectCard
+          title="BearStocks"
+          description="Market Dashboard"
+          image="/icons/bearstocks.png"
+          imageClassName="h-44"
+          bearMode={settings.bearMode}
+          onClick={() => onOpen("stocks")}
+          />
+
+
          </div>
         </section>
 
