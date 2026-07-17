@@ -18,7 +18,7 @@ export default function ProjectCard({
             text-left
             transition-all
             hover:-translate-y-1
-            hover:shadow-xl
+            hover:shadow-2xl
             ${
               bearMode
                 ? "border-[#4c6b2c] bg-[#253121] hover:bg-[#31452b] hover:shadow-amber-500/20"
@@ -65,6 +65,27 @@ export default function ProjectCard({
         </h3>
 
         <p className="text-sm text-neutral-400">{description}</p>
+        <div className={`
+        mt-4 
+        flex
+        items-center
+        text-sm
+        font-medium
+        opacity-0
+        transition-all
+        duration-300
+        group-hover:translate-x-1
+        group-hover:opacity-100
+        
+        ${
+          bearMode
+          ? "text-amber-300"
+          :"text-cyan-200"
+        }
+        `}
+        >
+          Open Project →
+        </div>
       </div>
     </button>
   );
