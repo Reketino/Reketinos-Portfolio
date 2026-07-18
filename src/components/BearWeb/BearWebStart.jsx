@@ -168,52 +168,16 @@ export default function BearWebStart({ onOpen, settings }) {
          </div>
         </section>
 
-        <section className="mt-6 flex flex-wrap justify-center gap-6">
-          {shortcuts.map((item) => (
-            <button
-              key={item.label}
-              onClick={() => onOpen(item.page || item.url)}
-              className={`
-            flex flex-col 
-            items-center justify-center
-             w-25 h-23
-             rounded-full
-             shadow-md
-             hover:shadow-lg
-             hover:scale-105
-             transition-all
-             ${
-               settings.bearMode
-                 ? "bg-[#253121] border border-[#4c6b2c] hover:bg-[#31452b]"
-                 : "bg-neutral-800 hover:bg-neutral-700"
-             }
-            `}
-            >
-              {typeof item.icon === "string" ? (
-                <img
-                  src={item.icon}
-                  alt=""
-                  className={`
-                  w-10 h-10 object-contain mb-1
-                  ${settings.bearMode ? "drop-shadow-[0_0_8px_rgba(255,200,80,.25)]" : ""}
-                  `}
-                  draggable="false"
-                />
-              ) : (
-                <div className="text-3xl mb-1">{item.icon}</div>
-              )}
-
-              <span
-                className={`
-                text-xs
-                ${settings.bearMode ? "text-amber-100" : "text-neutral-200"}
-                `}
-              >
-                {item.label}
-              </span>
-            </button>
-          ))}
+        <section className="mt-8 w-full max-w-5xl">
+          <h2 
+          className={`mb-4 text-lg font-semibold ${
+            settings.bearMode ? "text-amber-200" : "text-violet-200"
+          }`}
+          >
+            Quick Links
+          </h2>
         </section>
+
 
         <p className="bw-start-sub mt-8">
           Your Bearowser - powered by Bear Even 🐻
