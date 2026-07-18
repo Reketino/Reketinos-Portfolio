@@ -177,7 +177,7 @@ export default function BearWebStart({ onOpen, settings }) {
             Quick Links
           </h2>
 
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap justify-center gap-4">
             {shortcuts.map((item) => (
               <button
               key={item.label}
@@ -219,6 +219,19 @@ export default function BearWebStart({ onOpen, settings }) {
                     `}
                     draggable={false}
                     />
+
+                    <span 
+                    className={`
+                      text-xs
+                      ${
+                        settings.bearMode
+                        ? "text-amber-100"
+                        : "text-neutral-200"
+                      }
+                      `}
+                      >
+                        {item.label}
+                      </span>
                 </button>
             ))}
           </div>
