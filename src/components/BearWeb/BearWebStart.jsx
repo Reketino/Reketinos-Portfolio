@@ -156,7 +156,15 @@ export default function BearWebStart({ onOpen, settings }) {
           bearMode={settings.bearMode}
           onClick={() => onOpen("stocks")}
           />
-
+          
+          <ProjectCard
+          title="Bear Hold'Em"
+          description="Texas Hold'em Poker Game"
+          image="/icons/bearholdem.png"
+          imageClassName="h-44"
+          bearMode={settings.bearMode}
+          onClick={() => onOpen("holdem")}
+          />
 
          </div>
         </section>
