@@ -135,7 +135,7 @@ body {
 
 /* Bearweb Ready Set Start page */
 .bw-start {
-  @apply flex flex-col items-center justify-center gap-4 min-h-full w-full  text-neutral-100;
+  @apply flex flex-col items-center gap-4 px-6 pb-12 min-h-full w-full  text-neutral-100;
 }
 
 .bw-start-title {

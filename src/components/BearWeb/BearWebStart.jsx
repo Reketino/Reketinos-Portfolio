@@ -8,7 +8,6 @@ export default function BearWebStart({ onOpen, settings }) {
 
   const shortcuts = [
     { label: "Google", page: "google", icon: "/icons/google.png" },
-    { label: "Bear HoldEm", page: "holdem", icon: "/icons/bearholdem.png" },
     { label: "Github", page: "github", icon: "/icons/github.png" },
     { label: "Linkedin", page: "linkedin", icon: "/icons/linkedin.png" },
   ];
@@ -60,7 +59,7 @@ export default function BearWebStart({ onOpen, settings }) {
         />
       )}
 
-      <section className="relative z-10 flex flex-col items-center">
+      <section className="relative z-10 flex w-full flex-col items-center pt-16">
         <h1
           className={`
         text-6xl 
@@ -134,12 +133,12 @@ export default function BearWebStart({ onOpen, settings }) {
           </form>
         </header>
 
-        <section className="mt-10 w-full max-w-3xl">
+        <section className="mt-10 w-full max-w-5xl">
          <h2 className="mb-4 text-lg font-semibold text-violet-200">
           Bear Projects
          </h2>
 
-         <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
           <ProjectCard
           title="BearFlights"
           description="Aircraft around Sykkylven"
@@ -156,57 +155,88 @@ export default function BearWebStart({ onOpen, settings }) {
           bearMode={settings.bearMode}
           onClick={() => onOpen("stocks")}
           />
-
+          
+          <ProjectCard
+          title="Bear Hold'Em"
+          description="Texas Hold'em Poker Game"
+          image="/icons/bearholdem.png"
+          imageClassName="h-44"
+          bearMode={settings.bearMode}
+          onClick={() => onOpen("holdem")}
+          />
 
          </div>
         </section>
 
-        <section className="mt-6 flex flex-wrap justify-center gap-6">
-          {shortcuts.map((item) => (
-            <button
+        <section className="mt-8 w-full max-w-5xl">
+          <h2 
+          className={`mb-4 text-lg font-semibold ${
+            settings.bearMode ? "text-amber-200" : "text-violet-200"
+          }`}
+          >
+            Quick Links
+          </h2>
+
+          <div className="flex flex-wrap justify-center gap-4">
+            {shortcuts.map((item) => (
+              <button
               key={item.label}
               onClick={() => onOpen(item.page || item.url)}
               className={`
-            flex flex-col 
-            items-center justify-center
-             w-25 h-23
-             rounded-full
-             shadow-md
-             hover:shadow-lg
-             hover:scale-105
-             transition-all
-             ${
-               settings.bearMode
-                 ? "bg-[#253121] border border-[#4c6b2c] hover:bg-[#31452b]"
-                 : "bg-neutral-800 hover:bg-neutral-700"
-             }
-            `}
-            >
-              {typeof item.icon === "string" ? (
-                <img
+                group flex
+                h-20 w-20
+                flex-col
+                items-center
+                justify-center
+                rounded-2xl
+                border
+                shadow-md
+                transition-all
+                duration-300
+                hover:-translate-y-1
+                hover:shadow-lg
+                ${
+                  settings.bearMode
+                  ? "border-[#4c6b2c] bg-[#253121] hover:bg-[#31452b] hover:shadow-amber-500/20"
+                  : "border-neutral-700 bg-neutral-800 hover:bg-neutral-700 hover:shadow-cyan-500/20"
+                }
+                `}
+                >
+                  <img 
                   src={item.icon}
                   alt=""
                   className={`
-                  w-10 h-10 object-contain mb-1
-                  ${settings.bearMode ? "drop-shadow-[0_0_8px_rgba(255,200,80,.25)]" : ""}
-                  `}
-                  draggable="false"
-                />
-              ) : (
-                <div className="text-3xl mb-1">{item.icon}</div>
-              )}
+                    mb-1 h-8 w-8
+                    object-contain
+                    transition-transform
+                    duration-300
+                    group-hover:scale-110
+                    ${
+                      settings.bearMode
+                      ? "drop-shadow-[0_0_8px_rgba(255,200,80,.25)]"
+                      : ""
+                    }
+                    `}
+                    draggable={false}
+                    />
 
-              <span
-                className={`
-                text-xs
-                ${settings.bearMode ? "text-amber-100" : "text-neutral-200"}
-                `}
-              >
-                {item.label}
-              </span>
-            </button>
-          ))}
+                    <span 
+                    className={`
+                      text-xs
+                      ${
+                        settings.bearMode
+                        ? "text-amber-100"
+                        : "text-neutral-200"
+                      }
+                      `}
+                      >
+                        {item.label}
+                      </span>
+                </button>
+            ))}
+          </div>
         </section>
+
 
         <p className="bw-start-sub mt-8">
           Your Bearowser - powered by Bear Even 🐻
