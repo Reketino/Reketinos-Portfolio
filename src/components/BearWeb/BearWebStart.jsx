@@ -133,12 +133,12 @@ export default function BearWebStart({ onOpen, settings }) {
           </form>
         </header>
 
-        <section className="mt-10 w-full max-w-3xl">
+        <section className="mt-10 w-full max-w-5xl">
          <h2 className="mb-4 text-lg font-semibold text-violet-200">
           Bear Projects
          </h2>
 
-         <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
           <ProjectCard
           title="BearFlights"
           description="Aircraft around Sykkylven"
