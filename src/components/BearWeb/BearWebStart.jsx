@@ -176,6 +176,36 @@ export default function BearWebStart({ onOpen, settings }) {
           >
             Quick Links
           </h2>
+
+          <div className="flex flex-wrap gap-4">
+            {shortcuts.map((item) => (
+              <button
+              key={item.label}
+              onClick={() => onOpen(item.page || item.url)}
+              className={`
+                group flex
+                h-20 w-20
+                flex-col
+                items-center
+                justify-center
+                rounded-2xl
+                border
+                shadow-md
+                transition-all
+                duration-300
+                hover:-translate-y-1
+                hover:shadow-lg
+                ${
+                  settings.bearMode
+                  ? "border-[#4c6b2c] bg-[#253121] hover:bg-[#31452b] hover:shadow-amber-500/20"
+                  : "border-neutral-700 bg-neutral-800 hover:bg-neutral-700 hover:shadow-cyan-500/20"
+                }
+                `}
+                >
+                  
+                </button>
+            ))}
+          </div>
         </section>
 
 
