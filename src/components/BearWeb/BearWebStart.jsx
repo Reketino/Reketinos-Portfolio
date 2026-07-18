@@ -59,7 +59,7 @@ export default function BearWebStart({ onOpen, settings }) {
         />
       )}
 
-      <section className="relative z-10 flex w-full flex-col items-center pt-10">
+      <section className="relative z-10 flex w-full flex-col items-center pt-16">
         <h1
           className={`
         text-6xl 
