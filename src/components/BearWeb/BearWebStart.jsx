@@ -134,45 +134,44 @@ export default function BearWebStart({ onOpen, settings }) {
         </header>
 
         <section className="mt-10 w-full max-w-5xl">
-         <h2 className="mb-4 text-lg font-semibold text-violet-200">
-          Bear Projects
-         </h2>
+          <h2 className="mb-4 text-lg font-semibold text-violet-200">
+            Bear Projects
+          </h2>
 
-         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
-          <ProjectCard
-          title="BearFlights"
-          description="Aircraft around Sykkylven"
-          image="/icons/bearflights.png"
-          bearMode={settings.bearMode}
-          onClick={() => onOpen("bearflights")}
-          />
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
+            <ProjectCard
+              title="BearFlights"
+              description="Aircraft around Sykkylven"
+              image="/icons/bearflights.png"
+              bearMode={settings.bearMode}
+              onClick={() => onOpen("bearflights")}
+            />
 
-          <ProjectCard
-          title="BearStocks"
-          description="Market Dashboard"
-          image="/icons/bearstocks.png"
-          imageClassName="h-44"
-          bearMode={settings.bearMode}
-          onClick={() => onOpen("stocks")}
-          />
-          
-          <ProjectCard
-          title="Bear Hold'Em"
-          description="Texas Hold'em Poker Game"
-          image="/icons/bearholdem.png"
-          imageClassName="h-44"
-          bearMode={settings.bearMode}
-          onClick={() => onOpen("holdem")}
-          />
+            <ProjectCard
+              title="BearStocks"
+              description="Market Dashboard"
+              image="/icons/bearstocks.png"
+              imageClassName="h-44"
+              bearMode={settings.bearMode}
+              onClick={() => onOpen("stocks")}
+            />
 
-         </div>
+            <ProjectCard
+              title="Bear Hold'Em"
+              description="Texas Hold'em Poker Game"
+              image="/icons/bearholdem.png"
+              imageClassName="h-44"
+              bearMode={settings.bearMode}
+              onClick={() => onOpen("holdem")}
+            />
+          </div>
         </section>
 
         <section className="mt-8 w-full max-w-5xl">
-          <h2 
-          className={`mb-4 text-lg font-semibold ${
-            settings.bearMode ? "text-amber-200" : "text-violet-200"
-          }`}
+          <h2
+            className={`mb-4 text-lg font-semibold ${
+              settings.bearMode ? "text-amber-200" : "text-violet-200"
+            }`}
           >
             Quick Links
           </h2>
@@ -180,9 +179,9 @@ export default function BearWebStart({ onOpen, settings }) {
           <div className="flex flex-wrap justify-center gap-4">
             {shortcuts.map((item) => (
               <button
-              key={item.label}
-              onClick={() => onOpen(item.page || item.url)}
-              className={`
+                key={item.label}
+                onClick={() => onOpen(item.page || item.url)}
+                className={`
                 group flex
                 h-20 w-20
                 flex-col
@@ -197,12 +196,12 @@ export default function BearWebStart({ onOpen, settings }) {
                 hover:shadow-lg
                 ${
                   settings.bearMode
-                  ? "border-[#4c6b2c] bg-[#253121] hover:bg-[#31452b] hover:shadow-amber-500/20"
-                  : "border-neutral-700 bg-neutral-800 hover:bg-neutral-700 hover:shadow-cyan-500/20"
+                    ? "border-[#4c6b2c] bg-[#253121] hover:bg-[#31452b] hover:shadow-amber-500/20"
+                    : "border-neutral-700 bg-neutral-800 hover:bg-neutral-700 hover:shadow-cyan-500/20"
                 }
                 `}
-                >
-                  <img 
+              >
+                <img
                   src={item.icon}
                   alt=""
                   className={`
@@ -213,30 +212,29 @@ export default function BearWebStart({ onOpen, settings }) {
                     group-hover:scale-110
                     ${
                       settings.bearMode
-                      ? "drop-shadow-[0_0_8px_rgba(255,200,80,.25)]"
-                      : ""
+                        ? "drop-shadow-[0_0_8px_rgba(255,200,80,.25)]"
+                        : ""
                     }
                     `}
-                    draggable={false}
-                    />
+                  draggable={false}
+                />
 
-                    <span 
-                    className={`
+                <span
+                  className={`
                       text-xs
                       ${
                         settings.bearMode
-                        ? "text-amber-100"
-                        : "text-neutral-200"
+                          ? "text-amber-100"
+                          : "text-neutral-200"
                       }
                       `}
-                      >
-                        {item.label}
-                      </span>
-                </button>
+                >
+                  {item.label}
+                </span>
+              </button>
             ))}
           </div>
         </section>
-
 
         <p className="bw-start-sub mt-8">
           Your Bearowser - powered by Bear Even 🐻
