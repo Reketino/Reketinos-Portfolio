@@ -126,7 +126,7 @@ export default function BearWebSettings({ onClose, settings, updateSetting }) {
         </div>
       </section>
 
-      <footer className="border-t border-neutral-700 px-6 py-4 text-xs text-neutral-500">
+      <footer className="flex items-center justify-between border-neutral-700 px-6 py-4 text-xs text-neutral-500">
         <span>BearWeb v0.1</span>
         <span>Made by Bear Even 🐻</span>
       </footer>

@@ -95,14 +95,6 @@ export default function Desktop() {
       image: "/icons/vsbearcode.png",
       onOpen: () => setOpenApp("BearCode"),
     },
-    {
-      id: "BearFlights",
-      startX: 145,
-      startY: 375,
-      label: "BearFlights",
-      image: "/icons/bearflight.png",
-      onOpen: () => setOpenApp("BearFlights")  
-    },
   ];
 
   // Menu to "Aboutme"
