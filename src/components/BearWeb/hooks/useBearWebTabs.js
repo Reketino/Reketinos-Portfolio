@@ -136,8 +136,9 @@ export default function useBearWebTabs(settings) {
       case "brave":
         return `https://search.brave.com/search?q=${encodedQuery}`
 
-      
-      
+      case "google":
+        default:
+        return `https://www.google.com/search?igu=1&q=${encodedQuery}`
     }
   }
 
