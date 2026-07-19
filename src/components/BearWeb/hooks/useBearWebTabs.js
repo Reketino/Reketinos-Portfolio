@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const HOME_URL = "https://www.google.com/webhp?igu=1";
 
-export default function useBearWebTabs() {
+export default function useBearWebTabs(settings) {
   const [tabs, setTabs] = useState([
     {
       id: 1,
@@ -122,6 +122,25 @@ export default function useBearWebTabs() {
       }),
     );
   };
+
+  const getSearchUrl = (query) => {
+    const encodedQuery = encodeURIComponent(query);
+
+    switch (settings.searchEngine) {
+      case "duckduckgo":
+        return `https://duckduckgo.com/?q=${encodedQuery}`
+
+      case "bing":
+        return `https://www.bing.com/search?q=${encodedQuery}`
+
+      case "brave":
+        return `https://search.brave.com/search?q=${encodedQuery}`
+
+      case "google":
+        default:
+        return `https://www.google.com/search?igu=1&q=${encodedQuery}`
+    }
+  }
 
   const navigate = (value) => {
     if (!value.trim()) return;
