@@ -49,7 +49,9 @@ export default function ChatBear() {
             height={80}
             priority
             className="
-            hidden md:block
+            hidden
+            h-20 w-20
+            md:block
             object-contain 
             transition-transform 
             group-hover:scale-105
