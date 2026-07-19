@@ -123,6 +123,15 @@ export default function useBearWebTabs(settings) {
     );
   };
 
+  const getSearchUrl = (query) => {
+    const encodedQuery = encodeURIComponent(query);
+
+    switch (settings.searchEngine) {
+      case "duckduckgo":
+        return `https://duckduckgo.com/?q=${encodedQuery}`
+    }
+  }
+
   const navigate = (value) => {
     if (!value.trim()) return;
 
