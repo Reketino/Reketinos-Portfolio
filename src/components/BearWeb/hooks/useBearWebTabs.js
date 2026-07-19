@@ -128,19 +128,19 @@ export default function useBearWebTabs(settings) {
 
     switch (settings.searchEngine) {
       case "duckduckgo":
-        return `https://duckduckgo.com/?q=${encodedQuery}`
+        return `https://duckduckgo.com/?q=${encodedQuery}`;
 
       case "bing":
-        return `https://www.bing.com/search?q=${encodedQuery}`
+        return `https://www.bing.com/search?q=${encodedQuery}`;
 
       case "brave":
-        return `https://search.brave.com/search?q=${encodedQuery}`
+        return `https://search.brave.com/search?q=${encodedQuery}`;
 
       case "google":
-        default:
-        return `https://www.google.com/search?igu=1&q=${encodedQuery}`
+      default:
+        return `https://www.google.com/search?igu=1&q=${encodedQuery}`;
     }
-  }
+  };
 
   const navigate = (value) => {
     if (!value.trim()) return;
@@ -158,7 +158,6 @@ export default function useBearWebTabs(settings) {
       return;
     }
 
-    
     if (lower.includes("bearflights")) {
       navigateTab("https://bearflightradar.vercel.app/", "BearFlights");
       return;
