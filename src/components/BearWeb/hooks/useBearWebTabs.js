@@ -129,6 +129,9 @@ export default function useBearWebTabs(settings) {
     switch (settings.searchEngine) {
       case "duckduckgo":
         return `https://duckduckgo.com/?q=${encodedQuery}`
+
+      case "bing":
+        return `https://www.bing.com/search?q=${encodedQuery}`
     }
   }
 
