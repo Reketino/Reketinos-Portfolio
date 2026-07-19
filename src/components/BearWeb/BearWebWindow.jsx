@@ -80,10 +80,9 @@ export default function BearWebWindow({
       />
 
       <section className="bw-content min-h-0 overflow-auto">
-        {!activeTab.url && <BearWebStart 
-        onOpen={navigate} 
-        settings={settings}
-        />}
+        {!activeTab.url && (
+          <BearWebStart onOpen={navigate} settings={settings} />
+        )}
 
         {activeTab.url && (
           <iframe
