@@ -189,9 +189,17 @@ export default function useBearWebTabs(settings) {
       return;
     }
 
-    const finalUrl = `https://${input}`;
+    const looksLikeUrl =
+    input.includes(".") &&
+    !input.includes(" ");
 
-    navigateTab(finalUrl, input);
+    if (looksLikeUrl) {
+      navigateTab(`https://${input}`, input);
+      return;
+    }
+    const searchUrl = getSearchUrl(input);
+
+    navigateTab(searchUrl, `${input} - Search`)
   };
 
   const reloadPage = () => {
