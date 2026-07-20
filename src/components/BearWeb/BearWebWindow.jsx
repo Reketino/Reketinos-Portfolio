@@ -36,7 +36,7 @@ export default function BearWebWindow({
 
     canGoBack,
     canGoForward,
-  } = useBearWebTabs();
+  } = useBearWebTabs(settings);
 
   const { bookmarks, isBookmarked, addBookmark, removeBookmark } =
     useBookmarks(activeTab);
