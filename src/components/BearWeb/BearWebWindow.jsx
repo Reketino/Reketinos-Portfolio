@@ -15,6 +15,8 @@ export default function BearWebWindow({
   fullscreen,
   onToggleFullscreen,
 }) {
+  const { settings, updateSetting } = useSettings();
+
   const {
     tabs,
     activeTab,
@@ -39,7 +41,7 @@ export default function BearWebWindow({
   const { bookmarks, isBookmarked, addBookmark, removeBookmark } =
     useBookmarks(activeTab);
 
-  const { settings, updateSetting } = useSettings();
+
   const [settingsOpen, setSettingsOpen] = useState(false);
 
   return (
