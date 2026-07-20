@@ -195,7 +195,11 @@ export default function useBearWebTabs(settings) {
 
     if (looksLikeUrl) {
       navigateTab(`https://${input}`, input);
+      return;
     }
+    const searchUrl = getSearchUrl
+
+    navigateTab(searchUrl, `${input} - Search`)
   };
 
   const reloadPage = () => {
