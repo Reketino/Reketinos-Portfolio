@@ -197,7 +197,7 @@ export default function useBearWebTabs(settings) {
       navigateTab(`https://${input}`, input);
       return;
     }
-    const searchUrl = getSearchUrl
+    const searchUrl = getSearchUrl(input);
 
     navigateTab(searchUrl, `${input} - Search`)
   };
