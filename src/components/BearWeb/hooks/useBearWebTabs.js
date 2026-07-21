@@ -127,14 +127,8 @@ export default function useBearWebTabs(settings) {
     const encodedQuery = encodeURIComponent(query);
 
     switch (settings.searchEngine) {
-      case "duckduckgo":
-        return `https://duckduckgo.com/?q=${encodedQuery}`;
-
       case "bing":
         return `https://www.bing.com/search?q=${encodedQuery}`;
-
-      case "brave":
-        return `https://search.brave.com/search?q=${encodedQuery}`;
 
       case "google":
       default:
