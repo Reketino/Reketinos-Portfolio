@@ -6,8 +6,10 @@ export default function ProjectCard({
   image,
   imageClassName = "h-56",
   onClick,
-  bearMode,
+  settings,
 }) {
+  const {bearMode, animations} = settings;
+
   return (
     <button
       onClick={onClick}
@@ -17,9 +19,12 @@ export default function ProjectCard({
             rounded-2xl
             border
             text-left
-            transition-all
-            hover:-translate-y-1
-            hover:shadow-2xl
+            shadow-md
+            ${
+              animations
+              ? "transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
+              : ""
+            }
             ${
               bearMode
                 ? "border-[#4c6b2c] bg-[#253121] hover:bg-[#31452b] hover:shadow-amber-500/20"
@@ -47,11 +52,11 @@ export default function ProjectCard({
           className={`
             ${imageClassName}
         object-contain
-        transition-transform
-        duration-300
-        group-hover:scale-105
-        group-hover:-translate-y-1
-        group-hover:rotate-1
+        ${
+          animations
+        ? "transition-transform duration-300 group-hover:scale-105 group-hover:-translate-y-1 group-hover:rotate-1"
+        : ""
+        }
             `}
           draggable={false}
         />
@@ -62,8 +67,11 @@ export default function ProjectCard({
           className={`
             text-xl 
             font-bold 
-            transition-colors
-            duration-300
+            ${
+              animations
+              ? "transition-colors duration-300"
+              : ""
+            }
             ${
               bearMode
                 ? "text-amber-200 group-hover:text-amber-100"
@@ -83,13 +91,11 @@ export default function ProjectCard({
         pt-5
         text-sm
         font-medium
-        opacity-0
-        -translate-x-2
-        transition-all
-        duration-300
-        group-hover:translate-x-1
-        group-hover:opacity-100
-        
+          ${
+            animations
+            ? "-translate-x-2 opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100"
+            : "opacity-100"
+          }
         ${bearMode ? "text-amber-300" : "text-cyan-200"}
         `}
         >

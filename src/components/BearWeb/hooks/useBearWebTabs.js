@@ -127,14 +127,8 @@ export default function useBearWebTabs(settings) {
     const encodedQuery = encodeURIComponent(query);
 
     switch (settings.searchEngine) {
-      case "duckduckgo":
-        return `https://duckduckgo.com/?q=${encodedQuery}`;
-
       case "bing":
         return `https://www.bing.com/search?q=${encodedQuery}`;
-
-      case "brave":
-        return `https://search.brave.com/search?q=${encodedQuery}`;
 
       case "google":
       default:
@@ -146,7 +140,7 @@ export default function useBearWebTabs(settings) {
     if (!value.trim()) return;
 
     const input = value.trim();
-    const lower = value.toLowerCase();
+    const lower = input.toLowerCase();
 
     if (lower.includes("stock")) {
       navigateTab("https://bearstocks.vercel.app/", "BearStocks");
@@ -189,9 +183,7 @@ export default function useBearWebTabs(settings) {
       return;
     }
 
-    const looksLikeUrl =
-    input.includes(".") &&
-    !input.includes(" ");
+    const looksLikeUrl = input.includes(".") && !input.includes(" ");
 
     if (looksLikeUrl) {
       navigateTab(`https://${input}`, input);
@@ -199,7 +191,7 @@ export default function useBearWebTabs(settings) {
     }
     const searchUrl = getSearchUrl(input);
 
-    navigateTab(searchUrl, `${input} - Search`)
+    navigateTab(searchUrl, `${input} - Search`);
   };
 
   const reloadPage = () => {
