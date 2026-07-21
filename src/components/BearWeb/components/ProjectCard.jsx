@@ -6,7 +6,6 @@ export default function ProjectCard({
   image,
   imageClassName = "h-56",
   onClick,
-  bearMode,
   settings,
 }) {
   const {bearMode, animations} = settings;
@@ -53,11 +52,11 @@ export default function ProjectCard({
           className={`
             ${imageClassName}
         object-contain
-        transition-transform
-        duration-300
-        group-hover:scale-105
-        group-hover:-translate-y-1
-        group-hover:rotate-1
+        ${
+          animations
+        ? "transition-transform duration-300 group-hover:scale-105 group-hover:-translate-y-1 group-hover:rotate-1"
+        : ""
+        }
             `}
           draggable={false}
         />
@@ -94,8 +93,8 @@ export default function ProjectCard({
         font-medium
           ${
             animations
-            ? " -translate-x-2transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100"
-            : ""
+            ? "-translate-x-2 opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100"
+            : "opacity-100"
           }
         ${bearMode ? "text-amber-300" : "text-cyan-200"}
         `}
