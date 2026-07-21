@@ -140,7 +140,7 @@ export default function useBearWebTabs(settings) {
     if (!value.trim()) return;
 
     const input = value.trim();
-    const lower = value.toLowerCase();
+    const lower = input.toLowerCase();
 
     if (lower.includes("stock")) {
       navigateTab("https://bearstocks.vercel.app/", "BearStocks");
