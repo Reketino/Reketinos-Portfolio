@@ -191,7 +191,7 @@ export default function useBearWebTabs(settings) {
     }
     const searchUrl = getSearchUrl(input);
 
-    navigateTab(searchUrl, `${input} - Search`)
+    navigateTab(searchUrl, `${input} - Search`);
   };
 
   const reloadPage = () => {
