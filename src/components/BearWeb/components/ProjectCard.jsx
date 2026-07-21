@@ -7,7 +7,10 @@ export default function ProjectCard({
   imageClassName = "h-56",
   onClick,
   bearMode,
+  settings,
 }) {
+  const {bearMode, animations} = settings;
+
   return (
     <button
       onClick={onClick}
@@ -17,9 +20,12 @@ export default function ProjectCard({
             rounded-2xl
             border
             text-left
-            transition-all
-            hover:-translate-y-1
-            hover:shadow-2xl
+            shadow-md
+            ${
+              animations
+              ? "transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
+              : ""
+            }
             ${
               bearMode
                 ? "border-[#4c6b2c] bg-[#253121] hover:bg-[#31452b] hover:shadow-amber-500/20"
