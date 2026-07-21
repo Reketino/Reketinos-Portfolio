@@ -82,9 +82,7 @@ export default function BearWebSettings({ onClose, settings, updateSetting }) {
             className="w-full rounded-md border border-neutral-700 bg-neutral-800 px-3 py-2 outline-none"
           >
             <option value="google">Google</option>
-            <option value="duckduckgo">DuckDuckGo</option>
             <option value="bing">Bing</option>
-            <option value="brave">Brave</option>
           </select>
         </div>
 
