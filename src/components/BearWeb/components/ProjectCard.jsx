@@ -8,7 +8,7 @@ export default function ProjectCard({
   onClick,
   settings,
 }) {
-  const {bearMode, animations} = settings;
+  const { bearMode, animations } = settings;
 
   return (
     <button
@@ -22,8 +22,8 @@ export default function ProjectCard({
             shadow-md
             ${
               animations
-              ? "transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
-              : ""
+                ? "transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
+                : ""
             }
             ${
               bearMode
@@ -54,10 +54,10 @@ export default function ProjectCard({
         object-contain
         ${
           animations
-        ? "transition-transform duration-300 group-hover:scale-105 group-hover:-translate-y-1 group-hover:rotate-1"
-        : ""
+            ? "transition-transform duration-300 group-hover:scale-105 group-hover:-translate-y-1 group-hover:rotate-1"
+            : ""
         }
-            `}
+        `}
           draggable={false}
         />
       </div>
@@ -67,11 +67,7 @@ export default function ProjectCard({
           className={`
             text-xl 
             font-bold 
-            ${
-              animations
-              ? "transition-colors duration-300"
-              : ""
-            }
+            ${animations ? "transition-colors duration-300" : ""}
             ${
               bearMode
                 ? "text-amber-200 group-hover:text-amber-100"
@@ -93,8 +89,8 @@ export default function ProjectCard({
         font-medium
           ${
             animations
-            ? "-translate-x-2 opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100"
-            : "opacity-100"
+              ? "-translate-x-2 opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100"
+              : "opacity-100"
           }
         ${bearMode ? "text-amber-300" : "text-cyan-200"}
         `}
