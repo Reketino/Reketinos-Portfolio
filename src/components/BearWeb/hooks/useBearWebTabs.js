@@ -183,9 +183,7 @@ export default function useBearWebTabs(settings) {
       return;
     }
 
-    const looksLikeUrl =
-    input.includes(".") &&
-    !input.includes(" ");
+    const looksLikeUrl = input.includes(".") && !input.includes(" ");
 
     if (looksLikeUrl) {
       navigateTab(`https://${input}`, input);
