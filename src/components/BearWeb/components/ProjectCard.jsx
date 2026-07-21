@@ -68,8 +68,11 @@ export default function ProjectCard({
           className={`
             text-xl 
             font-bold 
-            transition-colors
-            duration-300
+            ${
+              animations
+              ? "transition-colors duration-300"
+              : ""
+            }
             ${
               bearMode
                 ? "text-amber-200 group-hover:text-amber-100"
@@ -89,13 +92,11 @@ export default function ProjectCard({
         pt-5
         text-sm
         font-medium
-        opacity-0
-        -translate-x-2
-        transition-all
-        duration-300
-        group-hover:translate-x-1
-        group-hover:opacity-100
-        
+          ${
+            animations
+            ? " -translate-x-2transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100"
+            : ""
+          }
         ${bearMode ? "text-amber-300" : "text-cyan-200"}
         `}
         >
