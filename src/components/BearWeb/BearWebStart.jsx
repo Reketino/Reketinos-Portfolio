@@ -190,10 +190,11 @@ export default function BearWebStart({ onOpen, settings }) {
                 rounded-2xl
                 border
                 shadow-md
-                transition-all
-                duration-300
-                hover:-translate-y-1
-                hover:shadow-lg
+                ${
+                  settings.animations
+                  ? "transition-all duration-300 hover:translate-y-1 hover:shadow-lg"
+                  : ""
+                }
                 ${
                   settings.bearMode
                     ? "border-[#4c6b2c] bg-[#253121] hover:bg-[#31452b] hover:shadow-amber-500/20"
