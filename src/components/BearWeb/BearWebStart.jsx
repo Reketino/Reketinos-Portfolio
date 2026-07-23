@@ -208,9 +208,11 @@ export default function BearWebStart({ onOpen, settings }) {
                   className={`
                     mb-1 h-8 w-8
                     object-contain
-                    transition-transform
-                    duration-300
-                    group-hover:scale-110
+                    ${
+                      settings.animations
+                      ? "transition-transform duration-300 group-hover:scale-110"
+                       : ""
+                    }
                     ${
                       settings.bearMode
                         ? "drop-shadow-[0_0_8px_rgba(255,200,80,.25)]"
