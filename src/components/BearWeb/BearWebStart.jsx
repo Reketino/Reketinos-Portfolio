@@ -143,7 +143,7 @@ export default function BearWebStart({ onOpen, settings }) {
               title="BearFlights"
               description="Aircraft around Sykkylven"
               image="/icons/bearflights.png"
-              bearMode={settings.bearMode}
+              settings={settings}
               onClick={() => onOpen("bearflights")}
             />
 
@@ -152,7 +152,7 @@ export default function BearWebStart({ onOpen, settings }) {
               description="Market Dashboard"
               image="/icons/bearstocks.png"
               imageClassName="h-44"
-              bearMode={settings.bearMode}
+              settings={settings}
               onClick={() => onOpen("stocks")}
             />
 
@@ -161,7 +161,7 @@ export default function BearWebStart({ onOpen, settings }) {
               description="Texas Hold'em Poker Game"
               image="/icons/bearholdem.png"
               imageClassName="h-44"
-              bearMode={settings.bearMode}
+              settings={settings}
               onClick={() => onOpen("holdem")}
             />
           </div>
@@ -192,7 +192,7 @@ export default function BearWebStart({ onOpen, settings }) {
                 shadow-md
                 ${
                   settings.animations
-                  ? "transition-all duration-300 hover:translate-y-1 hover:shadow-lg"
+                  ? "transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
                   : ""
                 }
                 ${
@@ -223,14 +223,9 @@ export default function BearWebStart({ onOpen, settings }) {
                 />
 
                 <span
-                  className={`
-                      text-xs
-                      ${
-                        settings.bearMode
-                          ? "text-amber-100"
-                          : "text-neutral-200"
-                      }
-                      `}
+                  className={`text-xs ${
+                        settings.bearMode ? "text-amber-100" : "text-neutral-200"
+                      }`}
                 >
                   {item.label}
                 </span>
