@@ -192,8 +192,8 @@ export default function BearWebStart({ onOpen, settings }) {
                 shadow-md
                 ${
                   settings.animations
-                  ? "transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-                  : ""
+                    ? "transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                    : ""
                 }
                 ${
                   settings.bearMode
@@ -210,8 +210,8 @@ export default function BearWebStart({ onOpen, settings }) {
                     object-contain
                     ${
                       settings.animations
-                      ? "transition-transform duration-300 group-hover:scale-110"
-                       : ""
+                        ? "transition-transform duration-300 group-hover:scale-110"
+                        : ""
                     }
                     ${
                       settings.bearMode
@@ -224,8 +224,8 @@ export default function BearWebStart({ onOpen, settings }) {
 
                 <span
                   className={`text-xs ${
-                        settings.bearMode ? "text-amber-100" : "text-neutral-200"
-                      }`}
+                    settings.bearMode ? "text-amber-100" : "text-neutral-200"
+                  }`}
                 >
                   {item.label}
                 </span>
