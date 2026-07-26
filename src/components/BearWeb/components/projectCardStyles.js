@@ -22,4 +22,8 @@ const imageBackground = glass
 : bearMode
 ? "bg-linear-to-br from-[#305a38] to-[#1f2f1b]"
 : "bg-neutral-900";
+
+const imageAnimation = animations
+? "transition-transform duration-300 group-hover:scale-105 group-hover:-translate-y-1 group-hover:rotate-1"
+: "";
 }
