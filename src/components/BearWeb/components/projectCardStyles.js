@@ -26,4 +26,8 @@ const imageBackground = glass
 const imageAnimation = animations
 ? "transition-transform duration-300 group-hover:scale-105 group-hover:-translate-y-1 group-hover:rotate-1"
 : "";
+
+const titleTheme = bearMode
+? "text-amber-200 group-hover:text-amber-100"
+: "text-white group-hover:text-cyan-300";
 }
