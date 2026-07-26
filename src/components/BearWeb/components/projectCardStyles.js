@@ -10,4 +10,8 @@ export function getProjectCardStyles({ bearMode, animations, glass}) {
 const cardAnimation = animations
 ? "transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
 : "";
+
+const cardShadow = bearMode
+? "hover:shadow-amber-500/20"
+: "hover:shadow-cyan-500/20";
 }
