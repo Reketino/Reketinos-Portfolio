@@ -34,4 +34,8 @@ const titleTheme = bearMode
 const titleAnimation = animations
     ? "transition-colors duration-300"
     : "";
+
+const openProjectAnimation = animations
+? "-translate-x-2 opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100"
+: "opacity-100";
 }
