@@ -30,4 +30,8 @@ const imageAnimation = animations
 const titleTheme = bearMode
 ? "text-amber-200 group-hover:text-amber-100"
 : "text-white group-hover:text-cyan-300";
+
+const titleAnimation = animations
+    ? "transition-colors duration-300"
+    : "";
 }
