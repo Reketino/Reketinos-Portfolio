@@ -8,7 +8,7 @@ export default function ProjectCard({
   onClick,
   settings,
 }) {
-  const { bearMode, animations } = settings;
+  const { bearMode, animations, glass } = settings;
 
   return (
     <button
