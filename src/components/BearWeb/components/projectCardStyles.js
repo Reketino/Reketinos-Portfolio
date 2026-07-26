@@ -14,4 +14,12 @@ const cardAnimation = animations
 const cardShadow = bearMode
 ? "hover:shadow-amber-500/20"
 : "hover:shadow-cyan-500/20";
+
+const imageBackground = glass
+? bearMode
+? "bg-[#305a38]/25"
+: "bg-neutral-950/25"
+: bearMode
+? "bg-linear-to-br from-[#305a38] to-[#1f2f1b]"
+: "bg-neutral-900";
 }
