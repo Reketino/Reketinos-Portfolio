@@ -38,4 +38,15 @@ const titleAnimation = animations
 const openProjectAnimation = animations
 ? "-translate-x-2 opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100"
 : "opacity-100";
+
+return {
+    cardTheme,
+    cardAnimation,
+    cardShadow,
+    imageBackground,
+    imageAnimation,
+    titleTheme,
+    titleAnimation,
+    openProjectAnimation,
+};
 }
