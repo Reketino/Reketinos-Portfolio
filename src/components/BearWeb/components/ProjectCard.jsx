@@ -1,5 +1,7 @@
 "use client";
 
+import { getProjectCardStyles } from "./projectCardStyles";
+
 export default function ProjectCard({
   title,
   description,
@@ -8,7 +10,16 @@ export default function ProjectCard({
   onClick,
   settings,
 }) {
-  const { bearMode, animations, glass } = settings;
+  const { 
+    cardTheme,
+    cardAnimation,
+    cardShadow,
+    imageBackground,
+    imageAnimation,
+    titleTheme,
+    titleAnimation,
+    openProjectAnimation, 
+  } = getProjectCardStyles(settings);
 
   return (
     <button
