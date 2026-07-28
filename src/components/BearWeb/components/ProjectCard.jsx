@@ -98,11 +98,7 @@ export default function ProjectCard({
         pt-5
         text-sm
         font-medium
-          ${
-            animations
-              ? "-translate-x-2 opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100"
-              : "opacity-100"
-          }
+          ${openProjectAnimation}
         ${bearMode ? "text-amber-300" : "text-cyan-200"}
         `}
         >
