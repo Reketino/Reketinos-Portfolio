@@ -31,16 +31,9 @@ export default function ProjectCard({
             border
             text-left
             shadow-md
-            ${
-              animations
-                ? "transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
-                : ""
-            }
-            ${
-              bearMode
-                ? "border-[#4c6b2c] bg-[#253121] hover:bg-[#31452b] hover:shadow-amber-500/20"
-                : "border-neutral-700 bg-neutral-800 hover:bg-neutral-700 hover:shadow-cyan-500/20"
-            }
+            ${cardTheme}
+            ${cardAnimation}
+            ${cardShadow}
             `}
     >
       <div
@@ -50,11 +43,7 @@ export default function ProjectCard({
             items-center
             justify-center
             p-6
-      ${
-        bearMode
-          ? "bg-linear-to-br from-[#305a38] to-[#1f2f1b]"
-          : "bg-neutral-900"
-      }
+      ${imageBackground}
       `}
       >
         <img
