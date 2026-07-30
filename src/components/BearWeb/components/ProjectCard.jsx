@@ -67,12 +67,8 @@ export default function ProjectCard({
           className={`
             text-xl 
             font-bold 
-            ${animations ? "transition-colors duration-300" : ""}
-            ${
-              bearMode
-                ? "text-amber-200 group-hover:text-amber-100"
-                : "text-white group-hover:text-cyan-300"
-            }
+          ${titleTheme}
+          ${titleAnimation}
           `}
         >
           {title}
@@ -88,7 +84,11 @@ export default function ProjectCard({
         text-sm
         font-medium
           ${openProjectAnimation}
-        ${bearMode ? "text-amber-300" : "text-cyan-200"}
+        ${
+          settings.bearMode 
+          ? "text-amber-300" 
+          : "text-cyan-200"
+        }
         `}
         >
           Open Project →
