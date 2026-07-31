@@ -52,11 +52,7 @@ export default function ProjectCard({
           className={`
             ${imageClassName}
         object-contain
-        ${
-          animations
-            ? "transition-transform duration-300 group-hover:scale-105 group-hover:-translate-y-1 group-hover:rotate-1"
-            : ""
-        }
+        ${imageAnimation}
         `}
           draggable={false}
         />
