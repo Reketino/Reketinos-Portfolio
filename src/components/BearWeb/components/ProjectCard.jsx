@@ -10,7 +10,7 @@ export default function ProjectCard({
   onClick,
   settings,
 }) {
-  const { 
+  const {
     cardTheme,
     cardAnimation,
     cardShadow,
@@ -18,7 +18,7 @@ export default function ProjectCard({
     imageAnimation,
     titleTheme,
     titleAnimation,
-    openProjectAnimation, 
+    openProjectAnimation,
   } = getProjectCardStyles(settings);
 
   return (
@@ -80,11 +80,7 @@ export default function ProjectCard({
         text-sm
         font-medium
           ${openProjectAnimation}
-        ${
-          settings.bearMode 
-          ? "text-amber-300" 
-          : "text-cyan-200"
-        }
+        ${settings.bearMode ? "text-amber-300" : "text-cyan-200"}
         `}
         >
           Open Project →
