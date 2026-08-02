@@ -31,6 +31,10 @@ export function getProjectCardStyles({ bearMode, animations, glass }) {
     ? "text-amber-200 group-hover:text-amber-100"
     : "text-white group-hover:text-cyan-300";
 
+    const openProjectTheme = bearMode
+    ? "text-amber-300"
+    : "text-cyan-200";
+
   const titleAnimation = animations ? "transition-colors duration-300" : "";
 
   const openProjectAnimation = animations
@@ -46,5 +50,6 @@ export function getProjectCardStyles({ bearMode, animations, glass }) {
     titleTheme,
     titleAnimation,
     openProjectAnimation,
+    openProjectTheme,
   };
 }
