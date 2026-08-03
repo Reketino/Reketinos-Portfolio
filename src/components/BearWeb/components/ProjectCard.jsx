@@ -19,6 +19,7 @@ export default function ProjectCard({
     titleTheme,
     titleAnimation,
     openProjectAnimation,
+    openProjectTheme,
   } = getProjectCardStyles(settings);
 
   return (
@@ -79,8 +80,8 @@ export default function ProjectCard({
         pt-5
         text-sm
         font-medium
-          ${openProjectAnimation}
-        ${settings.bearMode ? "text-amber-300" : "text-cyan-200"}
+        ${openProjectAnimation}
+        ${openProjectTheme}
         `}
         >
           Open Project →
