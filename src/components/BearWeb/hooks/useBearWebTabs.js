@@ -11,8 +11,13 @@ export default function useBearWebTabs(settings) {
       title: "New Tab",
       url: "",
       reloadKey: 0,
-      history: [],
-      historyIndex: -1,
+      history: [
+        {
+          url: "",
+          title: "New Tab",
+        },
+      ],
+      historyIndex: 0,
     },
   ]);
 

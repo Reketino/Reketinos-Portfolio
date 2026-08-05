@@ -4,7 +4,7 @@ export function useCalendar() {
   const todayDate = new Date();
 
   const [currentDate, setCurrentDate] = useState(
-    new Date(todayDate.getFullYear(), todayDate.getMonth(), 1)
+    new Date(todayDate.getFullYear(), todayDate.getMonth(), 1),
   );
 
   const [selectedDay, setSelectedDay] = useState(null);
@@ -14,7 +14,7 @@ export function useCalendar() {
 
   function changeMonth(offset) {
     setCurrentDate(
-      (prev) => new Date(prev.getFullYear(), prev.getMonth() + offset, 1)
+      (prev) => new Date(prev.getFullYear(), prev.getMonth() + offset, 1),
     );
     setSelectedDay(null);
   }
