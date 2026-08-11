@@ -1,16 +1,18 @@
-export const internalPages = {
-  bearflights: {
+export const internalPages = [
+   {
+    keywords: ["bearflights", "flight", "flights"],
     title: "BearFlights",
     url: "https://bearflightradar.vercel.app/",
   },
 
-  stocks: {
-    title: "BearFlights",
+   {
+    keywords: ["stock", "stocks"],
+    title: "BearStocks",
     url: "https://bearstocks.vercel.app/",
   },
 
-  holdem: {
+  {
     title: "Ber Hold Em",
     url: "https://bear-hold-em-frontend.vercel.app/",
   },
-};
+]
