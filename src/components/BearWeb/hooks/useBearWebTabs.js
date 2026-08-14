@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+
 import { internalPages } from "../data/internalPages";
 
 const HOME_URL = "https://www.google.com/webhp?igu=1";
