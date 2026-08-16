@@ -154,20 +154,9 @@ export default function useBearWebTabs(settings) {
     const input = value.trim();
     const lower = input.toLowerCase();
 
-    if (lower.includes("stock")) {
-      navigateTab("https://bearstocks.vercel.app/", "BearStocks");
-      return;
-    }
-
-    if (lower.includes("holdem")) {
-      navigateTab("https://bear-hold-em-frontend.vercel.app/", "Bear Hold Em");
-      return;
-    }
-
-    if (lower.includes("bearflights")) {
-      navigateTab("https://bearflightradar.vercel.app/", "BearFlights");
-      return;
-    }
+    const internalPage = internalPages.find((page) => 
+    page.keywords.some((keyword) => lower.includes(keyword)),
+    );
 
     if (lower === "home") {
       navigateTab("", "New Tab");
