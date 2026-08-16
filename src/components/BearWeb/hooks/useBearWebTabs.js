@@ -158,6 +158,11 @@ export default function useBearWebTabs(settings) {
     page.keywords.some((keyword) => lower.includes(keyword)),
     );
 
+    if (internalPage) {
+      navigateTab(internalPage.url, internalPage.title);
+      return;
+    }
+
     if (lower === "home") {
       navigateTab("", "New Tab");
       return;
