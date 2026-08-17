@@ -154,8 +154,8 @@ export default function useBearWebTabs(settings) {
     const input = value.trim();
     const lower = input.toLowerCase();
 
-    const internalPage = internalPages.find((page) => 
-    page.keywords.some((keyword) => lower.includes(keyword)),
+    const internalPage = internalPages.find((page) =>
+      page.keywords.some((keyword) => lower.includes(keyword)),
     );
 
     if (internalPage) {
