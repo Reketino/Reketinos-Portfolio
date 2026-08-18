@@ -13,7 +13,7 @@ export const internalPages = [
 
   {
     keywords: ["holdem", "poker"],
-    title: "Ber Hold Em",
+    title: "Bear Hold Em",
     url: "https://bear-hold-em-frontend.vercel.app/",
   },
 ];
