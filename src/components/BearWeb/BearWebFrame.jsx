@@ -23,6 +23,7 @@ export default function BearWebFrame({ children, onBack, onMinimize }) {
     <section
       className={`
                 ${framePosition}
+                z-40
                 bg-black 
                 rounded-lg 
                 overflow-hidden
