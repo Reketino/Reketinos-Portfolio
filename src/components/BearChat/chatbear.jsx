@@ -25,7 +25,6 @@ export default function ChatBear() {
       <main
         className="
       fixed bottom-15 right-3
-
       md:bottom-24 md:right-20
       "
       >
