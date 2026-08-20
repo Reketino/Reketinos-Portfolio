@@ -29,7 +29,7 @@ export default function BearWebAddressBar({
       <input
         name="SearchBar"
         className="bw-addr-input w-full pr-10"
-        placeholder="Search or type URL"
+        placeholder="Search BearWeb or Type URL"
         value={input}
         onFocus={() => setIsEditing(true)}
         onBlur={() => setIsEditing(false)}
