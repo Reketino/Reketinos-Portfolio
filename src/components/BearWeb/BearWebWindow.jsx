@@ -63,7 +63,7 @@ export default function BearWebWindow({
       </header>
 
       <BearWebTopbar
-        currentUrl={activeTab.url || "Search BearWeb or Type a URL"}
+        currentUrl={activeTab.url}
         onNavigate={navigate}
         onReload={reloadPage}
         onHome={() => navigateTab("", "New Tab")}
