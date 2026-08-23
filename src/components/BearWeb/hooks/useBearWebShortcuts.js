@@ -11,5 +11,11 @@ export default function useBearWebShortcuts({
     reloadPage,
     focusAddressBar,
 }) {
-    
+    useEffect(() => {
+        const handleKey = (event) => {
+            const isCtrlOrCmd = event.ctrlKey || event.metaKey
+
+            if (!isCtrlOrCmd) return;
+        }
+    })
 }
