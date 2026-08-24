@@ -13,9 +13,13 @@ export default function useBearWebShortcuts({
 }) {
     useEffect(() => {
         const handleKey = (event) => {
-            const isCtrlOrCmd = event.ctrlKey || event.metaKey
+            const isCtrlOrCmd = event.ctrlKey || event.metaKey;
 
             if (!isCtrlOrCmd) return;
+
+            switch (event.key.toLowerCase()) {
+                case "t":
+            }
         }
     })
 }
