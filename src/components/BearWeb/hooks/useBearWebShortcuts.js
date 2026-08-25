@@ -19,6 +19,14 @@ export default function useBearWebShortcuts({
 
             switch (event.key.toLowerCase()) {
                 case "t":
+                    event.preventDefault();
+                    createNewTab();
+                    break;
+
+                case "w":
+                    event.preventDefault();
+                    closeTab(activeTabId);
+                    break;
             }
         }
     })
