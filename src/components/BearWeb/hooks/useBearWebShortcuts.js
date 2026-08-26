@@ -27,6 +27,10 @@ export default function useBearWebShortcuts({
                     event.preventDefault();
                     closeTab(activeTabId);
                     break;
+
+                case "l":
+                    event.preventDefault();
+                    break;
             }
         }
     })
