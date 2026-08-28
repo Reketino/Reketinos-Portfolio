@@ -36,6 +36,11 @@ export default function useBearWebShortcuts({
                     event.preventDefault();
                     reloadPage();
                     break;
+
+                case "arrowleft":
+                    event.preventDefault();
+                    goBack();
+                    break;
             }
         }
     })
