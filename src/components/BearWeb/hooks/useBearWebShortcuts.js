@@ -12,7 +12,7 @@ export default function useBearWebShortcuts({
     focusAddressBar,
 }) {
     useEffect(() => {
-        const handleKey = (event) => {
+        const handleKeyDown = (event) => {
             const isCtrlOrCmd = event.ctrlKey || event.metaKey;
 
             if (!isCtrlOrCmd) return;
@@ -50,6 +50,8 @@ export default function useBearWebShortcuts({
                 default:
                     break;
             }
-        }
+        };
+
+        window.addEventListener("keydown", handleKeyDown);
     })
 }
