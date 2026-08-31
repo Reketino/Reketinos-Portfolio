@@ -53,5 +53,17 @@ export default function useBearWebShortcuts({
         };
 
         window.addEventListener("keydown", handleKeyDown);
-    })
+
+        return () => {
+            window.removeEventListener("keydown", handleKeyDown);
+        };
+    }, [
+        createNewTab,
+        closeTab,
+        activeTabId,
+        goBack,
+        goForward,
+        reloadPage,
+        focusAddressBar,
+    ]);
 }
