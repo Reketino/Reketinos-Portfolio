@@ -6,7 +6,8 @@ export default function BearWebAddressBar({
   onNavigate, 
   currentUrl,
   isBookmarked,
-  onBookmark, 
+  onBookmark,
+  onFocusAddressBar, 
 }) {
   const [input, setInput] = useState("");
   const [isEditing, setIsEditing] = useState(false);
