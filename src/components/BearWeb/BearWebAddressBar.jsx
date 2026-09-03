@@ -12,6 +12,8 @@ export default function BearWebAddressBar({
   const [input, setInput] = useState("");
   const [isEditing, setIsEditing] = useState(false);
 
+  const inputRef = useRef(null);
+
   const safeURL = typeof currentUrl === "string" ? currentUrl : "";
 
   useEffect(() => {
