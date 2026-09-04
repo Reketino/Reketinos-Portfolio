@@ -20,6 +20,15 @@ export default function BearWebAddressBar({
     if (!isEditing) setInput(safeURL);
   }, [safeURL, isEditing]);
 
+  useEffect(() => {
+    if (onFocusAddressBar) {
+      onFocusAddressBar(() => {
+        inputRef.current?.focus();
+        inputRef.current?.select();
+      });
+    }
+  }, [onFocusAddressBar]);
+
 
   return (
     <form
