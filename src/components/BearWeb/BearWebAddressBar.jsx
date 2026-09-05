@@ -2,12 +2,12 @@
 import { useEffect, useState } from "react";
 import { MdOutlineStarRate, MdStarRate } from "react-icons/md";
 
-export default function BearWebAddressBar({ 
-  onNavigate, 
+export default function BearWebAddressBar({
+  onNavigate,
   currentUrl,
   isBookmarked,
   onBookmark,
-  onFocusAddressBar, 
+  onFocusAddressBar,
 }) {
   const [input, setInput] = useState("");
   const [isEditing, setIsEditing] = useState(false);
@@ -28,7 +28,6 @@ export default function BearWebAddressBar({
       });
     }
   }, [onFocusAddressBar]);
-
 
   return (
     <form
