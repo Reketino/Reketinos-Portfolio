@@ -38,6 +38,7 @@ export default function BearWebAddressBar({
       className="bw-addr-form relative w-full"
     >
       <input
+      ref={inputRef}
         name="SearchBar"
         className="bw-addr-input w-full pr-10"
         placeholder="Search BearWeb or Type URL"
