@@ -1,5 +1,10 @@
 "use client";
-import { useEffect, useState } from "react";
+import { 
+  forwardRef,
+  useEffect,
+  useImperativeHandle, 
+  useState 
+} from "react";
 import { MdOutlineStarRate, MdStarRate } from "react-icons/md";
 
 export default function BearWebAddressBar({
