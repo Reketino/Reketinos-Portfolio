@@ -1,10 +1,7 @@
 "use client";
-import { 
-  forwardRef,
-  useEffect,
-  useImperativeHandle, 
-  useState 
-} from "react";
+
+import { useEffect, useRef, useState } from "react";
+
 import { MdOutlineStarRate, MdStarRate } from "react-icons/md";
 
 export default function BearWebAddressBar({
@@ -22,7 +19,9 @@ export default function BearWebAddressBar({
   const safeURL = typeof currentUrl === "string" ? currentUrl : "";
 
   useEffect(() => {
-    if (!isEditing) setInput(safeURL);
+    if (!isEditing) {
+      setInput(safeURL);
+    }
   }, [safeURL, isEditing]);
 
   useEffect(() => {
@@ -43,7 +42,7 @@ export default function BearWebAddressBar({
       className="bw-addr-form relative w-full"
     >
       <input
-      ref={inputRef}
+        ref={inputRef}
         name="SearchBar"
         className="bw-addr-input w-full pr-10"
         placeholder="Search BearWeb or Type URL"
@@ -59,12 +58,12 @@ export default function BearWebAddressBar({
         onClick={onBookmark}
         disabled={!currentUrl}
         className="
-      absolute right-5 
-      top-1/2 -translate-y-1/2
-      rounded-full
-      text-xl
-      hover:bg-neutral-600
-      "
+          absolute right-5
+          top-1/2 -translate-y-1/2
+          rounded-full
+          text-xl
+          hover:bg-neutral-600
+        "
       >
         {isBookmarked ? (
           <MdStarRate className="text-yellow-400" />
