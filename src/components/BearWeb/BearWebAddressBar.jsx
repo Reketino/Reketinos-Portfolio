@@ -7,13 +7,16 @@ import {
 } from "react";
 import { MdOutlineStarRate, MdStarRate } from "react-icons/md";
 
-export default function BearWebAddressBar({
+const BearWebAddressBar = forwardRef(function BearwebAddressBar(
+  {
   onNavigate,
   currentUrl,
   isBookmarked,
   onBookmark,
   onFocusAddressBar,
-}) {
+},
+ref,
+) {
   const [input, setInput] = useState("");
   const [isEditing, setIsEditing] = useState(false);
 
@@ -22,17 +25,22 @@ export default function BearWebAddressBar({
   const safeURL = typeof currentUrl === "string" ? currentUrl : "";
 
   useEffect(() => {
-    if (!isEditing) setInput(safeURL);
+    if (!isEditing) {
+      setInput(safeURL);
+    }
   }, [safeURL, isEditing]);
 
-  useEffect(() => {
-    if (onFocusAddressBar) {
-      onFocusAddressBar(() => {
-        inputRef.current?.focus();
-        inputRef.current?.select();
-      });
-    }
-  }, [onFocusAddressBar]);
+  useImperativeHandle(
+    ref,
+    () => ({
+      focus: () => inputRef.current?.focus(),
+      clear: () => setInput(""),
+      get value() {
+        return input;
+      },
+    }),
+    [input],
+  );
 
   return (
     <form
@@ -43,7 +51,7 @@ export default function BearWebAddressBar({
       className="bw-addr-form relative w-full"
     >
       <input
-      ref={inputRef}
+        ref={inputRef}
         name="SearchBar"
         className="bw-addr-input w-full pr-10"
         placeholder="Search BearWeb or Type URL"
@@ -74,4 +82,5 @@ export default function BearWebAddressBar({
       </button>
     </form>
   );
-}
+});
+
