@@ -1,22 +1,16 @@
 "use client";
-import { 
-  forwardRef,
-  useEffect,
-  useImperativeHandle, 
-  useState 
-} from "react";
+
+import { useEffect, useRef, useState } from "react";
+
 import { MdOutlineStarRate, MdStarRate } from "react-icons/md";
 
-const BearWebAddressBar = forwardRef(function BearwebAddressBar(
-  {
+export default function BearWebAddressBar({
   onNavigate,
   currentUrl,
   isBookmarked,
   onBookmark,
   onFocusAddressBar,
-},
-ref,
-) {
+}) {
   const [input, setInput] = useState("");
   const [isEditing, setIsEditing] = useState(false);
 
@@ -30,17 +24,14 @@ ref,
     }
   }, [safeURL, isEditing]);
 
-  useImperativeHandle(
-    ref,
-    () => ({
-      focus: () => inputRef.current?.focus(),
-      clear: () => setInput(""),
-      get value() {
-        return input;
-      },
-    }),
-    [input],
-  );
+  useEffect(() => {
+    if (onFocusAddressBar) {
+      onFocusAddressBar(() => {
+        inputRef.current?.focus();
+        inputRef.current?.select();
+      });
+    }
+  }, [onFocusAddressBar]);
 
   return (
     <form
@@ -67,12 +58,12 @@ ref,
         onClick={onBookmark}
         disabled={!currentUrl}
         className="
-      absolute right-5 
-      top-1/2 -translate-y-1/2
-      rounded-full
-      text-xl
-      hover:bg-neutral-600
-      "
+          absolute right-5
+          top-1/2 -translate-y-1/2
+          rounded-full
+          text-xl
+          hover:bg-neutral-600
+        "
       >
         {isBookmarked ? (
           <MdStarRate className="text-yellow-400" />
@@ -82,5 +73,4 @@ ref,
       </button>
     </form>
   );
-});
-
+}
