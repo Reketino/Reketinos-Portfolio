@@ -20,6 +20,7 @@ export default function BearWebTopbar({
   onClose,
   onSettings,
   settings,
+  addressBarRef,
 }) {
 
   return (
