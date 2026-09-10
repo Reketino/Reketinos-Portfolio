@@ -22,22 +22,17 @@ export default function BearWebTopbar({
   settings,
   addressBarRef,
 }) {
-
   return (
     <header className="bw-topbar">
       <section className="bw-toolbar flex items-center gap-2">
         <nav className="bw-nav shrink-0">
-          <button 
-          disabled={!canGoBack} 
-          onClick={onBack}
-          className="bw-nav-btn"
-          >
+          <button disabled={!canGoBack} onClick={onBack} className="bw-nav-btn">
             ←
           </button>
-          <button 
-          disabled={!canGoForward} 
-          onClick={onForward}
-          className="bw-nav-btn"
+          <button
+            disabled={!canGoForward}
+            onClick={onForward}
+            className="bw-nav-btn"
           >
             →
           </button>
