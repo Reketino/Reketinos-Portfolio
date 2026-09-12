@@ -42,6 +42,7 @@ export default function BearWebWindow({
     useBookmarks(activeTab);
 
   const [settingsOpen, setSettingsOpen] = useState(false);
+  const adressBarFocusRef = useRef(null);
 
   return (
     <main className="flex flex-col h-full min-h-0">
