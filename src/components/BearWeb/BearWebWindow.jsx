@@ -79,6 +79,9 @@ export default function BearWebWindow({
         onClose={onBack}
         onSettings={() => setSettingsOpen(true)}
         settings={settings}
+        onFocusAddress={(focus) => {
+          adressBarFocusRef.current = focus;
+        }}
       />
 
       <section className="bw-content min-h-0 overflow-auto">
