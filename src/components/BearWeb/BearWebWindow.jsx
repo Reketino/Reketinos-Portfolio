@@ -79,7 +79,7 @@ export default function BearWebWindow({
         onClose={onBack}
         onSettings={() => setSettingsOpen(true)}
         settings={settings}
-        onFocusAddress={(focus) => {
+        onFocusAddressBar={(focus) => {
           adressBarFocusRef.current = focus;
         }}
       />
