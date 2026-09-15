@@ -20,7 +20,7 @@ export default function BearWebTopbar({
   onClose,
   onSettings,
   settings,
-  addressBarRef,
+  onFocusAddressBar,
 }) {
   return (
     <header className="bw-topbar">
@@ -51,6 +51,7 @@ export default function BearWebTopbar({
               onNavigate={onNavigate}
               isBookmarked={isBookmarked}
               onBookmark={onBookmark}
+              onFocusAddressBar={onFocusAddressBar}
             />
           </div>
         </header>
