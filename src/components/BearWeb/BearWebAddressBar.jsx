@@ -1,16 +1,24 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { 
+  forwardRef,
+  useEffect,
+  useImperativeHandle, 
+  useRef, 
+  useState 
+} from "react";
 
 import { MdOutlineStarRate, MdStarRate } from "react-icons/md";
 
-export default function BearWebAddressBar({
+export default function BearWebAddressBar(
+  {
   onNavigate,
   currentUrl,
   isBookmarked,
   onBookmark,
-  onFocusAddressBar,
-}) {
+},
+ref,
+) {
   const [input, setInput] = useState("");
   const [isEditing, setIsEditing] = useState(false);
 
