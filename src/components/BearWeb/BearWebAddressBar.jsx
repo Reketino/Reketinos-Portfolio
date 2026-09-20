@@ -26,7 +26,14 @@ ref,
 
   const safeURL = typeof currentUrl === "string" ? currentUrl : "";
 
-  useEffect(() => {
+  useImperativeHandle(ref, () => ({
+    focus: () => {
+      inputRef.current?.focus();
+      inputRef.current?.select();
+    },
+  }));
+
+  useEffect( ref, () => {
     if (!isEditing) {
       setInput(safeURL);
     }
