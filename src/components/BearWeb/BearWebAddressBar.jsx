@@ -33,7 +33,7 @@ ref,
     },
   }));
 
-  useEffect( ref, () => {
+  useEffect(() => {
     if (!isEditing) {
       setInput(safeURL);
     }
