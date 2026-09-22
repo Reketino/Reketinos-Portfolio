@@ -10,7 +10,7 @@ import {
 
 import { MdOutlineStarRate, MdStarRate } from "react-icons/md";
 
-const  BearWebAddressBar = forwardRef(function BearWebAddressBar(
+const BearWebAddressBar = forwardRef(function BearWebAddressBar(
   { onNavigate, currentUrl, isBookmarked, onBookmark },
   ref,
 ) {
@@ -33,15 +33,6 @@ const  BearWebAddressBar = forwardRef(function BearWebAddressBar(
       setInput(safeURL);
     }
   }, [safeURL, isEditing]);
-
-  useEffect(() => {
-    if (onFocusAddressBar) {
-      onFocusAddressBar(() => {
-        inputRef.current?.focus();
-        inputRef.current?.select();
-      });
-    }
-  }, [onFocusAddressBar]);
 
   return (
     <form
@@ -84,3 +75,5 @@ const  BearWebAddressBar = forwardRef(function BearWebAddressBar(
     </form>
   );
 });
+
+export default BearWebAddressBar;
