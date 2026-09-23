@@ -20,7 +20,7 @@ export default function BearWebTopbar({
   onClose,
   onSettings,
   settings,
-  onFocusAddressBar,
+  addressBarRef,
 }) {
   return (
     <header className="bw-topbar">
