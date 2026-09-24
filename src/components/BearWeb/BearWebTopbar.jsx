@@ -47,6 +47,7 @@ export default function BearWebTopbar({
         <header className="flex-1 flex justify-center">
           <div className="w-full">
             <BearWebAddressBar
+            ref={addressBarRef}
               currentUrl={currentUrl}
               onNavigate={onNavigate}
               isBookmarked={isBookmarked}
