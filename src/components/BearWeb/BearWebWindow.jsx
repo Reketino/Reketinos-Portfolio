@@ -42,7 +42,7 @@ export default function BearWebWindow({
     useBookmarks(activeTab);
 
   const [settingsOpen, setSettingsOpen] = useState(false);
-  const addressBarFocusRef = useRef(null);
+  const addressBarRef = useRef(null);
 
   return (
     <main className="flex flex-col h-full min-h-0">
@@ -83,15 +83,15 @@ export default function BearWebWindow({
           addressBarFocusRef.current = focus;
         }}
       />
-<button
-  type="button"
-onClick={() => {
-  console.log("TEST FOCUS CLICKED");
-  console.log("addressBarFocusRef:", addressBarFocusRef.current);
+      <button
+        type="button"
+        onClick={() => {
+          console.log("TEST FOCUS CLICKED");
+          console.log("addressBarFocusRef:", addressBarFocusRef.current);
 
-  addressBarFocusRef.current?.();
-}}
-  className="
+          addressBarFocusRef.current?.();
+        }}
+        className="
     relative
     z-9999
     pointer-events-auto
@@ -101,9 +101,9 @@ onClick={() => {
     py-2
     text-white
   "
->
-  Test Focus
-</button>
+      >
+        Test Focus
+      </button>
 
       <section className="bw-content min-h-0 overflow-auto">
         {!activeTab.url && (
