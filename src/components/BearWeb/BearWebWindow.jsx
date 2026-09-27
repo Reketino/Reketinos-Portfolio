@@ -79,7 +79,7 @@ export default function BearWebWindow({
         onClose={onBack}
         onSettings={() => setSettingsOpen(true)}
         settings={settings}
-        onFocusAddressBar={addressBarRef}
+        addressBarRef={addressBarRef}
       />
       <button
         type="button"
