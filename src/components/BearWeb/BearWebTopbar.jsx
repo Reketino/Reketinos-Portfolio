@@ -26,9 +26,14 @@ export default function BearWebTopbar({
     <header className="bw-topbar">
       <section className="bw-toolbar flex items-center gap-2">
         <nav className="bw-nav shrink-0">
-          <button disabled={!canGoBack} onClick={onBack} className="bw-nav-btn">
+          <button 
+          disabled={!canGoBack} 
+          onClick={onBack} 
+          className="bw-nav-btn"
+          >
             ←
           </button>
+
           <button
             disabled={!canGoForward}
             onClick={onForward}
@@ -36,10 +41,18 @@ export default function BearWebTopbar({
           >
             →
           </button>
-          <button onClick={onReload} className="bw-nav-btn">
+
+          <button 
+          onClick={onReload} 
+          className="bw-nav-btn"
+          >
             ⟳
           </button>
-          <button onClick={onHome} className="bw-nav-btn">
+
+          <button 
+          onClick={onHome} 
+          className="bw-nav-btn"
+          >
             🏠
           </button>
         </nav>
@@ -47,12 +60,11 @@ export default function BearWebTopbar({
         <header className="flex-1 flex justify-center">
           <div className="w-full">
             <BearWebAddressBar
-            ref={addressBarRef}
+              ref={addressBarRef}
               currentUrl={currentUrl}
               onNavigate={onNavigate}
               isBookmarked={isBookmarked}
               onBookmark={onBookmark}
-              onFocusAddressBar={onFocusAddressBar}
             />
           </div>
         </header>
