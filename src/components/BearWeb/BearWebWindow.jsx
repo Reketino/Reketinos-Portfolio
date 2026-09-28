@@ -81,27 +81,6 @@ export default function BearWebWindow({
         settings={settings}
         addressBarRef={addressBarRef}
       />
-      <button
-        type="button"
-        onClick={() => {
-          console.log("TEST FOCUS CLICKED");
-          console.log("addressBarFocusRef:", addressBarFocusRef.current);
-
-          addressBarFocusRef.current?.();
-        }}
-        className="
-    relative
-    z-9999
-    pointer-events-auto
-    cursor-pointer
-    bg-red-500
-    px-3
-    py-2
-    text-white
-  "
-      >
-        Test Focus
-      </button>
 
       <section className="bw-content min-h-0 overflow-auto">
         {!activeTab.url && (
