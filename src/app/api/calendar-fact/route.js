@@ -31,7 +31,7 @@ export async function GET(request) {
           "User-Agent": "ReketinoCalendar/1.0 (https://github.com/Reketino)",
           Accept: "application.json",
         },
-      }
+      },
     );
 
     if (!res.ok) {
@@ -45,7 +45,7 @@ export async function GET(request) {
     }
 
     const shortEvents = data.events.filter(
-      (e) => e.text && e.text.length <= 120
+      (e) => e.text && e.text.length <= 120,
     );
 
     const pool = shortEvents.length ? shortEvents : data.events;
@@ -78,7 +78,7 @@ export async function GET(request) {
         error: "Failed to fetch fact ",
         details: String(err),
       }),
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
