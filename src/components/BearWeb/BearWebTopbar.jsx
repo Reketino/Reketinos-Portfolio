@@ -26,11 +26,7 @@ export default function BearWebTopbar({
     <header className="bw-topbar">
       <section className="bw-toolbar flex items-center gap-2">
         <nav className="bw-nav shrink-0">
-          <button 
-          disabled={!canGoBack} 
-          onClick={onBack} 
-          className="bw-nav-btn"
-          >
+          <button disabled={!canGoBack} onClick={onBack} className="bw-nav-btn">
             ←
           </button>
 
@@ -42,17 +38,11 @@ export default function BearWebTopbar({
             →
           </button>
 
-          <button 
-          onClick={onReload} 
-          className="bw-nav-btn"
-          >
+          <button onClick={onReload} className="bw-nav-btn">
             ⟳
           </button>
 
-          <button 
-          onClick={onHome} 
-          className="bw-nav-btn"
-          >
+          <button onClick={onHome} className="bw-nav-btn">
             🏠
           </button>
         </nav>
