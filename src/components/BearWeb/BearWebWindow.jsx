@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import BearWebTopbar from "./BearWebTopbar";
 import BearWebStart from "./BearWebStart";
 import BearWebTabs from "./BearWebTabs";
@@ -38,11 +38,21 @@ export default function BearWebWindow({
     canGoForward,
   } = useBearWebTabs(settings);
 
-  const { bookmarks, isBookmarked, addBookmark, removeBookmark } =
-    useBookmarks(activeTab);
+  const { 
+    bookmarks, 
+    isBookmarked, 
+    addBookmark, 
+    removeBookmark 
+  } =  useBookmarks(activeTab);
 
   const [settingsOpen, setSettingsOpen] = useState(false);
   const addressBarRef = useRef(null);
+
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      
+    }
+  })
 
   return (
     <main className="flex flex-col h-full min-h-0">
