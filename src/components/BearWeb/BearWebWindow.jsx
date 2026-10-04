@@ -51,7 +51,8 @@ export default function BearWebWindow({
   useEffect(() => {
     const handleKeyDown = (event) => {
       if (event.ctrlKey && event.key.toLowerCase() === "1") {
-
+        event.preventDefault();
+        
       }
     }
   })
