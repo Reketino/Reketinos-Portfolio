@@ -53,6 +53,7 @@ export default function BearWebWindow({
       if (event.ctrlKey && event.key.toLowerCase() === "1") {
         event.preventDefault();
         
+        addressBarRef.current?.focus();
       }
     }
   })
