@@ -55,7 +55,11 @@ export default function BearWebWindow({
         
         addressBarRef.current?.focus();
       }
-    }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {}
   })
 
   return (
