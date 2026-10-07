@@ -59,8 +59,10 @@ export default function BearWebWindow({
 
     window.addEventListener("keydown", handleKeyDown);
 
-    return () => {}
-  })
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
 
   return (
     <main className="flex flex-col h-full min-h-0">
