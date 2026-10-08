@@ -38,12 +38,8 @@ export default function BearWebWindow({
     canGoForward,
   } = useBearWebTabs(settings);
 
-  const { 
-    bookmarks, 
-    isBookmarked, 
-    addBookmark, 
-    removeBookmark 
-  } =  useBookmarks(activeTab);
+  const { bookmarks, isBookmarked, addBookmark, removeBookmark } =
+    useBookmarks(activeTab);
 
   const [settingsOpen, setSettingsOpen] = useState(false);
   const addressBarRef = useRef(null);
@@ -52,7 +48,7 @@ export default function BearWebWindow({
     const handleKeyDown = (event) => {
       if (event.ctrlKey && event.key.toLowerCase() === "1") {
         event.preventDefault();
-        
+
         addressBarRef.current?.focus();
       }
     };
