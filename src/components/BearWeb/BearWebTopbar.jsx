@@ -4,6 +4,15 @@ import BearWebAddressBar from "./BearWebAddressBar";
 import ThreeDotMenu from "./ThreeDotMenu";
 import { IoExtensionPuzzle } from "react-icons/io5";
 
+import {
+  ChevronLeft,
+  ChevronRight,
+  Home,
+  LoaderCircle,
+  Puzzle,
+  RotateCw,
+} from "lucide-react";
+
 export default function BearWebTopbar({
   currentUrl,
   onNavigate,
