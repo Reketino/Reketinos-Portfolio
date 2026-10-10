@@ -34,8 +34,12 @@ export default function BearWebTopbar({
   return (
     <header className="bw-topbar">
       <section className="bw-toolbar flex items-center gap-2">
-        <nav className="bw-nav shrink-0">
-          <button disabled={!canGoBack} onClick={onBack} className="bw-nav-btn">
+        <nav className="flex shrink-0 items-center gap-2">
+          <button 
+          type="button"
+          disabled={!canGoBack} 
+          onClick={onBack} 
+          className="bw-nav-btn">
             ←
           </button>
 
