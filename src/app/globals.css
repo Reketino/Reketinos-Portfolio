@@ -73,7 +73,7 @@ body {
 
 /* Bearweb Topbar */
 .bw-topbar {
-  @apply flex flex-col  bg-neutral-950/85 text-neutral-200 border-b border-neutral-700;
+  @apply flex flex-col border-b border-white/10 bg-neutral-950/85 text-neutral-200 backdrop-blur-xl;
 }
 
 /* Toolbar for nav & address bar*/
