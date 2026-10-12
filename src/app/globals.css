@@ -78,7 +78,7 @@ body {
 
 /* Toolbar for nav & address bar*/
 .bw-toolbar {
-  @apply flex items-center px-2 py-1;
+  @apply flex items-center gap-2 px-2 py-2;
 }
 
 /* Bearweb Tabs */
@@ -111,7 +111,7 @@ body {
 
 /* Bearweb Address bar  */
 .bw-addr-form {
-  @apply w-full px-2;
+  @apply w-full px-1;
 }
 
 .bw-addr-input {
