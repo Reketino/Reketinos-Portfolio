@@ -123,6 +123,10 @@ body {
   duration-200 placeholder:text-neutral-500;
 }
 
+.bw-addr-input:hover {
+  @apply border-white/15 bg-white/9
+}
+
 .bw-addr-url {
   @apply block text-[10px] mt-1 text-neutral-400 truncate;
 }
