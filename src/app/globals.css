@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -44,8 +43,6 @@ body {
 }
 /* Fullskjerm animation ends here */
 
-
-
 @keyframes slideUp {
   from {
     transform: translateY(10%);
@@ -60,16 +57,12 @@ body {
   animation: slideUp 0.4s ease-out forwards;
 }
 
-
-
 /* Bearweb */
-
 
 /* Bearweb Window */
 .bw-window {
   @apply w-full h-full bg-neutral-800 rounded-xl border border-neutral-700 flex flex-col min-h-0;
 }
-
 
 /* Bearweb Topbar */
 .bw-topbar {
@@ -124,19 +117,18 @@ body {
 }
 
 .bw-addr-input:hover {
-  @apply border-white/15 bg-white/9
+  @apply border-white/15 bg-white/9;
 }
 
 .bw-addr-input:focus {
   @apply border-cyan-400/40
   bg-white/10
-  ring-2 ring-cyan-400/10
+  ring-2 ring-cyan-400/10;
 }
 
 .bw-addr-url {
   @apply block text-[10px] mt-1 text-neutral-400 truncate;
 }
-
 
 /* Bearweb`s content */
 .bw-content {
@@ -146,7 +138,6 @@ body {
 .bw-iframe {
   @apply w-full h-full bg-white;
 }
-
 
 /* Bearweb Ready Set Start page */
 .bw-start {
@@ -169,10 +160,9 @@ body {
   @apply px-4 py-2 bg-neutral-700 rounded-md hover:bg-neutral-800;
 }
 
-
 /* BearAI animations */
 
-@keyframes popfromBear{
+@keyframes popfromBear {
   0% {
     opacity: 0;
     transform: translateY(10px) scale(0.95);
@@ -188,9 +178,15 @@ body {
 }
 
 @keyframes nod {
-  0% { transform: rotate(0deg); }
-  50% { transform: rotate(-3deg); }
-  100% { transform: rotate(0deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-3deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 .animate-bear-nod {
