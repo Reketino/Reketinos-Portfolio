@@ -38,9 +38,12 @@ export default function BearWebTopbar({
           <button 
           type="button"
           disabled={!canGoBack} 
-          onClick={onBack} 
-          className="bw-nav-btn">
-            ←
+          onClick={onBack}
+          className="bw-nav-btn"
+          title="Back"
+          aria-label="Go back" 
+         >
+            <ChevronLeft size={19} />
           </button>
 
           <button
