@@ -47,11 +47,15 @@ export default function BearWebTopbar({
           </button>
 
           <button
+            type="button"
             disabled={!canGoForward}
             onClick={onForward}
             className="bw-nav-btn"
+            title="Forward"
+            aria-label="Go forward"
+
           >
-            →
+            <ChevronRight size={19} />
           </button>
 
           <button onClick={onReload} className="bw-nav-btn">
