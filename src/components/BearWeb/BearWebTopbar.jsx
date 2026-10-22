@@ -58,7 +58,10 @@ export default function BearWebTopbar({
             <ChevronRight size={19} />
           </button>
 
-          <button onClick={onReload} className="bw-nav-btn">
+          <button 
+          onClick={onReload} 
+          className="bw-nav-btn"
+          >
             ⟳
           </button>
 
