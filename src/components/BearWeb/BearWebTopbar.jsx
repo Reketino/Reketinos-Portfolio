@@ -59,10 +59,13 @@ export default function BearWebTopbar({
           </button>
 
           <button 
+          type="button"
           onClick={onReload} 
           className="bw-nav-btn"
+          title="Reload"
+          aria-label="Reload page"
           >
-            ⟳
+            <RotateCw size={17} />
           </button>
 
           <button onClick={onHome} className="bw-nav-btn">
