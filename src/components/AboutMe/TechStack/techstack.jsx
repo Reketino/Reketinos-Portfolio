@@ -1,4 +1,5 @@
 
+import { color } from "framer-motion";
 import { title } from "node:process";
 import React from "react";
 
@@ -70,10 +71,11 @@ export default function TechStack() {
     {
       title: "Tools & DevOps",
       items: [
-        { Icon: FaGithub, color: "text-white", name: "GitHub" },
-        { Icon: FaGitAlt, color: "text-red-400", name: "Git"},
-        { Icon: VscVscode, color: "text-blue-400", name: "Vs Code" },
-        { Icon: SiVercel, color: "text-gray-300", name: "Vercel" },
+        { Icon: FaGithub, name: "GitHub", color: "text-white" },
+        { Icon: FaGitAlt, name: "Git", color: "text-red-400" },
+        { Icon: VscVscode, name: "Vs Code", color: "text-blue-400" },
+        { Icon: SiVercel, name: "Vercel", color: "text-gray-300" },
+        { Icon: SiGithubactions, name: "Github Actions", color: "text-blue-400" },
       ],
     },
     {
