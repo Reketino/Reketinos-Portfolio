@@ -54,6 +54,7 @@ export default function TechStack() {
       items: [
         { Icon: FaNodeJs, color: "text-green-500", name: "Node.js" },
         { Icon: FaPython, color: "text-yellow-500", name: "Python" },
+        { Icon: SiDotnet, name: ".NET", color: "#512BD4" },
         { Icon: SiSupabase, color: "text-green-700", name: "Supabase" },
         { Icon: SiRender, color: "text-purple-300", name: "Render" },
       ],
