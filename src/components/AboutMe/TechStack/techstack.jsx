@@ -57,16 +57,11 @@ export default function TechStack() {
       items: [
         { Icon: FaNodeJs, name: "Node.js", color: "text-green-500" },
         { Icon: FaPython, name: "Python", color: "text-yellow-400" },
-        { Icon: SiDotnet, name: ".NET", color: "text-purple-500" },
+        { Icon: SiDotnet, name: ".NET", color: "text-purple-700" },
         { Icon: SiSupabase, name: "Supabase", color: "text-emerald-400" },
         { Icon: SiRender, name: "Render", color: "text-purple-300" },
-      ],
-    },
-    {
-      title: "Database",
-      items: [
         { Icon: SiPostgresql, name: "PostegreSQL", color: "text-sky-500" },
-      ]
+      ],
     },
     {
       title: "Tools & DevOps",
