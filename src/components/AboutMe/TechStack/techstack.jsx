@@ -10,7 +10,10 @@ import {
   FaGithub,
   FaGitAlt,
   FaFigma,
-  FaNodeJs
+  FaNodeJs,
+  FaLinux,
+  FanNpm,
+  FaUbuntu,
 } from "react-icons/fa";
 
 import {
@@ -21,7 +24,12 @@ import {
   SiVercel,
   SiSupabase,
   SiTailwindcss,
-  SiTypescript
+  SiTypescript,
+  SiVite,
+  SiPostgresql,
+  SiLinuxmint,
+  SiDotnet,
+  SiGithubactions
 } from "react-icons/si";
 
 import { VscVscode } from "react-icons/vsc";
