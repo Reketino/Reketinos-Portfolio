@@ -73,9 +73,9 @@ export default function TechStack() {
       items: [
         { Icon: FaGithub, name: "GitHub", color: "text-white" },
         { Icon: FaGitAlt, name: "Git", color: "text-red-400" },
+        { Icon: SiGithubactions, name: "Github Actions", color: "text-blue-400" },
         { Icon: VscVscode, name: "Vs Code", color: "text-blue-400" },
         { Icon: SiVercel, name: "Vercel", color: "text-gray-300" },
-        { Icon: SiGithubactions, name: "Github Actions", color: "text-blue-400" },
       ],
     },
     {
