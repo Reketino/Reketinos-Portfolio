@@ -39,14 +39,14 @@ export default function TechStack() {
     {
       title: "Frontend",
       items: [
-        { Icon: FaHtml5, color: "text-orange-500", name: "HTML" },
-        { Icon: FaCss3Alt, color: "text-blue-600", name: "CSS" },
-        { Icon: SiTailwindcss, color: "text-sky-500", name: "Tailwind" },
-        { Icon: FaJs, color: "text-amber-300", name: "JavaScript" },
-        { Icon: SiTypescript, color: "text-blue-600", name: "TypeScript" },
-        { Icon: FaReact, color: "text-cyan-500", name: "React" },
-        { Icon: SiNextdotjs, color: "text-white", name: "Next.js" },
-        { Icon: SiVite, name: "Vite", color: "#646CFF"},
+        { Icon: FaHtml5, name: "HTML", color: "#E34F26" },
+        { Icon: FaCss3Alt, name: "CSS", color: "#1572B6" },
+        { Icon: SiTailwindcss, name: "Tailwind", color: "#06B6D4" },
+        { Icon: FaJs, name: "JavaScript", color: "#F7DF1E" },
+        { Icon: SiTypescript, name: "TypeScript", color: "#3178C6" },
+        { Icon: FaReact, name: "React", color: "#61DAFB" },
+        { Icon: SiNextdotjs, name: "Next.js", color: "#FFFFFF" },
+        { Icon: SiVite, name: "Vite", color: "#646CFF" },
       ],
     },
     {
