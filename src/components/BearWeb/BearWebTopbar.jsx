@@ -68,8 +68,14 @@ export default function BearWebTopbar({
             <RotateCw size={17} />
           </button>
 
-          <button onClick={onHome} className="bw-nav-btn">
-            🏠
+          <button 
+          type="button"
+          onClick={onHome} 
+          className="bw-nav-btn"
+          title="Home"
+          aria-label="Go home"
+          >
+            <Home size={17} />
           </button>
         </nav>
 
