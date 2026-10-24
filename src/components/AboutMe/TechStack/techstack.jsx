@@ -15,6 +15,7 @@ import {
   FaLinux,
   FanNpm,
   FaUbuntu,
+  FaWindows
 } from "react-icons/fa";
 
 import {
