@@ -1,4 +1,3 @@
-
 import { color } from "framer-motion";
 import { title } from "node:process";
 import React from "react";
@@ -16,7 +15,7 @@ import {
   FaLinux,
   FanNpm,
   FaUbuntu,
-  FaWindows
+  FaWindows,
 } from "react-icons/fa";
 
 import {
@@ -32,7 +31,7 @@ import {
   SiPostgresql,
   SiLinuxmint,
   SiDotnet,
-  SiGithubactions
+  SiGithubactions,
 } from "react-icons/si";
 
 import { VscVscode } from "react-icons/vsc";
@@ -68,7 +67,11 @@ export default function TechStack() {
       items: [
         { Icon: FaGithub, name: "GitHub", color: "text-white" },
         { Icon: FaGitAlt, name: "Git", color: "text-red-400" },
-        { Icon: SiGithubactions, name: "Github Actions", color: "text-blue-400" },
+        {
+          Icon: SiGithubactions,
+          name: "Github Actions",
+          color: "text-blue-400",
+        },
         { Icon: VscVscode, name: "Vs Code", color: "text-blue-400" },
         { Icon: SiVercel, name: "Vercel", color: "text-gray-300" },
       ],
@@ -79,13 +82,17 @@ export default function TechStack() {
         { Icon: FaWindows, name: "Windows", color: "text-cyan-300" },
         { Icon: FaLinux, name: "Linux", color: "text-yellow-400" },
         { Icon: SiLinuxmint, name: "Linux Mint", color: "text-green-500" },
-      ]
+      ],
     },
     {
       title: "Creative Work",
       items: [
         { Icon: SiAdobephotoshop, name: "Photoshop", color: "text-blue-500" },
-        { Icon: SiAdobepremierepro, name: "Premiere Pro", color: "text-indigo-700" },
+        {
+          Icon: SiAdobepremierepro,
+          name: "Premiere Pro",
+          color: "text-indigo-700",
+        },
         { Icon: FaFigma, name: "Figma", color: "text-cyan-300" },
       ],
     },
@@ -104,39 +111,41 @@ export default function TechStack() {
 
       <section className="relative z-10 w-full ">
         <header>
-      <h2 className="
+          <h2
+            className="
       text-4xl text-center font-bold 
       mb-5 mt-5  
       drop-shadow-[0_0_15px_rgba(16,255,100,0.4)]
       "
-      >
-        👨🏻‍💻 Tech Stack
-        </h2>
+          >
+            👨🏻‍💻 Tech Stack
+          </h2>
         </header>
 
-      <div className="
+        <div
+          className="
       grid grid-cols-1 md:grid-cols-2 
       gap-10 max-w-5xl mx-auto
       "
-      >
-        {sections.map((section) => (
-          <section
-            key={section.title}
-            className="
+        >
+          {sections.map((section) => (
+            <section
+              key={section.title}
+              className="
             bg-white/5 bg-opacity-30 
             backdrop-blur-md rounded-2xl 
             shadow-xl p-6 
             border-white/20"
-          >
-            <h3 className="text-2xl font-semibold text-green-500 mb-4 text-center">
-              {section.title}
-            </h3>
+            >
+              <h3 className="text-2xl font-semibold text-green-500 mb-4 text-center">
+                {section.title}
+              </h3>
 
-            <ul className="grid grid-cols-3 sm:grid-cols-4 gap-6 text-center">
-              {section.items.map(({ Icon, color, name }) => (
-                <li key={name} className="flex flex-col items-center">
-                  <div
-                    className={`
+              <ul className="grid grid-cols-3 sm:grid-cols-4 gap-6 text-center">
+                {section.items.map(({ Icon, color, name }) => (
+                  <li key={name} className="flex flex-col items-center">
+                    <div
+                      className={`
                     flex items-center justify-center
                     rounded-xl shadow-md p-5 
                   bg-white/15 backdrop-blur-sm 
@@ -144,27 +153,24 @@ export default function TechStack() {
                     hover:scale-105
                     hover:shadow-[0_0_25px_rgba(16,255,100,0.5)]
                    `}
-                    style={{
-                      boxShadow: `0 0 25px ${color.replace("text-", "")}66`,
-                    }}
-                  >
-                    <Icon 
-                    className={`text-5xl ${color}`} 
-                    title={name} 
-                    aria-hidden
-                    />
-                  </div>
+                      style={{
+                        boxShadow: `0 0 25px ${color.replace("text-", "")}66`,
+                      }}
+                    >
+                      <Icon
+                        className={`text-5xl ${color}`}
+                        title={name}
+                        aria-hidden
+                      />
+                    </div>
 
-                  <span 
-                  className="text-sm text-gray-300 mt-2">
-                    {name}
-                    </span>
-                </li>
-              ))}
-            </ul>
-          </section>
-        ))}
-      </div>
+                    <span className="text-sm text-gray-300 mt-2">{name}</span>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          ))}
+        </div>
       </section>
     </main>
   );
