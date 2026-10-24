@@ -89,13 +89,9 @@ export default function TechStack() {
     {
       title: "Creative Work",
       items: [
-        { Icon: SiAdobephotoshop, color: "text-blue-700", name: "Photoshop" },
-        {
-          Icon: SiAdobepremierepro,
-          color: "text-indigo-700",
-          name: "Premiere Pro",
-        },
-        { Icon: FaFigma, color: "text-cyan-300", name: "Figma" },
+        { Icon: SiAdobephotoshop, name: "Photoshop", color: "text-blue-500" },
+        { Icon: SiAdobepremierepro, name: "Premiere Pro", color: "text-indigo-700" },
+        { Icon: FaFigma, name: "Figma", color: "text-cyan-300" },
       ],
     },
   ];
