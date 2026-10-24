@@ -52,11 +52,11 @@ export default function TechStack() {
     {
       title: "Backend",
       items: [
-        { Icon: FaNodeJs, name: "Node.js", color: "#339933" },
-        { Icon: FaPython, name: "Python", color: "#3776AB" },
-        { Icon: SiDotnet, name: ".NET", color: "#512BD4" },
-        { Icon: SiSupabase, name: "Supabase", color: "#3ECF8E" },
-        { Icon: SiRender, name: "Render", color: "#46E3B7" },
+        { Icon: FaNodeJs, name: "Node.js", color: "text-green-500" },
+        { Icon: FaPython, name: "Python", color: "text-yellow-400" },
+        { Icon: SiDotnet, name: ".NET", color: "text-purple-500" },
+        { Icon: SiSupabase, name: "Supabase", color: "text-emerald-400" },
+        { Icon: SiRender, name: "Render", color: "text-purple-300" },
       ],
     },
     {
