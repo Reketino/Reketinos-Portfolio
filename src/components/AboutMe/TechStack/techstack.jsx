@@ -68,7 +68,7 @@ export default function TechStack() {
       ]
     },
     {
-      title: "Tools",
+      title: "Tools & DevOps",
       items: [
         { Icon: FaGithub, color: "text-white", name: "GitHub" },
         { Icon: FaGitAlt, color: "text-red-400", name: "Git"},
