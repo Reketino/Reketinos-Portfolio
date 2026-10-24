@@ -46,6 +46,7 @@ export default function TechStack() {
         { Icon: SiTypescript, color: "text-blue-600", name: "TypeScript" },
         { Icon: FaReact, color: "text-cyan-500", name: "React" },
         { Icon: SiNextdotjs, color: "text-white", name: "Next.js" },
+        { Icon: SiVite, name: "Vite", color: "#646CFF"},
       ],
     },
     {
