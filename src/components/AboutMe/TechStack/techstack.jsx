@@ -79,6 +79,14 @@ export default function TechStack() {
       ],
     },
     {
+      title: "Operating Systems",
+      items: [
+        { Icon: FaLinux, name: "Linux", color: "text-yellow-400" },
+        { Icon: SiLinuxmint, name: "Linux Mint", color: "text-green-500" },
+        { Icon: FaWindows, name: "Windows", color: "text-cyan-300" },
+      ]
+    },
+    {
       title: "Creative Work",
       items: [
         { Icon: SiAdobephotoshop, color: "text-blue-700", name: "Photoshop" },
