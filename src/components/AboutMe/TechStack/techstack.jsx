@@ -1,4 +1,5 @@
 
+import { title } from "node:process";
 import React from "react";
 
 import {
@@ -58,6 +59,12 @@ export default function TechStack() {
         { Icon: SiSupabase, name: "Supabase", color: "text-emerald-400" },
         { Icon: SiRender, name: "Render", color: "text-purple-300" },
       ],
+    },
+    {
+      title: "Database",
+      items: [
+        { Icon: SiPostgresql, name: "PostegreSQL", color: "text-sky-500" },
+      ]
     },
     {
       title: "Tools",
