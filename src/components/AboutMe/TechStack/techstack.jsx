@@ -1,5 +1,3 @@
-import { color } from "framer-motion";
-import { title } from "node:process";
 import React from "react";
 
 import {
@@ -14,7 +12,6 @@ import {
   FaNodeJs,
   FaLinux,
   FanNpm,
-  FaUbuntu,
   FaWindows,
 } from "react-icons/fa";
 
