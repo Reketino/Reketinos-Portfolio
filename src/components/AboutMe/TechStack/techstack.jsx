@@ -149,9 +149,6 @@ export default function TechStack() {
                     hover:scale-105
                     hover:shadow-[0_0_25px_rgba(16,255,100,0.5)]
                    `}
-                      style={{
-                        boxShadow: `0 0 25px ${color.replace("text-", "")}66`,
-                      }}
                     >
                       <Icon
                         className={`text-5xl ${color}`}
