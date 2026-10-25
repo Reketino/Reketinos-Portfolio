@@ -13,6 +13,7 @@ import {
   FaLinux,
   FanNpm,
   FaWindows,
+  FaLaptopCode,
 } from "react-icons/fa";
 
 import {
@@ -108,14 +109,12 @@ export default function TechStack() {
 
       <section className="relative z-10 w-full ">
         <header>
-          <h2
-            className="
-      text-4xl text-center font-bold 
-      mb-5 mt-5  
-      drop-shadow-[0_0_15px_rgba(16,255,100,0.4)]
-      "
-          >
-            👨🏻‍💻 Tech Stack
+          <h2 className="mb-5 mt-5 flex items-center justify-center gap-3 text-4xl font-bold text-white">
+            <FaLaptopCode
+            className="text-green-500 drop-shadow-[0_0_10px_rgba(34,197,94,0.5)]"
+            aria-hidden="true"
+            />
+            Tech Stack
           </h2>
         </header>
 
