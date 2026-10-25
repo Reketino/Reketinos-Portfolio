@@ -57,7 +57,7 @@ export default function TechStack() {
         { Icon: SiDotnet, name: ".NET", color: "text-purple-700" },
         { Icon: SiSupabase, name: "Supabase", color: "text-emerald-400" },
         { Icon: SiRender, name: "Render", color: "text-purple-300" },
-        { Icon: SiPostgresql, name: "PostegreSQL", color: "text-sky-500" },
+        { Icon: SiPostgresql, name: "PostgreSQL", color: "text-sky-500" },
       ],
     },
     {
