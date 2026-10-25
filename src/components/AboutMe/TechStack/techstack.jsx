@@ -1,3 +1,4 @@
+import { color } from "framer-motion";
 import React from "react";
 
 import {
@@ -14,6 +15,7 @@ import {
   FanNpm,
   FaWindows,
   FaLaptopCode,
+  FaNpm,
 } from "react-icons/fa";
 
 import {
@@ -65,6 +67,7 @@ export default function TechStack() {
       items: [
         { Icon: FaGithub, name: "GitHub", color: "text-white" },
         { Icon: FaGitAlt, name: "Git", color: "text-red-400" },
+        { Icon: FaNpm, name: "npm", color: "text-red-500" },
         {
           Icon: SiGithubactions,
           name: "GitHub Actions",
