@@ -93,12 +93,15 @@ export default function BearWebTopbar({
 
         <button
           className="
-         p-2 rounded-full shrink-0
-         text-neutral-500
-         hover:bg-neutral-800"
+          flex h-9 w-9 shrink-0 items-center justify-center
+          rounded-full text-neutral-400
+          transition-colors
+        hover:bg-white/10 hover:text-white
+          "
           title="Extension"
+          aria-label="Extension"
         >
-          <IoExtensionPuzzle />
+          <Puzzle size={17} />
         </button>
 
         <button
