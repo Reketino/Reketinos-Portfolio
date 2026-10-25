@@ -70,7 +70,7 @@ export default function TechStack() {
           name: "GitHub Actions",
           color: "text-blue-400",
         },
-        { Icon: VscVscode, name: "Vs Code", color: "text-blue-400" },
+        { Icon: VscVscode, name: "VS Code", color: "text-blue-400" },
         { Icon: SiVercel, name: "Vercel", color: "text-gray-300" },
       ],
     },
