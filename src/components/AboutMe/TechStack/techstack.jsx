@@ -1,5 +1,4 @@
 import { color } from "framer-motion";
-import { title } from "node:process";
 import React from "react";
 
 import {
@@ -14,8 +13,9 @@ import {
   FaNodeJs,
   FaLinux,
   FanNpm,
-  FaUbuntu,
   FaWindows,
+  FaLaptopCode,
+  FaNpm,
 } from "react-icons/fa";
 
 import {
@@ -59,7 +59,7 @@ export default function TechStack() {
         { Icon: SiDotnet, name: ".NET", color: "text-purple-700" },
         { Icon: SiSupabase, name: "Supabase", color: "text-emerald-400" },
         { Icon: SiRender, name: "Render", color: "text-purple-300" },
-        { Icon: SiPostgresql, name: "PostegreSQL", color: "text-sky-500" },
+        { Icon: SiPostgresql, name: "PostgreSQL", color: "text-sky-500" },
       ],
     },
     {
@@ -67,12 +67,13 @@ export default function TechStack() {
       items: [
         { Icon: FaGithub, name: "GitHub", color: "text-white" },
         { Icon: FaGitAlt, name: "Git", color: "text-red-400" },
+        { Icon: FaNpm, name: "npm", color: "text-red-500" },
         {
           Icon: SiGithubactions,
-          name: "Github Actions",
+          name: "GitHub Actions",
           color: "text-blue-400",
         },
-        { Icon: VscVscode, name: "Vs Code", color: "text-blue-400" },
+        { Icon: VscVscode, name: "VS Code", color: "text-blue-400" },
         { Icon: SiVercel, name: "Vercel", color: "text-gray-300" },
       ],
     },
@@ -111,14 +112,12 @@ export default function TechStack() {
 
       <section className="relative z-10 w-full ">
         <header>
-          <h2
-            className="
-      text-4xl text-center font-bold 
-      mb-5 mt-5  
-      drop-shadow-[0_0_15px_rgba(16,255,100,0.4)]
-      "
-          >
-            👨🏻‍💻 Tech Stack
+          <h2 className="mb-5 mt-5 flex items-center justify-center gap-3 text-4xl font-bold text-white">
+            <FaLaptopCode
+            className="text-green-500 drop-shadow-[0_0_10px_rgba(34,197,94,0.5)]"
+            aria-hidden="true"
+            />
+            Tech Stack
           </h2>
         </header>
 
@@ -153,9 +152,6 @@ export default function TechStack() {
                     hover:scale-105
                     hover:shadow-[0_0_25px_rgba(16,255,100,0.5)]
                    `}
-                      style={{
-                        boxShadow: `0 0 25px ${color.replace("text-", "")}66`,
-                      }}
                     >
                       <Icon
                         className={`text-5xl ${color}`}
