@@ -35,14 +35,14 @@ export default function BearWebTopbar({
     <header className="bw-topbar">
       <section className="bw-toolbar flex items-center gap-2">
         <nav className="flex shrink-0 items-center gap-2">
-          <button 
-          type="button"
-          disabled={!canGoBack} 
-          onClick={onBack}
-          className="bw-nav-btn"
-          title="Back"
-          aria-label="Go back" 
-         >
+          <button
+            type="button"
+            disabled={!canGoBack}
+            onClick={onBack}
+            className="bw-nav-btn"
+            title="Back"
+            aria-label="Go back"
+          >
             <ChevronLeft size={19} />
           </button>
 
@@ -53,27 +53,26 @@ export default function BearWebTopbar({
             className="bw-nav-btn"
             title="Forward"
             aria-label="Go forward"
-
           >
             <ChevronRight size={19} />
           </button>
 
-          <button 
-          type="button"
-          onClick={onReload} 
-          className="bw-nav-btn"
-          title="Reload"
-          aria-label="Reload page"
+          <button
+            type="button"
+            onClick={onReload}
+            className="bw-nav-btn"
+            title="Reload"
+            aria-label="Reload page"
           >
             <RotateCw size={17} />
           </button>
 
-          <button 
-          type="button"
-          onClick={onHome} 
-          className="bw-nav-btn"
-          title="Home"
-          aria-label="Go home"
+          <button
+            type="button"
+            onClick={onHome}
+            className="bw-nav-btn"
+            title="Home"
+            aria-label="Go home"
           >
             <Home size={17} />
           </button>
