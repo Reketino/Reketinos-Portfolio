@@ -112,7 +112,7 @@ export default function TechStack() {
 
       <section className="relative z-10 w-full ">
         <header>
-          <h2 className="mb-5 mt-5 flex items-center justify-center gap-3 text-4xl font-bold text-white">
+          <h2 className="mb-5 mt-5 flex font-supercharge items-center justify-center gap-3 text-3xl font-bold text-white">
             <FaLaptopCode
             className="text-green-500 drop-shadow-[0_0_10px_rgba(34,197,94,0.5)]"
             aria-hidden="true"
@@ -121,12 +121,7 @@ export default function TechStack() {
           </h2>
         </header>
 
-        <div
-          className="
-      grid grid-cols-1 md:grid-cols-2 
-      gap-10 max-w-5xl mx-auto
-      "
-        >
+        <div className="mx-auto grid w-full max-w-5xl grid-cols-1 gap-5 px-2 sm:px-4 md:grid-cols-2 lg:gap-8">
           {sections.map((section) => (
             <section
               key={section.title}
@@ -136,13 +131,13 @@ export default function TechStack() {
             shadow-xl p-6 
             border-white/20"
             >
-              <h3 className="text-2xl font-semibold text-green-500 mb-4 text-center">
+              <h3 className="text-2xl font-supercharge text-green-500 mb-4 text-center">
                 {section.title}
               </h3>
 
-              <ul className="grid grid-cols-3 sm:grid-cols-4 gap-6 text-center">
+              <ul className="grid grid-cols-2 min-[400px]:grid-cols-3 sm:grid-cols-4 gap-x-3 gap-y-6 text-center">
                 {section.items.map(({ Icon, color, name }) => (
-                  <li key={name} className="flex flex-col items-center">
+                  <li key={name} className="group flex min-w-0 flex-col items-center">
                     <div
                       className={`
                     flex items-center justify-center
@@ -160,7 +155,17 @@ export default function TechStack() {
                       />
                     </div>
 
-                    <span className="text-sm text-gray-300 mt-2">{name}</span>
+                    <span className="
+                  mt-2 block w-full min-w-0
+                  wrap-break-word px-1
+                  text-center text-xs sm:text-sm
+                  font-semibold text-gray-300/90
+                  tracking-wide transition-colors duration-300
+                group-hover:text-green-300
+                    "
+                    >
+                      {name}
+                    </span>
                   </li>
                 ))}
               </ul>
