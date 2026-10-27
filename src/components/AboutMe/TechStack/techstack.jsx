@@ -114,8 +114,8 @@ export default function TechStack() {
         <header>
           <h2 className="mb-5 mt-5 flex font-supercharge items-center justify-center gap-3 text-3xl font-bold text-white">
             <FaLaptopCode
-            className="text-green-500 drop-shadow-[0_0_10px_rgba(34,197,94,0.5)]"
-            aria-hidden="true"
+              className="text-green-500 drop-shadow-[0_0_10px_rgba(34,197,94,0.5)]"
+              aria-hidden="true"
             />
             Tech Stack
           </h2>
@@ -137,7 +137,10 @@ export default function TechStack() {
 
               <ul className="grid grid-cols-2 min-[400px]:grid-cols-3 sm:grid-cols-4 gap-x-3 gap-y-6 text-center">
                 {section.items.map(({ Icon, color, name }) => (
-                  <li key={name} className="group flex min-w-0 flex-col items-center">
+                  <li
+                    key={name}
+                    className="group flex min-w-0 flex-col items-center"
+                  >
                     <div
                       className={`
                     flex items-center justify-center
@@ -155,7 +158,8 @@ export default function TechStack() {
                       />
                     </div>
 
-                    <span className="
+                    <span
+                      className="
                   mt-2 block w-full min-w-0
                   wrap-break-word px-1
                   text-center text-xs sm:text-sm
