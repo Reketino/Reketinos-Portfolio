@@ -1,5 +1,17 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Supercharge";
+  src: url("/fonts/Supercharge-JRgPo.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-supercharge: "Supercharge", sans-serif;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
