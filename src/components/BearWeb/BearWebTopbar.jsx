@@ -91,6 +91,7 @@ export default function BearWebTopbar({
         </header>
 
         <button
+        type="button"
           className="
           flex h-9 w-9 shrink-0 items-center justify-center
           rounded-full text-neutral-400
