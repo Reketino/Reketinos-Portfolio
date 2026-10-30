@@ -11,7 +11,10 @@ export default function SleepScreen() {
     <main
       className="
         fixed inset-0 z-999999
-        flex items-center justify-center
+        flex min-h-dvh items-center 
+        justify-center overflow-hidden 
+        bg-neutral-950 px-5 
+        py-8 sm:px-8
         "
     >
       <section
