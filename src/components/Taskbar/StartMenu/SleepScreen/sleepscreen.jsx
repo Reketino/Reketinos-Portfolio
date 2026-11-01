@@ -44,6 +44,10 @@ export default function SleepScreen() {
       to-black/80
       "
         />
+
+      <div className="absolute inset-0 
+      bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(0,0,0,0.45)_100%)]"
+      />
       </section>
 
       <header
