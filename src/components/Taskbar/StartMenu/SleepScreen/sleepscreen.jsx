@@ -16,6 +16,8 @@ export default function SleepScreen() {
         bg-neutral-950 px-5 
         py-8 sm:px-8
         "
+        role="status"
+        aria-label="Sleep screen"
     >
       <section
         className={`
@@ -28,14 +30,18 @@ export default function SleepScreen() {
           src="/sleepscreen/sleepscreen.webp"
           alt="Gimsdalstind"
           fill
-          className="object-cover"
+          priority
+          sizes="100vw"
+          className="object-cover object-center"
         />
 
         <div
           className="
       absolute inset-0 
-      bg-black/90
-      backdrop-blur-[0.5px]
+      bg-linear-to-b
+      from-black/45
+      via-black/55
+      to-black/80
       "
         />
       </section>
