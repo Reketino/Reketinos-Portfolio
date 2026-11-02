@@ -52,9 +52,14 @@ export default function SleepScreen() {
 
       <header
         className={`
-      relative text-center
-      transition-opacity duration-300
-      ${fade ? "opacity-100" : "opacity-0"}
+      relative flex w-full z-10
+      max-w-3xl flex-col items-center
+      text-center
+      transition-all duration-700 ease-out
+      ${fade 
+        ? "translate-y-0 opacity-100" 
+        : "translate-y-3 opacity-0"
+      }
       `}
       >
         <p className="font-mono text-red-950 text-4xl animate-pulse">
