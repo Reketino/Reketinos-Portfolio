@@ -62,9 +62,15 @@ export default function SleepScreen() {
       }
       `}
       >
-        <p className="font-mono text-red-950 text-4xl animate-pulse">
+        <p className="
+        text-balance text-3xl text-white 
+        sm:text-4xl md:text-5xl lg:text-6xl 
+        [text-shadow:0_2px_24px_rgba(0,0,0,0.45)]animate-pulse
+        "
+        >
           Reketino's Portfolio
         </p>
+
         <p className="mt-4 font-mono text-red-50 text-sm">
           press any button to wake
         </p>
