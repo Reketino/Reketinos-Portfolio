@@ -71,6 +71,13 @@ export default function SleepScreen() {
           Reketino's Portfolio
         </p>
 
+        <div className="
+        mt-5 h-px w-12 sm:mt-6 sm:w-16
+        bg-linear-to-r from-transparent
+        via-red-400 to-transparent 
+        "
+        />
+
         <p className="mt-4 font-mono text-red-50 text-sm">
           press any button to wake
         </p>
