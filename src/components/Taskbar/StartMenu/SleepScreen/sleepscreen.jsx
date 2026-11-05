@@ -72,9 +72,10 @@ export default function SleepScreen() {
         </p>
 
         <div className="
-        mt-5 h-px w-12 sm:mt-6 sm:w-16
-        bg-linear-to-r from-transparent
-        via-red-400 to-transparent 
+        mt-5 h-px w-12 
+        bg-linear-to-r
+        from-transparent via-red-400 
+        to-transparent sm:mt-6 sm:w-16
         "
         />
 
