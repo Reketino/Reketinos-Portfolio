@@ -52,6 +52,7 @@ export default function Desktop() {
         "backgrounds/desktop4.webp",
         "backgrounds/desktop5.webp",
         "backgrounds/desktop6.webp",
+        "backgrounds/desktop7.webp",
       ],
       onOpen: () => setOpenFolder(true),
     },
