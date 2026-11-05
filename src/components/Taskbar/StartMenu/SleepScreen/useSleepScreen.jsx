@@ -6,6 +6,8 @@ export function useSleepScreen() {
   const [fade, setFade] = useState(false);
   const [bgFade, setBgFade] = useState(false);
 
+  const timersRef = useRef([]);
+
   //   Trigger functions globally
   useEffect(() => {
     window.enterSleep = () => {
