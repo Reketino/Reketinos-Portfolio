@@ -16,8 +16,8 @@ export default function SleepScreen() {
         bg-neutral-950 px-5 
         py-8 sm:px-8
         "
-        role="status"
-        aria-label="Sleep screen"
+      role="status"
+      aria-label="Sleep screen"
     >
       <section
         className={`
@@ -45,9 +45,10 @@ export default function SleepScreen() {
       "
         />
 
-      <div className="absolute inset-0 
+        <div
+          className="absolute inset-0 
       bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(0,0,0,0.45)_100%)]"
-      />
+        />
       </section>
 
       <header
@@ -56,13 +57,11 @@ export default function SleepScreen() {
       max-w-3xl flex-col items-center
       text-center
       transition-all duration-700 ease-out
-      ${fade 
-        ? "translate-y-0 opacity-100" 
-        : "translate-y-3 opacity-0"
-      }
+      ${fade ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"}
       `}
       >
-        <p className="
+        <p
+          className="
         text-balance text-3xl text-white 
         sm:text-4xl md:text-5xl lg:text-6xl 
         [text-shadow:0_2px_24px_rgba(0,0,0,0.45)]animate-pulse
@@ -70,6 +69,17 @@ export default function SleepScreen() {
         >
           Reketino's Portfolio
         </p>
+
+        <div
+          className="
+        mt-5
+        text-xs font-medium tracking-[0.18em]
+        text-white/75
+        uppercase
+        sm:text-sm
+        sm:tracking-[0.22em]
+        "
+        />
 
         <p className="mt-4 font-mono text-red-50 text-sm">
           press any button to wake
