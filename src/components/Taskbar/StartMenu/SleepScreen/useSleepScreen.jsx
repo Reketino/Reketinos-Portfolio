@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState, useRef, useCallback } from "react";
+import { clearTimeout } from "timers";
 
 export function useSleepScreen() {
   const [active, setActive] = useState(false);
@@ -8,6 +9,11 @@ export function useSleepScreen() {
 
   const timersRef = useRef([]);
   const wakingRef = useRef(false);
+
+  const clearTimers = useCallback(() => {
+    timersRef.current.forEach((timer) => clearTimeout(timer));
+    timersRef.current = [];
+  })
 
   //   Trigger functions globally
   useEffect(() => {
