@@ -15,6 +15,12 @@ export function useSleepScreen() {
     timersRef.current = [];
   })
 
+  const schedule = useCallback((callback, delay) => {
+    const timer = setTimeout(callback, delay);
+    timersRef.current.push(timer);
+    return timer;
+  }, []);
+
   //   Trigger functions globally
   useEffect(() => {
     window.enterSleep = () => {
