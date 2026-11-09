@@ -21,6 +21,11 @@ export function useSleepScreen() {
     return timer;
   }, []);
 
+  const exitSleep = useCallback(() => {
+    if (wakingRef.current) return;
+    
+  })
+
   //   Trigger functions globally
   useEffect(() => {
     window.enterSleep = () => {
