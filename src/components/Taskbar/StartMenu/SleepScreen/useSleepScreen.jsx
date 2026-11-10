@@ -24,6 +24,10 @@ export function useSleepScreen() {
   const exitSleep = useCallback(() => {
     if (wakingRef.current) return;
     
+    wakingRef.current = true;
+
+    clearTimers();
+    
   })
 
   //   Trigger functions globally
