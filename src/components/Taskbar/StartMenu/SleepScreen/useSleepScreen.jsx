@@ -27,7 +27,8 @@ export function useSleepScreen() {
     wakingRef.current = true;
 
     clearTimers();
-    
+
+    setFade(false);
   })
 
   //   Trigger functions globally
