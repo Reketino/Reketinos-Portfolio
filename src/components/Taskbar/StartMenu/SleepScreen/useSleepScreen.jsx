@@ -29,6 +29,13 @@ export function useSleepScreen() {
     clearTimers();
 
     setBgFade(false);
+
+  schedule(() => {
+    window.disableStartMenuClick = false;
+    setActive(false);
+    wakingRef.current = false;
+  }, 700);
+
   })
 
   //   Trigger functions globally
