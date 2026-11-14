@@ -28,6 +28,7 @@ export function useSleepScreen() {
 
     clearTimers();
 
+    setFade(false);
     setBgFade(false);
 
   schedule(() => {
