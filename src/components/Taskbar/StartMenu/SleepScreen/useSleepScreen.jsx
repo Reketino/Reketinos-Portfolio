@@ -37,7 +37,7 @@ export function useSleepScreen() {
     wakingRef.current = false;
   }, 700);
 
-  }, [clearTimers, schedule])
+  }, [clearTimers, schedule]);
 
   //   Trigger functions globally
   useEffect(() => {
