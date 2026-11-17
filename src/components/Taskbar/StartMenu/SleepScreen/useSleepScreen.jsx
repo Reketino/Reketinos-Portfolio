@@ -39,6 +39,14 @@ export function useSleepScreen() {
 
   }, [clearTimers, schedule]);
 
+  useEffect(() => {
+    window.enterSleep = () => {
+      if (window.closeStartMenu) {
+        window.closeStartMenu();
+      }
+    }
+  })
+
   //   Trigger functions globally
   useEffect(() => {
     window.enterSleep = () => {
