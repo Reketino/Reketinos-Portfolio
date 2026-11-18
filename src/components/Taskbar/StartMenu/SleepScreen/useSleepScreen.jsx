@@ -44,6 +44,8 @@ export function useSleepScreen() {
       if (window.closeStartMenu) {
         window.closeStartMenu();
       }
+
+      clearTimers();
     }
   })
 
