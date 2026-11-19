@@ -46,6 +46,8 @@ export function useSleepScreen() {
       }
 
       clearTimers();
+
+      wakingRef.current = false;
     }
   })
 
