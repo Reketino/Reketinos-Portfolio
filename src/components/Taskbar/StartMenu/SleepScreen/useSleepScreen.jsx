@@ -49,6 +49,8 @@ export function useSleepScreen() {
 
       wakingRef.current = false;
       window.disableStartMenuClick = true;
+
+      setFade(false);
     }
   })
 
