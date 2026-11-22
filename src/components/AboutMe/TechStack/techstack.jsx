@@ -16,6 +16,7 @@ import {
   FaWindows,
   FaLaptopCode,
   FaNpm,
+  FaDocker,
 } from "react-icons/fa";
 
 import {
