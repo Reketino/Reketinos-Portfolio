@@ -12,10 +12,10 @@ import {
   FaFigma,
   FaNodeJs,
   FaLinux,
-  FanNpm,
   FaWindows,
   FaLaptopCode,
   FaNpm,
+  FaDocker,
 } from "react-icons/fa";
 
 import {
@@ -68,6 +68,7 @@ export default function TechStack() {
         { Icon: FaGithub, name: "GitHub", color: "text-white" },
         { Icon: FaGitAlt, name: "Git", color: "text-red-400" },
         { Icon: FaNpm, name: "npm", color: "text-red-500" },
+        { Icon: FaDocker, name: "Docker", color: "text-blue-400" },
         {
           Icon: SiGithubactions,
           name: "GitHub Actions",
