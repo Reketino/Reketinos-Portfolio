@@ -12,7 +12,6 @@ import {
   FaFigma,
   FaNodeJs,
   FaLinux,
-  FanNpm,
   FaWindows,
   FaLaptopCode,
   FaNpm,
