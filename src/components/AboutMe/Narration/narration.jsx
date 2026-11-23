@@ -83,8 +83,9 @@ export default function Narration() {
       />
       
       <motion.p
-      className="text-sm text-gray-300 mt-3 italic"
+      className="mt-3 text-sm italic text-gray-300"
       animate={{ opacity: isPlaying ? 1 : 0.6 }}
+      aria-live="polite"
       >
       {isPlaying ? "🎙️ Narration playing..." : "🔊 Hear narration"}
       </motion.p>
