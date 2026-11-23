@@ -11,7 +11,7 @@ export default function Narration() {
   const [isLoading, setIsLoading] = useState(false);
   const [hasError, setHasError] = useState(false);
 
-  const toggleAudio = () => {
+  const toggleAudio = async () => {
     const audio = audioRef.current;
 
     if (!audio) return;
@@ -21,7 +21,14 @@ export default function Narration() {
       return;
     }
 
-    
+    try {
+      setHasError(false);
+      await audio.play();
+    } catch (error) {
+      console.error("Unable to play narration:", error);
+      setHasError(true);
+    }
+  }
 
   return (
     <main>
