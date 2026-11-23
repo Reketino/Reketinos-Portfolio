@@ -4,10 +4,7 @@ import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Play, Pause, LoaderCircle } from "lucide-react";
 
-export default function AudioPlayer({
-    src,
-    label = "Hear narration",
-}) {
+export default function AudioPlayer({ src, label = "Hear narration" }) {
   const audioRef = useRef(null);
 
   const [isPlaying, setIsPlaying] = useState(false);
