@@ -35,14 +35,12 @@ export default function AudioPlayer({ src, label = "Hear narration" }) {
       <motion.button
         type="button"
         onClick={toggleAudio}
-        disabled={isLoading}
         aria-label={isPlaying ? `Pause: ${label}` : `Play: ${label}`}
         aria-pressed={isPlaying}
         className={`   
         flex h-20 w-20 items-center justify-center
         rounded-full border-2 border-amber-400/70
         shadow-lg backdrop-blur-lg transition-all
-        disabled:cursor-wait disabled:opacity-60
         focus-visible:outline-none
         focus-visible:ring-2 focus-visible:ring-amber-400
         focus-visible:ring-offset-2 focus-visible:ring-offset-black
