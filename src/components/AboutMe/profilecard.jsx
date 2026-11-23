@@ -54,8 +54,7 @@ export default function ProfileCard() {
           >
             <p>
               🧔🏻 29 years old | 📍 Sykkylven, More & Romsdal, Norway | 🎓
-              Participant at{" "}
-              <span className="text-amber-300 font-semibold">Kodehode</span>
+              <span className="text-amber-300 font-semibold">{" "} Kodehode Graduate</span>
             </p>
             <p>
               I`ve spent over 20 years around computers — from 🎮 gaming and
