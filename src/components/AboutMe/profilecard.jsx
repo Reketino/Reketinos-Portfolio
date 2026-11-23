@@ -53,7 +53,7 @@ export default function ProfileCard() {
           className={`${inter.className} mt-8 text-gray-200 space-y-4 leading-relaxed`}
         >
           <p>
-            🧔🏻 29 years old | 📍 Sykkylven, More & Romsdal, Norway | 🎓
+            🧔🏻 29 years old | 📍 Sykkylven, Møre & Romsdal, Norway | 🎓
             <span className="text-amber-300 font-semibold">
               {" "}
               Kodehode Graduate
