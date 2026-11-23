@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import HobbyCard from "./hobbycard";
 import MediaBox from "./mediabox";
 import SteamCard from "./steamcard";
-import NarrationTwo from "./Narration/narrationtwo";
+import AudioPlayer from "./AudioPlayer/AudioPlayer";
 
 export default function HobbiesSection() {
   return (
