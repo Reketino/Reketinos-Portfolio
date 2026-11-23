@@ -6,7 +6,10 @@ import { Play, Pause, LoaderCircle } from 'lucide-react';
 
 export default function Narration() {
   const audioRef = useRef(null);
+
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [hasError, setHasError] = useState(false);
 
   const toggleAudio = () => {
     const audio = audioRef.current;
