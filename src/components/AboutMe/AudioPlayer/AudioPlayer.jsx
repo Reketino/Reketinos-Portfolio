@@ -36,7 +36,7 @@ export default function AudioPlayer({ src, label = "Hear narration" }) {
         type="button"
         onClick={toggleAudio}
         disabled={isLoading}
-        aria-label={isPlaying ? "Pause narration" : "Play narration"}
+        aria-label={isPlaying ? `Pause: ${label}` : `Play: ${label}`}
         aria-pressed={isPlaying}
         className={`   
         flex h-20 w-20 items-center justify-center
