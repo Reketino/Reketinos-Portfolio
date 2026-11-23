@@ -4,7 +4,10 @@ import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Play, Pause, LoaderCircle } from "lucide-react";
 
-export default function Narration() {
+export default function Narration({
+    src,
+    label = "Hear narration",
+}) {
   const audioRef = useRef(null);
 
   const [isPlaying, setIsPlaying] = useState(false);
