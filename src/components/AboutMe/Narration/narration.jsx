@@ -87,7 +87,13 @@ export default function Narration() {
       animate={{ opacity: isPlaying ? 1 : 0.6 }}
       aria-live="polite"
       >
-      {isPlaying ? "🎙️ Narration playing..." : "🔊 Hear narration"}
+      {hasError 
+      ? "Unable to load narration" 
+      : isLoading
+       ? "Loading narration..."
+      : isPlaying
+      ? "Narration playing..."
+    : "Hear narration"}
       </motion.p>
     </section>
   );
