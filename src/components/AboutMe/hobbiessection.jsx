@@ -83,12 +83,12 @@ export default function HobbiesSection() {
                   <HobbyCard title="🎬 Video Editing">
                  <MediaBox src="https://www.youtube.com/embed/EVIE_8xvWws?si=4iDvqcDL7Pa79HSQ"/>
                  </HobbyCard>
-    
+                 </ul>
+
                   <AudioPlayer
                   src="/audio/hobby.mp3"
                   label="Hear about my hobbies"
                   />
-                </ul>
               </section>
             </div>
           </motion.section>
