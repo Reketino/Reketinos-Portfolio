@@ -6,7 +6,6 @@ import HobbiesSection from "./hobbiessection";
 
 const outfit = Outfit({ subsets: ["latin"], weight: ["400", "600", "700"] });
 
-
 export default function AboutMe() {
   return (
     <main
@@ -17,20 +16,23 @@ export default function AboutMe() {
       px-4 sm:px-6 md:px-12 py-10`}
       style={{ backgroundImage: "url('/bg.png')" }}
     >
-      <div className="
+      <div
+        className="
       absolute inset-0 
       bg-linear-to-b from-black/40 
       via-black/30 to-black/40
-      " />
+      "
+      />
 
-     <section className="
+      <section
+        className="
      relative flex flex-col
      items-center gap-12 z-10
-     ">
-     <ProfileCard />
-     <HobbiesSection />
-     </section>
-
+     "
+      >
+        <ProfileCard />
+        <HobbiesSection />
+      </section>
     </main>
   );
 }
