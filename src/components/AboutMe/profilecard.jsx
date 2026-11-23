@@ -57,12 +57,14 @@ export default function ProfileCard() {
               <span className="text-amber-300 font-semibold">{" "} Kodehode Graduate</span>
             </p>
             <p>
-              I`ve spent over 20 years around computers — from 🎮 gaming and
-              digital creativity to 🎬 video and 📸 photo editing — but it
-              wasn`t until{" "}
-              <span className="text-amber-300 font-semibold">Kodehode</span>{" "}
-              that I discovered how naturally coding fits the way I think and
-              create.
+  I've spent over 20 years around computers — from 🎮 gaming and
+  digital creativity to 🎬 video and 📸 photo editing. After
+  completing the{" "}
+              <span className="text-amber-300 font-semibold">
+               Kodehode programming course
+              </span>
+  , I discovered how naturally coding fits the way I think and
+  create.
             </p>
             <p>
               Today I focus on building clean, responsive and engaging web
