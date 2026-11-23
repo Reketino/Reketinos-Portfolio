@@ -51,6 +51,7 @@ export function useSleepScreen() {
       window.disableStartMenuClick = true;
 
       setFade(false);
+      setBgFade(false);
     }
   })
 
