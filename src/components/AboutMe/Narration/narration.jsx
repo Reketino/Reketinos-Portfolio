@@ -54,10 +54,12 @@ export default function Narration() {
        whileHover={{ scale: 1.1 }}
        whileTap={{ scale: 0.95 }}
       >
-    {isPlaying ? (
-       <Pause className="w-10 h-10 text-amber-300" />
+    {isLoading ? (
+       <LoaderCircle className="w-10 h-10 animate-spin text-amber-300" />
+          ) : isPlaying ? (
+            <Pause className="h-10 w-10 text-amber-300" />
           ) : (
-            <Play className="w-10 h-10 text-amber-300 ml-1" />
+            <Play className="ml-1 h-10 w-10 text-amber-300" />
           )}
       </motion.button>
 
