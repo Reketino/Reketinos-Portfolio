@@ -31,19 +31,25 @@ export default function Narration() {
   }
 
   return (
-    <main>
-
-      <motion.div
-      className='flex flex-col items-center mt-12'
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, delay: 0.3 }}
-      >
-
+    <section className='mt-12 flex flex-col items-center'>
       <motion.button
+      type='button'
       onClick={toggleAudio}
-      className={`w-20 h-20 rounded-full flex items-center justify-center shadow-lg border-2 border-amber-400/70 backdrop-blur-lg transition-all
-      ${isPlaying ? "bg-amber-400/20 shadow-amber-400/50" : "bg-white/10 hover:bg-white/20"}
+      disabled={isLoading}
+      aria-label={isPlaying ? "Pause narration" : "Play narration"}
+      aria-pressed={isPlaying}
+      className={`   
+        flex h-20 w-20 items-center justify-center
+        rounded-full border-2 border-amber-400/70
+        shadow-lg backdrop-blur-lg transition-all
+        disabled:cursor-wait disabled:opacity-60
+        focus-visible:outline-none
+        focus-visible:ring-2 focus-visible:ring-amber-400
+        focus-visible:ring-offset-2 focus-visible:ring-offset-black
+      ${isPlaying 
+        ? "bg-amber-400/20 shadow-amber-400/50" 
+        : "bg-white/10 hover:bg-white/20"
+      }
        `}
        whileHover={{ scale: 1.1 }}
        whileTap={{ scale: 0.95 }}
@@ -67,7 +73,6 @@ export default function Narration() {
       >
       {isPlaying ? "🎙️ Narration playing..." : "🔊 Hear narration"}
       </motion.p>
-      </motion.div>
-    </main>
+    </section>
   );
 }
