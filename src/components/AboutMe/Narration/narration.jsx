@@ -65,8 +65,21 @@ export default function Narration() {
 
       <audio 
       ref={audioRef} 
-      src='/audio/about me.mp3' 
-      onEnded={() => setIsPlaying (false)}
+      src="/audio/about me.mp3"
+      preload="metadata"
+      onPlay={() => {
+        setIsPlaying(true);
+        setIsLoading(false);
+      }}
+      onPause={() => setIsPlaying(false)}
+      onEnded={() => setIsPlaying(false)}
+      onWaiting={() => setIsLoading(true)}
+      onCanPlay={() => setIsLoading(false)}
+      onError={() => {
+        setIsPlaying(false);
+        setIsLoading(false);
+        setHasError(true);
+      }}
       />
       
       <motion.p
