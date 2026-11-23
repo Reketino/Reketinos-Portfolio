@@ -1,7 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Outfit, Inter } from "next/font/google";
-import Narration from "./Narration/narration";
+import AudioPlayer from "./AudioPlayer/AudioPlayer";
 
 const outfit = Outfit({ subsets: ["latin"], weight: ["400", "600", "700"] });
 const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "600"] });
@@ -51,7 +53,7 @@ export default function ProfileCard() {
           className={`${inter.className} mt-8 text-gray-200 space-y-4 leading-relaxed`}
         >
           <p>
-            🧔🏻 29 years old | 📍 Sykkylven, More & Romsdal, Norway | 🎓
+            🧔🏻 29 years old | 📍 Sykkylven, Møre & Romsdal, Norway | 🎓
             <span className="text-amber-300 font-semibold">
               {" "}
               Kodehode Graduate
@@ -84,7 +86,10 @@ export default function ProfileCard() {
             collaborative — I enjoy working with others, sharing ideas, and
             creating something better together.
           </p>
-          <Narration />
+          <AudioPlayer
+          src="/audio/about-me.mp3"
+          label="Hear my introduction"
+          />
         </div>
       </div>
     </motion.section>

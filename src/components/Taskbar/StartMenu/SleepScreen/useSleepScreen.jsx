@@ -52,6 +52,7 @@ export function useSleepScreen() {
 
       setFade(false);
       setBgFade(false);
+      setActive(true);
     }
   })
 
