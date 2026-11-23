@@ -31,9 +31,9 @@ export default function Narration() {
   }
 
   return (
-    <section className='mt-12 flex flex-col items-center'>
+    <section className="mt-12 flex flex-col items-center">
       <motion.button
-      type='button'
+      type="button"
       onClick={toggleAudio}
       disabled={isLoading}
       aria-label={isPlaying ? "Pause narration" : "Play narration"}
