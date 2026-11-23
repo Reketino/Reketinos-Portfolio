@@ -2,7 +2,7 @@
 
 import { useRef, useState } from 'react'
 import { motion } from 'framer-motion';
-import { Play, Pause } from 'lucide-react';
+import { Play, Pause, LoaderCircle } from 'lucide-react';
 
 export default function Narration() {
   const audioRef = useRef(null);
