@@ -13,6 +13,7 @@ export default function Narration() {
 
   const toggleAudio = () => {
     const audio = audioRef.current;
+    
     if (!audio) return;
 
     if (isPlaying) {
