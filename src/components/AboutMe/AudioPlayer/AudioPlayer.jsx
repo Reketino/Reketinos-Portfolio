@@ -69,7 +69,7 @@ export default function AudioPlayer({
 
       <audio
         ref={audioRef}
-        src="/audio/about me.mp3"
+        src={src}
         preload="metadata"
         onPlay={() => {
           setIsPlaying(true);
