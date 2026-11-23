@@ -84,7 +84,10 @@ export default function HobbiesSection() {
                  <MediaBox src="https://www.youtube.com/embed/EVIE_8xvWws?si=4iDvqcDL7Pa79HSQ"/>
                  </HobbyCard>
     
-                  <NarrationTwo className="mt-4" />
+                  <AudioPlayer
+                  src="/audio/hobby.mp3"
+                  label="Hear about my hobbies"
+                  />
                 </ul>
               </section>
             </div>
