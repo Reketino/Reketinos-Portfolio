@@ -86,7 +86,7 @@ export default function HobbiesSection() {
             </HobbyCard>
           </ul>
 
-          <AudioPlayer src="/audio/hobby.mp3" label="Hear about my hobbies" />
+          <AudioPlayer src="/audio/hobbies.mp3" label="Hear about my hobbies" />
         </section>
       </div>
     </motion.section>
