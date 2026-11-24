@@ -53,8 +53,11 @@ export default function HobbiesSection() {
               <MediaBox src="https://www.youtube.com/embed/Cm_TeuKtgRw?si=ungy74VpeyRF-BrO" />
             </HobbyCard>
 
-            <HobbyCard title="❄️ Winter sports">
-            <p className="text-blue-400">
+            <HobbyCard 
+            title="❄️ Winter Sports"
+            titleClassName ="text-blue-500"
+            >
+            <p className="text-blue-300">
               Snowshoeing, Snowboarding & Splitboarding
             </p>
             </HobbyCard>
