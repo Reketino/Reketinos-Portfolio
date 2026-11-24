@@ -54,7 +54,7 @@ export default function HobbiesSection() {
             </HobbyCard>
 
             <HobbyCard title="❄️ Winter sports">
-            <p className="text-blue-400 font-semibold">
+            <p className="text-blue-400">
               ❄️ Winter sports: snowshoeing, snowboarding, splitboarding
             </p>
             </HobbyCard>
