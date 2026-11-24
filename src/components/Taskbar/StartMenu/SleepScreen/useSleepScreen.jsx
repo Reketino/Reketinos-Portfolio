@@ -53,7 +53,9 @@ export function useSleepScreen() {
       setFade(false);
       setBgFade(false);
       setActive(true);
-    }
+    };
+
+    windows.exitSleep = exitSleep;
   })
 
   //   Trigger functions globally
