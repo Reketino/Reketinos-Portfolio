@@ -56,6 +56,14 @@ export function useSleepScreen() {
     };
 
     windows.exitSleep = exitSleep;
+
+    return () => {
+      clearTimers();
+
+      delete window.enterSleep;
+      delete window.exitSleep;
+    };
+    
   })
 
   //   Trigger functions globally
