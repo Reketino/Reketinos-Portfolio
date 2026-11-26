@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useState, useRef, useCallback } from "react";
-import { clearTimeout } from "timers";
 
 export function useSleepScreen() {
   const [active, setActive] = useState(false);
