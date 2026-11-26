@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useState, useRef, useCallback } from "react";
-import { clearTimeout } from "timers";
 
 export function useSleepScreen() {
   const [active, setActive] = useState(false);
@@ -13,7 +12,7 @@ export function useSleepScreen() {
   const clearTimers = useCallback(() => {
     timersRef.current.forEach((timer) => clearTimeout(timer));
     timersRef.current = [];
-  })
+  }, []);
 
   const schedule = useCallback((callback, delay) => {
     const timer = setTimeout(callback, delay);
