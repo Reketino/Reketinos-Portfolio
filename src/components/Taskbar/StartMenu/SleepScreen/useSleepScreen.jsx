@@ -55,7 +55,7 @@ export function useSleepScreen() {
       setActive(true);
     };
 
-    windows.exitSleep = exitSleep;
+    window.exitSleep = exitSleep;
 
     return () => {
       clearTimers();
@@ -63,6 +63,12 @@ export function useSleepScreen() {
       delete window.enterSleep;
       delete window.exitSleep;
     };
+    
+  }, [clearTimers,exitSleep]);
+
+  useEffect(() => {
+    if (!active) return;
+
     
   })
 
