@@ -68,6 +68,7 @@ export function useSleepScreen() {
   useEffect(() => {
     if (!active) return;
 
+    schedule(() => setFade(true), 50);
     
   })
 
