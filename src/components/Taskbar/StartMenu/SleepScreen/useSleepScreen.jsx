@@ -75,7 +75,11 @@ export function useSleepScreen() {
 
     window.addEventListener("keydown", wake);
     window.addEventListener("pointerdown", wake);
-    
+
+    return () => {
+      window.removeEventListener("keydown", wake);
+      window.removeEventListener("pointerdown", wake);
+    };
   });
 
   //   Trigger functions globally
