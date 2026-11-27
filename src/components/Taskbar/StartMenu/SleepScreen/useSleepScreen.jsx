@@ -72,6 +72,8 @@ export function useSleepScreen() {
     schedule(() => setBgFade(true), 100);
 
     const wake = () => exitSleep();
+
+    window.addEventListener("keydown", wake);
     
   });
 
