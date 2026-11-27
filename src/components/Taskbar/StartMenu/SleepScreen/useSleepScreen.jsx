@@ -86,4 +86,9 @@ export function useSleepScreen() {
     return clearTimers;
   }, [clearTimers]);
 
-  
+  return {
+    active,
+    fade,
+    bgFade,
+  };
+}
