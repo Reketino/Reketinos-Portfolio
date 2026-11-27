@@ -103,7 +103,7 @@ export default function ChatBear() {
                 hover:text-white
                   active:scale-95"
               >
-                X
+                <X size={18} strokeWidth={2} />
               </button>
             </header>
 
