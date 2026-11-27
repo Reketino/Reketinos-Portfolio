@@ -22,7 +22,7 @@ export function useSleepScreen() {
 
   const exitSleep = useCallback(() => {
     if (wakingRef.current) return;
-    
+
     wakingRef.current = true;
 
     clearTimers();
@@ -30,12 +30,11 @@ export function useSleepScreen() {
     setFade(false);
     setBgFade(false);
 
-  schedule(() => {
-    window.disableStartMenuClick = false;
-    setActive(false);
-    wakingRef.current = false;
-  }, 700);
-
+    schedule(() => {
+      window.disableStartMenuClick = false;
+      setActive(false);
+      wakingRef.current = false;
+    }, 700);
   }, [clearTimers, schedule]);
 
   useEffect(() => {
@@ -62,52 +61,28 @@ export function useSleepScreen() {
       delete window.enterSleep;
       delete window.exitSleep;
     };
-    
-  }, [clearTimers,exitSleep]);
+  }, [clearTimers, exitSleep]);
 
   useEffect(() => {
     if (!active) return;
 
     schedule(() => setFade(true), 50);
-    
-  })
+    schedule(() => setBgFade(true), 100);
 
-  //   Trigger functions globally
-  useEffect(() => {
-    window.enterSleep = () => {
-      if (window.closeStartMenu) window.closeStartMenu();
-      window.disableStartMenuClick = true;
-      setActive(true);
-    };
+    const wake = () => exitSleep();
 
-    window.exitSleep = () => {
-      setFade(false);
-
-      setTimeout(() => {
-        window.disableStartMenuClick = false;
-        setActive(false);
-      }, 300);
-    };
-  }, []);
-
-  // Fade & background fade
-  useEffect(() => {
-    if (!active) return;
-    setTimeout(() => setFade(true), 0);
-    setTimeout(() => setBgFade(true), 50);
-
-    const wake = () => {
-      window.exitSleep();
-    };
-
-    window.addEventListener("keydown", wake, { once: true });
-    window.addEventListener("pointerdown", wake, { once: true });
+    window.addEventListener("keydown", wake);
+    window.addEventListener("pointerdown", wake);
 
     return () => {
       window.removeEventListener("keydown", wake);
       window.removeEventListener("pointerdown", wake);
     };
-  }, [active]);
+  }, [active, exitSleep, schedule]);
+
+  useEffect(() => {
+    return clearTimers;
+  }, [clearTimers]);
 
   return {
     active,
