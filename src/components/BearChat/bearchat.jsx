@@ -27,8 +27,6 @@ export default function BearChat({ setIsAnswering }) {
   }, [messages, loading, error]);
 
   async function askBear() {
-    if (!input.trim() || loading) return;
-
     const userMessage = input;
 
     // Usermessage pop up immediately
