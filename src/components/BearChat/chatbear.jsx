@@ -100,6 +100,8 @@ export default function ChatBear() {
               "
               >
                 <Sparkles className="h-4 w-4 text-amber-400" />
+
+                <span className="absolute -bottom-1 -right-1 h-2.5 w-2.5 rounded-full border-2 border-neutral-950 bg-green-500" />
               </div>
               <h3 className="text-sm font-semibold text-amber-400">🐻BearAI</h3>
               </div>
