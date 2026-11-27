@@ -105,7 +105,10 @@ export default function ChatBear() {
               </div>
 
               <div>
-              <h3 className="text-sm font-semibold tracking-wide text-neutral-100">BearAI</h3>
+              <h3 className="text-sm font-semibold tracking-wide text-neutral-100">
+                BearAI
+                </h3>
+                
               </div>
               </div>
               <button
