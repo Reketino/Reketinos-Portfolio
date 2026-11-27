@@ -1,8 +1,9 @@
 "use client";
 import { useEffect, useState } from "react";
-import BearChat from "./bearchat";
+import { X, Panda } from "lucide-react";
 import Image from "next/image";
 import ChatBubble from "./chatbubble";
+import BearChat from "./bearchat";
 
 export default function ChatBear() {
   const [open, setOpen] = useState(false);
@@ -10,7 +11,6 @@ export default function ChatBear() {
   const [isAnswering, setIsAnswering] = useState(false);
 
   useEffect(() => {
-    // Bubble only pop up first time
     const seen = sessionStorage.getItem("chatBubbleSeen");
     if (!seen) {
       setShowBubble(true);
@@ -88,13 +88,45 @@ export default function ChatBear() {
           animate-pop-from-bear
           "
           >
-            <header className="flex justify-between items-center mb-2">
-              <h3 className="text-sm font-semibold text-amber-400">🐻BearAI</h3>
+            <header className="mb-4 flex items-center justify-between border-b border-neutral-800/80 pb-3">
+              <div className="flex items-center gap-3">
+                <div
+                  className="
+              relative flex h-9 w-9 items-center 
+              justify-center rounded-xl border 
+              border-amber-500/20 
+              bg-linear-to-br from-amber-500/15 to-neutral-900 
+              shadow-lg shadow-amber-500/5
+              "
+                >
+                  <Panda className="h-4 w-4 text-amber-400" />
+
+                  <span className="absolute -bottom-1 -right-1 h-2.5 w-2.5 rounded-full border-2 border-neutral-950 bg-green-500" />
+                </div>
+
+                <div>
+                  <h3 className="text-sm font-semibold tracking-wide text-neutral-100">
+                    BearAI
+                  </h3>
+
+                  <p className="mt-0.5 text-xs text-neutral-500">
+                    Your AI assistant
+                  </p>
+                </div>
+              </div>
               <button
                 onClick={() => setOpen(false)}
-                className="text-neutral-400 hover:text-white"
+                aria-label="Close BearAi"
+                className="
+                  flex h-8 w-8 items-center justify-center
+                  rounded-lg
+                text-neutral-400
+                  transition-all duration-200
+                hover:bg-neutral-800
+                hover:text-white
+                  active:scale-95"
               >
-                X
+                <X size={18} strokeWidth={2} />
               </button>
             </header>
 
