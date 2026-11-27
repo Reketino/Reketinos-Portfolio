@@ -82,46 +82,8 @@ export function useSleepScreen() {
     };
   }, [active, exitSleep, schedule]);
 
-  //   Trigger functions globally
   useEffect(() => {
-    window.enterSleep = () => {
-      if (window.closeStartMenu) window.closeStartMenu();
-      window.disableStartMenuClick = true;
-      setActive(true);
-    };
+    return clearTimers;
+  }, [clearTimers]);
 
-    window.exitSleep = () => {
-      setFade(false);
-
-      setTimeout(() => {
-        window.disableStartMenuClick = false;
-        setActive(false);
-      }, 300);
-    };
-  }, []);
-
-  // Fade & background fade
-  useEffect(() => {
-    if (!active) return;
-    setTimeout(() => setFade(true), 0);
-    setTimeout(() => setBgFade(true), 50);
-
-    const wake = () => {
-      window.exitSleep();
-    };
-
-    window.addEventListener("keydown", wake, { once: true });
-    window.addEventListener("pointerdown", wake, { once: true });
-
-    return () => {
-      window.removeEventListener("keydown", wake);
-      window.removeEventListener("pointerdown", wake);
-    };
-  }, [active]);
-
-  return {
-    active,
-    fade,
-    bgFade,
-  };
-}
+  
