@@ -6,7 +6,7 @@ import {Panda, Send, Sparkles } from "lucide-react";
 const modes = [
   { value: "professional", label: "Professional" },
   { value: "casual", label: "Casual" },
-  { value: "", label: "" },
+  { value: "fun", label: "Fun" },
   { value: "", label: "" },
 ]
 
