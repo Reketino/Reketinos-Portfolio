@@ -91,6 +91,16 @@ export default function ChatBear() {
           >
             <header className="mb-4 flex items-center justify-between border-b border-neutral-800/80 pb-3">
             <div className="flex items-center gap-3">
+              <div className="
+              relative flex h-9 w-9 items-center 
+              justify-center rounded-xl border 
+              border-amber-500/20 
+              bg-linear-to-br from-amber-500/15 to-neutral-900 
+              shadow-lg shadow-amber-500/5
+              "
+              >
+                <Sparkles className="h-4 w-4 text-amber-400" />
+              </div>
               <h3 className="text-sm font-semibold text-amber-400">🐻BearAI</h3>
               </div>
               <button
