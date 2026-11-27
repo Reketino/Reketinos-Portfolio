@@ -89,7 +89,7 @@ export default function ChatBear() {
           animate-pop-from-bear
           "
           >
-            <header className="flex justify-between items-center mb-2">
+            <header className="mb-4 flex items-center justify-between border-b border-neutral-800/80 pb-3">
               <h3 className="text-sm font-semibold text-amber-400">🐻BearAI</h3>
               <button
                 onClick={() => setOpen(false)}
