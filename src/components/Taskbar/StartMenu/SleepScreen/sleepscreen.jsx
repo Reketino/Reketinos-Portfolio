@@ -62,7 +62,7 @@ export default function SleepScreen() {
       >
         <p
           className="
-        text-balance text-3xl text-white
+        text-balance text-3xl text-red-950
         sm:text-4xl md:text-5xl lg:text-6xl 
         [text-shadow:0_2px_24px_rgba(0,0,0,0.45)] animate-pulse
         "
