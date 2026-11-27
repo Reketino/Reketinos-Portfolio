@@ -1,8 +1,9 @@
 "use client";
 import { useEffect, useState } from "react";
-import BearChat from "./bearchat";
+
 import Image from "next/image";
 import ChatBubble from "./chatbubble";
+import BearChat from "./bearchat";
 
 export default function ChatBear() {
   const [open, setOpen] = useState(false);
