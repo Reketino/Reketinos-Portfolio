@@ -93,6 +93,7 @@ export default function ChatBear() {
               <h3 className="text-sm font-semibold text-amber-400">🐻BearAI</h3>
               <button
                 onClick={() => setOpen(false)}
+                aria-label="Close BearAi"
                 className="text-neutral-400 hover:text-white"
               >
                 X
