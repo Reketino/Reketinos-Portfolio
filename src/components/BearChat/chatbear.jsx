@@ -90,29 +90,30 @@ export default function ChatBear() {
           "
           >
             <header className="mb-4 flex items-center justify-between border-b border-neutral-800/80 pb-3">
-            <div className="flex items-center gap-3">
-              <div className="
+              <div className="flex items-center gap-3">
+                <div
+                  className="
               relative flex h-9 w-9 items-center 
               justify-center rounded-xl border 
               border-amber-500/20 
               bg-linear-to-br from-amber-500/15 to-neutral-900 
               shadow-lg shadow-amber-500/5
               "
-              >
-                <Panda className="h-4 w-4 text-amber-400" />
+                >
+                  <Panda className="h-4 w-4 text-amber-400" />
 
-                <span className="absolute -bottom-1 -right-1 h-2.5 w-2.5 rounded-full border-2 border-neutral-950 bg-green-500" />
-              </div>
+                  <span className="absolute -bottom-1 -right-1 h-2.5 w-2.5 rounded-full border-2 border-neutral-950 bg-green-500" />
+                </div>
 
-              <div>
-              <h3 className="text-sm font-semibold tracking-wide text-neutral-100">
-                BearAI
-                </h3>
-                
-                <p className="mt-0.5 text-xs text-neutral-500">
-                  Your AI assistant
-                </p>
-              </div>
+                <div>
+                  <h3 className="text-sm font-semibold tracking-wide text-neutral-100">
+                    BearAI
+                  </h3>
+
+                  <p className="mt-0.5 text-xs text-neutral-500">
+                    Your AI assistant
+                  </p>
+                </div>
               </div>
               <button
                 onClick={() => setOpen(false)}
