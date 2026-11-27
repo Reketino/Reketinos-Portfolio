@@ -3,6 +3,10 @@
 import { useState, useEffect, useRef } from "react";
 import {Panda, Send, Sparkles } from "lucide-react";
 
+const modes = [
+  { value: "professional", label: "Professional" },
+]
+
 export default function BearChat({ setIsAnswering }) {
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([]);
