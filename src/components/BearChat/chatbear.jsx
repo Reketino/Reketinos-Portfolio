@@ -94,7 +94,14 @@ export default function ChatBear() {
               <button
                 onClick={() => setOpen(false)}
                 aria-label="Close BearAi"
-                className="text-neutral-400 hover:text-white"
+                className="
+                  flex h-8 w-8 items-center justify-center
+                  rounded-lg
+                text-neutral-400
+                  transition-all duration-200
+                hover:bg-neutral-800
+                hover:text-white
+                  active:scale-95"
               >
                 X
               </button>
