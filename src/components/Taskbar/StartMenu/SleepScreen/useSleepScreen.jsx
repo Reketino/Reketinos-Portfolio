@@ -69,8 +69,11 @@ export function useSleepScreen() {
     if (!active) return;
 
     schedule(() => setFade(true), 50);
+    schedule(() => setBgFade(true), 100);
+
+    const wake = () => exitSleep();
     
-  })
+  });
 
   //   Trigger functions globally
   useEffect(() => {
