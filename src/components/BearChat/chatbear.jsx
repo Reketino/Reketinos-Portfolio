@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { X } from "lucide-react";
+import { X, Sparkles } from "lucide-react";
 import Image from "next/image";
 import ChatBubble from "./chatbubble";
 import BearChat from "./bearchat";
