@@ -103,7 +103,10 @@ export default function ChatBear() {
 
                 <span className="absolute -bottom-1 -right-1 h-2.5 w-2.5 rounded-full border-2 border-neutral-950 bg-green-500" />
               </div>
-              <h3 className="text-sm font-semibold text-amber-400">🐻BearAI</h3>
+
+              <div>
+              <h3 className="text-sm font-semibold tracking-wide text-neutral-100">BearAI</h3>
+              </div>
               </div>
               <button
                 onClick={() => setOpen(false)}
