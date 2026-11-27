@@ -24,7 +24,7 @@ export default function BearChat({ setIsAnswering }) {
       behavior: "smooth", 
       block: "end",
     });
-  }, [messages, loading]);
+  }, [messages, loading, error]);
 
   async function askBear() {
     if (!input.trim() || loading) return;
