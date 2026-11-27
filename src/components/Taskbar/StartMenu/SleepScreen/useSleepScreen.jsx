@@ -74,6 +74,7 @@ export function useSleepScreen() {
     const wake = () => exitSleep();
 
     window.addEventListener("keydown", wake);
+    window.addEventListener("pointerdown", wake);
     
   });
 
