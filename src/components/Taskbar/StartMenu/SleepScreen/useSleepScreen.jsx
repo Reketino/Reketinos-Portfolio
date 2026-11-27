@@ -22,7 +22,7 @@ export function useSleepScreen() {
 
   const exitSleep = useCallback(() => {
     if (wakingRef.current) return;
-    
+
     wakingRef.current = true;
 
     clearTimers();
@@ -30,12 +30,11 @@ export function useSleepScreen() {
     setFade(false);
     setBgFade(false);
 
-  schedule(() => {
-    window.disableStartMenuClick = false;
-    setActive(false);
-    wakingRef.current = false;
-  }, 700);
-
+    schedule(() => {
+      window.disableStartMenuClick = false;
+      setActive(false);
+      wakingRef.current = false;
+    }, 700);
   }, [clearTimers, schedule]);
 
   useEffect(() => {
@@ -62,8 +61,7 @@ export function useSleepScreen() {
       delete window.enterSleep;
       delete window.exitSleep;
     };
-    
-  }, [clearTimers,exitSleep]);
+  }, [clearTimers, exitSleep]);
 
   useEffect(() => {
     if (!active) return;
