@@ -16,11 +16,14 @@ export default function BearChat({ setIsAnswering }) {
   const [mode, setMode] = useState("professional");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  
+
   const bottomRef = useRef(null);
 
   useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+    bottomRef.current?.scrollIntoView({ 
+      behavior: "smooth", 
+      block: "end",
+    });
   }, [messages, loading]);
 
   async function askBear() {
