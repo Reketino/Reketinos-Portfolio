@@ -1,5 +1,14 @@
 "use client";
+
 import { useState, useEffect, useRef } from "react";
+import {Panda, Send, Sparkles } from "lucide-react";
+
+const modes = [
+  { value: "professional", label: "Professional" },
+  { value: "casual", label: "Casual" },
+  { value: "fun", label: "Fun" },
+  { value: "story", label: "Story" },
+]
 
 export default function BearChat({ setIsAnswering }) {
   const [input, setInput] = useState("");
@@ -7,11 +16,15 @@ export default function BearChat({ setIsAnswering }) {
   const [mode, setMode] = useState("professional");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+
   const bottomRef = useRef(null);
 
   useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages, loading]);
+    bottomRef.current?.scrollIntoView({ 
+      behavior: "smooth", 
+      block: "end",
+    });
+  }, [messages, loading, error]);
 
   async function askBear() {
     if (!input.trim() || loading) return;
