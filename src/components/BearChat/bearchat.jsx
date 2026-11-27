@@ -1,5 +1,7 @@
 "use client";
+
 import { useState, useEffect, useRef } from "react";
+import {Panda, Send, Sparkles } from "lucide-react";
 
 export default function BearChat({ setIsAnswering }) {
   const [input, setInput] = useState("");
