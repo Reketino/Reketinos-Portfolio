@@ -90,7 +90,9 @@ export default function ChatBear() {
           "
           >
             <header className="mb-4 flex items-center justify-between border-b border-neutral-800/80 pb-3">
+            <div className="flex items-center gap-3">
               <h3 className="text-sm font-semibold text-amber-400">🐻BearAI</h3>
+              </div>
               <button
                 onClick={() => setOpen(false)}
                 aria-label="Close BearAi"
