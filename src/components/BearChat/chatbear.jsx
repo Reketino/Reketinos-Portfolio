@@ -109,6 +109,9 @@ export default function ChatBear() {
                 BearAI
                 </h3>
                 
+                <p className="mt-0.5 text-xs text-neutral-500">
+                  Your AI assistant
+                </p>
               </div>
               </div>
               <button
