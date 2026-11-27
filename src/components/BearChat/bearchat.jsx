@@ -5,6 +5,9 @@ import {Panda, Send, Sparkles } from "lucide-react";
 
 const modes = [
   { value: "professional", label: "Professional" },
+  { value: "casual", label: "Casual" },
+  { value: "", label: "" },
+  { value: "", label: "" },
 ]
 
 export default function BearChat({ setIsAnswering }) {
