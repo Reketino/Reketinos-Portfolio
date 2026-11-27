@@ -7,7 +7,7 @@ const modes = [
   { value: "professional", label: "Professional" },
   { value: "casual", label: "Casual" },
   { value: "fun", label: "Fun" },
-  { value: "", label: "" },
+  { value: "story", label: "Story" },
 ]
 
 export default function BearChat({ setIsAnswering }) {
