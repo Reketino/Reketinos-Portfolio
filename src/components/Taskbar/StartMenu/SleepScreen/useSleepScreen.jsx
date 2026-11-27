@@ -80,7 +80,7 @@ export function useSleepScreen() {
       window.removeEventListener("keydown", wake);
       window.removeEventListener("pointerdown", wake);
     };
-  });
+  }, [active, exitSleep, schedule]);
 
   //   Trigger functions globally
   useEffect(() => {
