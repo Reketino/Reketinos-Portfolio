@@ -11,7 +11,6 @@ export default function ChatBear() {
   const [isAnswering, setIsAnswering] = useState(false);
 
   useEffect(() => {
-    // Bubble only pop up first time
     const seen = sessionStorage.getItem("chatBubbleSeen");
     if (!seen) {
       setShowBubble(true);
