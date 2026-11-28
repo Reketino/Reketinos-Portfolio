@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { X, Panda } from "lucide-react";
+import { X } from "lucide-react";
 import Image from "next/image";
 import ChatBubble from "./chatbubble";
 import BearChat from "./bearchat";
@@ -92,14 +92,19 @@ export default function ChatBear() {
               <div className="flex items-center gap-3">
                 <div
                   className="
-              relative flex h-9 w-9 items-center 
-              justify-center rounded-xl border 
-              border-amber-500/20 
-              bg-linear-to-br from-amber-500/15 to-neutral-900 
-              shadow-lg shadow-amber-500/5
-              "
+                      relative flex h-9 w-9 items-center justify-center
+                      rounded-xl border border-amber-500/20
+                    bg-neutral-900
+                      shadow-lg shadow-amber-500/5
+                    "
                 >
-                  <Panda className="h-4 w-4 text-amber-400" />
+                  <Image
+                    src="/BearAI/beariicon.png"
+                    alt="BearAI"
+                    width={28}
+                    height={28}
+                    className="object-contain"
+                  />
 
                   <span className="absolute -bottom-1 -right-1 h-2.5 w-2.5 rounded-full border-2 border-neutral-950 bg-green-500" />
                 </div>

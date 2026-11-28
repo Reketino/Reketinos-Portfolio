@@ -1,14 +1,14 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import {Panda, Send, Sparkles } from "lucide-react";
+import { Panda, Send, Sparkles } from "lucide-react";
 
 const modes = [
   { value: "professional", label: "Professional" },
   { value: "casual", label: "Casual" },
   { value: "fun", label: "Fun" },
   { value: "story", label: "Story" },
-]
+];
 
 export default function BearChat({ setIsAnswering }) {
   const [input, setInput] = useState("");
@@ -20,8 +20,8 @@ export default function BearChat({ setIsAnswering }) {
   const bottomRef = useRef(null);
 
   useEffect(() => {
-    bottomRef.current?.scrollIntoView({ 
-      behavior: "smooth", 
+    bottomRef.current?.scrollIntoView({
+      behavior: "smooth",
       block: "end",
     });
   }, [messages, loading, error]);
@@ -29,7 +29,6 @@ export default function BearChat({ setIsAnswering }) {
   async function askBear() {
     const userMessage = input;
 
-    // Usermessage pop up immediately
     setMessages((prev) => [...prev, { role: "user", text: userMessage }]);
 
     setInput("");
@@ -53,9 +52,16 @@ export default function BearChat({ setIsAnswering }) {
         return;
       }
 
+      if (!res.ok) {
+        throw new Error("Something went wrong.");
+      }
+
       const data = await res.json();
 
-      // Adding BearAI reply
+      if (!data.answer) {
+        throw new Error("BearAi returned an empty response.");
+      }
+
       setMessages((prev) => [...prev, { role: "bear", text: data.answer }]);
 
       setInput("");
@@ -67,76 +73,238 @@ export default function BearChat({ setIsAnswering }) {
     }
   }
 
+  function handleSubmit(e) {
+    e.preventDefault();
+    askBear();
+  }
+
+  function handleKeyDown(e) {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      askBear();
+    }
+  }
+
   return (
-    <main className="max-w-xl mx-auto space-y-3">
-      <select
-        value={mode}
-        onChange={(e) => setMode(e.target.value)}
-        className="
-        bg-neutral-100 text-neutral-900
-        dark:bg-neutral-900 dark:text-neutral-100
-        p-2 pr-8 rounded text-sm"
-      >
-        <option value="professional">Professional</option>
-        <option value="casual">Casual</option>
-        <option value="fun">Fun</option>
-        <option value="story">Story</option>
-      </select>
+    <section className="flex flex-col gap-3">
+      <div className="flex items-center justify-between">
+        <label
+          htmlFor="bear-mode"
+          className="text-xs font-medium text-neutral-500"
+        >
+          Convertion style
+        </label>
+
+        <select
+          id="bear-mode"
+          value={mode}
+          onChange={(e) => setMode(e.target.value)}
+          disabled={loading}
+          className="
+           cursor-pointer rounded-lg
+            border border-neutral-800
+            bg-neutral-900
+            px-3 py-1.5
+            text-xs text-neutral-300
+            outline-none
+            transition-colors
+            hover:border-neutral-700
+            focus-visible:border-amber-500/50
+            disabled:cursor-not-allowed
+            disabled:opacity-50
+        "
+        >
+          {modes.map((item) => (
+            <option key={item.value} value={item.value}>
+              {item.label}
+            </option>
+          ))}
+        </select>
+      </div>
 
       <section
+        aria-label="BearAi conversation"
         className="
-      bg-black/40 rounded 
-      p-4 h-44 
-      md:h-64 text-sm 
-      overflow-y-auto space-y-2
-      "
+            flex h-64 flex-col gap-3
+            overflow-y-auto overscroll-contain
+            rounded-xl
+          bg-neutral-950/30
+            p-3
+            text-sm
+          "
       >
-        {messages.map((m, i) => (
-          <p
-            key={i}
-            className={
-              m.role === "bear" ? "text-amber-400" : "text-neutral-200"
-            }
+        {messages.length === 0 && !loading && (
+          <div className="flex flex-1 flex-col items-center justify-center text-center">
+            <div
+              className="
+                  mb-3 flex h-11 w-11 items-center justify-center
+                  rounded-2xl
+                bg-amber-500/5
+            "
+            >
+              <Panda className="h-5 w-5 text-amber-400" />
+            </div>
+
+            <p className="text-sm font-medium text-neutral-300">
+              Welcome to BearAI
+            </p>
+
+            <p className="mt-1 max-w-52 text-xs leading-relaxed text-neutral-500">
+              Ask me anything. I'm ready when your are.
+            </p>
+          </div>
+        )}
+
+        {messages.map((message, index) => {
+          const isBear = message.role === "bear";
+
+          return (
+            <div
+              key={`${message.role}-${index}`}
+              className={`flex items-end gap-2 ${
+                isBear ? "justify-start" : "justify-end"
+              }`}
+            >
+              {isBear && (
+                <div
+                  className="
+                    flex h-7 w-7 shrink-0 items-center justify-center
+                    rounded-lg border border-amber-500/10
+                    bg-amber-500/5
+                "
+                >
+                  <Panda className="h-3.5 w-3.5 text-amber-400" />
+                </div>
+              )}
+
+              <div
+                className={`
+                  max-w-[85%] rounded-2xl px-3 py-2
+                  leading-relaxed whitespace-pre-wrap wrap-break-word
+                  ${
+                    isBear
+                      ? "rounded-bl-md border border-neutral-800 bg-neutral-900 text-neutral-200"
+                      : "rounded-br-md bg-amber-500 text-neutral-950"
+                  }
+              `}
+              >
+                {message.text}
+              </div>
+            </div>
+          );
+        })}
+
+        {loading && (
+          <div className="flex items-end gap-2">
+            <div
+              className="
+                flex h-7 w-7 shrink-0 items-center justify-center
+                rounded-lg border border-amber-500/10
+                bg-amber-500/5
+              "
+            >
+              <Panda className="h-3.5 w-3.5 text-amber-400" />
+            </div>
+
+            <div
+              className="
+              flex items-center gap-1.5
+                rounded-2xl rounded-bl-md
+                border border-neutral-800
+                bg-neutral-900
+                px-4 py-3
+              "
+            >
+              <span className="text-xs text-neutral-500">
+                BearAi is thinking
+              </span>
+
+              <span className="flex gap-1">
+                <span className="h-1 w-1 animate-bounce rounded-full bg-amber-400 [animation-delay:-0.3s]" />
+                <span className="h-1 w-1 animate-bounce rounded-full bg-amber-400 [animation-delay:-0.15s]" />
+                <span className="h-1 w-1 animate-bounce rounded-full bg-amber-400" />
+              </span>
+            </div>
+          </div>
+        )}
+
+        {error && (
+          <div
+            className="
+              rounded-lg border border-red-500/10
+              bg-red-500/5 px-3 py-2
+              text-xs text-red-400
+          "
           >
-            <strong>{m.role === "bear" ? "🐻BearAI" : "You"}:</strong> {m.text}
-          </p>
-        ))}
-
-        {loading && <p className="text-neutral-400">BearAI is typing...</p>}
-
-        {error && <p className="text-red-400">{error}</p>}
+            {error}
+          </div>
+        )}
 
         <div ref={bottomRef} />
       </section>
 
-      <section className="flex gap-2">
-        <input
+      <form onSubmit={handleSubmit} className="flex items-end gap-2">
+        <div
           className="
-          flex-1 p-2 rounded text-sm
-          bg-neutral-100 text-neutral-900
-          dark:bg-neutral-900 dark:text-neutral-100
-          placeholder:text-neutral-500 dark:placeholder:text-neutral-400
-          focus:outline-none
-          focus:ring-2 focus:ring-amber-500/40
-          "
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          placeholder="Ask Bear something..."
-          onKeyDown={(e) => e.key === "Enter" && askBear()}
-        />
-        <button
-          onClick={askBear}
-          disabled={loading}
-          className="
-          bg-amber-500 hover:bg-amber-600 
-          text-black px-4 rounded 
-          disabled:opacity-50
-          transition
+            flex flex-1 items-center
+            rounded-xl border border-neutral-800
+            bg-neutral-900
+            transition-all duration-200
+            focus-within:border-amber-500/40
+            focus-within:ring-2
+            focus-within:ring-amber-500/10
           "
         >
-          Ask
+          <textarea
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            onKeyDown={handleKeyDown}
+            disabled={loading}
+            rows={1}
+            placeholder="Ask Bear something..."
+            aria-label="Message BearAI"
+            className="
+              min-h-11 max-h-28 flex-1
+              resize-none bg-transparent
+              px-3 py-3
+              text-sm text-neutral-100
+              placeholder:text-neutral-600
+              outline-none
+              disabled:cursor-not-allowed
+              disabled:opacity-50
+            "
+          />
+        </div>
+
+        <button
+          type="submit"
+          disabled={loading || !input.trim()}
+          aria-label="Send message"
+          className="
+            flex h-11 w-11 shrink-0
+            items-center justify-center
+            rounded-xl
+            bg-amber-500
+            text-neutral-950
+            shadow-lg shadow-amber-500/5
+            transition-all duration-200
+            hover:bg-amber-400
+            hover:shadow-amber-500/10
+            active:scale-95
+            disabled:cursor-not-allowed
+            disabled:bg-neutral-800
+            disabled:text-neutral-500
+            disabled:shadow-none
+          "
+        >
+          <Send className="h-4 w-4" />
         </button>
-      </section>
-    </main>
+      </form>
+
+      <p className="flex items-center justify-center gap-1 text-[10px] text-neutral-600">
+        <Sparkles className="h-3 w-3" />
+        BearAI can make mistakes. Check important information.
+      </p>
+    </section>
   );
 }
