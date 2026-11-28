@@ -131,7 +131,7 @@ export default function BearChat({ setIsAnswering }) {
           bg-neutral-950/30
             p-3
             text-sm
-      "
+          "
       >
         {messages.length === 0 && !loading && (
           <div className="flex flex-1 flex-col items-center justify-center text-center">
