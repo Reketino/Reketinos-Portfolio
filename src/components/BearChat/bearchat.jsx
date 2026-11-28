@@ -145,9 +145,13 @@ export default function BearChat({ setIsAnswering }) {
               <Panda className="h-5 w-5 text-amber-400" />
             </div>
 
-            
+            <p className="mt-1 max-w-52 text-xs leading-relaxed text-neutral-500">
+              Ask me anything. I'm ready when your are.
+            </p>
           </div>
         )}
+
+        
       </section>
     </section>
   );
