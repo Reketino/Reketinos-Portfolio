@@ -5,6 +5,7 @@ import Image from "next/image";
 import ChatBubble from "./chatbubble";
 import BearChat from "./bearchat";
 
+
 export default function ChatBear() {
   const [open, setOpen] = useState(false);
   const [showBubble, setShowBubble] = useState(false);
@@ -99,7 +100,13 @@ export default function ChatBear() {
               shadow-lg shadow-amber-500/5
               "
                 >
-                  <Panda className="h-4 w-4 text-amber-400" />
+                  <Image
+                  src="/BearAI/beariicon.png"
+                  alt="BearAI"
+                  width={28}
+                  height={28}
+                  className="object-contain"
+                  />
 
                   <span className="absolute -bottom-1 -right-1 h-2.5 w-2.5 rounded-full border-2 border-neutral-950 bg-green-500" />
                 </div>
