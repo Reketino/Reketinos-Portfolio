@@ -265,7 +265,33 @@ export default function BearChat({ setIsAnswering }) {
           "
           />
         </div>
+
+        <button 
+        type="submit"
+        disabled={loading || !input.trim()}
+        aria-label="Send message"
+        className="
+            flex h-11 w-11 shrink-0
+            items-center justify-center
+            rounded-xl
+            bg-amber-500
+            text-neutral-950
+            shadow-lg shadow-amber-500/5
+            transition-all duration-200
+            hover:bg-amber-400
+            hover:shadow-amber-500/10
+            active:scale-95
+            disabled:cursor-not-allowed
+            disabled:bg-neutral-800
+            disabled:text-neutral-500
+            disabled:shadow-none
+        "
+        >
+          <Send className="h-4 w-4" />
+        </button>
       </form>
+
+      
     </section>
   );
 }
