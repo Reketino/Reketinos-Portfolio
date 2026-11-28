@@ -295,7 +295,7 @@ export default function BearChat({ setIsAnswering }) {
             disabled:bg-neutral-800
             disabled:text-neutral-500
             disabled:shadow-none
-        "
+          "
         >
           <Send className="h-4 w-4" />
         </button>
