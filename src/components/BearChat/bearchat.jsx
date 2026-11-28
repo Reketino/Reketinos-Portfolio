@@ -213,7 +213,7 @@ export default function BearChat({ setIsAnswering }) {
                 border border-neutral-800
                 bg-neutral-900
                 px-4 py-3
-            "
+              "
             >
               <span className="text-xs text-neutral-500">
                 BearAi is thinking
