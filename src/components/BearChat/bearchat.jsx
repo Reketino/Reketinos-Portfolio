@@ -154,7 +154,16 @@ export default function BearChat({ setIsAnswering }) {
         {messages.map((message, index) => {
           const isBear = message.role === "bear";
 
-          
+          return (
+            <div 
+            key={`${message.role}-${index}`}
+            className={`flex items-end gap-2 ${
+              isBear ? "justify-start" : "justify-end"
+            }`}
+            >
+              
+            </div>
+          )
         })}
       </section>
     </section>
