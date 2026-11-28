@@ -86,75 +86,17 @@ export default function BearChat({ setIsAnswering }) {
   }
 
   return (
-    <main className="max-w-xl mx-auto space-y-3">
-      <select
-        value={mode}
-        onChange={(e) => setMode(e.target.value)}
-        className="
-        bg-neutral-100 text-neutral-900
-        dark:bg-neutral-900 dark:text-neutral-100
-        p-2 pr-8 rounded text-sm"
-      >
-        <option value="professional">Professional</option>
-        <option value="casual">Casual</option>
-        <option value="fun">Fun</option>
-        <option value="story">Story</option>
-      </select>
-
-      <section
-        className="
-      bg-black/40 rounded 
-      p-4 h-44 
-      md:h-64 text-sm 
-      overflow-y-auto space-y-2
-      "
-      >
-        {messages.map((m, i) => (
-          <p
-            key={i}
-            className={
-              m.role === "bear" ? "text-amber-400" : "text-neutral-200"
-            }
-          >
-            <strong>{m.role === "bear" ? "🐻BearAI" : "You"}:</strong> {m.text}
-          </p>
-        ))}
-
-        {loading && <p className="text-neutral-400">BearAI is typing...</p>}
-
-        {error && <p className="text-red-400">{error}</p>}
-
-        <div ref={bottomRef} />
-      </section>
-
-      <section className="flex gap-2">
-        <input
-          className="
-          flex-1 p-2 rounded text-sm
-          bg-neutral-100 text-neutral-900
-          dark:bg-neutral-900 dark:text-neutral-100
-          placeholder:text-neutral-500 dark:placeholder:text-neutral-400
-          focus:outline-none
-          focus:ring-2 focus:ring-amber-500/40
-          "
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          placeholder="Ask Bear something..."
-          onKeyDown={(e) => e.key === "Enter" && askBear()}
-        />
-        <button
-          onClick={askBear}
-          disabled={loading}
-          className="
-          bg-amber-500 hover:bg-amber-600 
-          text-black px-4 rounded 
-          disabled:opacity-50
-          transition
-          "
+    <section className="flex flex-col gap-3">
+      <div className="flex items-center justify-between">
+        <label
+        htmlFor="bear-mode"
+        className="text-xs font-medium text-neutral-500"
         >
-          Ask
-        </button>
-      </section>
-    </main>
+          Convertion style
+        </label>
+
+        
+      </div>
+    </section>
   );
 }
