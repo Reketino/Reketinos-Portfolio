@@ -58,6 +58,10 @@ export default function BearChat({ setIsAnswering }) {
 
       const data = await res.json();
 
+      if (!data.answer) {
+        throw new Error("BearAi returned an empty response.")
+      }
+
       // Adding BearAI reply
       setMessages((prev) => [...prev, { role: "bear", text: data.answer }]);
 
