@@ -291,7 +291,10 @@ export default function BearChat({ setIsAnswering }) {
         </button>
       </form>
 
-      
+      <p className="flex items-center justify-center gap-1 text-[10px] text-neutral-600">
+        <Sparkles className="h-3 w-3" />
+        BearAI can make mistakes. Check important information.
+      </p>
     </section>
   );
 }
