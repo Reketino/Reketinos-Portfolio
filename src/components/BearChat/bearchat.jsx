@@ -250,7 +250,20 @@ export default function BearChat({ setIsAnswering }) {
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={handleKeyDown}
           disabled={loading}
-          
+          rows={1}
+          placeholder="Ask Bear something..."
+          aria-label="Message BearAI"
+          className="
+              min-h-11 max-h-28 flex-1
+              resize-none bg-transparent
+              px-3 py-3
+              text-sm text-neutral-100
+              placeholder:text-neutral-600
+              outline-none
+              disabled:cursor-not-allowed
+              disabled:opacity-50
+          "
+          />
         </div>
       </form>
     </section>
