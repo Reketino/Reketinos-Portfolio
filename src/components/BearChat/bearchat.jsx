@@ -161,7 +161,16 @@ export default function BearChat({ setIsAnswering }) {
               isBear ? "justify-start" : "justify-end"
             }`}
             >
-              
+              {isBear && (
+                <div className="
+                    flex h-7 w-7 shrink-0 items-center justify-center
+                    rounded-lg border border-amber-500/10
+                    bg-amber-500/5
+                "
+                >
+                  
+                  </div>
+              )}
             </div>
           )
         })}
