@@ -151,7 +151,11 @@ export default function BearChat({ setIsAnswering }) {
           </div>
         )}
 
-        
+        {messages.map((message, index) => {
+          const isBear = message.role === "bear";
+
+          
+        })}
       </section>
     </section>
   );
