@@ -234,7 +234,20 @@ export default function BearChat({ setIsAnswering }) {
         <div ref={bottomRef} />
       </section>
 
-      
+      <form onSubmit={handleSubmit} className="flex items-end gap-2">
+        <div className="
+                   flex flex-1 items-center
+            rounded-xl border border-neutral-800
+            bg-neutral-900
+            transition-all duration-200
+            focus-within:border-amber-500/40
+            focus-within:ring-2
+            focus-within:ring-amber-500/10
+        "
+        >
+          
+        </div>
+      </form>
     </section>
   );
 }
