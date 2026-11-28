@@ -185,8 +185,32 @@ export default function BearChat({ setIsAnswering }) {
                 {message.text}
               </div>
             </div>
-          )
+          );
         })}
+
+        {loading && (
+          <div className="flex items-end gap-2">
+            <div className="
+                flex h-7 w-7 shrink-0 items-center justify-center
+                rounded-lg border border-amber-500/10
+                bg-amber-500/5
+            "
+            >
+              <Panda className="h-3.5 w-3.5 text-amber-400" />
+            </div>
+
+            <div className="
+              flex items-center gap-1.5
+                rounded-2xl rounded-bl-md
+                border border-neutral-800
+                bg-neutral-900
+                px-4 py-3
+            "
+            >
+              
+            </div>
+          </div>
+        )}
       </section>
     </section>
   );
