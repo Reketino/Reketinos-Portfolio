@@ -253,7 +253,7 @@ export default function BearChat({ setIsAnswering }) {
             focus-within:border-amber-500/40
             focus-within:ring-2
             focus-within:ring-amber-500/10
-        "
+          "
         >
           <textarea
             value={input}
