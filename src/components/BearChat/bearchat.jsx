@@ -29,7 +29,6 @@ export default function BearChat({ setIsAnswering }) {
   async function askBear() {
     const userMessage = input;
 
-    // Usermessage pop up immediately
     setMessages((prev) => [...prev, { role: "user", text: userMessage }]);
 
     setInput("");
