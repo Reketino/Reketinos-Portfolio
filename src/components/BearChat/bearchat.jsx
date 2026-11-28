@@ -77,7 +77,13 @@ export default function BearChat({ setIsAnswering }) {
     e.preventDefault();
     askBear();
   }
-  
+
+  function handleKeyDown(e) {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      askBear();
+    }
+  }
 
   return (
     <main className="max-w-xl mx-auto space-y-3">
