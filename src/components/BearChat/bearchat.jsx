@@ -168,7 +168,7 @@ export default function BearChat({ setIsAnswering }) {
                     bg-amber-500/5
                 "
                 >
-                  
+                  <Panda className="h-3.5 w-3.5 text-amber-400" />
                   </div>
               )}
             </div>
