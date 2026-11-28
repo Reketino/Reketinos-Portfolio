@@ -272,7 +272,7 @@ export default function BearChat({ setIsAnswering }) {
               outline-none
               disabled:cursor-not-allowed
               disabled:opacity-50
-          "
+            "
           />
         </div>
 
