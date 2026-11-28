@@ -93,12 +93,11 @@ export default function ChatBear() {
               <div className="flex items-center gap-3">
                 <div
                   className="
-              relative flex h-9 w-9 items-center 
-              justify-center rounded-xl border 
-              border-amber-500/20 
-              bg-linear-to-br from-amber-500/15 to-neutral-900 
-              shadow-lg shadow-amber-500/5
-              "
+                      relative flex h-9 w-9 items-center justify-center
+                      rounded-xl border border-amber-500/20
+                    bg-neutral-900
+                      shadow-lg shadow-amber-500/5
+                    "
                 >
                   <Image
                   src="/BearAI/beariicon.png"
