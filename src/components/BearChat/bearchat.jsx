@@ -134,7 +134,20 @@ export default function BearChat({ setIsAnswering }) {
           text-sm
       "
       >
-        
+        {messages.length === 0 && !loading && (
+          <div className="flex flex-1 flex-col items-center justify-center text-center">
+            <div className="
+                mb-3 flex h-11 w-11 items-center justify-center
+                rounded-2xl border border-amber-500/10
+                bg-amber-500/5
+            "
+            >
+              <Panda className="h-5 w-5 text-amber-400" />
+            </div>
+
+            
+          </div>
+        )}
       </section>
     </section>
   );
