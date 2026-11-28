@@ -73,6 +73,12 @@ export default function BearChat({ setIsAnswering }) {
     }
   }
 
+  function handleSubmit(e) {
+    e.preventDefault();
+    askBear();
+  }
+  
+
   return (
     <main className="max-w-xl mx-auto space-y-3">
       <select
