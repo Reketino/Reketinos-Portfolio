@@ -171,6 +171,19 @@ export default function BearChat({ setIsAnswering }) {
                   <Panda className="h-3.5 w-3.5 text-amber-400" />
                   </div>
               )}
+
+              <div className={`
+                  max-w-[85%] rounded-2xl px-3 py-2
+                  leading-relaxed whitespace-pre-wrap wrap-break-word
+                  ${
+                    isBear
+                    ? "rounded-bl-md border border-neutral-800 bg-neutral-900 text-neutral-200"
+                    : "rounded-br-md bg-amber-500 text-neutral-950"
+                  }
+              `}
+              >
+                {message.text}
+              </div>
             </div>
           )
         })}
