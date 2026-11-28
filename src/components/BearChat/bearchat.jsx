@@ -219,7 +219,22 @@ export default function BearChat({ setIsAnswering }) {
             </div>
           </div>
         )}
+
+        {error && (
+          <div className="
+              rounded-lg border border-red-500/10
+              bg-red-500/5 px-3 py-2
+              text-xs text-red-400
+          "
+          >
+            {error}
+          </div>
+        )}
+
+        <div ref={bottomRef} />
       </section>
+
+      
     </section>
   );
 }
