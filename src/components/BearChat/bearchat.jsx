@@ -207,7 +207,9 @@ export default function BearChat({ setIsAnswering }) {
                 px-4 py-3
             "
             >
-              
+              <span className="text-xs text-neutral-500">
+                BearAi is thinking
+              </span>
             </div>
           </div>
         )}
