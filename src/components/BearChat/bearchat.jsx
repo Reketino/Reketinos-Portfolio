@@ -52,6 +52,10 @@ export default function BearChat({ setIsAnswering }) {
         return;
       }
 
+      if (!res.ok) {
+        throw new Error("Something went wrong.")
+      }
+
       const data = await res.json();
 
       // Adding BearAI reply
