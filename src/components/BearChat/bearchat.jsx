@@ -245,6 +245,11 @@ export default function BearChat({ setIsAnswering }) {
             focus-within:ring-amber-500/10
         "
         >
+          <textarea
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          onKeyDown={handleKeyDown}
+          disabled={loading}
           
         </div>
       </form>
