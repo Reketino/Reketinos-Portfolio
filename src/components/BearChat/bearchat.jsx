@@ -125,13 +125,12 @@ export default function BearChat({ setIsAnswering }) {
       <section
         aria-label="BearAi conversation"
         className="
-                flex h-64 flex-col gap-3
-          overflow-y-auto overscroll-contain
-          rounded-xl
-          border border-neutral-800/80
-          bg-neutral-900/40
-          p-3
-          text-sm
+            flex h-64 flex-col gap-3
+            overflow-y-auto overscroll-contain
+            rounded-xl
+          bg-neutral-950/30
+            p-3
+            text-sm
       "
       >
         {messages.length === 0 && !loading && (
