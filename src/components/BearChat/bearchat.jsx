@@ -1,14 +1,14 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import {Panda, Send, Sparkles } from "lucide-react";
+import { Panda, Send, Sparkles } from "lucide-react";
 
 const modes = [
   { value: "professional", label: "Professional" },
   { value: "casual", label: "Casual" },
   { value: "fun", label: "Fun" },
   { value: "story", label: "Story" },
-]
+];
 
 export default function BearChat({ setIsAnswering }) {
   const [input, setInput] = useState("");
@@ -20,8 +20,8 @@ export default function BearChat({ setIsAnswering }) {
   const bottomRef = useRef(null);
 
   useEffect(() => {
-    bottomRef.current?.scrollIntoView({ 
-      behavior: "smooth", 
+    bottomRef.current?.scrollIntoView({
+      behavior: "smooth",
       block: "end",
     });
   }, [messages, loading, error]);
@@ -53,13 +53,13 @@ export default function BearChat({ setIsAnswering }) {
       }
 
       if (!res.ok) {
-        throw new Error("Something went wrong.")
+        throw new Error("Something went wrong.");
       }
 
       const data = await res.json();
 
       if (!data.answer) {
-        throw new Error("BearAi returned an empty response.")
+        throw new Error("BearAi returned an empty response.");
       }
 
       setMessages((prev) => [...prev, { role: "bear", text: data.answer }]);
@@ -89,18 +89,18 @@ export default function BearChat({ setIsAnswering }) {
     <section className="flex flex-col gap-3">
       <div className="flex items-center justify-between">
         <label
-        htmlFor="bear-mode"
-        className="text-xs font-medium text-neutral-500"
+          htmlFor="bear-mode"
+          className="text-xs font-medium text-neutral-500"
         >
           Convertion style
         </label>
 
         <select
-        id="bear-mode"
-        value={mode}
-        onChange={(e) => setMode(e.target.value)}
-        disabled={loading}
-        className="
+          id="bear-mode"
+          value={mode}
+          onChange={(e) => setMode(e.target.value)}
+          disabled={loading}
+          className="
            cursor-pointer rounded-lg
             border border-neutral-800
             bg-neutral-900
@@ -122,9 +122,9 @@ export default function BearChat({ setIsAnswering }) {
         </select>
       </div>
 
-      <section 
-      aria-label="BearAi conversation"
-      className="
+      <section
+        aria-label="BearAi conversation"
+        className="
                 flex h-64 flex-col gap-3
           overflow-y-auto overscroll-contain
           rounded-xl
@@ -136,7 +136,8 @@ export default function BearChat({ setIsAnswering }) {
       >
         {messages.length === 0 && !loading && (
           <div className="flex flex-1 flex-col items-center justify-center text-center">
-            <div className="
+            <div
+              className="
                 mb-3 flex h-11 w-11 items-center justify-center
                 rounded-2xl border border-amber-500/10
                 bg-amber-500/5
@@ -155,30 +156,32 @@ export default function BearChat({ setIsAnswering }) {
           const isBear = message.role === "bear";
 
           return (
-            <div 
-            key={`${message.role}-${index}`}
-            className={`flex items-end gap-2 ${
-              isBear ? "justify-start" : "justify-end"
-            }`}
+            <div
+              key={`${message.role}-${index}`}
+              className={`flex items-end gap-2 ${
+                isBear ? "justify-start" : "justify-end"
+              }`}
             >
               {isBear && (
-                <div className="
+                <div
+                  className="
                     flex h-7 w-7 shrink-0 items-center justify-center
                     rounded-lg border border-amber-500/10
                     bg-amber-500/5
                 "
                 >
                   <Panda className="h-3.5 w-3.5 text-amber-400" />
-                  </div>
+                </div>
               )}
 
-              <div className={`
+              <div
+                className={`
                   max-w-[85%] rounded-2xl px-3 py-2
                   leading-relaxed whitespace-pre-wrap wrap-break-word
                   ${
                     isBear
-                    ? "rounded-bl-md border border-neutral-800 bg-neutral-900 text-neutral-200"
-                    : "rounded-br-md bg-amber-500 text-neutral-950"
+                      ? "rounded-bl-md border border-neutral-800 bg-neutral-900 text-neutral-200"
+                      : "rounded-br-md bg-amber-500 text-neutral-950"
                   }
               `}
               >
@@ -190,7 +193,8 @@ export default function BearChat({ setIsAnswering }) {
 
         {loading && (
           <div className="flex items-end gap-2">
-            <div className="
+            <div
+              className="
                 flex h-7 w-7 shrink-0 items-center justify-center
                 rounded-lg border border-amber-500/10
                 bg-amber-500/5
@@ -199,7 +203,8 @@ export default function BearChat({ setIsAnswering }) {
               <Panda className="h-3.5 w-3.5 text-amber-400" />
             </div>
 
-            <div className="
+            <div
+              className="
               flex items-center gap-1.5
                 rounded-2xl rounded-bl-md
                 border border-neutral-800
@@ -221,7 +226,8 @@ export default function BearChat({ setIsAnswering }) {
         )}
 
         {error && (
-          <div className="
+          <div
+            className="
               rounded-lg border border-red-500/10
               bg-red-500/5 px-3 py-2
               text-xs text-red-400
@@ -235,7 +241,8 @@ export default function BearChat({ setIsAnswering }) {
       </section>
 
       <form onSubmit={handleSubmit} className="flex items-end gap-2">
-        <div className="
+        <div
+          className="
                    flex flex-1 items-center
             rounded-xl border border-neutral-800
             bg-neutral-900
@@ -246,14 +253,14 @@ export default function BearChat({ setIsAnswering }) {
         "
         >
           <textarea
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          onKeyDown={handleKeyDown}
-          disabled={loading}
-          rows={1}
-          placeholder="Ask Bear something..."
-          aria-label="Message BearAI"
-          className="
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            onKeyDown={handleKeyDown}
+            disabled={loading}
+            rows={1}
+            placeholder="Ask Bear something..."
+            aria-label="Message BearAI"
+            className="
               min-h-11 max-h-28 flex-1
               resize-none bg-transparent
               px-3 py-3
@@ -266,11 +273,11 @@ export default function BearChat({ setIsAnswering }) {
           />
         </div>
 
-        <button 
-        type="submit"
-        disabled={loading || !input.trim()}
-        aria-label="Send message"
-        className="
+        <button
+          type="submit"
+          disabled={loading || !input.trim()}
+          aria-label="Send message"
+          className="
             flex h-11 w-11 shrink-0
             items-center justify-center
             rounded-xl
