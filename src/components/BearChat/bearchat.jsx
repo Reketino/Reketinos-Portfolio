@@ -201,7 +201,7 @@ export default function BearChat({ setIsAnswering }) {
                 flex h-7 w-7 shrink-0 items-center justify-center
                 rounded-lg border border-amber-500/10
                 bg-amber-500/5
-            "
+              "
             >
               <Panda className="h-3.5 w-3.5 text-amber-400" />
             </div>
